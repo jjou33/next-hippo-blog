@@ -1,11 +1,14 @@
-import { StyledLayout, Header, Footer } from 'components/shared'
+import FeaturePosts from 'components/home-page/featured-posts'
 import Hero from 'components/home-page/hero'
+import { getFeaturedPosts } from 'lib/post-util'
+
 const Homepage = props => {
   console.log(props)
 
   return (
     <>
       <Hero />
+      <FeaturePosts posts={props.posts} />
     </>
   )
   // <StyledLayout.FlexBox flexDirection="column" alignItems="center">
@@ -23,4 +26,13 @@ const Homepage = props => {
   // </StyledLayout.FlexBox>
 }
 
+export const getStaticProps = () => {
+  const featuredPosts = getFeaturedPosts()
+
+  return {
+    props: {
+      posts: featuredPosts,
+    },
+  }
+}
 export default Homepage
