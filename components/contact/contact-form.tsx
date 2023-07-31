@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import classes from './contact-form.module.css'
-import Notification from 'components/ui/notification'
 
 const sendContactData = async contactDetails => {
   const response = await fetch('/api/contact', {
@@ -21,24 +20,9 @@ const ContactForm = () => {
   const [enteredEmail, setEnteredEmail] = useState('')
   const [enteredName, setEnteredName] = useState('')
   const [enteredMessage, setEnteredMessage] = useState('')
-  const [requestStatus, setRequestState] = useState() // 'pending', 'success', 'error'
-  const [requestError, setRequestError] = useState()
-
-  useEffect(() => {
-    if (requestStatus === 'pending' || requestStatus === 'error') {
-      const timer = setTimeout(() => {
-        setRequestState(null)
-        setRequestError(null)
-      }, 3000)
-
-      return () => clearTimeout(timer)
-    }
-  }, [requestStatus])
 
   const sendMessageHandler = async event => {
     event.preventDefault()
-
-    setRequestState('pending')
 
     try {
       await sendContactData({
@@ -46,39 +30,11 @@ const ContactForm = () => {
         name: enteredName,
         message: enteredMessage,
       })
-      setRequestState('success')
     } catch (error) {
-      setRequestError(error.message)
-      setRequestState('error')
-    }
-
-    sendContactData('success')
-  }
-
-  let notification
-
-  if (requestStatus === 'pending') {
-    notification = {
-      status: 'pending',
-      title: 'Sending message...',
-      message: 'Your message is on its Way!',
+      throw new Error('Error : ', error)
     }
   }
 
-  if (requestStatus === 'success') {
-    notification = {
-      status: 'success',
-      title: 'success',
-      message: 'Message sent successfully!',
-    }
-  }
-  if (requestStatus === 'error') {
-    notification = {
-      status: 'error',
-      title: 'Error!',
-      message: requestError,
-    }
-  }
   return (
     <section className={classes.contact}>
       <h1>how can i help you</h1>
@@ -120,13 +76,6 @@ const ContactForm = () => {
           <button>Send Message</button>
         </div>
       </form>
-      {notification && (
-        <Notification
-          status={notification.status}
-          title={notification.title}
-          message={notification.message}
-        />
-      )}
     </section>
   )
 }

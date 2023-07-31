@@ -1,8 +1,8 @@
+import { CSSProperties } from 'react'
 import styled from '@emotion/styled'
-import { CSSObject } from '@emotion/react'
 import Link from 'next/link'
 
-export const FlexBox = styled.div<CSSObject>`
+export const FlexBox = styled.div<CSSProperties>`
   flex: ${({ flex }) => flex};
   display: ${({ display }) => display ?? 'flex'};
   flex-direction: ${({ flexDirection }) => flexDirection ?? 'row'};
@@ -24,7 +24,7 @@ export const FlexBox = styled.div<CSSObject>`
   white-space: ${({ whiteSpace }) => whiteSpace};
 `
 
-export const MaxContainer = styled.div<CSSObject>`
+export const MaxContainer = styled.div<CSSProperties>`
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -39,13 +39,13 @@ export const SubMaxContainer = styled.div`
   margin: 0 auto;
 `
 
-export const UnorderList = styled.ul<CSSObject>`
+export const UnorderList = styled.ul<CSSProperties>`
   display: flex;
   align-items: center;
   gap: ${({ gap }) => gap};
 `
 
-export const LinkWrapper = styled(Link)<CSSObject>`
+export const LinkWrapper = styled(Link)<CSSProperties>`
   display: flex;
   height: 100%;
   align-items: center;
@@ -53,7 +53,7 @@ export const LinkWrapper = styled(Link)<CSSObject>`
   cursor: pointer;
 `
 
-export const EmptyBoxDivider = styled.div<CSSObject>`
+export const EmptyBoxDivider = styled.div<CSSProperties>`
   height: ${({ height }) => height};
 `
 

@@ -1,5 +1,12 @@
 import { Global, css } from '@emotion/react'
 const defaultStyle = css`
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px -> 1rem
+  }
+
   html,
   body,
   div,

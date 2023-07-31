@@ -13,7 +13,6 @@ const MainNavigation = () => {
         <ul>
           <li>
             <Link href="/posts">Post</Link>
-            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
