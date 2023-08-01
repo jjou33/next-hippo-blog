@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
-import { DefaultTheme } from '@emotion/styled'
-import localFont from '@next/font/local'
+import { Theme } from '@emotion/react'
+import localFont from 'next/font/local'
 
 const pretendard = localFont({
   src: [
@@ -46,7 +46,7 @@ const fontStyleGenerator = ({
   `
 }
 
-const theme: DefaultTheme = {
+const theme: Theme = {
   colors: {
     white: '#ffffff',
     gray_000: '#F9F9FB',
@@ -70,6 +70,7 @@ const theme: DefaultTheme = {
     error: '#F04700',
     success: '#44927F',
   },
+
   fonts: {
     headline_oneline_001: fontStyleGenerator({
       weight: 700,

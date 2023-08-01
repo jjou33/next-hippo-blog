@@ -1,8 +1,8 @@
 import { CSSProperties } from 'react'
-import '@emotion/styled'
+import '@emotion/react'
 
-declare module '@emotion/styled' {
-  export interface DefaultTheme {
+declare module '@emotion/react' {
+  export interface Theme {
     colors: {
       white: '#ffffff'
       gray_000: '#F9F9FB'
