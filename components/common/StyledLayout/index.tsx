@@ -57,7 +57,7 @@ export const EmptyBoxDivider = styled.div<CSSProperties>`
   height: ${({ height }) => height};
 `
 
-type DividerProps = {
+interface DividerProps {
   direction: 'vertical' | 'horizontal'
   width: string
   height: string
