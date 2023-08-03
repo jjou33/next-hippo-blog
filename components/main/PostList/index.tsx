@@ -1,8 +1,8 @@
 import { Typography } from 'components/common'
 import { FlexBox, Divider } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
-
-const PostList = () => {
+import PostGrid from 'components/posts/PostGrid'
+const PostList = props => {
   return (
     <FlexBox flexDirection="column" width="996px" margin="64px 0 0 0">
       <Typography
@@ -19,6 +19,7 @@ const PostList = () => {
         margin="20px 0 16px 0"
         color={theme.colors.gray_002}
       />
+      <PostGrid posts={props.posts} />
     </FlexBox>
   )
 }

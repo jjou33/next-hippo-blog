@@ -1,11 +1,8 @@
+import AllPost from 'components/posts/AllPost'
 import { getFeaturedPosts } from 'lib/PostUtil'
-import MainSection from 'components/main'
-const Homepage = props => {
-  return (
-    <>
-      <MainSection posts={props.posts} />
-    </>
-  )
+
+const AllPostPage = () => {
+  return <AllPost posts={props.posts} />
 }
 
 export function getStaticProps() {
@@ -17,5 +14,4 @@ export function getStaticProps() {
     },
   }
 }
-
-export default Homepage
+export default AllPostPage

@@ -46,7 +46,7 @@ const fontStyleGenerator = ({
   `
 }
 
-const theme: Theme = {
+const theme: DefaultTheme = {
   colors: {
     white: '#ffffff',
     gray_000: '#F9F9FB',

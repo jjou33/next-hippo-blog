@@ -22,34 +22,29 @@ const LINKED_INFO: LinkedInfo[] = [
     href: 'https://github.com/jjou33',
     imagePath: '/static/images/github.png',
     motionDirection: 'down',
-    linkName: 'GIT HUB',
+    linkName: 'GIT HUB2',
   },
   {
     href: 'https://github.com/jjou33',
     imagePath: '/static/images/github.png',
     motionDirection: 'up',
-    linkName: 'GIT HUB',
-  },
-  {
-    href: 'https://github.com/jjou33',
-    imagePath: '/static/images/github.png',
-    motionDirection: 'down',
-    linkName: 'GIT HUB',
+    linkName: 'GIT HUB3',
   },
 ]
 
 const LinkedItem = () => {
   return (
-    <FlexBox width="480px" height="100%" gap="10px" alignContent="center">
+    <FlexBox
+      width="480px"
+      height="100%"
+      gap="40px"
+      alignContent="center"
+      justifyContent="center"
+    >
       {LINKED_INFO.map(({ href, motionDirection, linkName, imagePath }) => {
         return (
           <MotionShowBox showDirection={motionDirection} key={linkName}>
-            <LinkedBtn
-              href={href}
-              target={'_blank'}
-              flex={1}
-              hoveropacity={'0.8'}
-            >
+            <LinkedBtn href={href} target={'_blank'} hoveropacity={'0.8'}>
               <FlexBox flexDirection="column" alignContent="center">
                 <Image
                   src={imagePath}

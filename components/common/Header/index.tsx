@@ -18,7 +18,7 @@ const Header = () => {
           </S.LogoWrapper>
           <UnorderList gap={'40px'}>
             <S.NavigationItem>
-              <LinkWrapper href={'/'}>
+              <LinkWrapper href={'/posts'}>
                 <Typography
                   variant="h2"
                   aggressive="button_001"
@@ -29,7 +29,7 @@ const Header = () => {
               </LinkWrapper>
             </S.NavigationItem>
             <S.NavigationItem>
-              <LinkWrapper href={'/'}>
+              <LinkWrapper href={'/posts'}>
                 <Typography
                   variant="h2"
                   aggressive="button_001"
@@ -40,7 +40,7 @@ const Header = () => {
               </LinkWrapper>
             </S.NavigationItem>
             <S.NavigationItem>
-              <LinkWrapper href={'/'}>
+              <LinkWrapper href={'/posts'}>
                 <Typography
                   variant="h2"
                   aggressive="button_001"
