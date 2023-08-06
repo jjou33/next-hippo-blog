@@ -75,3 +75,10 @@ export const Divider = styled.div<DividerProps>`
   transform: ${({ direction }) =>
     direction === 'horizontal' ? `rotate(0deg)` : `rotate(90deg)`};
 `
+
+export const StyledImageBox = styled.div<CSSProperties>`
+  position: ${({ position }) => position ?? 'relative'};
+  height: ${({ height }) => height};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  overflow: ${({ overflow }) => overflow ?? 'hidden'};
+`

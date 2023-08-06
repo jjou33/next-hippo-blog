@@ -1,5 +1,5 @@
 import { Typography } from 'components/common'
-import { Divider } from 'components/common/StyledLayout'
+import { Divider, StyledImageBox } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,9 +20,14 @@ const PostItem = props => {
   return (
     <S.GridItemContainer>
       <Link href={linkPath}>
-        <S.ImageWrapper>
-          <Image src={imagePath} alt={title} layout="fill" />
-        </S.ImageWrapper>
+        <StyledImageBox borderRadius={'20px 20px 0 0'} height={'220px'}>
+          <Image
+            src={imagePath}
+            alt={title}
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+        </StyledImageBox>
         <S.ContentsWrapper>
           <Typography variant="h3" aggressive="headline_oneline_003">
             {title}

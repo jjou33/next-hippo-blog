@@ -1,5 +1,4 @@
 import { Typography } from 'components/common'
-import { filterProps } from 'framer-motion'
 import PostGrid from '../PostGrid'
 import * as S from './styles'
 

@@ -1,17 +1,18 @@
 import AllPost from 'components/posts/AllPost'
-import { getFeaturedPosts } from 'lib/PostUtil'
+import { getAllPosts } from 'lib/PostUtil'
 
-const AllPostPage = () => {
+const AllPostPage = props => {
   return <AllPost posts={props.posts} />
 }
 
 export function getStaticProps() {
-  const featuredPosts = getFeaturedPosts()
+  const allPosts = getAllPosts()
 
   return {
     props: {
-      posts: featuredPosts,
+      posts: allPosts,
     },
   }
 }
+
 export default AllPostPage

@@ -2,7 +2,6 @@ import * as S from './styles'
 import PostItem from '../PostItem'
 
 const PostGrid = props => {
-  console.log('props : ', props)
   const { posts } = props
 
   return (

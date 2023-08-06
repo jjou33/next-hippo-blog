@@ -1,15 +1,41 @@
 import { Typography } from 'components/common'
+import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import Image from 'next/image'
-import * as S from './styles'
-const PostHeader = props => {
-  const { title, image } = props
+
+const PostHeader = ({ posts }) => {
+  const imagePath = `/static/images/${posts.slug}/${posts.image}`
+
   return (
-    <S.HeaderContainer>
-      <Typography variant="h1" aggressive="headline_oneline_005">
-        {title}
-      </Typography>
-      <Image src={image} alt={title} width={200} height={150} />
-    </S.HeaderContainer>
+    <StyledImageBox height={'88vh'}>
+      <FlexBox
+        flexDirection="column"
+        alignContent="center"
+        justifyContent="center"
+        position="relative"
+        width="100%"
+        height="100%"
+      >
+        <Image
+          src={imagePath}
+          alt={posts.title}
+          fill
+          style={{
+            objectFit: 'cover',
+            filter: 'brightness(0.25)',
+            zIndex: '-1',
+          }}
+        />
+        <FlexBox flexDirection="column" position="absolute" margin="0 auto">
+          <Typography
+            variant="h3"
+            aggressive="headline_oneline_004"
+            color="red"
+          >
+            HELLO
+          </Typography>
+        </FlexBox>
+      </FlexBox>
+    </StyledImageBox>
   )
 }
 

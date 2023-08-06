@@ -1,4 +1,4 @@
-import { DefaultTheme } from '@emotion/react'
+import { Theme } from '@emotion/react'
 import styled from '@emotion/styled'
 
 interface ComponentProps {
@@ -29,7 +29,7 @@ interface ComponentProps {
     | 'caption_large'
     | 'caption_medium'
     | 'caption_small'
-  theme?: DefaultTheme
+  theme?: Theme
   margin?: string
   padding?: string
   color?: string

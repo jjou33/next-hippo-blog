@@ -1,7 +1,6 @@
 import theme from './theme'
-import { Styles } from '@emotion/styled'
 
-const style: Styles = {
+const style = {
   btnStyle: {
     white_btn: {
       width: `200px`,

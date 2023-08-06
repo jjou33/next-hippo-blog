@@ -1,21 +1,57 @@
 import ReactMarkdown from 'react-markdown'
-
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import * as S from './styles'
-import PostHeader from '../PostHeader'
 
-const DUMMY_POST = {
-  slug: 'next1',
-  title: 'next1',
-  image: 'next1.jpg',
-  date: '2022-02-10',
-  content: '# HELLO HIPPO DEV',
-}
 const PostContent = props => {
-  const imagePath = `/static/images/${DUMMY_POST.slug}/${DUMMY_POST.image}`
+  const { posts } = props
+
+  const imagePath = `/static/images/${posts.slug}/${posts.image}`
+
+  const customRenderers = {
+    p(paragraph) {
+      const {
+        node: { children },
+      } = paragraph
+
+      if (children[0].tagName === 'img') {
+        const {
+          properties: { alt, src },
+        } = children[0]
+
+        if (!src.includes('http')) {
+          return (
+            <S.StyledImage
+              src={imagePath}
+              alt={alt}
+              width={0}
+              height={0}
+              sizes="100vw"
+            />
+          )
+        }
+      }
+
+      return <p>{paragraph.children}</p>
+    },
+
+    code(code) {
+      const { className, children } = code
+      const language = className.split('-')[1]
+      return (
+        <SyntaxHighlighter style={atomDark} language={language}>
+          {children}
+        </SyntaxHighlighter>
+      )
+    },
+  }
+
   return (
     <S.ContentsContainer>
-      <PostHeader title={DUMMY_POST.title} image={imagePath} />
-      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
+      {/* <PostHeader title={posts.title} image={imagePath} /> */}
+      <ReactMarkdown components={customRenderers}>
+        {posts.content}
+      </ReactMarkdown>
     </S.ContentsContainer>
   )
 }

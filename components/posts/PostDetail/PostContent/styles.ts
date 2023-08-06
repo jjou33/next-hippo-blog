@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 export const ContentsContainer = styled.article`
-  width: 95%;
+  width: 100vw;
   max-width: 60rem;
   margin: 2rem auto;
   font-size: 1.25rem;
@@ -14,13 +15,19 @@ export const ContentsContainer = styled.article`
     color: hsl(276, 5%, 20%);
   }
 
-  .image {
-    margin: 1rem auto;
+  p img {
     width: 100%;
-    max-width: 600px;
+    height: auto;
   }
 
   @media (min-width: 768px) {
     padding: 2rem;
   }
+`
+export const ImageWrapper = styled.div`
+  position: relative;
+`
+export const StyledImage = styled(Image)`
+  width: 100%;
+  height: auto;
 `

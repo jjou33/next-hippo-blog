@@ -1,10 +1,12 @@
-import { getFeaturedPosts } from 'lib/PostUtil'
 import MainSection from 'components/main'
-const Homepage = props => {
+import { Fragment } from 'react'
+import { getFeaturedPosts } from 'lib/PostUtil'
+
+const RootPage = props => {
   return (
-    <>
+    <Fragment>
       <MainSection posts={props.posts} />
-    </>
+    </Fragment>
   )
 }
 
@@ -18,4 +20,4 @@ export function getStaticProps() {
   }
 }
 
-export default Homepage
+export default RootPage

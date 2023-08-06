@@ -1,7 +1,7 @@
 ---
 date: "2023-05-07"
 title: "[Algorithm] DFS 알고리즘 정리1"
-image: 'dfs.jpg'
+image: 'dfs.png'
 excerpt: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
 isFeatured: true
 ---
@@ -23,6 +23,10 @@ isFeatured: true
 ```
 
 이와 같이 부분집합 즉, 1부터 N 까지의 원소 중 중복이 되지 않은 어떤 조건을 걸러야하는 부분이다.
+
+![image](https://github.com/jjou33/hippo-blog/assets/134469187/ee007c65-cb25-424d-81c1-64f00eaeb925)
+
+![image](dfs.png)
 
 #### 풀이
 ---
