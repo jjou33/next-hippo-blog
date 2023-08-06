@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import {} from 'components/common/Typography'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
@@ -81,4 +82,12 @@ export const StyledImageBox = styled.div<CSSProperties>`
   height: ${({ height }) => height};
   border-radius: ${({ borderRadius }) => borderRadius};
   overflow: ${({ overflow }) => overflow ?? 'hidden'};
+`
+
+export const StyledBadgeBox = styled.div<CSSProperties>`
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ?? backgroundColor};
+  color: ${({ color }) => color ?? color};
+  text-align: center;
 `

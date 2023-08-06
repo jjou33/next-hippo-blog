@@ -131,6 +131,10 @@ const defaultStyle = css`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `
 
 const GlobalStyle = () => {

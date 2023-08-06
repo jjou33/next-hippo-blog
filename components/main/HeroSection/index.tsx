@@ -4,7 +4,7 @@ import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import theme from 'styles/theme'
 import LinkedItem from './LinkedItem'
 import LoadingCircleLottie from 'components/common/Lottie/LoadingCircleLottie'
-
+import * as S from './styles'
 const HeroSection = () => {
   return (
     <FlexBox

@@ -1,7 +1,7 @@
-import { Theme } from '@emotion/react'
-import styled from '@emotion/styled'
+import { PropsWithChildren } from 'react'
+import * as S from './styles'
 
-export interface ComponentProps {
+interface Props extends PropsWithChildren {
   aggressive:
     | 'headline_oneline_001'
     | 'headline_oneline_002'
@@ -29,21 +29,22 @@ export interface ComponentProps {
     | 'caption_large'
     | 'caption_medium'
     | 'caption_small'
-  theme?: Theme
   margin?: string
   padding?: string
   color?: string
+  borderRadius: string
+  backgroundColor: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
 }
 
-export const Component = styled.div<ComponentProps>`
-  margin: ${({ margin }) => margin && margin};
-  padding: ${({ padding }) => padding && padding};
-  ${({ aggressive, theme }) => theme.fonts[aggressive]};
-  color: ${({ color }) => color && color};
-  line-height: ${({ lineHeight }) => lineHeight && lineHeight};
-  text-align: ${({ align }) => align && align};
-  white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
-`
+const Badge = ({ children, aggressive, ...props }: Props) => {
+  return (
+    <S.Component aggressive={aggressive} {...props}>
+      {children}
+    </S.Component>
+  )
+}
+
+export default Badge

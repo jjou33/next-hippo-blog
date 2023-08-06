@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown'
+import { SubMaxContainer } from 'components/common/StyledLayout'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import * as S from './styles'
@@ -47,12 +48,13 @@ const PostContent = props => {
   }
 
   return (
-    <S.ContentsContainer>
-      {/* <PostHeader title={posts.title} image={imagePath} /> */}
-      <ReactMarkdown components={customRenderers}>
-        {posts.content}
-      </ReactMarkdown>
-    </S.ContentsContainer>
+    <SubMaxContainer>
+      <S.ContentsContainer>
+        <ReactMarkdown components={customRenderers}>
+          {posts.content}
+        </ReactMarkdown>
+      </S.ContentsContainer>
+    </SubMaxContainer>
   )
 }
 

@@ -33,6 +33,8 @@ export interface ComponentProps {
   margin?: string
   padding?: string
   color?: string
+  borderRadius: string
+  backgroundColor: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
@@ -46,4 +48,8 @@ export const Component = styled.div<ComponentProps>`
   line-height: ${({ lineHeight }) => lineHeight && lineHeight};
   text-align: ${({ align }) => align && align};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ?? backgroundColor};
+  text-align: center;
 `
