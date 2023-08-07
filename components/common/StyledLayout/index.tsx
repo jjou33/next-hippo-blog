@@ -1,5 +1,4 @@
 import { CSSProperties } from 'react'
-import {} from 'components/common/Typography'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
@@ -21,8 +20,12 @@ export const FlexBox = styled.div<CSSProperties>`
   border-right: ${({ borderRight }) => borderRight};
   border-bottom: ${({ borderBottom }) => borderBottom};
   border-left: ${({ borderLeft }) => borderLeft};
+  box-shadow: ${({ boxShadow }) => boxShadow};
   background: ${({ background }) => background};
   white-space: ${({ whiteSpace }) => whiteSpace};
+  overflow: ${({ overflow }) => overflow};
+  place-items: ${({ placeItems }) => placeItems};
+  border-radius: ${({ borderRadius }) => borderRadius};
 `
 
 export const MaxContainer = styled.div<CSSProperties>`
@@ -82,6 +85,9 @@ export const StyledImageBox = styled.div<CSSProperties>`
   height: ${({ height }) => height};
   border-radius: ${({ borderRadius }) => borderRadius};
   overflow: ${({ overflow }) => overflow ?? 'hidden'};
+  width: ${({ width }) => width};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ?? backgroundColor};
 `
 
 export const StyledBadgeBox = styled.div<CSSProperties>`
@@ -90,4 +96,5 @@ export const StyledBadgeBox = styled.div<CSSProperties>`
     backgroundColor ?? backgroundColor};
   color: ${({ color }) => color ?? color};
   text-align: center;
+  margin: ${({ margin }) => margin};
 `

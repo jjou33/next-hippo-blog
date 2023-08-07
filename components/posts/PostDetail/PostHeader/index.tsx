@@ -1,7 +1,7 @@
 import { Typography } from 'components/common'
 import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import Image from 'next/image'
-import { Badge } from 'components/common/'
+import { Badge } from 'components/common'
 import theme from 'styles/theme'
 
 const PostHeader = ({ posts }) => {

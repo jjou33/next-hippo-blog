@@ -1,16 +1,17 @@
 import { Typography } from 'components/common'
-import { FlexBox, Divider } from 'components/common/StyledLayout'
+import { Divider, FlexBox } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
-import PostGrid from 'components/posts/PostGrid'
-const PostList = props => {
+import ProjectGrid from './ProjectGrid'
+
+const ProjectSection = () => {
   return (
-    <FlexBox flexDirection="column" width="996px" margin="64px 0 0 0">
+    <FlexBox flexDirection="column" width="996px" margin="10px 0 0 0">
       <Typography
         variant="h1"
         aggressive="headline_oneline_001"
         color={theme.colors.gray_007}
       >
-        최신 포스트
+        사이드 프로젝트
       </Typography>
       <Divider
         direction="horizontal"
@@ -19,9 +20,9 @@ const PostList = props => {
         margin="20px 0 16px 0"
         color={theme.colors.gray_002}
       />
-      <PostGrid posts={props.posts} />
+      <ProjectGrid />
     </FlexBox>
   )
 }
 
-export default PostList
+export default ProjectSection

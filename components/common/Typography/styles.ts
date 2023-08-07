@@ -36,6 +36,8 @@ export interface ComponentProps {
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
+  overFlow?: string
+  textOverflow?: string
 }
 
 export const Component = styled.div<ComponentProps>`
@@ -46,4 +48,6 @@ export const Component = styled.div<ComponentProps>`
   line-height: ${({ lineHeight }) => lineHeight && lineHeight};
   text-align: ${({ align }) => align && align};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
+  overflow: ${({ overFlow }) => overFlow && overFlow};
+  text-overflow: ${({ textOverflow }) => textOverflow && textOverflow};
 `

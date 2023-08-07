@@ -46,6 +46,8 @@ interface Props extends PropsWithChildren {
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
+  overFlow?: string
+  textOverflow?: string
 }
 
 const Typography = ({ children, variant, aggressive, ...props }: Props) => {
