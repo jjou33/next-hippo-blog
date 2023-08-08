@@ -4,11 +4,15 @@ import { keyframes } from '@emotion/react'
 export const SliderContainer = styled.div`
   display: flex;
   position: relative;
-  height: 100%;
-  width: 996px;
-  margin: auto;
+  /* margin: 20px auto; */
   place-items: center;
+  width: 100%;
   overflow: hidden;
+
+  @media screen and (min-width: 996px) {
+    width: 996px;
+    margin: 0 auto;
+  }
 `
 const scroll = keyframes`
   0% {

@@ -30,7 +30,7 @@ export const FlexBox = styled.div<CSSProperties>`
 
 export const MaxContainer = styled.div<CSSProperties>`
   position: relative;
-  width: 100%;
+  width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -88,6 +88,7 @@ export const StyledImageBox = styled.div<CSSProperties>`
   width: ${({ width }) => width};
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? backgroundColor};
+  margin: ${({ margin }) => margin};
 `
 
 export const StyledBadgeBox = styled.div<CSSProperties>`

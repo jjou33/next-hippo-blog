@@ -1,19 +1,21 @@
 import { Header, Footer } from 'components/common'
 import styled from '@emotion/styled'
+import { FlexBox } from '../StyledLayout'
 const Layout = props => {
   return (
-    <>
+    <FlexBox flexDirection="column" width="100vw">
       <Header />
       <ChildrenContainer>{props.children}</ChildrenContainer>
       <Footer />
-    </>
+    </FlexBox>
   )
 }
 
 const ChildrenContainer = styled.main`
-  position: relative;
-  min-height: calc(100vh - 258px);
-  margin-top: 78px;
+  display: flex;
+  flex-direction: column;
+  /* width: 100vw; */
+  /* margin: 0 auto; */
 `
 
 export default Layout

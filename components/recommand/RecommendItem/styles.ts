@@ -18,4 +18,10 @@ export const RecommendItemWrapper = styled.div`
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(-7px);
   }
+
+  /* @media screen and (max-width: 996px) {
+    width: 50px;
+    height: 50px;
+    margin: 5px 15px;
+  } */
 `

@@ -1,3 +1,4 @@
+import { MaxContainer } from '../StyledLayout'
 import * as S from './styles'
 
 const Footer = () => {

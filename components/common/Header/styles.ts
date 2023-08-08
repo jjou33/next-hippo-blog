@@ -3,7 +3,8 @@ import { LinkWrapper } from 'components/common/StyledLayout'
 export const Container = styled.header`
   position: fixed;
   display: flex;
-  background-color: ${({ theme }) => theme.colors.white};
+  /* background-color: ${({ theme }) => theme.colors.white}; */
+  background-color: transparent;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   top: 0;

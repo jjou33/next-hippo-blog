@@ -2,10 +2,11 @@ import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
 import ProjectGrid from './ProjectGrid'
-
+import * as S from './styles'
 const ProjectSection = () => {
   return (
-    <FlexBox flexDirection="column" width="996px" margin="10px 0 0 0">
+    // <FlexBox flexDirection="column" width="996px" margin="10px 0 0 0">
+    <S.ProjectContainer>
       <Typography
         variant="h1"
         aggressive="headline_oneline_001"
@@ -15,13 +16,14 @@ const ProjectSection = () => {
       </Typography>
       <Divider
         direction="horizontal"
-        width="996px"
+        width="100%"
         height="1px"
         margin="20px 0 16px 0"
         color={theme.colors.gray_002}
       />
       <ProjectGrid />
-    </FlexBox>
+    </S.ProjectContainer>
+    // </FlexBox>
   )
 }
 
