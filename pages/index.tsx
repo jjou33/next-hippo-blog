@@ -1,12 +1,12 @@
 import MainSection from 'components/main'
 import { Fragment } from 'react'
 import { getFeaturedPosts } from 'lib/PostUtil'
-import { FlexBox } from 'components/common/StyledLayout'
-import SideBar from 'components/sidebar'
+import { Header } from 'components/common'
 
 const RootPage = props => {
   return (
     <Fragment>
+      <Header />
       <MainSection posts={props.posts} />
     </Fragment>
   )

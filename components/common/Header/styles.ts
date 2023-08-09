@@ -10,6 +10,10 @@ export const Container = styled.header`
   top: 0;
   left: 0;
   z-index: 100;
+  @media screen and (min-width: 1500px) {
+    width: calc(100vw - 350px);
+    margin: 0 0 0 352px;
+  }
 `
 
 export const LogoWrapper = styled(LinkWrapper)`

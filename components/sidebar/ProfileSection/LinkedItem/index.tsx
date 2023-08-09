@@ -35,8 +35,7 @@ const LINKED_INFO: LinkedInfo[] = [
 const LinkedItem = () => {
   return (
     <FlexBox
-      width="480px"
-      height="100%"
+      width="100%"
       gap="40px"
       alignContent="center"
       justifyContent="center"
