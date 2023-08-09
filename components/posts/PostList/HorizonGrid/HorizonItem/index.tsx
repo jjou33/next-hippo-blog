@@ -1,10 +1,11 @@
 import { Typography } from 'components/common'
 import { Divider, StyledImageBox } from 'components/common/StyledLayout'
+import theme from 'styles/theme'
 import Image from 'next/image'
 import Link from 'next/link'
-import theme from 'styles/theme'
 import * as S from './styles'
-const AllPostItem = props => {
+
+const HorizonItem = props => {
   const { title, image, excerpt, date, slug } = props.post
 
   const formattedDate = new Date(date).toLocaleDateString('ko', {
@@ -17,10 +18,18 @@ const AllPostItem = props => {
   const linkPath = `/posts/${slug}`
 
   return (
-    <Link href={linkPath}>
-      <S.ItemContainer>
-        <S.ItemContentsBox>
-          <Typography variant="h3" aggressive="body_oneline_001">
+    <S.GridItemContainer>
+      <Link href={linkPath}>
+        <StyledImageBox borderRadius={'20px 20px 0 0'} height={'220px'}>
+          <Image
+            src={imagePath}
+            alt={title}
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+        </StyledImageBox>
+        <S.ContentsWrapper>
+          <Typography variant="h3" aggressive="headline_oneline_003">
             {title}
           </Typography>
           <Divider
@@ -34,23 +43,10 @@ const AllPostItem = props => {
           <Typography variant="p" aggressive="body_multiline_005">
             {excerpt}
           </Typography>
-        </S.ItemContentsBox>
-        <StyledImageBox
-          width="8rem"
-          height="8rem"
-          margin="1rem"
-          borderRadius="20px"
-        >
-          <Image
-            src={imagePath}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </StyledImageBox>
-      </S.ItemContainer>
-    </Link>
+        </S.ContentsWrapper>
+      </Link>
+    </S.GridItemContainer>
   )
 }
 
-export default AllPostItem
+export default HorizonItem

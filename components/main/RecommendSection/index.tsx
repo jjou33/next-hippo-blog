@@ -1,5 +1,5 @@
 import { Typography, StyledLayout } from 'components/common'
-import RecommendCategory from 'components/recommand'
+import RecommendCategory from 'components/main/RecommendSection/RecommendGrid'
 import theme from 'styles/theme'
 import * as S from './styles'
 const RecommendList = () => {

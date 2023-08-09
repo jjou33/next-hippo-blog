@@ -1,8 +1,8 @@
 import { FlexBox } from 'components/common/StyledLayout'
 import HeroSection from './HeroSection'
-import PostList from './PostList'
+import PostList from '../posts/PostList'
 import ProjectSection from './ProjectSection'
-import RecommendList from './Recommend'
+import RecommendList from './RecommendSection'
 import * as S from './styles'
 const MainImageSection = props => {
   return (

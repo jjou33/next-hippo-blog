@@ -1,4 +1,4 @@
-import RecommendItem from './RecommendItem'
+import RecommendItem from '../RecommendItem'
 import * as S from './styles'
 
 const RecommendCategory = () => {
