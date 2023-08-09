@@ -5,7 +5,7 @@ import * as S from './styles'
 const RecommendList = () => {
   return (
     <S.RecommendContainer>
-      <Typography variant="h1" aggressive="headline_oneline_001">
+      <Typography variant="h2" aggressive="headline_oneline_002">
         추천 카테고리
       </Typography>
       <StyledLayout.Divider

@@ -6,7 +6,7 @@ export const GridContainer = styled.div`
   flex-direction: column;
   gap: 3rem;
 
-  @media screen and (min-width: 996px) {
+  @media screen and (min-width: 768px) {
     width: 700px;
     margin: 0 auto;
   }

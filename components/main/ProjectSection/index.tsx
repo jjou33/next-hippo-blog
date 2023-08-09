@@ -8,8 +8,8 @@ const ProjectSection = () => {
     // <FlexBox flexDirection="column" width="996px" margin="10px 0 0 0">
     <S.ProjectContainer>
       <Typography
-        variant="h1"
-        aggressive="headline_oneline_001"
+        variant="h2"
+        aggressive="headline_oneline_002"
         color={theme.colors.gray_007}
       >
         사이드 프로젝트

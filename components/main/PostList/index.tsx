@@ -7,8 +7,8 @@ const PostList = props => {
   return (
     <S.PostListContainer>
       <Typography
-        variant="h1"
-        aggressive="headline_oneline_001"
+        variant="h2"
+        aggressive="headline_oneline_002"
         color={theme.colors.gray_007}
       >
         최신 포스트

@@ -28,7 +28,6 @@ export const StyledLinkBtn = styled(Link)<LinkBtnProps>`
 `
 
 export const MainContainer = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   margin-top: 10rem;
@@ -44,7 +43,7 @@ export const IndicatorContainer = styled.div`
   position: absolute;
   top: 92%;
 
-  @media screen and (max-width: 996px) {
+  @media screen and (max-width: 768px) {
     top: 90%;
   }
 `
@@ -67,8 +66,8 @@ export const MouseIndicatorWrapper = styled.div`
 `
 export const MouseIndicator = styled.div`
   position: relative;
-  width: 2.5rem;
-  height: 6em;
+  width: 2rem;
+  height: 3.5rem;
   border: solid 4px;
   border-radius: 30px;
 

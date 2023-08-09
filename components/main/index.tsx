@@ -6,7 +6,7 @@ import RecommendList from './Recommend'
 import * as S from './styles'
 const MainImageSection = props => {
   return (
-    <>
+    <FlexBox flexDirection="column" flex={4}>
       <HeroSection />
       <S.MainContainer>
         <FlexBox justifyContent="center">
@@ -20,7 +20,7 @@ const MainImageSection = props => {
         <ProjectSection />
         <PostList posts={props.posts} />
       </S.MainContainer>
-    </>
+    </FlexBox>
   )
 }
 
