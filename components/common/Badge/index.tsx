@@ -31,9 +31,10 @@ interface Props extends PropsWithChildren {
     | 'caption_small'
   margin?: string
   padding?: string
+  border?: string
   color?: string
   borderRadius: string
-  backgroundColor: string
+  backgroundColor?: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'

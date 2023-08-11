@@ -1,5 +1,5 @@
 import PostDetail from 'components/posts/PostDetail'
-import { getPostsFiles, getPostData } from 'lib/PostUtil'
+import { getPostsFiles, getPostData } from 'utils/PostUtil'
 const PostDetailPage = props => {
   return <PostDetail posts={props.post} />
 }

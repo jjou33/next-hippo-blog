@@ -1,6 +1,6 @@
 // import AllPost from 'components/posts/AllPost'
 import PostList from 'components/posts/PostList'
-import { getAllPosts } from 'lib/PostUtil'
+import { getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
   return <PostList posts={props.posts} isVertical={true} />

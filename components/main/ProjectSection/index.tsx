@@ -1,5 +1,5 @@
 import { Typography } from 'components/common'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { Divider } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
 import ProjectGrid from './ProjectGrid'
 import * as S from './styles'

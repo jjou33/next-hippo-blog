@@ -3,16 +3,15 @@ import { LinkWrapper } from 'components/common/StyledLayout'
 export const Container = styled.header`
   position: fixed;
   display: flex;
-  /* background-color: ${({ theme }) => theme.colors.white}; */
   background-color: transparent;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
-  @media screen and (min-width: 1500px) {
-    width: calc(100vw - 350px);
-    margin: 0 0 0 352px;
+  z-index: 1;
+  @media screen and (min-width: 700px) {
+    width: calc(100vw - 355px);
+    margin: 0 0 0 355px;
   }
 `
 

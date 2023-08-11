@@ -7,9 +7,11 @@ const Layout = props => {
     <FlexBox flexDirection="column" width="100vw">
       <FlexBox>
         <SideBar />
-        <ChildrenContainer>{props.children}</ChildrenContainer>
+        <ChildrenContainer>
+          {props.children}
+          <Footer />
+        </ChildrenContainer>
       </FlexBox>
-      <Footer />
     </FlexBox>
   )
 }

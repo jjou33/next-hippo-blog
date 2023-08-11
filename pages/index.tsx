@@ -1,6 +1,6 @@
 import MainSection from 'components/main'
 import { Fragment } from 'react'
-import { getFeaturedPosts } from 'lib/PostUtil'
+import { getFeaturedPosts } from 'utils/PostUtil'
 import { Header } from 'components/common'
 
 const RootPage = props => {

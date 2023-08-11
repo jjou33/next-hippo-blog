@@ -32,6 +32,7 @@ export interface ComponentProps {
   theme?: Theme
   margin?: string
   padding?: string
+  border?: string
   color?: string
   borderRadius: string
   backgroundColor: string
@@ -52,4 +53,5 @@ export const Component = styled.div<ComponentProps>`
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? backgroundColor};
   text-align: center;
+  border: ${({ border }) => border ?? border};
 `
