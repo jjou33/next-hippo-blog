@@ -10,7 +10,7 @@ export const NavItemWrapper = styled.li`
   border-radius: 5px;
   transition: background, 0.5s;
   gap: 10px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   &:hover {
     background: #ebfeff;
     color: black;
@@ -37,7 +37,7 @@ export const NavItemTitle = styled.div`
   align-items: center;
   margin-right: 20px;
   padding: 5px 0;
-  font-size: 20px;
+  /* font-size: 20px; */
   cursor: pointer;
 
   &:last-of-type {

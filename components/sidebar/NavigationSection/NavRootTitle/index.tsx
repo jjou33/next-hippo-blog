@@ -1,8 +1,6 @@
-import { Badge, Typography } from 'components/common'
+import { Badge } from 'components/common'
 import ColorText from 'components/common/ColorText'
-import { StyledBadgeBox } from 'components/common/StyledLayout'
 import Link from 'next/link'
-import theme from 'styles/theme'
 import * as S from './styles'
 
 const NavRootTitle = () => {

@@ -20,7 +20,8 @@ export const NavItem1depthWrapper = styled.div`
 export const NavItem1depthArrorw = styled.div`
   margin-left: 85%;
   position: absolute;
-
+  width: 20px;
+  height: 20px;
   ${(props: { isOpen: boolean }) =>
     props.isOpen
       ? css`
@@ -30,6 +31,8 @@ export const NavItem1depthArrorw = styled.div`
           transform: rotate(0deg);
           padding-top: 4px;
         `};
+
+  transition: transform ease-in-out 0.5s;
 `
 
 export const DropdownWrapper = styled.article`
@@ -40,7 +43,7 @@ export const DropdownWrapper = styled.article`
   ${(props: { isOpen: boolean; categoryItemCount: number }) => {
     if (props.isOpen) {
       return css`
-        height: ${(props.categoryItemCount as number) * 40 + 10}px;
+        height: ${(props.categoryItemCount as number) * 33}px;
         /* height: 100%; */
       `
     } else {
