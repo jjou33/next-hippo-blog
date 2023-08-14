@@ -43,7 +43,7 @@ export const DropdownWrapper = styled.article`
   ${(props: { isOpen: boolean; categoryItemCount: number }) => {
     if (props.isOpen) {
       return css`
-        height: ${(props.categoryItemCount as number) * 33}px;
+        height: ${(props.categoryItemCount as number) * 35}px;
         /* height: 100%; */
       `
     } else {

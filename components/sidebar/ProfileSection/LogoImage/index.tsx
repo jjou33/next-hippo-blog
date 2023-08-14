@@ -6,9 +6,9 @@ const LogoImage = () => {
 
   return (
     <StyledImageBox
-      borderRadius="50%"
-      width="7rem"
-      height="7rem"
+      borderRadius="30%"
+      width="6rem"
+      height="6rem"
       margin="2rem auto"
       top="20px"
     >

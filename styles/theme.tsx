@@ -107,6 +107,13 @@ const theme: Theme = {
       spacing: -0.4,
       fontFamily: pretendard.style.fontFamily,
     }),
+    headline_oneline_006: fontStyleGenerator({
+      weight: 500,
+      size: 14,
+      height: 16,
+      spacing: -0.4,
+      fontFamily: pretendard.style.fontFamily,
+    }),
     headline_multiline_001: fontStyleGenerator({
       weight: 700,
       size: 48,
@@ -230,6 +237,13 @@ const theme: Theme = {
       weight: 500,
       size: 15,
       height: 17,
+      spacing: -0.4,
+      fontFamily: pretendard.style.fontFamily,
+    }),
+    tab_003: fontStyleGenerator({
+      weight: 400,
+      size: 11,
+      height: 14,
       spacing: -0.4,
       fontFamily: pretendard.style.fontFamily,
     }),

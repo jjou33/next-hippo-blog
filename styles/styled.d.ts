@@ -32,6 +32,8 @@ declare module '@emotion/react' {
       headline_oneline_003: FlattenSimpleInterpolation
       headline_oneline_004: FlattenSimpleInterpolation
       headline_oneline_005: FlattenSimpleInterpolation
+      headline_oneline_006: FlattenSimpleInterpolation
+      headline_oneline_007: FlattenSimpleInterpolation
       headline_multiline_001: FlattenSimpleInterpolation
       headline_multiline_002: FlattenSimpleInterpolation
       body_oneline_000: FlattenSimpleInterpolation
@@ -50,6 +52,7 @@ declare module '@emotion/react' {
       button_001: FlattenSimpleInterpolation
       tab_001: FlattenSimpleInterpolation
       tab_002: FlattenSimpleInterpolation
+      tab_003: FlattenSimpleInterpolation
       caption_large: FlattenSimpleInterpolation
       caption_medium: FlattenSimpleInterpolation
       caption_small: FlattenSimpleInterpolation

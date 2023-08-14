@@ -5,6 +5,7 @@ export const NavigationContainer = styled.nav`
   flex-direction: column;
   gap: 2rem;
   padding: 0 2rem;
+  height: 100vh;
 `
 export const NavigationGrid = styled.ul`
   display: flex;
