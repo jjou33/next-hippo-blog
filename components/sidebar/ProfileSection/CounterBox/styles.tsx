@@ -10,7 +10,7 @@ export const CounterContainer = styled.div`
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid black;
-  z-index: -1;
+  z-index: 1;
   gap: 30px;
 `
 

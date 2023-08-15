@@ -3,7 +3,7 @@ import theme from 'styles/theme'
 import * as S from './styles'
 import useNumberCount from 'hooks/useNumberCount'
 import Typography from '../Typography'
-const NumberCount = ({ number, name, duration }) => {
+const NumberCount = ({ number, name, duration = 2000 }) => {
   return (
     <S.CountContainer>
       <S.CountNameBox>
@@ -15,6 +15,7 @@ const NumberCount = ({ number, name, duration }) => {
         direction="horizontal"
         width="100%"
         height="1px"
+        margin="0 0 0 0"
         color={theme.colors.gray_002}
       />
       {useNumberCount({ number, duration })}

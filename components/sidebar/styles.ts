@@ -4,7 +4,6 @@ export const SideNavContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 350px;
 
   @media screen and (max-width: 1200px) {
     display: none;

@@ -4,7 +4,8 @@ import PostList from '../posts/PostList'
 import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
 import * as S from './styles'
-const MainImageSection = props => {
+import IntroSection from './IntroSection'
+const MainContents = props => {
   return (
     <FlexBox flexDirection="column" flex={4}>
       <HeroSection />
@@ -16,6 +17,7 @@ const MainImageSection = props => {
             </S.MouseIndicatorWrapper>
           </S.IndicatorContainer>
         </FlexBox>
+        <IntroSection />
         <RecommendList />
         <ProjectSection />
         <PostList posts={props.posts} />
@@ -24,4 +26,4 @@ const MainImageSection = props => {
   )
 }
 
-export default MainImageSection
+export default MainContents

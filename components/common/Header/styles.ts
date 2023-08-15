@@ -10,8 +10,8 @@ export const Container = styled.header`
   left: 0;
   z-index: 1;
   @media screen and (min-width: 700px) {
-    width: calc(100vw - 355px);
-    margin: 0 0 0 355px;
+    width: calc(100vw - 280px);
+    margin: 0 0 0 280px;
   }
 `
 
