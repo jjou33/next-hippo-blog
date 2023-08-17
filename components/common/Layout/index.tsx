@@ -2,13 +2,13 @@ import { Footer } from 'components/common'
 import styled from '@emotion/styled'
 import { FlexBox } from '../StyledLayout'
 import SideBar from 'components/sidebar'
-const Layout = props => {
+const Layout = ({ children, pageProps: { posts } }) => {
   return (
     <FlexBox flexDirection="column" width="100vw">
       <FlexBox>
-        <SideBar />
+        <SideBar posts={posts} />
         <ChildrenContainer>
-          {props.children}
+          {children}
           <Footer />
         </ChildrenContainer>
       </FlexBox>

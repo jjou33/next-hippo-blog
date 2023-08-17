@@ -4,7 +4,7 @@ interface NumberCountProp {
   number: string
   duration?: number
 }
-const useNumberCount = ({ number, duration }: NumberCountProp) => {
+export const useNumberCount = ({ number, duration }: NumberCountProp) => {
   /* 동시에 종료하여야 하기 때문에 duration 값을 2000ms 으로 설정하였고 
     부모 컴포넌트에서 duration 값을 조정할 수 있도록 props 로 정의 */
   const easeFormula = (t: number) => --t * t * t + 1
@@ -37,5 +37,3 @@ const useNumberCount = ({ number, duration }: NumberCountProp) => {
 
   return Math.floor(count)
 }
-
-export default useNumberCount

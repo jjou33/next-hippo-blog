@@ -1,29 +1,26 @@
 import styled from '@emotion/styled'
 
-export const CounterContainer = styled.div`
+export const CountContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 5px;
   justify-content: center;
-  width: 200px;
-  height: 100%;
-  padding: 10px 0;
-  margin: 0 auto;
-  border-radius: 10px;
+  width: 70px;
+  height: 60px;
   border: 1px solid black;
-  z-index: 1;
-  gap: 30px;
+  border-radius: 10px;
 `
 
-export const CounterName = styled.div`
+export const CountNameBox = styled.div`
   display: flex;
   justify-content: center;
   width: 70px;
-  font-size: 0.8rem;
-  /* height: 100%; */
-  /* padding-top: 5px; */
+  font-size: 0.5rem;
+  padding: 0 5px;
 `
 
-export const CounterWapper = styled.div`
+export const CountNumberBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

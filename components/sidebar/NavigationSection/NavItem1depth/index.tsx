@@ -1,6 +1,7 @@
 import { Typography } from 'components/common'
 import IconBox from 'components/common/IconBox'
-import { Arrow, Test } from 'public/static/icon'
+import { NavigationIconSet } from 'public/static/icon'
+
 import { useState } from 'react'
 
 import * as S from './styles'
@@ -14,15 +15,13 @@ const NavItem1depth = ({ children, item }) => {
   return (
     <>
       <S.NavItem1depthContainer key={item} onClick={stateHandler}>
-        <IconBox>
-          <Test />
-        </IconBox>
+        <IconBox>{NavigationIconSet['Arrow'].icon()}</IconBox>
 
         <Typography variant="span" aggressive="body_oneline_001">
           {item}
         </Typography>
         <S.NavItem1depthArrorw isOpen={openState}>
-          <Arrow />
+          {NavigationIconSet['Arrow'].icon()}
         </S.NavItem1depthArrorw>
       </S.NavItem1depthContainer>
 

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import * as S from './styles'
-import IconBox from 'components/common/IconBox'
-import { Arrow } from 'public/static/icon'
+
 import { Badge, Typography } from 'components/common'
 
 const NavItem2depth = () => {
@@ -11,9 +10,6 @@ const NavItem2depth = () => {
     <S.NavItemContainer>
       {DUMMY_DATA.map(item => (
         <S.NavItemWrapper key={item}>
-          <IconBox width="25px" height="25px">
-            <Arrow />
-          </IconBox>
           <Link href="/">
             <S.NavItemTitle>
               <Typography variant="span" aggressive="body_oneline_003">

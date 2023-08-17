@@ -2,6 +2,9 @@
 title: "[Algorithm] DFS 알고리즘 정리"
 date: "2023-05-05"
 image: next1.jpg
+category1depth: Mac
+category2depth: Error
+keywords: ['g', 'h']
 excerpt: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
 isFeatured: true
 ---

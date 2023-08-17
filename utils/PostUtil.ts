@@ -44,6 +44,43 @@ export const getAllPosts = () => {
   return sortedPosts
 }
 
+export const getAllNavList = () => {
+  const allPosts = getAllPosts()
+
+  return allPosts.reduce((list, posts) => {
+    if (list[posts.category1depth] === undefined) {
+      list[posts.category1depth] = {
+        title: posts.category1depth,
+        children: [posts.category2depth],
+      }
+    } else {
+      if (
+        list[posts.category1depth]['children'] !== undefined &&
+        !list[posts.category1depth]['children'].includes(posts.category2depth)
+      ) {
+        list[posts.category1depth]['children'].push(posts.category2depth)
+      }
+    }
+
+    return list
+  }, {})
+}
+
+export const getCategoryPosts = category => {
+  const allPost = getAllPosts()
+
+  const categoryPosts = allPost.filter(post => post.category2depth === category)
+
+  return categoryPosts
+}
+
+export const getCategoryNames = () => {
+  const allPost = getAllPosts()
+
+  const categoryNames = allPost.map(post => post.category2depth)
+  // console.log(categoryNames)
+  return categoryNames
+}
 export const getFeaturedPosts = () => {
   const allPosts = getAllPosts()
 

@@ -1,6 +1,6 @@
 import MainSection from 'components/main'
 import { Fragment } from 'react'
-import { getFeaturedPosts } from 'utils/PostUtil'
+import { getAllPosts, getAllNavList } from 'utils/PostUtil'
 import { Header } from 'components/common'
 
 const RootPage = props => {
@@ -13,11 +13,12 @@ const RootPage = props => {
 }
 
 export function getStaticProps() {
-  const featuredPosts = getFeaturedPosts()
-
+  const allPosts = getAllPosts()
+  const navList = getAllNavList()
   return {
     props: {
-      posts: featuredPosts,
+      posts: allPosts,
+      navList: navList,
     },
   }
 }

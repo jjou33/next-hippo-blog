@@ -8,7 +8,7 @@ export const CountContainer = styled.div`
   justify-content: center;
   width: 70px;
   height: 60px;
-  border: 3px solid black;
+  border: 1px solid black;
   border-radius: 10px;
 `
 

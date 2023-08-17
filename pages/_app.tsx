@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }) => {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Layout>
+        <Layout pageProps={pageProps}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

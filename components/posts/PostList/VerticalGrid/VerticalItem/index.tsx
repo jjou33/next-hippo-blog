@@ -5,7 +5,7 @@ import Link from 'next/link'
 import theme from 'styles/theme'
 import * as S from './styles'
 const VerticalItem = props => {
-  const { title, image, excerpt, date, slug } = props.post
+  const { title, image, excerpt, date, slug, category2depth } = props.post
 
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
@@ -14,8 +14,8 @@ const VerticalItem = props => {
   })
 
   const imagePath = `/static/images/${slug}/${image}`
-  const linkPath = `/posts/${slug}`
-
+  const linkPath = `/posts/${category2depth}/${slug}`
+  // console.log('link : ', linkPath)
   return (
     <Link href={linkPath}>
       <S.ItemContainer>

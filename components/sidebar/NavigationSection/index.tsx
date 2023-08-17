@@ -3,7 +3,7 @@ import NavItem2depth from './NavItem2depth'
 import NavRootTitle from './NavRootTitle'
 import * as S from './styles'
 
-const NavigationSection = () => {
+const NavigationSection = ({ posts }) => {
   const DUMMY_DATA = [
     'test',
     'test',
