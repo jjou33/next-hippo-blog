@@ -15,7 +15,7 @@ const VerticalItem = props => {
 
   const imagePath = `/static/images/${slug}/${image}`
   const linkPath = `/posts/${category2depth}/${slug}`
-  // console.log('link : ', linkPath)
+
   return (
     <Link href={linkPath}>
       <S.ItemContainer>

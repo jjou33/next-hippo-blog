@@ -1,12 +1,22 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import theme from 'styles/theme'
 export const NavItem1depthContainer = styled.li`
   display: flex;
   align-items: center;
   gap: 1rem;
   /* border: 1px solid; */
+  margin: 0 5px;
   cursor: pointer;
   position: relative;
+  span {
+    color: ${({ openState }) => (openState ? 'red' : '')};
+  }
+  :hover {
+    span {
+      color: red;
+    }
+  }
 `
 export const NavItem1depthWrapper = styled.div`
   display: flex;
@@ -17,6 +27,7 @@ export const NavItem1depthWrapper = styled.div`
   background-color: #fef5f5;
   /* border: 1px solid; */
 `
+
 export const NavItem1depthArrorw = styled.div`
   margin-left: 85%;
   position: absolute;
@@ -37,7 +48,7 @@ export const NavItem1depthArrorw = styled.div`
 
 export const DropdownWrapper = styled.article`
   overflow: hidden;
-  margin-left: 30px;
+  margin-left: 1rem;
   height: 0;
   transition: height ease-in-out 0.3s;
   ${(props: { isOpen: boolean; categoryItemCount: number }) => {
@@ -53,4 +64,14 @@ export const DropdownWrapper = styled.article`
       `
     }
   }}
+`
+
+export const NavIconBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  background-color: ${theme.colors.gray_001};
 `

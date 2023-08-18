@@ -6,7 +6,7 @@ import Link from 'next/link'
 import * as S from './styles'
 
 const HorizonItem = props => {
-  const { title, image, excerpt, date, slug } = props.post
+  const { title, image, excerpt, date, slug, category2depth } = props.post
 
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
@@ -15,7 +15,7 @@ const HorizonItem = props => {
   })
 
   const imagePath = `/static/images/${slug}/${image}`
-  const linkPath = `/posts/${slug}`
+  const linkPath = `/posts/${category2depth}/${slug}`
 
   return (
     <S.GridItemContainer>

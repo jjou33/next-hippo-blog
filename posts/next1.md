@@ -2,6 +2,7 @@
 title: "[Algorithm] DFS 알고리즘 정리"
 date: "2023-05-05"
 image: next1.jpg
+rootCategory: OS & NetWork
 category1depth: Mac
 category2depth: Error
 keywords: ['g', 'h']

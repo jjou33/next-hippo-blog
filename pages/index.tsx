@@ -15,6 +15,7 @@ const RootPage = props => {
 export function getStaticProps() {
   const allPosts = getAllPosts()
   const navList = getAllNavList()
+
   return {
     props: {
       posts: allPosts,

@@ -47,25 +47,41 @@ export const getAllPosts = () => {
 export const getAllNavList = () => {
   const allPosts = getAllPosts()
 
-  return allPosts.reduce((list, posts) => {
-    if (list[posts.category1depth] === undefined) {
-      list[posts.category1depth] = {
-        title: posts.category1depth,
-        children: [posts.category2depth],
-      }
-    } else {
-      if (
-        list[posts.category1depth]['children'] !== undefined &&
-        !list[posts.category1depth]['children'].includes(posts.category2depth)
-      ) {
-        list[posts.category1depth]['children'].push(posts.category2depth)
-      }
+  const result = {}
+  const count = {}
+  allPosts.forEach(item => {
+    const { rootCategory, category1depth, category2depth } = item
+
+    if (!result[rootCategory]) {
+      result[rootCategory] = {}
     }
 
-    return list
-  }, {})
+    if (!result[rootCategory][category1depth]) {
+      result[rootCategory][category1depth] = []
+    }
+
+    if (!result[rootCategory][category1depth].includes(category2depth)) {
+      // 2depth 배열에 동일 카테고리 존재 하지 않을 경우
+      result[rootCategory][category1depth].push(category2depth)
+      // count Object 에 값 추가
+      count[category2depth] = 1
+    } else {
+      // 2depth 배열에 동일 카테고리 존재 할 경우
+      count[category2depth]++
+    }
+  })
+
+  return { result, count }
 }
 
+export const getSlugByParams = () => {
+  const slugList = getAllPosts().map(posts => [
+    posts.category2depth,
+    posts.slug,
+  ])
+
+  return slugList
+}
 export const getCategoryPosts = category => {
   const allPost = getAllPosts()
 
@@ -76,11 +92,10 @@ export const getCategoryPosts = category => {
 
 export const getCategoryNames = () => {
   const allPost = getAllPosts()
-
   const categoryNames = allPost.map(post => post.category2depth)
-  // console.log(categoryNames)
   return categoryNames
 }
+
 export const getFeaturedPosts = () => {
   const allPosts = getAllPosts()
 

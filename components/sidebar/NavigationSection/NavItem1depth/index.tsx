@@ -1,12 +1,12 @@
 import { Typography } from 'components/common'
 import IconBox from 'components/common/IconBox'
 import { NavigationIconSet } from 'public/static/icon'
-
+import theme from 'styles/theme'
 import { useState } from 'react'
 
 import * as S from './styles'
 
-const NavItem1depth = ({ children, item }) => {
+const NavItem1depth = ({ children, item, count }) => {
   const [openState, setOpenState] = useState(false)
 
   const stateHandler = () => {
@@ -14,10 +14,22 @@ const NavItem1depth = ({ children, item }) => {
   }
   return (
     <>
-      <S.NavItem1depthContainer key={item} onClick={stateHandler}>
-        <IconBox>{NavigationIconSet['Arrow'].icon()}</IconBox>
+      <S.NavItem1depthContainer
+        key={item}
+        onClick={stateHandler}
+        openState={openState}
+      >
+        <S.NavIconBox>
+          <IconBox width="25px" height="25px">
+            {NavigationIconSet[item].icon()}
+          </IconBox>
+        </S.NavIconBox>
 
-        <Typography variant="span" aggressive="body_oneline_001">
+        <Typography
+          variant="span"
+          aggressive="headline_oneline_006"
+          color={theme.colors.gray_005}
+        >
           {item}
         </Typography>
         <S.NavItem1depthArrorw isOpen={openState}>
@@ -25,7 +37,7 @@ const NavItem1depth = ({ children, item }) => {
         </S.NavItem1depthArrorw>
       </S.NavItem1depthContainer>
 
-      <S.DropdownWrapper isOpen={openState} categoryItemCount={5}>
+      <S.DropdownWrapper isOpen={openState} categoryItemCount={count}>
         {children}
       </S.DropdownWrapper>
     </>

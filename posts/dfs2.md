@@ -2,6 +2,7 @@
 date: "2023-05-07"
 title: "[Algorithm] DFS 알고리즘 정1"
 image: 'dfs2.png'
+rootCategory: Programming
 category1depth: Web
 category2depth: CSS
 keywords: ['e', 'f']

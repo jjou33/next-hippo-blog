@@ -3,12 +3,12 @@ import ProfileSection from './ProfileSection'
 
 import * as S from './styles'
 
-const SideBar = ({ posts }) => {
+const SideBar = ({ navList }) => {
   return (
     <S.SideNavContainer>
       <S.SideNavWrapper>
         <ProfileSection />
-        <NavigationSection posts={posts} />
+        <NavigationSection navList={navList} />
       </S.SideNavWrapper>
     </S.SideNavContainer>
   )

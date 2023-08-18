@@ -37,6 +37,7 @@ export const NavItemTitle = styled.div`
   align-items: center;
   margin-right: 20px;
   padding: 5px 0;
+  gap: 15px;
   /* font-size: 20px; */
   cursor: pointer;
 
