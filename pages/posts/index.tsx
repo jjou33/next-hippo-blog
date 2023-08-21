@@ -1,6 +1,6 @@
 // import AllPost from 'components/posts/AllPost'
 import PostList from 'components/posts/PostList'
-import { getAllNavList, getAllPosts } from 'utils/PostUtil'
+import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
   return <PostList posts={props.posts} isVertical={true} />
@@ -8,11 +8,11 @@ const AllPostPage = props => {
 
 export function getStaticProps() {
   const allPosts = getAllPosts()
-  const navList = getAllNavList()
+  const category = getAllPostsCategory()
   return {
     props: {
       posts: allPosts,
-      navList: navList,
+      category,
     },
   }
 }

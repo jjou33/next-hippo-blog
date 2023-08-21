@@ -10,11 +10,11 @@ export const NavigationIconSet: IconPropsType = {
         fill="#000000"
         stroke="#000000"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {' '}
@@ -22,9 +22,9 @@ export const NavigationIconSet: IconPropsType = {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             {' '}
             <g
@@ -52,13 +52,13 @@ export const NavigationIconSet: IconPropsType = {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
-        enable-background="new 0 0 512 512"
+        enableBackground="new 0 0 512 512"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {' '}
@@ -83,13 +83,13 @@ export const NavigationIconSet: IconPropsType = {
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64"
-        enable-background="new 0 0 64 64"
+        enableBackground="new 0 0 64 64"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {' '}
@@ -101,18 +101,20 @@ export const NavigationIconSet: IconPropsType = {
   dfs: {
     icon: () => (
       <svg
+        width="auto"
+        height="auto"
         version="1.0"
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64"
-        enable-background="new 0 0 64 64"
+        enableBackground="new 0 0 64 64"
         fill="#93a1ae"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {' '}
@@ -133,19 +135,19 @@ export const NavigationIconSet: IconPropsType = {
         viewBox="0 0 1920 1920"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
 
         <g id="SVGRepo_iconCarrier">
           {' '}
           <path
             d="m1380.664 0 5.547 52.865c13.923 131.766-31.47 278.7-121.238 393.146-1.359 1.585-2.944 2.717-4.189 4.302 14.943-.566 29.885-1.698 45.394-.226 67.694 2.83 245.646 28.64 362.016 202.176l31.583 47.205-47.318 31.47c-40.752 25.81-165.839 118.748-164.141 293.077 1.924 220.742 179.876 301.68 200.14 310.17l48.562 20.377-16.3 50.26c-13.472 43.47-52.3 154.746-128.144 267.947-72.335 107.768-162.217 242.024-314.246 244.854-71.769 1.811-117.615-19.81-159.613-38.262-39.96-17.66-74.26-32.828-131.086-32.828-60.11 0-96.448 15.735-138.558 34.073-39.507 17.207-84.335 36.677-146.482 39.28-2.83.114-5.66.114-8.264.114-147.274 0-249.608-150.897-317.755-251.306l-5.187-7.735c-170.414-256.903-265.7-675.19-108.466-953.793 86.598-153.614 244.174-250.627 411.258-253.117 65.09-.906 124.974 19.47 176.594 39.846 8.83-119.88 65.883-231.722 125.087-303.944C1061.89 84.448 1206.448 7.245 1327.573 2.264L1380.664 0Zm-82.75 562.948c-73.694-7.81-144.331 21.282-207.157 46.639-47.432 19.13-88.297 35.545-126.22 35.545-32.375 0-66.335-10.98-101.654-24.791l-5.433-.453-.227-1.698c-7.471-3.056-14.942-6-22.64-9.056C785 588.984 730.55 562.608 676.102 567.25c-127.125 1.924-247.684 76.863-314.586 195.61-144.897 256.627-23.658 647.057 108.787 842.215 70.41 103.805 145.123 206.365 227.76 201.724 40.978-1.698 69.505-14.15 105.843-29.885 46.865-20.49 100.07-43.582 183.725-43.582 80.712 0 131.765 22.527 176.82 42.45 37.242 16.527 68.146 30.451 111.729 28.64 86.372-1.585 146.708-81.731 222.326-194.706 49.582-73.92 81.278-146.708 99.277-195.271-76.637-45.96-220.628-162.443-222.666-389.411-1.698-180.103 97.24-294.662 165.613-352.168-85.353-92.598-195.385-107.88-242.816-109.918Zm-23.093-438.314c-76.524 20.49-158.707 72.449-211.233 136.86l-.113.113c-46.525 56.827-95.994 150.784-101.088 247.457 84.674-12.678 165.273-71.769 213.61-133.01 58.411-74.374 93.39-164.821 98.824-251.42Z"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           />{' '}
         </g>
       </svg>
@@ -160,24 +162,24 @@ export const NavigationIconSet: IconPropsType = {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
 
         <g id="SVGRepo_iconCarrier">
           {' '}
-          <g id="style=stroke" clip-path="url(#clip0_1_1828)">
+          <g id="style=stroke" clipPath="url(#clip0_1_1828)">
             {' '}
             <g id="web">
               {' '}
               <path
                 id="vector (Stroke)"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M10.4425 2.44429C10.0752 3.64002 9.32073 6.25569 8.89915 8.83258C9.99331 9.00921 11.0621 9.12209 12 9.12209C12.9379 9.12209 14.0067 9.00921 15.1009 8.83258C14.6793 6.25569 13.9248 3.64002 13.5575 2.44429C13.0509 2.3624 12.5307 2.31977 12 2.31977C11.4693 2.31977 10.9491 2.3624 10.4425 2.44429ZM15.3337 2.90893C15.737 4.305 16.2958 6.42828 16.6448 8.54737C18.1513 8.23703 19.5727 7.85824 20.605 7.56109C19.4986 5.42102 17.6172 3.74662 15.3337 2.90893ZM21.2129 9.01933C20.1222 9.33683 18.5423 9.76328 16.8594 10.1057C16.9295 10.7564 16.9709 11.3958 16.9709 12C16.9709 12.8816 16.8827 13.8411 16.7445 14.8058C18.759 14.3858 20.6068 13.849 21.5557 13.5575C21.6376 13.0509 21.6802 12.5307 21.6802 12C21.6802 10.959 21.5162 9.95751 21.2129 9.01933ZM21.0911 15.3337C19.9166 15.6729 18.229 16.1219 16.4634 16.4634C16.1219 18.229 15.6729 19.9166 15.3337 21.0911C17.9978 20.1138 20.1138 17.9978 21.0911 15.3337ZM13.5576 21.5557C13.849 20.6068 14.3858 18.759 14.8058 16.7445C13.8411 16.8827 12.8816 16.9709 12 16.9709C11.1184 16.9709 10.1589 16.8827 9.19423 16.7445C9.61421 18.759 10.151 20.6068 10.4425 21.5557C10.9491 21.6376 11.4693 21.6802 12 21.6802C12.5307 21.6802 13.0509 21.6376 13.5576 21.5557ZM8.66629 21.0911C8.32707 19.9166 7.8781 18.229 7.53658 16.4634C5.77099 16.1219 4.08335 15.6729 2.90891 15.3337C3.88622 17.9978 6.00216 20.1138 8.66629 21.0911ZM2.44429 13.5575C3.39316 13.849 5.24101 14.3858 7.25548 14.8058C7.1173 13.8411 7.02907 12.8816 7.02907 12C7.02907 11.3958 7.07048 10.7564 7.14056 10.1057C5.45769 9.76328 3.87779 9.33683 2.78712 9.01933C2.48383 9.95751 2.31977 10.959 2.31977 12C2.31977 12.5307 2.3624 13.0509 2.44429 13.5575ZM3.39504 7.56109C4.42731 7.85824 5.84865 8.23703 7.35522 8.54737C7.70416 6.42827 8.26303 4.305 8.66626 2.90893C6.38282 3.74662 4.50139 5.42102 3.39504 7.56109ZM8.68924 10.3888C8.63137 10.9544 8.59884 11.4968 8.59884 12C8.59884 12.9399 8.71224 14.012 8.88985 15.1102C9.98798 15.2878 11.0601 15.4012 12 15.4012C12.9399 15.4012 14.012 15.2878 15.1102 15.1102C15.2878 14.012 15.4012 12.9399 15.4012 12C15.4012 11.4968 15.3686 10.9544 15.3108 10.3888C14.1776 10.5703 13.0348 10.6919 12 10.6919C10.9652 10.6919 9.82236 10.5703 8.68924 10.3888ZM9.67273 0.991173C10.4243 0.833026 11.2029 0.75 12 0.75C12.7971 0.75 13.5757 0.833026 14.3273 0.991174C18.0108 1.76627 21.0281 4.34097 22.42 7.75174C22.9554 9.06356 23.25 10.4983 23.25 12C23.25 12.7971 23.167 13.5757 23.0088 14.3273C22.0943 18.6736 18.6736 22.0943 14.3273 23.0088C13.5757 23.167 12.7971 23.25 12 23.25C11.2029 23.25 10.4243 23.167 9.67273 23.0088C5.32644 22.0943 1.90572 18.6736 0.991173 14.3273C0.833026 13.5757 0.75 12.7971 0.75 12C0.75 10.4972 1.04509 9.06132 1.58123 7.74866C2.97369 4.33943 5.99026 1.76604 9.67273 0.991173Z"
                 fill="#959697"
               />{' '}
@@ -197,20 +199,20 @@ export const NavigationIconSet: IconPropsType = {
   Algorithm: {
     icon: () => (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {' '}
           <path
             d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20"
             stroke="#959697"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>{' '}
         </g>
       </svg>
@@ -225,24 +227,24 @@ export const NavigationIconSet: IconPropsType = {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
 
         <g id="SVGRepo_iconCarrier">
           {' '}
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M15.6 9C15.6 11.2091 13.8539 13 11.7 13C9.54608 13 7.79999 11.2091 7.79999 9C7.79999 6.79086 9.54608 5 11.7 5C12.7343 5 13.7263 5.42143 14.4577 6.17157C15.1891 6.92172 15.6 7.93913 15.6 9Z"
             stroke="#c7c2c2"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />{' '}
           <path
             d="M12.45 13C12.45 12.5858 12.1142 12.25 11.7 12.25C11.2858 12.25 10.95 12.5858 10.95 13H12.45ZM10.95 19C10.95 19.4142 11.2858 19.75 11.7 19.75C12.1142 19.75 12.45 19.4142 12.45 19H10.95ZM11.6185 6.66744C11.2067 6.71248 10.9094 7.08279 10.9545 7.49454C10.9995 7.9063 11.3698 8.20358 11.7816 8.15854L11.6185 6.66744ZM12.9287 8.85878C13.0871 9.24152 13.5258 9.42338 13.9085 9.26499C14.2913 9.1066 14.4731 8.66793 14.3147 8.2852L12.9287 8.85878ZM10.95 13V19H12.45V13H10.95ZM11.7816 8.15854C12.2597 8.10624 12.7304 8.37955 12.9287 8.85878L14.3147 8.2852C13.8691 7.20829 12.7792 6.54046 11.6185 6.66744L11.7816 8.15854Z"

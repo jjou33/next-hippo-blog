@@ -1,11 +1,14 @@
+import { Typography } from 'components/common'
 import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import Image from 'next/image'
 import * as S from './styles'
 const LogoImage = () => {
-  const imagePath = `/static/images/hacker.png`
-
   return (
-    <FlexBox background="linear-gradient(45deg, white 40%, #eee)">
+    <FlexBox
+      background="linear-gradient(45deg, white 40%, #eee)"
+      borderRadius="1rem"
+      flexDirection="column"
+    >
       <S.LogoImageWrapper>
         <StyledImageBox
           borderRadius="30%"
@@ -15,13 +18,18 @@ const LogoImage = () => {
           top="50px"
         >
           <Image
-            src={imagePath}
+            src="/static/images/hacker.png"
             alt="alt"
             fill
             style={{ objectFit: 'cover' }}
           />
         </StyledImageBox>
       </S.LogoImageWrapper>
+      <FlexBox flexDirection="column" alignItems="center" margin="0 0 1.5rem 0">
+        <Typography variant="h5" aggressive="headline_oneline_006">
+          HIPPO DEV 🧑🏼‍💻
+        </Typography>
+      </FlexBox>
     </FlexBox>
   )
 }

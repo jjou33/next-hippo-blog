@@ -4,7 +4,12 @@ import Image from 'next/image'
 const HeroSection = () => {
   const imagePath = `/static/images/main4.jpg`
   return (
-    <StyledImageBox position="relative" width="100%" height="95vh">
+    <StyledImageBox
+      position="fixed"
+      width="100%"
+      height="100vh"
+      overflow="hidden"
+    >
       <Image
         src={imagePath}
         alt={'alt'}
@@ -12,6 +17,8 @@ const HeroSection = () => {
         style={{
           objectFit: 'cover',
           zIndex: '-1',
+          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center',
         }}
       />
     </StyledImageBox>

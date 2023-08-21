@@ -3,15 +3,15 @@ import ProfileSection from './ProfileSection'
 
 import * as S from './styles'
 
-const SideBar = ({ navList }) => {
+const Navigation = ({ category }) => {
   return (
     <S.SideNavContainer>
       <S.SideNavWrapper>
         <ProfileSection />
-        <NavigationSection navList={navList} />
+        <NavigationSection category={category} />
       </S.SideNavWrapper>
     </S.SideNavContainer>
   )
 }
 
-export default SideBar
+export default Navigation

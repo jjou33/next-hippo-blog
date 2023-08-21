@@ -1,5 +1,9 @@
 import PostDetail from 'components/posts/PostDetail'
-import { getAllNavList, getPostData, getSlugByParams } from 'utils/PostUtil'
+import {
+  getAllPostsCategory,
+  getPostData,
+  getSlugByParams,
+} from 'utils/PostUtil'
 
 const PostDetailPage = props => {
   return <PostDetail posts={props.post} />
@@ -7,15 +11,13 @@ const PostDetailPage = props => {
 
 export default PostDetailPage
 
-export const getStaticProps = context => {
-  const { params } = context
-  const { postId } = params
+export const getStaticProps = async ({ params: { postId } }) => {
   const postData = getPostData(postId)
-  const navList = getAllNavList()
+  const category = getAllPostsCategory()
   return {
     props: {
       post: postData,
-      navList: navList,
+      category,
     },
     revalidate: 600,
   }

@@ -1,7 +1,7 @@
 import MainSection from 'components/main'
 import { Fragment } from 'react'
-import { getAllPosts, getAllNavList } from 'utils/PostUtil'
 import { Header } from 'components/common'
+import { getAllPosts, getAllPostsCategory } from 'utils/PostUtil'
 
 const RootPage = props => {
   return (
@@ -14,12 +14,12 @@ const RootPage = props => {
 
 export function getStaticProps() {
   const allPosts = getAllPosts()
-  const navList = getAllNavList()
+  const category = getAllPostsCategory()
 
   return {
     props: {
       posts: allPosts,
-      navList: navList,
+      category,
     },
   }
 }

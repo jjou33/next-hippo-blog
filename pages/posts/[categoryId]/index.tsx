@@ -1,5 +1,9 @@
 import PostList from 'components/posts/PostList'
-import { getAllNavList, getCategoryPosts } from 'utils/PostUtil'
+import {
+  getAllPostsCategory,
+  getCategoryPosts,
+  getSlugByParams,
+} from 'utils/PostUtil'
 
 const PostCategoryListPage = props => {
   return <PostList posts={props.posts} />
@@ -7,15 +11,26 @@ const PostCategoryListPage = props => {
 
 export default PostCategoryListPage
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const categoryId = params.categoryId
 
   const postList = getCategoryPosts(categoryId)
-  const navList = getAllNavList()
+  const category = getAllPostsCategory()
   return {
     props: {
       posts: postList,
-      navList: navList,
+      category,
     },
+  }
+}
+
+export const getStaticPaths = () => {
+  const slugs = getSlugByParams()
+
+  return {
+    paths: slugs.map(([categoryId]) => ({
+      params: { categoryId },
+    })),
+    fallback: false,
   }
 }

@@ -4,12 +4,12 @@ import Typography from 'components/common/Typography'
 import theme from 'styles/theme'
 import * as S from './styles'
 
-const NumberCountBox = ({ number, name, duration = 2000 }) => {
+const NumberCountBox = ({ number, title, duration = 2000 }) => {
   return (
     <S.CountContainer>
       <S.CountNameBox>
         <Typography variant="span" aggressive="tab_003">
-          {name}
+          {title}
         </Typography>
       </S.CountNameBox>
       <Divider

@@ -30,9 +30,11 @@ export const StyledLinkBtn = styled(Link)<LinkBtnProps>`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 10rem;
+  margin-top: 100vh;
   gap: 10rem;
   padding: 0 20px;
+  background: white;
+  z-index: 1;
 `
 
 export const IndicatorContainer = styled.div`

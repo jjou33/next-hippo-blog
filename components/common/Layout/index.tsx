@@ -1,14 +1,12 @@
 import { Footer } from 'components/common'
 import styled from '@emotion/styled'
 import { FlexBox } from '../StyledLayout'
-import SideBar from 'components/sidebar'
-const Layout = ({ children, pageProps }) => {
-  console.log('page : ', pageProps.navList)
-
+import SideBar from 'components/navigation'
+const Layout = ({ children, pageProps: { category } }) => {
   return (
     <FlexBox flexDirection="column" width="100vw">
       <FlexBox>
-        <SideBar navList={pageProps.navList} />
+        <SideBar category={category} />
         <ChildrenContainer>
           {children}
           <Footer />

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import { CSSProperties } from 'react'
 
 export const LinkItemIcon = styled.span`
   color: #777;
@@ -22,7 +22,7 @@ export const LinkItemContainer = styled.ul`
   gap: 25px;
 `
 
-export const LinkItemWrapper = styled.li`
+export const LinkItemWrapper = styled.li<CSSProperties>`
   position: relative;
   list-style: none;
   width: 40px;
@@ -65,9 +65,7 @@ export const LinkItemWrapper = styled.li`
     position: absolute;
     inset: 0;
     border-radius: 50px;
-    ${({ color1, color2 }) => css`
-      background: linear-gradient(45deg, ${color1}, ${color2});
-    `};
+    background: ${({ background }) => background};
     opacity: 0;
     transition: 0.5s;
   }
@@ -78,9 +76,7 @@ export const LinkItemWrapper = styled.li`
     width: 100%;
     height: 100%;
     border-radius: 60px;
-    ${({ color1, color2 }) => css`
-      background: linear-gradient(45deg, ${color1}, ${color2});
-    `};
+    background: ${({ background }) => background};
     transition: 0.5s;
     filter: blur(15px);
     z-index: -1;

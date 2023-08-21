@@ -1,10 +1,8 @@
 import styled from '@emotion/styled'
 
 export const NavigationContainer = styled.nav`
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
-  height: 100vh;
+  /* height: 100vh; */
+  padding: 0 1rem;
 `
 export const NavigationGrid = styled.ul`
   display: flex;
@@ -14,13 +12,18 @@ export const NavigationGrid = styled.ul`
 
 export const RootItem = styled.div`
   display: flex;
-  /* align-items: center; */
+
   flex-direction: column;
   gap: 10px;
   margin-bottom: 1rem;
 `
 
-export const NavListContainer = styled.div`
+export const NavigationWrapper = styled.div`
   display: flex;
-  margin: 2rem 0;
+  flex-direction: column;
+  padding: 1rem;
+
+  height: 100vh;
+  box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 `
