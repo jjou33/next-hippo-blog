@@ -1,52 +1,26 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
-import Link from 'next/link'
-import { CSSProperties } from 'react'
-
-interface LinkBtnProps extends CSSProperties {
-  borderradius?: string
-  backgroundcolor?: string
-  hoveropacity?: string
-  hoverbackgroundcolor?: string
-}
-
-export const StyledLinkBtn = styled(Link)<LinkBtnProps>`
-  flex: ${({ flex }) => flex};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ padding }) => padding};
-  border: ${({ border }) => border};
-  border-radius: ${({ borderradius }) => borderradius};
-  background-color: ${({ backgroundcolor }) => backgroundcolor};
-  color: ${({ color }) => color};
-
-  &:hover {
-    background-color: ${({ hoverbackgroundcolor }) => hoverbackgroundcolor};
-    opacity: ${({ hoveropacity }) => hoveropacity};
-  }
-`
 
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
   gap: 10rem;
-  padding: 0 20px;
+  padding: 0 2rem 5rem;
   background: white;
   z-index: 1;
 `
 
 export const IndicatorContainer = styled.div`
   width: 10rem;
-  height: 7rem;
+  height: 10rem;
   border-radius: 70%;
   background-color: white;
   position: absolute;
-  top: 92%;
+  top: calc(100vh - 4.7rem);
 
   @media screen and (max-width: 768px) {
-    top: 90%;
+    top: calc(100vh - 4.5rem);
   }
 `
 export const scroll = keyframes`
@@ -64,12 +38,12 @@ export const scroll = keyframes`
 export const MouseIndicatorWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 5px;
+  padding-top: 10px;
 `
 export const MouseIndicator = styled.div`
   position: relative;
   width: 2rem;
-  height: 3.5rem;
+  height: 3rem;
   border: solid 4px;
   border-radius: 30px;
 

@@ -12,7 +12,7 @@ const ProjectSection = () => {
         aggressive="headline_oneline_002"
         color={theme.colors.gray_007}
       >
-        사이드 프로젝트
+        ✨ 사이드 프로젝트
       </Typography>
       <Divider
         direction="horizontal"

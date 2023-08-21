@@ -1,20 +1,49 @@
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 import { LinkWrapper } from 'components/common/StyledLayout'
 export const Container = styled.header`
   position: fixed;
   display: flex;
   background-color: transparent;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
-  @media screen and (min-width: 700px) {
+  z-index: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+    isHeaderSticky ? 2 : 1};
+  padding: 0 2rem;
+  @media screen and (min-width: 1300px) {
     width: calc(100vw - 280px);
     margin: 0 0 0 280px;
   }
 `
 
+export const HeaderWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 996px;
+  ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+    isHeaderSticky
+      ? css`
+          z-index: 2;
+          margin: 1rem auto;
+          padding: 0 1rem;
+          backdrop-filter: blur(10px);
+          background-color: rgba(
+            255,
+            255,
+            255,
+            0.7
+          ); /* 반투명한 백그라운드 색상 */
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+          transition: background-color 0.3s ease; /* 트랜지션 효과 추가 */
+          border-radius: 10px;
+        `
+      : css`
+          z-index: 1;
+          margin: 0 auto;
+        `}
+`
 export const LogoWrapper = styled(LinkWrapper)`
   display: flex;
   align-items: center;
@@ -44,19 +73,6 @@ export const HeaderMenuButton = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-`
-
-export const HeaderWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  max-width: 100%;
-  height: 100%;
-  margin: 0 50px;
-
-  @media screen and (max-width: 768px) {
-    margin: 0 0px;
-  }
 `
 
 export const HeaderItemTitle = styled.div`

@@ -29,7 +29,7 @@ const PostList = props => {
             aggressive="headline_oneline_002"
             color={theme.colors.gray_007}
           >
-            최신 포스트
+            🧑🏼‍💻 최신 포스트
           </Typography>
           <Divider
             direction="horizontal"

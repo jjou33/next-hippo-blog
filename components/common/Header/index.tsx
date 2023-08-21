@@ -1,15 +1,27 @@
 import * as S from './styles'
-import {
-  SubMaxContainer,
-  UnorderList,
-  LinkWrapper,
-} from 'components/common/StyledLayout'
+import { UnorderList, LinkWrapper } from 'components/common/StyledLayout'
 import Typography from '../Typography'
 import theme from 'styles/theme'
+import { useEffect, useState } from 'react'
 const Header = () => {
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isSticky = window.scrollY > window.innerHeight
+      setIsHeaderSticky(isSticky)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <S.Container>
-      <SubMaxContainer>
+    <S.Container isHeaderSticky={isHeaderSticky}>
+      <S.HeaderWrapper isHeaderSticky={isHeaderSticky}>
         <S.NavigationContentsWrapper>
           <S.LogoWrapper href={'/'} hrefLang={'ko'}>
             <Typography variant="p" aggressive="body_oneline_001">
@@ -52,7 +64,7 @@ const Header = () => {
             </S.NavigationItem>
           </UnorderList>
         </S.NavigationContentsWrapper>
-      </SubMaxContainer>
+      </S.HeaderWrapper>
     </S.Container>
   )
 }
