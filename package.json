@@ -18,7 +18,6 @@
     "lottie-react": "^2.4.0",
     "mongodb": "^5.7.0",
     "next": "^13.2.13",
-    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",

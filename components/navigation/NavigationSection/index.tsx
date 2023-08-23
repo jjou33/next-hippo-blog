@@ -25,7 +25,7 @@ const NavigationSection = ({ category }) => {
                   </IconBox>
                   <Typography
                     variant="span"
-                    aggressive="headline_oneline_006"
+                    aggressive="montserratAlternates_medium_001"
                     color={theme.colors.gray_004}
                   >
                     {rootCategory}

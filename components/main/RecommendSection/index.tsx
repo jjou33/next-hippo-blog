@@ -5,7 +5,7 @@ import * as S from './styles'
 
 const RecommendList = () => {
   return (
-    <S.RecommendContainer>
+    <S.RecommendWrapper>
       <Typography variant="h2" aggressive="headline_oneline_002">
         🎖 추천 카테고리
       </Typography>
@@ -17,7 +17,7 @@ const RecommendList = () => {
         color={theme.colors.gray_002}
       />
       <RecommendCategory />
-    </S.RecommendContainer>
+    </S.RecommendWrapper>
   )
 }
 

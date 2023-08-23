@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
-
+import { cafe24OhsquareAir } from 'public/static/fonts'
 export const ContentsContainer = styled.article`
   width: 100%;
   margin: 2rem auto;
@@ -8,7 +8,7 @@ export const ContentsContainer = styled.article`
   line-height: 2rem;
   border-radius: 6px;
   padding: 1rem;
-
+  font-family: ${cafe24OhsquareAir.style.fontFamily};
   p {
     color: hsl(276, 5%, 20%);
   }

@@ -8,3 +8,4 @@ export interface IconPropsType {
 }
 export * from './NavigationIcon'
 export * from './ProfileIcon'
+export * from './MainIcon'

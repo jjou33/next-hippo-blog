@@ -4,12 +4,13 @@ import * as S from './styles'
 interface ColorTextPropsType {
   text: string
   fontSize?: number
+  aggressive?: string
 }
 
-const ColorText = ({ text, fontSize = 0 }: ColorTextPropsType) => {
+const ColorText = ({ text, fontSize = 0, aggressive }: ColorTextPropsType) => {
   return (
     <S.ColorText fontSize={fontSize}>
-      <Typography variant="span" aggressive="headline_oneline_005">
+      <Typography variant="span" aggressive={aggressive}>
         {text}
       </Typography>
     </S.ColorText>

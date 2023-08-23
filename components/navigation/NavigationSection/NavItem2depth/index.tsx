@@ -7,7 +7,7 @@ import IconBox from 'components/common/IconBox'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'
 
-const NavItem2depth = ({ item, item2, count }) => {
+const NavItem2depth = ({ item2, count }) => {
   return (
     <S.NavItemContainer>
       {item2.map(value => (
@@ -25,7 +25,7 @@ const NavItem2depth = ({ item, item2, count }) => {
 
               <Typography
                 variant="span"
-                aggressive="headline_oneline_006"
+                aggressive="montserratAlternates_medium_003"
                 color={theme.colors.gray_005}
               >
                 {value}

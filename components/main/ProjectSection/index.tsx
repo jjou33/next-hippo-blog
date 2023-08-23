@@ -5,8 +5,7 @@ import ProjectGrid from './ProjectGrid'
 import * as S from './styles'
 const ProjectSection = () => {
   return (
-    // <FlexBox flexDirection="column" width="996px" margin="10px 0 0 0">
-    <S.ProjectContainer>
+    <S.ProjectWrapper>
       <Typography
         variant="h2"
         aggressive="headline_oneline_002"
@@ -22,8 +21,7 @@ const ProjectSection = () => {
         color={theme.colors.gray_002}
       />
       <ProjectGrid />
-    </S.ProjectContainer>
-    // </FlexBox>
+    </S.ProjectWrapper>
   )
 }
 

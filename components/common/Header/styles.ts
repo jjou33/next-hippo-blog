@@ -12,6 +12,7 @@ export const Container = styled.header`
   z-index: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
     isHeaderSticky ? 2 : 1};
   padding: 0 2rem;
+
   @media screen and (min-width: 1300px) {
     width: calc(100vw - 280px);
     margin: 0 0 0 280px;
@@ -26,8 +27,8 @@ export const HeaderWrapper = styled.div`
     isHeaderSticky
       ? css`
           z-index: 2;
-          margin: 1rem auto;
-          padding: 0 1rem;
+          margin: 0.5rem auto;
+          padding: 0 2rem;
           backdrop-filter: blur(10px);
           background-color: rgba(
             255,

@@ -27,7 +27,7 @@ const NavItem1depth = ({ children, item, count }) => {
 
         <Typography
           variant="span"
-          aggressive="headline_oneline_006"
+          aggressive="montserratAlternates_medium_002"
           color={theme.colors.gray_005}
         >
           {item}

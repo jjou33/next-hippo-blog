@@ -3,6 +3,7 @@ import HeroSection from './HeroSection'
 import PostList from '../posts/PostList'
 import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
+import { MainIconSet } from 'public/static/icon/MainIcon'
 import * as S from './styles'
 
 const MainContents = props => {
@@ -10,16 +11,14 @@ const MainContents = props => {
     <FlexBox flexDirection="column" flex={4}>
       <HeroSection />
       <S.MainContainer>
-        <FlexBox justifyContent="center">
-          <S.IndicatorContainer>
-            <S.MouseIndicatorWrapper>
-              <S.MouseIndicator />
-            </S.MouseIndicatorWrapper>
-          </S.IndicatorContainer>
-        </FlexBox>
-        <RecommendList />
-        <ProjectSection />
-        <PostList posts={props.posts} />
+        <S.WaveAnimationContainer>
+          <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
+        </S.WaveAnimationContainer>
+        <S.SectionContainer>
+          <RecommendList />
+          <ProjectSection />
+          <PostList posts={props.posts} />
+        </S.SectionContainer>
       </S.MainContainer>
     </FlexBox>
   )

@@ -10,7 +10,7 @@ export const SliderContainer = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 1000px) {
-    width: 768px;
+    width: 960px;
     margin: 0 auto;
   }
 `

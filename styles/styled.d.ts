@@ -33,7 +33,6 @@ declare module '@emotion/react' {
       headline_oneline_004: FlattenSimpleInterpolation
       headline_oneline_005: FlattenSimpleInterpolation
       headline_oneline_006: FlattenSimpleInterpolation
-      headline_oneline_007: FlattenSimpleInterpolation
       headline_multiline_001: FlattenSimpleInterpolation
       headline_multiline_002: FlattenSimpleInterpolation
       body_oneline_000: FlattenSimpleInterpolation

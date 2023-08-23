@@ -8,7 +8,7 @@ const TextEffectKeyFrame = keyframes`
 `
 
 export const ColorText = styled.p`
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background-image: linear-gradient(
     -225deg,
     #edb575 0%,
