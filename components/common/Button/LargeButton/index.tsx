@@ -1,6 +1,8 @@
-import Typography from 'components/common/Typography'
-import { ButtonHTMLAttributes, CSSProperties } from 'react'
 import * as S from './styles'
+
+import Typography from 'components/common/Typography'
+
+import { ButtonHTMLAttributes, CSSProperties } from 'react'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string

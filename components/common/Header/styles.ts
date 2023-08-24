@@ -1,7 +1,11 @@
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
+
 import { LinkWrapper } from 'components/common/StyledLayout'
-export const Container = styled.header`
+
+interface HeaderProps {
+  isHeaderSticky: boolean
+}
+export const Container = styled.header<HeaderProps>`
   position: fixed;
   display: flex;
   background-color: transparent;
@@ -19,11 +23,11 @@ export const Container = styled.header`
   }
 `
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div<HeaderProps>`
   position: relative;
   width: 100%;
   max-width: 996px;
-  ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+  ${({ isHeaderSticky }) =>
     isHeaderSticky
       ? css`
           z-index: 2;

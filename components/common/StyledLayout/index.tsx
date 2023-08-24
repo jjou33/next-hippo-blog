@@ -1,6 +1,7 @@
+import styled, { css, keyframes } from 'styled-components'
+
 import { CSSProperties } from 'react'
-import styled from '@emotion/styled'
-import { css, keyframes } from '@emotion/react'
+
 import Link from 'next/link'
 
 export const FlexBox = styled.div<CSSProperties>`

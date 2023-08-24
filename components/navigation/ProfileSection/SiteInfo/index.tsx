@@ -1,8 +1,9 @@
+import * as S from './styles'
+
 import NumberCountBox from './NumberCountBox'
-import { FlexBox } from 'components/common/StyledLayout'
 import LinkStyleBox from './LinkedIcon'
 
-import * as S from './styles'
+import { FlexBox } from 'components/common/StyledLayout'
 
 interface NavItemType {
   linkItems: {

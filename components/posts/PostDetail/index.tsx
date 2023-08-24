@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
 import PostContent from './PostContent'
 import PostHeader from './PostHeader'
+
+import { Fragment } from 'react'
 
 const PostDetail = props => {
   return (

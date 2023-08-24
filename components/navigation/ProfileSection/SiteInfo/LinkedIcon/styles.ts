@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { CSSProperties } from 'react'
 
 export const LinkItemIcon = styled.span`

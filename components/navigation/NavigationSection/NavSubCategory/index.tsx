@@ -7,13 +7,19 @@ import IconBox from 'components/common/IconBox'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'
 
-const NavItem2depth = ({ item2, count }) => {
+interface NavSubCategoryProps {
+  items: string[]
+  count: {
+    [key: string]: number
+  }
+}
+const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
   return (
-    <S.NavItemContainer>
-      {item2.map(value => (
-        <S.NavItemWrapper key={value}>
+    <S.NavSubItemContainer>
+      {items.map(value => (
+        <S.NavSubItemWrapper key={value}>
           <Link href={`/posts/${value}`}>
-            <S.NavItemTitle>
+            <S.NavSubItemTitle>
               <FlexBox>
                 <IconBox width="20px" height="20px">
                   {NavigationIconSet['Arrow'].icon()}
@@ -39,12 +45,12 @@ const NavItem2depth = ({ item2, count }) => {
               >
                 {count[value]}
               </Badge>
-            </S.NavItemTitle>
+            </S.NavSubItemTitle>
           </Link>
-        </S.NavItemWrapper>
+        </S.NavSubItemWrapper>
       ))}
-    </S.NavItemContainer>
+    </S.NavSubItemContainer>
   )
 }
 
-export default NavItem2depth
+export default NavSubCategory

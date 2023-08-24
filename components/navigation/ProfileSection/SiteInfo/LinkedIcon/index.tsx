@@ -1,5 +1,7 @@
 import * as S from './styles'
+
 import IconBox from 'components/common/IconBox'
+
 import { ProfileIconSet } from 'public/static/icon'
 
 interface LinkStyleBoxProps {
@@ -8,6 +10,7 @@ interface LinkStyleBoxProps {
   iconName: string
   title: string
 }
+
 const LinkedIcon = ({ color1, color2, iconName, title }: LinkStyleBoxProps) => {
   return (
     <S.LinkItemContainer>

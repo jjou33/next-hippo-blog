@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {

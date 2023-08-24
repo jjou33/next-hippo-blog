@@ -1,11 +1,10 @@
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 import theme from 'styles/theme'
-export const NavItem1depthContainer = styled.li`
+
+export const NavMainCategoryItem = styled.li<{ openState: boolean }>`
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* border: 1px solid; */
   margin: 0 5px;
   cursor: pointer;
   position: relative;
@@ -14,21 +13,22 @@ export const NavItem1depthContainer = styled.li`
   }
   :hover {
     span {
-      color: red;
+      color: #f25b5b;
     }
   }
 `
-export const NavItem1depthWrapper = styled.div`
+
+export const NavIconBoxWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  border-radius: 1rem;
-  padding: 0.2rem;
-  background-color: #fef5f5;
-  /* border: 1px solid; */
+  justify-content: center;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  background-color: ${theme.colors.gray_001};
 `
 
-export const NavItem1depthArrorw = styled.div`
+export const NavItemArrowWrapper = styled.div<{ isOpen: boolean }>`
   margin-left: 85%;
   position: absolute;
   width: 20px;
@@ -43,15 +43,18 @@ export const NavItem1depthArrorw = styled.div`
           padding-top: 4px;
         `};
 
-  transition: transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.3s;
 `
 
-export const DropdownWrapper = styled.article`
+export const DropdownWrapper = styled.article<{
+  isOpen: boolean
+  categoryItemCount: number
+}>`
   overflow: hidden;
   margin-left: 1rem;
   height: 0;
   transition: height ease-in-out 0.3s;
-  ${(props: { isOpen: boolean; categoryItemCount: number }) => {
+  ${props => {
     if (props.isOpen) {
       return css`
         height: ${(props.categoryItemCount as number) * 35}px;
@@ -64,14 +67,4 @@ export const DropdownWrapper = styled.article`
       `
     }
   }}
-`
-
-export const NavIconBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 27px;
-  height: 27px;
-  background-color: ${theme.colors.gray_001};
 `

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-
+import type { PostData, AllPostCategory } from 'types/post'
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 /**
@@ -14,7 +14,26 @@ export const getPostsFiles = () => {
 /**
  * @description 모든 PostFile 에 대한 정보를 가진 Array 리턴
  */
-export const getAllPosts = () => {
+
+/**
+ * @description 특정 PostDetail 파일 Generation 을 위한 데이터 Fetch 함수
+ */
+
+export const getPostData = (postIdentifier: string) => {
+  const postSlug = postIdentifier.replace(/\.md$/, '')
+  const filePath = path.join(postsDirectory, `${postSlug}.md`)
+  const fileContent = fs.readFileSync(filePath, 'utf-8')
+  const { data, content } = matter(fileContent)
+
+  const postData: PostData = {
+    slug: postSlug,
+    ...data,
+    content,
+  }
+  return postData
+}
+
+export const getAllPosts = (): PostData[] => {
   const postFiles = getPostsFiles()
 
   const allPosts = postFiles.map(postFile => {
@@ -32,7 +51,7 @@ export const getAllPosts = () => {
  * @description Navigation 을 위한 rootCategory, CategoryDepth 에 대한 정보를 통한 객체 생성
  */
 
-export const getAllPostsCategory = () => {
+export const getAllPostsCategory = (): AllPostCategory => {
   const result = {}
   const count = {}
 
@@ -60,35 +79,10 @@ export const getAllPostsCategory = () => {
 }
 
 /**
- * @description 특정 PostDetail 파일 Generation 을 위한 데이터 Fetch 함수
- */
-
-export const getPostData = postIdentifier => {
-  const postSlug = postIdentifier.replace(/\.md$/, '')
-  const filePath = path.join(postsDirectory, `${postSlug}.md`)
-  const fileContent = fs.readFileSync(filePath, 'utf-8')
-  const { data, content } = matter(fileContent)
-
-  interface PostData {
-    slug: string
-    content: string
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key: string]: any
-  }
-  const postData: PostData = {
-    slug: postSlug,
-    ...data,
-    content,
-  }
-
-  return postData
-}
-
-/**
  * @description 2depth(PostDetail) SSG 를 위한 StaticPath 관련 정보
  */
 
-export const getSlugByParams = () => {
+export const getSlugByParams = (): Array<string>[] => {
   const slugList = getAllPosts().map(posts => [
     posts.category2depth,
     posts.slug,
@@ -101,7 +95,7 @@ export const getSlugByParams = () => {
  * @description 1depth(PostList) SSG 를 위한 StaticProps 관련 정보
  */
 
-export const getCategoryPosts = category => {
+export const getCategoryPosts = (category: string): PostData[] => {
   const allPost = getAllPosts()
 
   const categoryPosts = allPost.filter(post => post.category2depth === category)

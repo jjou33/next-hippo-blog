@@ -1,12 +1,10 @@
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
+import styled, { keyframes } from 'styled-components'
 
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
   gap: 10rem;
-  /* padding: 0 2rem 5rem; */
   background: white;
   z-index: 1;
 `
@@ -60,9 +58,6 @@ export const SectionContainer = styled.div`
   gap: 5rem;
 `
 export const WaveAnimationBox = styled.div`
-  /* bottom: 13rem; */
-  /* position: absolute; */
-
   .editorial {
     display: block;
     width: 100%;
@@ -72,31 +67,29 @@ export const WaveAnimationBox = styled.div`
     z-index: 5;
     bottom: 0;
     position: absolute;
-    /* left: 0px;
-    float: left; */
   }
 
   .parallax1 > use {
     animation: ${WaveKeyframe1} 10s linear infinite;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax2 > use {
     animation: ${WaveKeyframe2} 8s linear infinite;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax3 > use {
     animation: ${WaveKeyframe3} 6s linear infinite;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax4 > use {
     animation: ${WaveKeyframe4} 4s linear infinite;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }

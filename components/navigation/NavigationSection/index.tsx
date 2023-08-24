@@ -1,56 +1,65 @@
-import { Typography } from 'components/common'
-import NavItem1depth from './NavItem1depth'
-import NavItem2depth from './NavItem2depth'
-import NavRootTitle from './NavRootTitle'
-import theme from 'styles/theme'
 import * as S from './styles'
+
+import theme from 'styles/theme'
 import IconBox from 'components/common/IconBox'
-import { NavigationIconSet } from 'public/static/icon'
+import NavMainCategory from './NavMainCategory'
+import NavSubCategory from './NavSubCategory'
+import NavRootTitle from './NavRootTitle'
+
 import { FlexBox } from 'components/common/StyledLayout'
+import { Typography } from 'components/common'
+import { NavigationIconSet } from 'public/static/icon'
 
-const NavigationSection = ({ category }) => {
-  const { result, count } = category
+import type { AllPostCategory } from 'types/post'
 
+const NavigationSection = ({ category }: { category: AllPostCategory }) => {
   return (
     <S.NavigationContainer>
       <S.NavigationWrapper>
         <NavRootTitle />
         <S.NavigationGrid>
-          {Object.entries(result).map(([rootCategory, category1depthObj]) => {
-            return (
-              <S.RootItem key={rootCategory}>
-                <FlexBox alignItems="center">
-                  <IconBox width="32px" height="32px">
-                    {NavigationIconSet['Glass'].icon()}
-                  </IconBox>
-                  <Typography
-                    variant="span"
-                    aggressive="montserratAlternates_medium_001"
-                    color={theme.colors.gray_004}
-                  >
-                    {rootCategory}
-                  </Typography>
-                </FlexBox>
-                {Object.entries(category1depthObj).map(
-                  ([category1depth, category2depth]) => {
-                    return (
-                      <NavItem1depth
-                        item={category1depth}
-                        count={category2depth.length}
-                        key={category1depth}
+          {category ? (
+            Object.entries(category.result).map(
+              ([rootCategory, mainCategory]) => {
+                return (
+                  <S.RootItemContainer key={rootCategory}>
+                    <FlexBox alignItems="center">
+                      <IconBox width="32px" height="32px">
+                        {NavigationIconSet['Glass'].icon()}
+                      </IconBox>
+                      <Typography
+                        variant="span"
+                        aggressive="montserratAlternates_medium_001"
+                        color={theme.colors.gray_004}
                       >
-                        <NavItem2depth
-                          item={category1depth}
-                          item2={category2depth}
-                          count={count}
-                        />
-                      </NavItem1depth>
-                    )
-                  },
-                )}
-              </S.RootItem>
+                        {rootCategory}
+                      </Typography>
+                    </FlexBox>
+                    {Object.entries(mainCategory).map(
+                      ([mainCategoryItem, subCategoryItems]) => {
+                        console.log(mainCategoryItem)
+                        return (
+                          <NavMainCategory
+                            item={mainCategoryItem}
+                            count={subCategoryItems.length}
+                            key={mainCategoryItem}
+                          >
+                            <NavSubCategory
+                              items={subCategoryItems}
+                              count={category.count}
+                            />
+                          </NavMainCategory>
+                        )
+                      },
+                    )}
+                  </S.RootItemContainer>
+                )
+              },
             )
-          })}
+          ) : (
+            // TODO : null 일 경우 Skeleton UI 적용
+            <></>
+          )}
         </S.NavigationGrid>
       </S.NavigationWrapper>
     </S.NavigationContainer>

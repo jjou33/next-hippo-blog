@@ -1,8 +1,11 @@
 import * as S from './styles'
-import { UnorderList, LinkWrapper } from 'components/common/StyledLayout'
+
 import Typography from '../Typography'
 import theme from 'styles/theme'
+
+import { UnorderList, LinkWrapper } from 'components/common/StyledLayout'
 import { useEffect, useState } from 'react'
+
 const Header = () => {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
 

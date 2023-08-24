@@ -1,6 +1,8 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Image from 'next/image'
+
 import { cafe24OhsquareAir } from 'public/static/fonts'
+
 export const ContentsContainer = styled.article`
   width: 100%;
   margin: 2rem auto;

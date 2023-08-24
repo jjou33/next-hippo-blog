@@ -1,15 +1,17 @@
-import Typography from '../Typography'
 import * as S from './styles'
+
+import Typography from '../Typography'
+
+import type { AggressivePropsType } from 'types/styles'
 
 interface ColorTextPropsType {
   text: string
-  fontSize?: number
-  aggressive?: string
+  aggressive?: AggressivePropsType['aggressive']
 }
 
-const ColorText = ({ text, fontSize = 0, aggressive }: ColorTextPropsType) => {
+const ColorText = ({ text, aggressive }: ColorTextPropsType) => {
   return (
-    <S.ColorText fontSize={fontSize}>
+    <S.ColorText>
       <Typography variant="span" aggressive={aggressive}>
         {text}
       </Typography>

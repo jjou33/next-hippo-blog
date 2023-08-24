@@ -7,7 +7,10 @@ const NavRootTitle = () => {
     <S.NavRootContainer>
       <S.NavRootTextWrapper>
         <Link href="/">
-          <ColorText text="Total Contents" />
+          <ColorText
+            text="TOTAL CONTENTS"
+            aggressive="montserratAlternates_medium_001"
+          />
         </Link>
       </S.NavRootTextWrapper>
     </S.NavRootContainer>

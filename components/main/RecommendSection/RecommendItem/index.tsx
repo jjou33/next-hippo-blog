@@ -1,8 +1,15 @@
-import { StyledLayout, Typography } from 'components/common'
 import * as S from './styles'
+
 import Image from 'next/image'
 import theme from 'styles/theme'
-const RecommendItem = ({ imagePath, itemName }) => {
+
+import { StyledLayout, Typography } from 'components/common'
+
+interface RecommendItemProps {
+  imagePath: string
+  itemName: string
+}
+const RecommendItem = ({ imagePath, itemName }: RecommendItemProps) => {
   return (
     <S.RecommendItemWrapper key={itemName}>
       <StyledLayout.StyledImageBox borderRadius="40px" boxShadow="">

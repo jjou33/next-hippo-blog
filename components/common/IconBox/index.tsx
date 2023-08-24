@@ -1,5 +1,6 @@
-import { PropsWithChildren } from 'react'
 import * as S from './styles'
+
+import { PropsWithChildren } from 'react'
 
 interface IconBoxProps extends PropsWithChildren {
   width?: string

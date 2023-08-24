@@ -1,29 +1,34 @@
-import { Typography } from 'components/common'
-import IconBox from 'components/common/IconBox'
-import { NavigationIconSet } from 'public/static/icon'
-import theme from 'styles/theme'
-import { useState } from 'react'
-
 import * as S from './styles'
 
-const NavItem1depth = ({ children, item, count }) => {
+import theme from 'styles/theme'
+import IconBox from 'components/common/IconBox'
+
+import { Typography } from 'components/common'
+import { Fragment, PropsWithChildren, useState } from 'react'
+import { NavigationIconSet } from 'public/static/icon'
+
+interface MainCategoryProps extends PropsWithChildren {
+  item: string
+  count: number
+}
+const NavMainCategory = ({ children, item, count }: MainCategoryProps) => {
   const [openState, setOpenState] = useState(false)
 
   const stateHandler = () => {
     setOpenState(!openState)
   }
   return (
-    <>
-      <S.NavItem1depthContainer
+    <Fragment>
+      <S.NavMainCategoryItem
         key={item}
         onClick={stateHandler}
         openState={openState}
       >
-        <S.NavIconBox>
+        <S.NavIconBoxWrapper>
           <IconBox width="25px" height="25px">
             {NavigationIconSet[item].icon()}
           </IconBox>
-        </S.NavIconBox>
+        </S.NavIconBoxWrapper>
 
         <Typography
           variant="span"
@@ -32,16 +37,16 @@ const NavItem1depth = ({ children, item, count }) => {
         >
           {item}
         </Typography>
-        <S.NavItem1depthArrorw isOpen={openState}>
+        <S.NavItemArrowWrapper isOpen={openState}>
           {NavigationIconSet['Arrow'].icon()}
-        </S.NavItem1depthArrorw>
-      </S.NavItem1depthContainer>
+        </S.NavItemArrowWrapper>
+      </S.NavMainCategoryItem>
 
       <S.DropdownWrapper isOpen={openState} categoryItemCount={count}>
         {children}
       </S.DropdownWrapper>
-    </>
+    </Fragment>
   )
 }
 
-export default NavItem1depth
+export default NavMainCategory

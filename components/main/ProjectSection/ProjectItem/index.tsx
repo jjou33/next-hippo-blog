@@ -1,10 +1,18 @@
-import { Badge, Typography } from 'components/common'
-import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
+import * as S from './styles'
+
 import Image from 'next/image'
 import theme from 'styles/theme'
 import Link from 'next/link'
-import * as S from './styles'
-const ProjectItem = ({ imagePath, title }) => {
+
+import { Badge, Typography } from 'components/common'
+import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
+
+interface ProjectItemProps {
+  imagePath: string
+  title: string
+}
+
+const ProjectItem = ({ imagePath, title }: ProjectItemProps) => {
   const linkPath = `/`
   return (
     <S.ProjectItemContainer>

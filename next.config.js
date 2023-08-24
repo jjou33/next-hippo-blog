@@ -2,8 +2,9 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   compiler: {
-    emotion: true,
+    styledComponents: true,
   },
   webpack: config => {
     config.module.rules.push({

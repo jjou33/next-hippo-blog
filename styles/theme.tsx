@@ -1,8 +1,8 @@
-import { css } from '@emotion/react'
-import { Theme } from '@emotion/react'
+import { css, DefaultTheme } from 'styled-components'
+
 import { montserratAlternates, cafe24OhsquareAir } from 'public/static/fonts'
 interface Font {
-  weight: 400 | 500 | 600 | 700
+  weight: 300 | 400 | 500 | 600 | 700
   size: number
   height: number
   spacing: number
@@ -25,7 +25,7 @@ const fontStyleGenerator = ({
   `
 }
 
-const theme: Theme = {
+const theme: DefaultTheme = {
   colors: {
     white: '#ffffff',
     gray_000: '#F9F9FB',

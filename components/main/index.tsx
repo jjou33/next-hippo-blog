@@ -1,14 +1,18 @@
-import { FlexBox } from 'components/common/StyledLayout'
+import * as S from './styles'
+
 import HeroSection from './HeroSection'
 import PostList from '../posts/PostList'
 import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
-import { MainIconSet } from 'public/static/icon/MainIcon'
-import * as S from './styles'
 
-const MainContents = props => {
+import { FlexBox } from 'components/common/StyledLayout'
+import { MainIconSet } from 'public/static/icon/MainIcon'
+
+import type { PostData } from 'types/post'
+
+const MainContents = ({ posts }: { posts: PostData[] }) => {
   return (
-    <FlexBox flexDirection="column" flex={4}>
+    <FlexBox flexDirection="column">
       <HeroSection />
       <S.MainContainer>
         <S.WaveAnimationContainer>
@@ -17,7 +21,7 @@ const MainContents = props => {
         <S.SectionContainer>
           <RecommendList />
           <ProjectSection />
-          <PostList posts={props.posts} />
+          <PostList posts={posts} />
         </S.SectionContainer>
       </S.MainContainer>
     </FlexBox>

@@ -1,5 +1,4 @@
-import styled from '@emotion/styled'
-import { keyframes, css } from '@emotion/react'
+import styled, { keyframes } from 'styled-components'
 
 const TextEffectKeyFrame = keyframes`
   to {
@@ -8,7 +7,6 @@ const TextEffectKeyFrame = keyframes`
 `
 
 export const ColorText = styled.p`
-  /* text-transform: uppercase; */
   background-image: linear-gradient(
     -225deg,
     #edb575 0%,
@@ -25,10 +23,4 @@ export const ColorText = styled.p`
   -webkit-text-fill-color: transparent;
   animation: ${TextEffectKeyFrame} 2s linear infinite;
   display: inline-block;
-  /* ${(props: { fontSize: number }) =>
-    props.fontSize !== 0
-      ? css`
-          font-size: ${props.fontSize}px;
-        `
-      : css``} */
 `

@@ -1,8 +1,8 @@
 import { CSSProperties } from 'react'
-import '@emotion/react'
+import 'styled-components'
 
-declare module '@emotion/react' {
-  export interface Theme {
+declare module 'styled-components' {
+  export interface DefaultTheme {
     colors: {
       white: '#ffffff'
       gray_000: '#F9F9FB'
@@ -55,6 +55,12 @@ declare module '@emotion/react' {
       caption_large: FlattenSimpleInterpolation
       caption_medium: FlattenSimpleInterpolation
       caption_small: FlattenSimpleInterpolation
+      montserratAlternates_Bold_001: FlattenSimpleInterpolation
+      montserratAlternates_Bold_002: FlattenSimpleInterpolation
+      montserratAlternates_medium_001: FlattenSimpleInterpolation
+      montserratAlternates_medium_002: FlattenSimpleInterpolation
+      montserratAlternates_medium_003: FlattenSimpleInterpolation
+      montserratAlternates_light: FlattenSimpleInterpolation
     }
   }
   export interface Styles {

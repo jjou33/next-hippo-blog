@@ -1,8 +1,10 @@
-import { Divider } from 'components/common/StyledLayout'
-import { useNumberCount } from 'hooks/useNumberCount'
+import * as S from './styles'
+
 import Typography from 'components/common/Typography'
 import theme from 'styles/theme'
-import * as S from './styles'
+
+import { Divider } from 'components/common/StyledLayout'
+import { useNumberCount } from 'hooks/useNumberCount'
 
 const NumberCountBox = ({ number, title, duration = 2000 }) => {
   return (

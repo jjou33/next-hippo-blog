@@ -1,8 +1,18 @@
-import { Footer } from 'components/common'
-import styled from '@emotion/styled'
-import { FlexBox } from '../StyledLayout'
+import styled from 'styled-components'
 import SideBar from 'components/navigation'
-const Layout = ({ children, pageProps: { category } }) => {
+
+import { Footer } from 'components/common'
+import { FlexBox } from '../StyledLayout'
+
+import { PropsWithChildren } from 'react'
+import type { AllPostCategory } from 'types/post'
+
+interface LayoutPropsType extends PropsWithChildren {
+  pageProps: {
+    category: AllPostCategory
+  }
+}
+const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
   return (
     <FlexBox flexDirection="column" width="100vw">
       <FlexBox>

@@ -1,20 +1,14 @@
-import Image from 'next/image'
-
-import { useTypingTitle } from 'hooks/useTypingTitle'
 import * as S from './styles'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
-import { Typography } from 'components/common'
+
+import Image from 'next/image'
 import theme from 'styles/theme'
 import ColorText from 'components/common/ColorText'
+import TypingSection from './TypingSection'
+
+import { Divider, FlexBox } from 'components/common/StyledLayout'
 
 const HeroSection = () => {
-  const imagePath = `/static/images/pixel3.gif`
-  const currentTitle = useTypingTitle([
-    'Typescript',
-    'Javascript',
-    'NextJS',
-    'React',
-  ])
+  const imagePath = `/static/images/heroBackground.gif`
   return (
     <S.HeroImageContainer>
       <Image
@@ -47,79 +41,7 @@ const HeroSection = () => {
             margin="0px 0 16px 0"
             color={theme.colors.gray_002}
           />
-          <FlexBox gap="2rem">
-            <S.HeroWriteContainer>
-              <Typography
-                variant="h3"
-                aggressive="montserratAlternates_Bold_002"
-                color={theme.colors.gray_001}
-              >
-                FAVORITE Language
-                <Divider
-                  direction="horizontal"
-                  width="100%"
-                  height="1px"
-                  margin="10px 0 5px 0"
-                  color={theme.colors.gray_002}
-                />
-                : {currentTitle}
-              </Typography>{' '}
-              <Typography
-                variant="h3"
-                aggressive="montserratAlternates_Bold_002"
-                color={theme.colors.gray_001}
-              >
-                FAVORITE Language
-                <Divider
-                  direction="horizontal"
-                  width="100%"
-                  height="1px"
-                  margin="10px 0 5px 0"
-                  color={theme.colors.gray_002}
-                />
-                : {currentTitle}
-              </Typography>
-            </S.HeroWriteContainer>
-            <S.HeroWriteContainer>
-              <Typography
-                variant="h3"
-                aggressive="montserratAlternates_Bold_002"
-                color={theme.colors.gray_001}
-              >
-                FAVORITE Language
-                <Divider
-                  direction="horizontal"
-                  width="100%"
-                  height="1px"
-                  margin="10px 0 5px 0"
-                  color={theme.colors.gray_002}
-                />
-                : {currentTitle}
-              </Typography>
-              <Typography
-                variant="h3"
-                aggressive="montserratAlternates_Bold_002"
-                color={theme.colors.gray_001}
-              >
-                FAVORITE Language
-                <Divider
-                  direction="horizontal"
-                  width="100%"
-                  height="1px"
-                  margin="10px 0 5px 0"
-                  color={theme.colors.gray_002}
-                />
-                : {currentTitle}
-              </Typography>
-            </S.HeroWriteContainer>
-          </FlexBox>
-          {/* <Typography
-            variant="h4"
-            aggressive="montserratAlternates_Bold_001"
-            color={theme.colors.gray_001}
-          >
-            WE STUDY {currentTitle}
-          </Typography> */}
+          <TypingSection />
           <S.MouseIndicatorWrapper>
             <S.MouseIndicator></S.MouseIndicator>
           </S.MouseIndicatorWrapper>

@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Link from 'next/link'
+
 import { CSSProperties } from 'react'
 
 interface LinkBtnProps extends CSSProperties {

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Image from 'next/image'
 export const GridItemContainer = styled.li`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);

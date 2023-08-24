@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
+import styled, { keyframes } from 'styled-components'
+
 export const IndicatorContainer = styled.div`
   width: 10rem;
   height: 10rem;

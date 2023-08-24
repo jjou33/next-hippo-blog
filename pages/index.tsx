@@ -1,9 +1,17 @@
 import MainSection from 'components/main'
+
 import { Fragment } from 'react'
 import { Header } from 'components/common'
 import { getAllPosts, getAllPostsCategory } from 'utils/PostUtil'
 
-const RootPage = props => {
+import type { AllPostCategory, PostData } from 'types/post'
+
+interface RootProps {
+  posts: PostData[]
+  category: AllPostCategory
+}
+
+const RootPage = (props: RootProps) => {
   return (
     <Fragment>
       <Header />
@@ -13,8 +21,8 @@ const RootPage = props => {
 }
 
 export function getStaticProps() {
-  const allPosts = getAllPosts()
-  const category = getAllPostsCategory()
+  const allPosts: PostData[] = getAllPosts()
+  const category: AllPostCategory = getAllPostsCategory()
 
   return {
     props: {

@@ -1,9 +1,11 @@
-import { Typography, StyledLayout } from 'components/common'
-import RecommendCategory from 'components/main/RecommendSection/RecommendGrid'
-import theme from 'styles/theme'
 import * as S from './styles'
 
-const RecommendList = () => {
+import theme from 'styles/theme'
+import RecommendCategory from 'components/main/RecommendSection/RecommendGrid'
+
+import { Typography, StyledLayout } from 'components/common'
+
+const RecommendSection = () => {
   return (
     <S.RecommendWrapper>
       <Typography variant="h2" aggressive="headline_oneline_002">
@@ -21,4 +23,4 @@ const RecommendList = () => {
   )
 }
 
-export default RecommendList
+export default RecommendSection

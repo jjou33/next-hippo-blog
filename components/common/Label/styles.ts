@@ -1,5 +1,6 @@
+import styled from 'styled-components'
+
 import { CSSProperties } from 'react'
-import styled from '@emotion/styled'
 
 export const Label = styled.label<CSSProperties>`
   width: ${({ width }) => width ?? '22px'};

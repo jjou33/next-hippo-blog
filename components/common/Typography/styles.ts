@@ -1,37 +1,9 @@
-import { Theme } from '@emotion/react'
-import styled from '@emotion/styled'
+import styled, { DefaultTheme } from 'styled-components'
 
-export interface ComponentProps {
-  aggressive:
-    | 'headline_oneline_001'
-    | 'headline_oneline_002'
-    | 'headline_oneline_003'
-    | 'headline_oneline_004'
-    | 'headline_oneline_005'
-    | 'headline_oneline_006'
-    | 'headline_multiline_001'
-    | 'headline_multiline_002'
-    | 'body_oneline_000'
-    | 'body_oneline_001'
-    | 'body_oneline_002'
-    | 'body_oneline_003'
-    | 'body_oneline_004'
-    | 'body_oneline_005'
-    | 'body_multiline_000'
-    | 'body_multiline_001'
-    | 'body_multiline_002'
-    | 'body_multiline_003'
-    | 'body_multiline_004'
-    | 'body_multiline_005'
-    | 'button_000'
-    | 'button_001'
-    | 'tab_001'
-    | 'tab_002'
-    | 'tab_003'
-    | 'caption_large'
-    | 'caption_medium'
-    | 'caption_small'
-  theme?: Theme
+import type { AggressivePropsType } from 'types/styles'
+
+export interface ComponentProps extends AggressivePropsType {
+  theme?: DefaultTheme
   margin?: string
   padding?: string
   color?: string

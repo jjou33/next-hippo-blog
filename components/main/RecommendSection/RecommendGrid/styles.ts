@@ -1,5 +1,4 @@
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
+import styled, { keyframes } from 'styled-components'
 
 export const SliderContainer = styled.div`
   display: flex;

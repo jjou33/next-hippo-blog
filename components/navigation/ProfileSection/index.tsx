@@ -1,8 +1,10 @@
+import * as S from './styles'
+
 import SiteInfo from './SiteInfo'
 import LogoImage from './LogoImage'
-import { Divider } from 'components/common/StyledLayout'
-import * as S from './styles'
 import theme from 'styles/theme'
+
+import { Divider } from 'components/common/StyledLayout'
 
 const ProfileSection = () => {
   const linkInfo = [
