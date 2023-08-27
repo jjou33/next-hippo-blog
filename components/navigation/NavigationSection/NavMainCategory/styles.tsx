@@ -11,7 +11,7 @@ export const NavMainCategoryItem = styled.li<{ openState: boolean }>`
   span {
     color: ${({ openState }) => (openState ? 'red' : '')};
   }
-  :hover {
+  &:hover {
     span {
       color: #f25b5b;
     }

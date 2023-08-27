@@ -2,61 +2,51 @@ import * as S from './styles'
 
 import theme from 'styles/theme'
 
-import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { Divider } from 'components/common/StyledLayout'
 import { Typography } from 'components/common'
 import { useTypingTitle } from 'hooks/useTypingTitle'
+import { LandingLottie } from 'components/common/Lottie'
+import MotionShowBox from 'components/common/Motion/MotionShowBox'
 
 const TypingSection = () => {
-  const myInfoList = ['Favorite Language', 'Hobby']
   const currentTitle = useTypingTitle([
     'Typescript',
     'Javascript',
     'NextJS',
     'React',
+    'HTML',
   ])
   return (
-    <FlexBox gap="2rem">
+    <S.Container>
+      <MotionShowBox showDirection={'down'}>
+        <S.HeroMoveImageContainer>
+          <LandingLottie />
+        </S.HeroMoveImageContainer>
+      </MotionShowBox>
       <S.HeroWriteContainer>
-        {myInfoList.map(title => (
-          <Typography
-            variant="h3"
-            aggressive="montserratAlternates_Bold_002"
-            color={theme.colors.gray_001}
-            key={title}
-          >
-            {title}
-            <Divider
-              direction="horizontal"
-              width="100%"
-              height="1px"
-              margin="10px 0 5px 0"
-              color={theme.colors.gray_002}
-            />
-            : {currentTitle}
-          </Typography>
-        ))}
+        <Typography
+          variant="h2"
+          aggressive="montserratAlternates_Bold_002"
+          color={theme.colors.gray_001}
+        >
+          Favorite Language
+        </Typography>
+        <Divider
+          direction="horizontal"
+          width="100%"
+          height="1px"
+          margin="1rem 0 1rem 0"
+          color={theme.colors.gray_002}
+        />
+        <Typography
+          variant="h3"
+          aggressive="montserratAlternates_Bold_003"
+          color={theme.colors.primary_005}
+        >
+          : {currentTitle}
+        </Typography>
       </S.HeroWriteContainer>
-      <S.HeroWriteContainer>
-        {myInfoList.map(title => (
-          <Typography
-            variant="h3"
-            aggressive="montserratAlternates_Bold_002"
-            color={theme.colors.gray_001}
-            key={title}
-          >
-            {title}
-            <Divider
-              direction="horizontal"
-              width="100%"
-              height="1px"
-              margin="10px 0 5px 0"
-              color={theme.colors.gray_002}
-            />
-            : {currentTitle}
-          </Typography>
-        ))}
-      </S.HeroWriteContainer>
-    </FlexBox>
+    </S.Container>
   )
 }
 

@@ -1,4 +1,5 @@
 import { Typography } from 'components/common'
+import TextNotification from 'components/common/Lottie/textNotification'
 import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import Image from 'next/image'
 import * as S from './styles'
@@ -24,6 +25,9 @@ const LogoImage = () => {
             style={{ objectFit: 'cover' }}
           />
         </StyledImageBox>
+        <S.NotificationContainer>
+          <TextNotification />
+        </S.NotificationContainer>
       </S.LogoImageWrapper>
       <FlexBox flexDirection="column" alignItems="center" margin="0 0 1.5rem 0">
         <Typography variant="h5" aggressive="headline_oneline_006">

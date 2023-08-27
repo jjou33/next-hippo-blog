@@ -15,7 +15,7 @@ export const SideNavWrapper = styled.aside`
   height: 100vh;
   overflow-y: auto;
   top: 0;
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   }
 `

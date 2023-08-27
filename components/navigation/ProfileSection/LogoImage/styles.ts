@@ -13,7 +13,7 @@ export const LogoImageWrapper = styled.div`
     inset -10px -10px 15px rgba(255, 255, 255, 0.9);
   border-radius: 50%;
 
-  ::before {
+  &::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -24,7 +24,7 @@ export const LogoImageWrapper = styled.div`
     left: 25px;
   }
 
-  ::after {
+  &::after {
     content: '';
     position: absolute;
     width: 10px;
@@ -34,4 +34,12 @@ export const LogoImageWrapper = styled.div`
     top: 25px;
     left: 50px;
   }
+`
+
+export const NotificationContainer = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 5rem;
+  left: 5rem;
 `

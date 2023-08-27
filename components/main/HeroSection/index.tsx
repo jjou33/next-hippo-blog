@@ -16,7 +16,7 @@ const HeroSection = () => {
         alt={'alt'}
         fill
         style={{
-          objectFit: 'cover',
+          // objectFit: 'cover',
           zIndex: '-1',
           filter: 'brightness(50%)',
         }}

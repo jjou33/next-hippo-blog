@@ -14,7 +14,7 @@ const ShowDirectionTranslateTable = {
   },
   down: {
     x: 0,
-    y: -10,
+    y: -50,
   },
   left: {
     x: 10,

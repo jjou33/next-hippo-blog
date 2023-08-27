@@ -57,6 +57,7 @@ declare module 'styled-components' {
       caption_small: FlattenSimpleInterpolation
       montserratAlternates_Bold_001: FlattenSimpleInterpolation
       montserratAlternates_Bold_002: FlattenSimpleInterpolation
+      montserratAlternates_Bold_003: FlattenSimpleInterpolation
       montserratAlternates_medium_001: FlattenSimpleInterpolation
       montserratAlternates_medium_002: FlattenSimpleInterpolation
       montserratAlternates_medium_003: FlattenSimpleInterpolation

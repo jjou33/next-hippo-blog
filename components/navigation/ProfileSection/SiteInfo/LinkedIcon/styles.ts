@@ -37,14 +37,14 @@ export const LinkItemWrapper = styled.li<CSSProperties>`
   box-shadow: 0 16px 25px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
 
-  :hover {
+  &:hover {
     width: 180px;
     box-shadow: 0 16px 25px rgba(0, 0, 0, 0.1);
-    ::before {
+    &::before {
       opacity: 1;
     }
 
-    ::after {
+    &::after {
       opacity: 0.5;
     }
 
@@ -60,7 +60,7 @@ export const LinkItemWrapper = styled.li<CSSProperties>`
     }
   }
 
-  ::before {
+  &::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -70,7 +70,7 @@ export const LinkItemWrapper = styled.li<CSSProperties>`
     transition: 0.5s;
   }
 
-  ::after {
+  &::after {
     content: '';
     position: absolute;
     width: 100%;

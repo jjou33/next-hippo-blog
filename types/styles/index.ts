@@ -30,6 +30,7 @@ export interface AggressivePropsType {
     | 'caption_small'
     | 'montserratAlternates_Bold_001'
     | 'montserratAlternates_Bold_002'
+    | 'montserratAlternates_Bold_003'
     | 'montserratAlternates_medium_001'
     | 'montserratAlternates_medium_002'
     | 'montserratAlternates_medium_003'

@@ -4,6 +4,7 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
+  padding-top: 10rem;
   gap: 10rem;
   background: white;
   z-index: 1;

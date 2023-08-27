@@ -78,23 +78,25 @@ export const scroll = keyframes`
 export const MouseIndicatorWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  padding-top: 3rem;
+  width: 5rem;
+  height: 7rem;
 `
 export const MouseIndicator = styled.div`
   position: relative;
   width: 2rem;
   height: 3rem;
-  border: solid 1px;
+  border: solid 2px;
   border-radius: 30px;
-  border-color: #b2a2ce;
-  background: #35303d;
+  border-color: #ada6bb;
+  /* background: #35303d; */
   &::before {
     content: '';
     position: absolute;
     width: 0.4rem;
     height: 0.4rem;
     border-radius: 50%;
-    background: #cb9f59;
+    background: #e7d5b8;
     left: 50%;
     transform: translateX(-50%);
     animation: ${scroll} 2s infinite;

@@ -118,7 +118,7 @@ export const ColorContainerStyle = css`
   position: relative;
   border-radius: 10px;
 
-  ::after {
+  &::after {
     content: '';
     position: absolute;
     top: calc(-1 * 3px);
