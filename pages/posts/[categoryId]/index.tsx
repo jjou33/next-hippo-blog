@@ -1,3 +1,5 @@
+import { FlexBox } from 'components/common/StyledLayout'
+
 import PostList from 'components/posts/PostList'
 import {
   getAllPostsCategory,
@@ -6,7 +8,11 @@ import {
 } from 'utils/PostUtil'
 
 const PostCategoryListPage = props => {
-  return <PostList posts={props.posts} />
+  return (
+    <FlexBox flexDirection="column">
+      <PostList posts={props.posts} />
+    </FlexBox>
+  )
 }
 
 export default PostCategoryListPage

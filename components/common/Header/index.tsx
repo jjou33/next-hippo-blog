@@ -4,30 +4,21 @@ import Typography from '../Typography'
 import theme from 'styles/theme'
 
 import { UnorderList, LinkWrapper } from 'components/common/StyledLayout'
-import { useEffect, useState } from 'react'
 
+import { useHeaderSticky } from 'hooks/useHeaderSticky'
 const Header = () => {
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isSticky = window.scrollY > window.innerHeight
-      setIsHeaderSticky(isSticky)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  const isHeaderSticky = useHeaderSticky()
 
   return (
     <S.Container isHeaderSticky={isHeaderSticky}>
       <S.HeaderWrapper isHeaderSticky={isHeaderSticky}>
-        <S.NavigationContentsWrapper>
+        <S.NavigationContentsWrapper isHeaderSticky={isHeaderSticky}>
           <S.LogoWrapper href={'/'} hrefLang={'ko'}>
-            <Typography variant="p" aggressive="body_oneline_001">
+            <Typography
+              variant="span"
+              aggressive="body_oneline_001"
+              color={theme.colors.gray_003}
+            >
               HIPPO DEV
             </Typography>
           </S.LogoWrapper>
@@ -35,33 +26,11 @@ const Header = () => {
             <S.NavigationItem>
               <LinkWrapper href={'/posts'}>
                 <Typography
-                  variant="h2"
+                  variant="span"
                   aggressive="button_001"
-                  color={theme.colors.gray_005}
+                  color={theme.colors.gray_003}
                 >
                   POST
-                </Typography>
-              </LinkWrapper>
-            </S.NavigationItem>
-            <S.NavigationItem>
-              <LinkWrapper href={'/posts'}>
-                <Typography
-                  variant="h2"
-                  aggressive="button_001"
-                  color={theme.colors.gray_005}
-                >
-                  POST2
-                </Typography>
-              </LinkWrapper>
-            </S.NavigationItem>
-            <S.NavigationItem>
-              <LinkWrapper href={'/posts'}>
-                <Typography
-                  variant="h2"
-                  aggressive="button_001"
-                  color={theme.colors.gray_005}
-                >
-                  POST2
                 </Typography>
               </LinkWrapper>
             </S.NavigationItem>

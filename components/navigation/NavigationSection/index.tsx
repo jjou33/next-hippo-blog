@@ -37,7 +37,6 @@ const NavigationSection = ({ category }: { category: AllPostCategory }) => {
                     </FlexBox>
                     {Object.entries(mainCategory).map(
                       ([mainCategoryItem, subCategoryItems]) => {
-                        console.log(mainCategoryItem)
                         return (
                           <NavMainCategory
                             item={mainCategoryItem}

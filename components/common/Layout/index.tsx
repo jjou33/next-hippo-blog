@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import SideBar from 'components/navigation'
 
-import { Footer } from 'components/common'
+import { Footer, Header } from 'components/common'
 import { FlexBox } from '../StyledLayout'
 
 import { PropsWithChildren } from 'react'
 import type { AllPostCategory } from 'types/post'
+import ScrollBar from '../ScrollStateBar'
 
 interface LayoutPropsType extends PropsWithChildren {
   pageProps: {
@@ -15,9 +16,11 @@ interface LayoutPropsType extends PropsWithChildren {
 const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
   return (
     <FlexBox flexDirection="column" width="100vw">
+      <ScrollBar />
       <FlexBox>
         <SideBar category={category} />
         <ChildrenContainer>
+          <Header />
           {children}
           <Footer />
         </ChildrenContainer>

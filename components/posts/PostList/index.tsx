@@ -11,7 +11,7 @@ const PostList = props => {
       {props.isVertical ? (
         <S.AllPostContainer>
           <Typography variant="h1" aggressive="headline_oneline_001">
-            All Post
+            {`${props.rootCategory}/${props.category1depth}/${props.category2depth}`}
           </Typography>
           <Divider
             direction="horizontal"
@@ -29,7 +29,7 @@ const PostList = props => {
             aggressive="headline_oneline_002"
             color={theme.colors.gray_007}
           >
-            🧑🏼‍💻 최신 포스트
+            {`🧑🏼‍💻 ${props.rootCategory}/${props.category1depth}/${props.category2depth}`}
           </Typography>
           <Divider
             direction="horizontal"

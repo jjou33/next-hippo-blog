@@ -1,7 +1,6 @@
 import MainSection from 'components/main'
 
 import { Fragment } from 'react'
-import { Header } from 'components/common'
 import { getAllPosts, getAllPostsCategory } from 'utils/PostUtil'
 
 import type { AllPostCategory, PostData } from 'types/post'
@@ -14,7 +13,6 @@ interface RootProps {
 const RootPage = (props: RootProps) => {
   return (
     <Fragment>
-      <Header />
       <MainSection posts={props.posts} />
     </Fragment>
   )

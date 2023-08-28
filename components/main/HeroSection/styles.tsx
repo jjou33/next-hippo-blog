@@ -15,7 +15,15 @@ export const HeroWriteContainer = styled.div`
   margin: 0 auto;
   height: 100%;
 `
-export const HeroInfoContainer = styled.div`
+
+interface HeroInfoProps {
+  currentPercentage: number
+}
+export const HeroInfoContainer = styled.div.attrs<HeroInfoProps>(props => ({
+  style: {
+    opacity: `${props.currentPercentage}`,
+  },
+}))`
   width: 100%;
   height: 100%;
   /* margin: 15rem; */

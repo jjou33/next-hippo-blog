@@ -6,7 +6,7 @@ import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
 
 import { FlexBox } from 'components/common/StyledLayout'
-// import { MainIconSet } from 'public/static/icon/MainIcon'
+import { MainIconSet } from 'public/static/icon/MainIcon'
 
 import type { PostData } from 'types/post'
 
@@ -15,9 +15,9 @@ const MainContents = ({ posts }: { posts: PostData[] }) => {
     <FlexBox flexDirection="column">
       <HeroSection />
       <S.MainContainer>
-        {/* <S.WaveAnimationContainer>
+        <S.WaveAnimationContainer>
           <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
-        </S.WaveAnimationContainer> */}
+        </S.WaveAnimationContainer>
         <S.SectionContainer>
           <RecommendList />
           <ProjectSection />

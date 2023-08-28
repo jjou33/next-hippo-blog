@@ -54,12 +54,17 @@ export const LogoWrapper = styled(LinkWrapper)`
   align-items: center;
 `
 
-export const NavigationContentsWrapper = styled.nav`
+export const NavigationContentsWrapper = styled.nav<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   min-height: 78px;
+
+  span {
+    color: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+      isHeaderSticky ? 'black' : ''};
+  }
 `
 export const NavigationItem = styled.li`
   display: flex;

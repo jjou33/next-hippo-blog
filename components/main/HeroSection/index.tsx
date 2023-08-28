@@ -6,9 +6,25 @@ import ColorText from 'components/common/ColorText'
 import TypingSection from './TypingSection'
 
 import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { useEffect, useState } from 'react'
 
 const HeroSection = () => {
   const imagePath = `/static/images/heroBackground.gif`
+  const [currentPercentage, setCurrentPercentage] = useState(1)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scroll = 1 - window.scrollY / window.innerHeight
+      if (scroll <= 1 && scroll >= 0) {
+        setCurrentPercentage(scroll)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <S.HeroImageContainer>
       <Image
@@ -21,7 +37,7 @@ const HeroSection = () => {
           filter: 'brightness(50%)',
         }}
       />
-      <S.HeroInfoContainer>
+      <S.HeroInfoContainer currentPercentage={currentPercentage}>
         <FlexBox
           flexDirection="column"
           alignItems="center"
