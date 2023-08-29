@@ -1,5 +1,5 @@
 import { FlexBox } from 'components/common/StyledLayout'
-
+import PostCategoryList from 'components/posts/PostCategoryList'
 import PostList from 'components/posts/PostList'
 import {
   getAllPostsCategory,
@@ -10,7 +10,7 @@ import {
 const PostCategoryListPage = props => {
   return (
     <FlexBox flexDirection="column">
-      <PostList posts={props.posts} />
+      <PostCategoryList posts={props.posts} />
     </FlexBox>
   )
 }
@@ -30,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
   const slugs = getSlugByParams()
 
   return {

@@ -16,28 +16,9 @@ export const HeroWriteContainer = styled.div`
   height: 100%;
 `
 
-interface HeroInfoProps {
-  currentPercentage: number
-}
-export const HeroInfoContainer = styled.div.attrs<HeroInfoProps>(props => ({
-  style: {
-    opacity: `${props.currentPercentage}`,
-  },
-}))`
-  width: 100%;
-  height: 100%;
-  /* margin: 15rem; */
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-`
-
 export const HeroImageContainer = styled.div`
   position: fixed;
   height: 100vh;
-  overflow: hidden;
   width: 100%;
 
   @media screen and (min-width: 1300px) {
@@ -111,3 +92,21 @@ export const MouseIndicator = styled.div`
   }
 `
 export const HeroMoveItemContainer = styled.div``
+
+interface HeroInfoProps {
+  currentPercentage: number
+}
+export const HeroInfoContainer = styled.div.attrs<HeroInfoProps>(props => ({
+  style: {
+    opacity: `${props.currentPercentage}`,
+  },
+}))`
+  width: 100%;
+  height: 100%;
+  /* margin: 15rem; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+`

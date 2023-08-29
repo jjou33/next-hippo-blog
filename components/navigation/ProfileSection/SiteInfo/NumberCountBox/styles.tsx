@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const CountContainer = styled.div`
   display: flex;
@@ -8,8 +8,11 @@ export const CountContainer = styled.div`
   justify-content: center;
   width: 70px;
   height: 60px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 10px;
+  background-color: white;
+  z-index: 3;
+  box-shadow: 5px 5px 16px 25px rgba(0, 0, 0, 0.1);
 `
 
 export const CountNameBox = styled.div`

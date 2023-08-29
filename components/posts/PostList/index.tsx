@@ -5,13 +5,15 @@ import * as S from './styles'
 
 import HorizonGrid from './HorizonGrid'
 import VerticalGrid from './VerticalGrid'
+
 const PostList = props => {
+  const imagePath = `/static/images/heroBackground.gif`
   return (
     <S.PostListContainer>
       {props.isVertical ? (
         <S.AllPostContainer>
           <Typography variant="h1" aggressive="headline_oneline_001">
-            {`${props.rootCategory}/${props.category1depth}/${props.category2depth}`}
+            {`${props.posts.rootCategory}/${props.category1depth}/${props.category2depth}`}
           </Typography>
           <Divider
             direction="horizontal"
@@ -23,13 +25,13 @@ const PostList = props => {
           <VerticalGrid posts={props.posts} />
         </S.AllPostContainer>
       ) : (
-        <S.PostListContainer>
+        <S.AllPostContainer>
           <Typography
-            variant="h2"
-            aggressive="headline_oneline_002"
-            color={theme.colors.gray_007}
+            variant="h1"
+            aggressive="headline_oneline_001"
+            color={theme.colors.gray_002}
           >
-            {`🧑🏼‍💻 ${props.rootCategory}/${props.category1depth}/${props.category2depth}`}
+            Algorithm (DFS)
           </Typography>
           <Divider
             direction="horizontal"
@@ -39,9 +41,8 @@ const PostList = props => {
             color={theme.colors.gray_002}
           />
           <HorizonGrid posts={props.posts} />
-        </S.PostListContainer>
+        </S.AllPostContainer>
       )}
-      {/* <PostGrid posts={props.posts} /> */}
     </S.PostListContainer>
   )
 }

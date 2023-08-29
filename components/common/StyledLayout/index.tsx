@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { CSSProperties } from 'react'
 
@@ -102,43 +102,38 @@ export const StyledBadgeBox = styled.div<CSSProperties>`
   margin: ${({ margin }) => margin};
 `
 
-const ColorStyle = keyframes`
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 `
-export const ColorContainerStyle = css`
-  background: white;
+export const ColorBorderBox = styled.div`
+  padding: 2px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 150%;
+    background: linear-gradient(#00ccff, #d500f9);
+    animation: ${rotate} 5s linear infinite;
+  }
 
   &::after {
     content: '';
     position: absolute;
-    top: calc(-1 * 3px);
-    left: calc(-1 * 3px);
-    height: calc(100% + 3px * 2);
-    width: calc(100% + 3px * 2);
-    background: linear-gradient(
-      60deg,
-      #f79533,
-      #f37055,
-      #ef4e7b,
-      #a166ab,
-      #5073b8,
-      #1098ad,
-      #07b39b,
-      #6fba82
-    );
+    background: #2b2e47;
+    inset: 5px;
     border-radius: 10px;
-    z-index: -1;
-    animation: ${ColorStyle} 3s ease alternate infinite;
-    background-size: 300% 300%;
   }
 `
