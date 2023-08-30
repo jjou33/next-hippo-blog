@@ -32,7 +32,7 @@ const NavMainCategory = ({ children, item, count }: MainCategoryProps) => {
 
         <Typography
           variant="span"
-          aggressive="montserratAlternates_medium_002"
+          aggressive="montserratAlternates_Regular_002"
           color={theme.colors.gray_005}
         >
           {item}

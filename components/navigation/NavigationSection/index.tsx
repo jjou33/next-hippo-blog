@@ -29,7 +29,7 @@ const NavigationSection = ({ category }: { category: AllPostCategory }) => {
                       </IconBox>
                       <Typography
                         variant="span"
-                        aggressive="montserratAlternates_medium_001"
+                        aggressive="montserratAlternates_Regular_001"
                         color={theme.colors.gray_004}
                       >
                         {rootCategory}

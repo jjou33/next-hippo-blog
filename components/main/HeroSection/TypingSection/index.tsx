@@ -26,7 +26,7 @@ const TypingSection = () => {
       <S.HeroWriteContainer>
         <Typography
           variant="h2"
-          aggressive="montserratAlternates_Bold_002"
+          aggressive="montserratAlternates_Medium_002"
           color={theme.colors.gray_001}
         >
           Favorite Language
@@ -35,12 +35,12 @@ const TypingSection = () => {
           direction="horizontal"
           width="100%"
           height="1px"
-          margin="1rem 0 1rem 0"
+          margin="0.1rem 0 0.1rem 0"
           color={theme.colors.gray_002}
         />
         <Typography
           variant="h3"
-          aggressive="montserratAlternates_Bold_003"
+          aggressive="montserratAlternates_Medium_002"
           color={theme.colors.primary_005}
         >
           : {currentTitle}

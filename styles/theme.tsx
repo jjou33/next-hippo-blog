@@ -268,21 +268,42 @@ const theme: DefaultTheme = {
       spacing: -0.6,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
-    montserratAlternates_medium_001: fontStyleGenerator({
+    montserratAlternates_Medium_001: fontStyleGenerator({
+      weight: 500,
+      size: 60,
+      height: 65,
+      spacing: -1,
+      fontFamily: ` ${montserratAlternates.style.fontFamily}`,
+    }),
+    montserratAlternates_Medium_002: fontStyleGenerator({
+      weight: 500,
+      size: 32,
+      height: 36,
+      spacing: -1,
+      fontFamily: ` ${montserratAlternates.style.fontFamily}`,
+    }),
+    montserratAlternates_Medium_003: fontStyleGenerator({
+      weight: 500,
+      size: 24,
+      height: 28,
+      spacing: -1,
+      fontFamily: ` ${montserratAlternates.style.fontFamily}`,
+    }),
+    montserratAlternates_Regular_001: fontStyleGenerator({
       weight: 400,
       size: 15,
       height: 15,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
-    montserratAlternates_medium_002: fontStyleGenerator({
+    montserratAlternates_Regular_002: fontStyleGenerator({
       weight: 400,
       size: 14,
       height: 13,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
-    montserratAlternates_medium_003: fontStyleGenerator({
+    montserratAlternates_Regular_003: fontStyleGenerator({
       weight: 400,
       size: 13,
       height: 13,

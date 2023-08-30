@@ -31,7 +31,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
 
               <Typography
                 variant="span"
-                aggressive="montserratAlternates_medium_003"
+                aggressive="montserratAlternates_Regular_003"
                 color={theme.colors.gray_005}
               >
                 {value}

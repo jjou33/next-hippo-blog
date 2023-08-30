@@ -1,7 +1,6 @@
 import * as S from './styles'
 
 import HeroSection from './HeroSection'
-import PostList from '../posts/PostList'
 import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
 
@@ -9,6 +8,7 @@ import { FlexBox } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon/MainIcon'
 
 import type { PostData } from 'types/post'
+import PostListSection from './PostListSection'
 
 const MainContents = ({ posts }: { posts: PostData[] }) => {
   return (
@@ -21,7 +21,8 @@ const MainContents = ({ posts }: { posts: PostData[] }) => {
         <S.SectionContainer>
           <RecommendList />
           <ProjectSection />
-          <PostList posts={posts} />
+          <PostListSection posts={posts} />
+          {/* <PostList posts={posts} /> */}
         </S.SectionContainer>
       </S.MainContainer>
     </FlexBox>

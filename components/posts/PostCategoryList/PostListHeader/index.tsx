@@ -1,16 +1,16 @@
 import * as S from './styles'
 import Image from 'next/image'
 import theme from 'styles/theme'
-import { Badge, Typography } from 'components/common'
+import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
 import FlyingAirplaneLottie from 'components/common/Lottie/FlyingAirplane'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
-import WaveAnimation from 'components/common/WaveAnimation'
 import { IndicatorLottie } from 'components/common/Lottie'
 
-const PostListHeader = props => {
-  console.log('props2 : ', props.posts)
+const PostListHeader = ({ categoryId, mainCategory }) => {
+  console.log('props2 : ', categoryId)
   const imagePath = `/static/images/next1.jpg`
+
   return (
     <S.HeroImageContainer>
       <FlexBox
@@ -36,65 +36,48 @@ const PostListHeader = props => {
           <MotionShowBox showDirection="down">
             <Typography
               variant="h3"
-              aggressive="montserratAlternates_Bold_001"
+              aggressive="montserratAlternates_Medium_001"
               color={theme.colors.gray_000}
-              align="center"
             >
-              Look Arround About
+              Look Arround
             </Typography>
             <Typography
               variant="span"
-              aggressive="montserratAlternates_Bold_001"
+              aggressive="montserratAlternates_Medium_001"
               color={theme.colors.primary_008}
+              // align="center"
             >
-              Algrithm (DFS)
+              {`${mainCategory} / ${categoryId}`}
             </Typography>
+            {/* <FlexBox gap="1rem">
+              <Typography
+                variant="span"
+                aggressive="montserratAlternates_Medium_001"
+                color={theme.colors.gray_000}
+                // align="center"
+              >
+                About
+              </Typography>
+              <Typography
+                variant="span"
+                aggressive="montserratAlternates_Medium_001"
+                color={theme.colors.primary_008}
+                // align="center"
+              >
+                {`${mainCategory} / ${categoryId}`}
+              </Typography>
+            </FlexBox> */}
           </MotionShowBox>
           <Divider
             direction="horizontal"
             width="100%"
             height="1px"
-            margin="20px 0 16px 0"
+            margin="20px 0 10px 0"
             color={theme.colors.gray_002}
           />
           <S.BookOpenerLottieWrapper>
             <FlyingAirplaneLottie />
           </S.BookOpenerLottieWrapper>
-          {/* <FlexBox margin="0 auto" padding="5px" gap="6rem">
-            <MotionShowBox showDirection="down">
-              <Badge
-                borderRadius="20px"
-                backgroundColor={theme.colors.primary_003}
-                aggressive="body_multiline_003"
-                padding="10px"
-                margin="15px auto"
-              >
-                {'DFS'}
-              </Badge>
-            </MotionShowBox>
-            <MotionShowBox showDirection="down" delay={1}>
-              <Badge
-                borderRadius="20px"
-                backgroundColor={theme.colors.primary_003}
-                aggressive="body_multiline_003"
-                padding="10px"
-                margin="15px auto"
-              >
-                {'DFS'}
-              </Badge>
-            </MotionShowBox>
-            <MotionShowBox showDirection="down" delay={2}>
-              <Badge
-                borderRadius="20px"
-                backgroundColor={theme.colors.primary_003}
-                aggressive="body_multiline_003"
-                padding="10px"
-                margin="15px auto"
-              >
-                {'DFS'}
-              </Badge>
-            </MotionShowBox>
-          </FlexBox> */}
         </FlexBox>
         <FlexBox justifyContent="center" margin="5rem 0 0 0">
           <S.IndicatorWrapper>

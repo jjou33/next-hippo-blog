@@ -58,9 +58,12 @@ declare module 'styled-components' {
       montserratAlternates_Bold_001: FlattenSimpleInterpolation
       montserratAlternates_Bold_002: FlattenSimpleInterpolation
       montserratAlternates_Bold_003: FlattenSimpleInterpolation
-      montserratAlternates_medium_001: FlattenSimpleInterpolation
-      montserratAlternates_medium_002: FlattenSimpleInterpolation
-      montserratAlternates_medium_003: FlattenSimpleInterpolation
+      montserratAlternates_Medium_001: FlattenSimpleInterpolation
+      montserratAlternates_Medium_002: FlattenSimpleInterpolation
+      montserratAlternates_Medium_003: FlattenSimpleInterpolation
+      montserratAlternates_Regular_001: FlattenSimpleInterpolation
+      montserratAlternates_Regular_002: FlattenSimpleInterpolation
+      montserratAlternates_Regular_003: FlattenSimpleInterpolation
       montserratAlternates_light: FlattenSimpleInterpolation
     }
   }

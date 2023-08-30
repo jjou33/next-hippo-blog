@@ -13,6 +13,11 @@ export const montserratAlternates = localFont({
       style: 'normal',
     },
     {
+      path: '../MontserratAlternates/MontserratAlternates-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
       path: '../MontserratAlternates/MontserratAlternates-Bold.woff2',
       weight: '700',
       style: 'normal',

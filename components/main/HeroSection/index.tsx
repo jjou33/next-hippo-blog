@@ -47,7 +47,7 @@ const HeroSection = () => {
         >
           <ColorText
             text="Welcome To Hippo Dev Blog !"
-            aggressive="montserratAlternates_Bold_001"
+            aggressive="montserratAlternates_Medium_001"
           />
 
           <Divider
