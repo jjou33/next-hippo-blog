@@ -15,7 +15,7 @@ export const Container = styled.header<HeaderProps>`
   left: 0;
   z-index: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
     isHeaderSticky ? 2 : 1};
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   @media screen and (min-width: 1300px) {
     width: calc(100vw - 280px);
@@ -62,8 +62,21 @@ export const NavigationContentsWrapper = styled.nav<HeaderProps>`
   min-height: 78px;
 
   span {
-    color: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
-      isHeaderSticky ? 'black' : ''};
+    ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+      isHeaderSticky
+        ? css`
+            color: black;
+            padding: 0;
+          `
+        : css`
+            padding: 0 2rem;
+          `};
+  }
+
+  @media screen and (max-width: 768px) {
+    * {
+      font-size: 15px;
+    }
   }
 `
 export const NavigationItem = styled.li`
@@ -93,5 +106,21 @@ export const HeaderItemTitle = styled.div`
   @media screen and (max-width: 768px) {
     font-size: 20px;
     padding-left: 0px;
+  }
+`
+export const NavBarButtonWrapper = styled.div`
+  position: absolute;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: wheat;
+  border-radius: 30%;
+  padding-top: 2.5px;
+  left: -25px;
+  top: 24px;
+  cursor: pointer;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
   }
 `

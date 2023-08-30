@@ -1,18 +1,28 @@
 import * as S from './styles'
 
-import Typography from '../Typography'
 import theme from 'styles/theme'
+import Typography from '../Typography'
+import MenuOpenLottie from '../Lottie/bookOpener'
 
 import { UnorderList, LinkWrapper } from 'components/common/StyledLayout'
-
 import { useHeaderSticky } from 'hooks/useHeaderSticky'
+import { useSetRecoilState } from 'recoil'
+import { menuOpenState } from 'states/menuOpenState'
+
 const Header = () => {
   const isHeaderSticky = useHeaderSticky()
-
+  const setMenuState = useSetRecoilState(menuOpenState)
+  const NavigationHandler = () => {
+    setMenuState((menuOpenState: boolean) => !menuOpenState)
+  }
   return (
     <S.Container isHeaderSticky={isHeaderSticky}>
       <S.HeaderWrapper isHeaderSticky={isHeaderSticky}>
         <S.NavigationContentsWrapper isHeaderSticky={isHeaderSticky}>
+          <S.NavBarButtonWrapper onClick={NavigationHandler}>
+            <MenuOpenLottie />
+          </S.NavBarButtonWrapper>
+
           <S.LogoWrapper href={'/'} hrefLang={'ko'}>
             <Typography
               variant="span"

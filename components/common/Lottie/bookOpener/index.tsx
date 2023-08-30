@@ -1,8 +1,8 @@
 import Lottie from 'lottie-react'
-import bookOpenMotionJSON from './bookOpener.json'
+import menuOpenMotionJSON from './menu.json'
 
-const bookOpenerLottie = () => {
-  return <Lottie animationData={bookOpenMotionJSON} loop={true} />
+const MenuOpenLottie = () => {
+  return <Lottie animationData={menuOpenMotionJSON} loop={true} />
 }
 
-export default bookOpenerLottie
+export default MenuOpenLottie
