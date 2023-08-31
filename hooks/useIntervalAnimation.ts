@@ -104,21 +104,16 @@ export const useTypingTitle = (typedList: string[]) => {
 
 export const useImageIndexSlider = (
   images: Array<string>,
-): { currentImage: number; visible: boolean } => {
-  const [currentImage, setCurrentImage] = useState<number>(0)
-  const [visible, setVisible] = useState(true)
+): { currentImage: number } => {
+  const [currentImage, setCurrentImage] = useState(0)
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisible(false) // 이미지 사라지는 페이드 아웃 효과
-
-      setTimeout(() => {
-        setCurrentImage((currentImage + 1) % images.length) // 다음 이미지로 변경
-        setVisible(true) // 이미지 나타나는 페이드 인 효과
-      }, 1000) // 페이드 아웃 후 이미지 변경까지의 시간
-    }, 5000) // 이미지 변경 간격
+      setCurrentImage(prevImage => (prevImage + 1) % images.length)
+    }, 6000) // 8초마다 이미지 변경
 
     return () => clearInterval(interval)
-  }, [currentImage])
+  }, [])
 
-  return { currentImage, visible }
+  return currentImage
 }
