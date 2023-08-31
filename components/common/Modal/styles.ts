@@ -27,7 +27,8 @@ export const ModalOverlay = styled.div<{ visible: boolean }>`
 
 export const ModalInner = styled.div`
   position: relative;
-  top: 50px;
+  background: white;
+  width: 300px;
 `
 
 export const CloseButton = styled.div`

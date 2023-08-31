@@ -3,12 +3,11 @@ import Image from 'next/image'
 import theme from 'styles/theme'
 import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
-import FlyingAirplaneLottie from 'components/common/Lottie/FlyingAirplane'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import { IndicatorLottie } from 'components/common/Lottie'
+import { FireCrackerDynamicLottie } from 'components/common/Lottie/FireCracker'
 
 const PostListHeader = ({ categoryId, mainCategory }) => {
-  console.log('props2 : ', categoryId)
   const imagePath = `/static/images/next1.jpg`
 
   return (
@@ -33,6 +32,9 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
         />
 
         <FlexBox flexDirection="column" position="absolute" margin="0 auto">
+          <S.FlyingLottieWrapper>
+            <FireCrackerDynamicLottie />
+          </S.FlyingLottieWrapper>
           <MotionShowBox showDirection="down">
             <Typography
               variant="h3"
@@ -47,26 +49,8 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
               color={theme.colors.primary_008}
               // align="center"
             >
-              {`${mainCategory} / ${categoryId}`}
+              {categoryId ? `${mainCategory} / ${categoryId}` : `All Post 📚`}
             </Typography>
-            {/* <FlexBox gap="1rem">
-              <Typography
-                variant="span"
-                aggressive="montserratAlternates_Medium_001"
-                color={theme.colors.gray_000}
-                // align="center"
-              >
-                About
-              </Typography>
-              <Typography
-                variant="span"
-                aggressive="montserratAlternates_Medium_001"
-                color={theme.colors.primary_008}
-                // align="center"
-              >
-                {`${mainCategory} / ${categoryId}`}
-              </Typography>
-            </FlexBox> */}
           </MotionShowBox>
           <Divider
             direction="horizontal"
@@ -75,9 +59,6 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
             margin="20px 0 10px 0"
             color={theme.colors.gray_002}
           />
-          <S.BookOpenerLottieWrapper>
-            <FlyingAirplaneLottie />
-          </S.BookOpenerLottieWrapper>
         </FlexBox>
         <FlexBox justifyContent="center" margin="5rem 0 0 0">
           <S.IndicatorWrapper>

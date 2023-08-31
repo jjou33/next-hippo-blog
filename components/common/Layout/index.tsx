@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import SideBar from 'components/navigation'
+import ScrollBar from '../ScrollStateBar'
+import Modal from '../Modal'
 
 import { Footer, Header } from 'components/common'
 import { FlexBox } from '../StyledLayout'
-
 import { PropsWithChildren } from 'react'
+
 import type { AllPostCategory } from 'types/post'
-import ScrollBar from '../ScrollStateBar'
 
 interface LayoutPropsType extends PropsWithChildren {
   pageProps: {
@@ -21,6 +22,9 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
         <SideBar category={category} />
         <ChildrenContainer>
           <Header />
+          <Modal>
+            <SideBar category={category} isModal={true} />
+          </Modal>
           {children}
           <Footer />
         </ChildrenContainer>

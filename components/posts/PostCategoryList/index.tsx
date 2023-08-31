@@ -4,18 +4,20 @@ import PostListHeader from './PostListHeader'
 import WaveAnimation from 'components/common/WaveAnimation'
 import { Typography } from 'components/common'
 import theme from 'styles/theme'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { FlexBox } from 'components/common/StyledLayout'
 import { useRouter } from 'next/router'
 import IconBox from 'components/common/IconBox'
 import { NavigationIconSet } from 'public/static/icon'
 
 const PostCategoryList = props => {
-  const { query } = useRouter()
+  const {
+    query: { categoryId },
+  } = useRouter()
 
   return (
     <>
       <PostListHeader
-        categoryId={query.categoryId}
+        categoryId={categoryId}
         mainCategory={props.posts[0].category1depth}
       />
       <S.PostCategoryContainer>
@@ -23,7 +25,9 @@ const PostCategoryList = props => {
         <S.AllPostContainer>
           <FlexBox justifyContent="center" gap="0.5rem" alignItems="center">
             <IconBox width="43px" height="43px">
-              {NavigationIconSet[`${query.categoryId}`].icon()}
+              {NavigationIconSet[
+                `${categoryId ? categoryId : 'PostList'}`
+              ].icon()}
             </IconBox>
             <Typography
               variant="h2"
@@ -31,17 +35,10 @@ const PostCategoryList = props => {
               color={theme.colors.primary_008}
               align="center"
             >
-              {query.categoryId}
+              {categoryId ? categoryId : '모든 포스트'}
             </Typography>
           </FlexBox>
           <S.CustomDivider />
-          {/* <Divider
-            direction="horizontal"
-            width="50%"
-            height="1px"
-            margin="2rem auto 5rem "
-            color={theme.colors.gray_002}
-          /> */}
           <PostList posts={props.posts} />
         </S.AllPostContainer>
       </S.PostCategoryContainer>

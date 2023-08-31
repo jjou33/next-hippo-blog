@@ -11,6 +11,7 @@ import { menuOpenState } from 'states/menuOpenState'
 
 const Header = () => {
   const isHeaderSticky = useHeaderSticky()
+
   const setMenuState = useSetRecoilState(menuOpenState)
   const NavigationHandler = () => {
     setMenuState((menuOpenState: boolean) => !menuOpenState)

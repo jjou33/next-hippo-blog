@@ -1,13 +1,23 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const SideNavContainer = styled.div`
+export const SideNavContainer = styled.div<{ isModal: boolean }>`
   display: flex;
   flex-direction: column;
   position: relative;
 
-  @media screen and (max-width: 1300px) {
-    display: none;
-  }
+  ${({ isModal }) =>
+    isModal
+      ? css`
+          @media screen and (min-width: 1300px) {
+            display: none;
+            background-color: white;
+          }
+        `
+      : css`
+          @media screen and (max-width: 1300px) {
+            display: none;
+          }
+        `}
 `
 
 export const SideNavWrapper = styled.aside`

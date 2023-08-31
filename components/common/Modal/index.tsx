@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
@@ -10,6 +10,21 @@ interface DimmedModalPropsType {
   children: React.ReactNode
 }
 const Modal = ({ children }: DimmedModalPropsType) => {
+  const setMenuState = useSetRecoilState(menuOpenState)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1300) {
+        setMenuState(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+
   const state = useRecoilValue<boolean>(menuOpenState)
   const setState = useSetRecoilState(menuOpenState)
 

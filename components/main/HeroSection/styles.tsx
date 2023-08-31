@@ -1,5 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 
+export const ImageContainer = styled.div<{ visible: boolean }>`
+  transition: opacity 0.5s ease-in-out; /* 페이드 인/아웃 트랜지션 설정 */
+  opacity: ${props =>
+    props.visible ? 1 : 0}; //현재 이미지가 보일지 여부에 따라 투명도 조절
+`
+
 export const IndicatorContainer = styled.div`
   width: 10rem;
   height: 10rem;
@@ -92,6 +98,15 @@ export const MouseIndicator = styled.div`
   }
 `
 export const HeroMoveItemContainer = styled.div``
+
+export const FireCrackerWrapper = styled.div`
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+`
 
 interface HeroInfoProps {
   currentPercentage: number

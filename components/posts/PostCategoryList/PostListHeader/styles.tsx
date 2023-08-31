@@ -55,11 +55,18 @@ export const TextAnimatedBox = styled.div`
   }
 `
 
-export const BookOpenerLottieWrapper = styled.div`
+export const FlyingLottieWrapper = styled.div`
   position: absolute;
-  width: 200px;
-  height: 200px;
-  right: 20rem;
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  @media screen and (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+  }
 `
 
 export const IndicatorWrapper = styled.div`

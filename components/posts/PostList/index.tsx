@@ -1,5 +1,3 @@
-import { Typography } from 'components/common'
-import { Divider } from 'components/common/StyledLayout'
 import * as S from './styles'
 
 import HorizonGrid from './HorizonGrid'

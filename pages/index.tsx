@@ -1,9 +1,11 @@
 import MainSection from 'components/main'
 
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { getAllPosts, getAllPostsCategory } from 'utils/PostUtil'
 
 import type { AllPostCategory, PostData } from 'types/post'
+import { useSetRecoilState } from 'recoil'
+import { categoryState } from 'states/categoryState'
 
 interface RootProps {
   posts: PostData[]
@@ -11,6 +13,12 @@ interface RootProps {
 }
 
 const RootPage = (props: RootProps) => {
+  const setCategoryInfo = useSetRecoilState(categoryState)
+
+  useEffect(() => {
+    setCategoryInfo(props.category)
+  })
+
   return (
     <Fragment>
       <MainSection posts={props.posts} />

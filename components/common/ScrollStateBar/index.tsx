@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useScrollStateBar } from 'hooks/useScrollStateBar'
+import { useScrollStateBar } from 'hooks/useScrollAnimation'
 
 const ScrollBar = () => {
   const scroll = useScrollStateBar()

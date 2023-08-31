@@ -5,38 +5,38 @@ import theme from 'styles/theme'
 import ColorText from 'components/common/ColorText'
 import TypingSection from './TypingSection'
 
+import { useChangeOpacityByScroll } from 'hooks/useScrollAnimation'
+import { useImageIndexSlider } from 'hooks/useIntervalAnimation'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
-import { useEffect, useState } from 'react'
+import { FireCrackerDynamicLottie } from 'components/common/Lottie/FireCracker'
 
 const HeroSection = () => {
-  const imagePath = `/static/images/heroBackground.gif`
-  const [currentPercentage, setCurrentPercentage] = useState(1)
-  useEffect(() => {
-    const handleScroll = () => {
-      const scroll = 1 - window.scrollY / window.innerHeight
-      if (scroll <= 1 && scroll >= 0) {
-        setCurrentPercentage(scroll)
-      }
-    }
+  const images = [
+    '/static/images/landing.jpg',
+    '/static/images/landing2.jpg',
+    '/static/images/landing3.jpg',
+  ]
 
-    window.addEventListener('scroll', handleScroll)
+  const currentPercentage = useChangeOpacityByScroll()
+  const { currentImage, visible } = useImageIndexSlider(images)
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
   return (
     <S.HeroImageContainer>
-      <Image
-        src={imagePath}
-        alt={'alt'}
-        fill
-        style={{
-          // objectFit: 'cover',
-          zIndex: '-1',
-          filter: 'brightness(50%)',
-        }}
-      />
+      <S.ImageContainer visible={visible}>
+        <Image
+          src={images[currentImage]}
+          alt={'alt'}
+          fill
+          style={{
+            objectFit: 'cover',
+            zIndex: '-1',
+            filter: 'brightness(50%)',
+          }}
+        />
+      </S.ImageContainer>
+      <S.FireCrackerWrapper>
+        <FireCrackerDynamicLottie />
+      </S.FireCrackerWrapper>
       <S.HeroInfoContainer currentPercentage={currentPercentage}>
         <FlexBox
           flexDirection="column"

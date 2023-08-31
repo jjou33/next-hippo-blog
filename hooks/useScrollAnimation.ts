@@ -23,3 +23,23 @@ export const useScrollStateBar = () => {
 
   return scroll
 }
+
+export const useChangeOpacityByScroll = () => {
+  const [currentPercentage, setCurrentPercentage] = useState(1)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scroll = 1 - window.scrollY / window.innerHeight
+      if (scroll <= 1 && scroll >= 0) {
+        setCurrentPercentage(scroll)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  return currentPercentage
+}

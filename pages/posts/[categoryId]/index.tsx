@@ -1,6 +1,5 @@
 import { FlexBox } from 'components/common/StyledLayout'
 import PostCategoryList from 'components/posts/PostCategoryList'
-import PostList from 'components/posts/PostList'
 import {
   getAllPostsCategory,
   getCategoryPosts,

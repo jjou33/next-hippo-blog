@@ -5,9 +5,15 @@ import ProfileSection from './ProfileSection'
 
 import type { AllPostCategory } from 'types/post'
 
-const Navigation = ({ category }: { category: AllPostCategory }) => {
+const Navigation = ({
+  category,
+  isModal,
+}: {
+  category: AllPostCategory
+  isModal?: boolean
+}) => {
   return (
-    <S.SideNavContainer>
+    <S.SideNavContainer isModal={isModal}>
       <S.SideNavWrapper>
         <ProfileSection />
         <NavigationSection category={category} />

@@ -4,6 +4,7 @@ import GlobalStyle from '../styles/GlobalStyle'
 import isPropValid from '@emotion/is-prop-valid'
 
 import { StyleSheetManager, ThemeProvider } from 'styled-components'
+import { RecoilRoot } from 'recoil'
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -17,9 +18,11 @@ const App = ({ Component, pageProps }) => {
     >
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Layout pageProps={...pageProps}>
-          <Component {...pageProps} />
-        </Layout>
+        <RecoilRoot>
+          <Layout pageProps={...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </RecoilRoot>
       </ThemeProvider>
     </StyleSheetManager>
   )
