@@ -2,11 +2,8 @@ import * as S from './styles'
 
 import theme from 'styles/theme'
 
-import { Divider } from 'components/common/StyledLayout'
 import { Typography } from 'components/common'
 import { useTypingTitle } from 'hooks/useTypingTitle'
-import { LandingLottie } from 'components/common/Lottie'
-import MotionShowBox from 'components/common/Motion/MotionShowBox'
 
 const TypingSection = () => {
   const currentTitle = useTypingTitle([
@@ -18,11 +15,11 @@ const TypingSection = () => {
   ])
   return (
     <S.Container>
-      <MotionShowBox showDirection={'down'}>
+      {/* <MotionShowBox showDirection={'down'}>
         <S.HeroMoveImageContainer>
           <LandingLottie />
         </S.HeroMoveImageContainer>
-      </MotionShowBox>
+      </MotionShowBox> */}
       <S.HeroWriteContainer>
         <Typography
           variant="h2"
@@ -31,13 +28,6 @@ const TypingSection = () => {
         >
           Favorite Language
         </Typography>
-        <Divider
-          direction="horizontal"
-          width="100%"
-          height="1px"
-          margin="0.1rem 0 0.1rem 0"
-          color={theme.colors.gray_002}
-        />
         <Typography
           variant="h3"
           aggressive="montserratAlternates_Medium_002"

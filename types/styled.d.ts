@@ -23,6 +23,12 @@ declare module 'styled-components' {
       primary_008: '#FF9E00'
       primary_009: '#FF8D00'
       primary_010: '#FF6C00'
+      subPrimary_001: '#beecd3'
+      subPrimary_002: '#86CCBB'
+      subPrimary_003: '#66AAA8'
+      subPrimary_004: '#4E8891'
+      subPrimary_005: '#3D6776'
+      subPrimary_006: '#2F4858'
       error: '#F04700'
       success: '#44927F'
     }
@@ -41,6 +47,7 @@ declare module 'styled-components' {
       body_oneline_003: FlattenSimpleInterpolation
       body_oneline_004: FlattenSimpleInterpolation
       body_oneline_005: FlattenSimpleInterpolation
+      body_oneline_006: FlattenSimpleInterpolation
       body_multiline_000: FlattenSimpleInterpolation
       body_multiline_001: FlattenSimpleInterpolation
       body_multiline_002: FlattenSimpleInterpolation

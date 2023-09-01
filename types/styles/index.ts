@@ -14,6 +14,7 @@ export interface AggressivePropsType {
     | 'body_oneline_003'
     | 'body_oneline_004'
     | 'body_oneline_005'
+    | 'body_oneline_006'
     | 'body_multiline_000'
     | 'body_multiline_001'
     | 'body_multiline_002'

@@ -102,9 +102,7 @@ export const useTypingTitle = (typedList: string[]) => {
   return typeTitle
 }
 
-export const useImageIndexSlider = (
-  images: Array<string>,
-): { currentImage: number } => {
+export const useImageIndexSlider = (images: Array<string>): number => {
   const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {

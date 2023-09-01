@@ -1,9 +1,21 @@
-import styled, { keyframes } from 'styled-components'
+import Image from 'next/image'
+import styled, { css, keyframes } from 'styled-components'
 
-export const ImageContainer = styled.div<{ visible: boolean }>`
-  transition: opacity 0.5s ease-in-out; /* 페이드 인/아웃 트랜지션 설정 */
-  opacity: ${props =>
-    props.visible ? 1 : 0}; //현재 이미지가 보일지 여부에 따라 투명도 조절
+export const StyledImage = styled(Image)<{ selected: boolean }>`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  filter: brightness(50%);
+  ${({ selected }) => {
+    if (selected) {
+      return css`
+        opacity: 1;
+      `
+    }
+  }};
+  transition: opacity 3s;
 `
 
 export const IndicatorContainer = styled.div`
@@ -103,7 +115,7 @@ export const FireCrackerWrapper = styled.div`
   position: absolute;
   width: 150px;
   height: 150px;
-  top: 0%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, 0%);
 `

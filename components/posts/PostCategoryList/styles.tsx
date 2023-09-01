@@ -21,9 +21,8 @@ export const PostListWrapper = styled.div`
 `
 
 export const AllPostContainer = styled.section`
-  margin: 20px auto;
+  margin: 9rem auto 0;
   min-height: calc(100vh - 258px);
-  margin-top: 9rem;
   padding: 0 2rem;
   @media screen and (min-width: 1000px) {
     width: 960px;

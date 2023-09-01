@@ -5,7 +5,6 @@ import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import { IndicatorLottie } from 'components/common/Lottie'
-import { FireCrackerDynamicLottie } from 'components/common/Lottie/FireCracker'
 
 const PostListHeader = ({ categoryId, mainCategory }) => {
   const imagePath = `/static/images/next1.jpg`
@@ -32,9 +31,6 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
         />
 
         <FlexBox flexDirection="column" position="absolute" margin="0 auto">
-          <S.FlyingLottieWrapper>
-            <FireCrackerDynamicLottie />
-          </S.FlyingLottieWrapper>
           <MotionShowBox showDirection="down">
             <Typography
               variant="h3"

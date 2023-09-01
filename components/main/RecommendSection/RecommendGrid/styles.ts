@@ -11,15 +11,12 @@ const scroll = keyframes`
 `
 export const SliderTrack = styled.div`
   display: flex;
-  animation: ${scroll} 20s linear infinite;
-
-  /* gap: 100px; */
+  animation: ${scroll} 40s linear infinite;
 `
 
 export const SliderContainer = styled.div`
   display: flex;
   position: relative;
-  /* margin: 20px auto; */
   place-items: center;
   width: 100%;
   overflow: hidden;

@@ -23,11 +23,11 @@ export const HeroWriteContainer = styled.div`
 `
 
 export const HeroMoveImageContainer = styled.div`
-  flex: 1;
+  /* flex: 1; */
   position: relative;
-  padding-top: 3rem;
-  width: 450px;
-  height: 300px;
+  /* padding-top: 3rem; */
+  width: 220px;
+  height: 150px;
 
   @media screen and (max-width: 960px) {
     display: none;

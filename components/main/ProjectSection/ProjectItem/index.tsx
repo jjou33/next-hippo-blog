@@ -41,16 +41,18 @@ const ProjectItem = ({ imagePath, title }: ProjectItemProps) => {
             <FlexBox gap="1rem" margin="10px 0 0 10px">
               <Badge
                 borderRadius="2rem"
-                backgroundColor={theme.colors.primary_005}
-                aggressive="body_multiline_003"
+                backgroundColor={theme.colors.subPrimary_001}
+                aggressive="body_oneline_006"
                 padding="5px 10px 5px 10px"
+                color={theme.colors.subPrimary_004}
               >
-                Badge1
+                알고리즘
               </Badge>
               <Badge
                 borderRadius="2rem"
-                backgroundColor={theme.colors.primary_005}
-                aggressive="body_multiline_003"
+                backgroundColor={theme.colors.subPrimary_001}
+                color={theme.colors.subPrimary_004}
+                aggressive="body_oneline_006"
                 padding="5px 10px 5px 10px"
               >
                 Badge2
