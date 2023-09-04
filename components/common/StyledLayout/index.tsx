@@ -111,7 +111,12 @@ const rotate = keyframes`
     transform: rotate(360deg);
   }
 `
-export const ColorBorderBox = styled.div`
+interface ColorBorderBoxProp {
+  width: string
+  height: string
+  background: string
+}
+export const ColorBorderBox = styled.div<ColorBorderBoxProp>`
   padding: 2px;
   position: relative;
   display: flex;
@@ -123,17 +128,17 @@ export const ColorBorderBox = styled.div`
   &::before {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 150%;
-    background: linear-gradient(#00ccff, #d500f9);
+    width: ${({ width }) => width && width};
+    height: ${({ height }) => height && height};
+    background: ${({ background }) => background && background};
     animation: ${rotate} 5s linear infinite;
   }
 
-  &::after {
+  /* &::after {
     content: '';
     position: absolute;
     background: #2b2e47;
     inset: 5px;
     border-radius: 10px;
-  }
+  } */
 `

@@ -1,11 +1,11 @@
 ---
 date: "2023-05-07"
-title: "[Algorithm] DFS 알고리즘 정리1"
-image: 'dfs.png'
+title: "[Algorithm] DFS 알고리즘 정1"
+image: 'dfs2.png'
 rootCategory: Programming
-category1depth: Algorithm
-category2depth: dfs
-keywords: ['a', 'b']
+category1depth: Web
+category2depth: css
+keywords: ['CSS', 'Design']
 excerpt: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
 isFeatured: true
 ---

@@ -1,35 +1,53 @@
-import { Typography } from 'components/common'
+import * as S from './styles'
+
 import IntroLottie from 'components/common/Lottie/Intro'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
-import NumberCountBox from 'components/navigation/ProfileSection/SiteInfo/NumberCountBox'
-import theme from 'styles/theme'
-import * as S from './styles'
-const IntroSection = () => {
-  const numberInfo = [
-    { number: 33, title: '총 게시글' },
-    { number: 53, title: '총 카테고리' },
-  ]
+import ColorText from 'components/common/ColorText'
 
+import { Typography } from 'components/common'
+import { ColorBorderBox } from 'components/common/StyledLayout'
+import { FireCrackerStaticLottie } from 'components/common/Lottie/FireCracker'
+
+const IntroSection = () => {
   return (
-    <S.IntroContainer>
-      <MotionShowBox showDirection="down">
-        <S.IntroLottieWrapper>
-          <IntroLottie />
-        </S.IntroLottieWrapper>
-      </MotionShowBox>
-      <S.IntroTextContainer>
-        <Typography variant="h2" aggressive="headline_oneline_002">
-          블로그를 찾아주셔서 감사합니다.
-        </Typography>
-        <Typography variant="h2" aggressive="headline_oneline_002">
-          더 멋진 개발자가 되기
-        </Typography>
-        <Typography variant="h2" aggressive="headline_oneline_002">
-          위해 항상 노력하겠습니다.
-        </Typography>
-      </S.IntroTextContainer>
-    </S.IntroContainer>
+    <S.IntroBorder>
+      <ColorBorderBox
+        width="150px"
+        height="390%"
+        background="linear-gradient(#4c00ff, #36f900);"
+      >
+        <S.IntroContainer>
+          <MotionShowBox showDirection="down">
+            <S.IntroLottieWrapper>
+              <IntroLottie />
+            </S.IntroLottieWrapper>
+          </MotionShowBox>
+          <S.IntroTextContainer>
+            <Typography
+              variant="h2"
+              aggressive="headline_oneline_002"
+              margin="2rem 0"
+            >
+              <ColorText text="HIPPO DEVLOG" />
+            </Typography>
+            <Typography
+              variant="h2"
+              aggressive="headline_oneline_002"
+              margin="1rem 0"
+            >
+              블로그를 찾아주신 모든분께 감사합니다!
+            </Typography>
+            <Typography variant="h2" aggressive="body_oneline_001">
+              즐거운 개발 라이프를 지향하며, 더욱 좋은 개발자가 되기 위해
+              노력합니다 🧑🏼‍💻
+            </Typography>
+            <S.IntroFireLottieWrapper>
+              <FireCrackerStaticLottie />
+            </S.IntroFireLottieWrapper>
+          </S.IntroTextContainer>
+        </S.IntroContainer>
+      </ColorBorderBox>
+    </S.IntroBorder>
   )
 }
 

@@ -1,7 +1,7 @@
 import type { IconPropsType } from 'public/static/icon/index'
 
 export const NavigationIconSet: IconPropsType = {
-  Error: {
+  error: {
     icon: () => (
       <svg
         viewBox="0 0 512 512"
@@ -45,7 +45,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  CSS: {
+  css: {
     icon: () => (
       <svg
         fill="#93a1ae"

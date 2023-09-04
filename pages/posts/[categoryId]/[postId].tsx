@@ -11,8 +11,8 @@ const PostDetailPage = props => {
 
 export default PostDetailPage
 
-export const getStaticProps = async ({ params: { postId } }) => {
-  const postData = getPostData(postId)
+export const getStaticProps = async ({ params: { categoryId, postId } }) => {
+  const postData = getPostData(`${categoryId}/${postId}`)
   const category = getAllPostsCategory()
   return {
     props: {

@@ -41,7 +41,7 @@ const Header = () => {
                   aggressive="button_001"
                   color={theme.colors.gray_003}
                 >
-                  POST
+                  ALL POST
                 </Typography>
               </LinkWrapper>
             </S.NavigationItem>

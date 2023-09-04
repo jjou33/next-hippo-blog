@@ -5,7 +5,8 @@ import Link from 'next/link'
 import theme from 'styles/theme'
 import * as S from './styles'
 const VerticalItem = props => {
-  const { title, image, excerpt, date, slug, category2depth } = props.post
+  const { title, image, excerpt, date, slug, category1depth, category2depth } =
+    props.post
 
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
@@ -13,7 +14,7 @@ const VerticalItem = props => {
     year: 'numeric',
   })
 
-  const imagePath = `/static/images/${slug}/${image}`
+  const imagePath = `/static/images/${category1depth}/${image}`
   const linkPath = `/posts/${category2depth}/${slug}`
 
   return (

@@ -4,16 +4,35 @@ import matter from 'gray-matter'
 import type { PostData, AllPostCategory } from 'types/post'
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-/**
- * @description 현재 디렉토리에 있는 PostFile 을 읽어 온다.
- */
-export const getPostsFiles = () => {
-  return fs.readdirSync(postsDirectory)
+const readFilesRecursively = directoryPath => {
+  const entries = fs.readdirSync(directoryPath)
+  const paths = []
+
+  for (const entry of entries) {
+    const entryPath = path.join(directoryPath, entry)
+    const stat = fs.statSync(entryPath)
+
+    if (stat.isDirectory()) {
+      // 디렉토리인 경우 재귀적으로 읽어옵니다.
+      const subPaths = readFilesRecursively(entryPath)
+      paths.push(...subPaths)
+    } else {
+      // 파일인 경우 상위 폴더명과 파일 이름을 조합하여 배열에 추가합니다.
+      const parentDirectory = path.basename(directoryPath)
+      paths.push(`${parentDirectory}/${entry}`)
+    }
+  }
+
+  return paths
 }
 
 /**
- * @description 모든 PostFile 에 대한 정보를 가진 Array 리턴
+ * @description 현재 디렉토리에 있는 PostFile 을 읽어 온다.
  */
+
+export const getPostsFiles = () => {
+  return readFilesRecursively(postsDirectory)
+}
 
 /**
  * @description 특정 PostDetail 파일 Generation 을 위한 데이터 Fetch 함수
@@ -26,7 +45,7 @@ export const getPostData = (postIdentifier: string) => {
   const { data, content } = matter(fileContent)
 
   const postData: PostData = {
-    slug: postSlug,
+    slug: postSlug.split('/')[1],
     ...data,
     content,
   }
@@ -83,10 +102,9 @@ export const getAllPostsCategory = (): AllPostCategory => {
  */
 
 export const getSlugByParams = (): Array<string>[] => {
-  const slugList = getAllPosts().map(posts => [
-    posts.category2depth,
-    posts.slug,
-  ])
+  const slugList = getAllPosts().map(posts => {
+    return [posts.category2depth, posts.slug]
+  })
 
   return slugList
 }

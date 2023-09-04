@@ -7,9 +7,12 @@ import { Divider, ColorBorderBox } from 'components/common/StyledLayout'
 import { useNumberCount } from 'hooks/useNumberCount'
 
 const NumberCountBox = ({ number, title, duration = 2000 }) => {
-  console.log('number : ', number)
   return (
-    <ColorBorderBox>
+    <ColorBorderBox
+      width="50px"
+      height="150%"
+      background="linear-gradient(#00ccff, #d500f9);"
+    >
       <S.CountContainer>
         <S.CountNameBox>
           <Typography variant="span" aggressive="tab_003">

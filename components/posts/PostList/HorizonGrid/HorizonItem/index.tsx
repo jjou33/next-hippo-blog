@@ -12,7 +12,17 @@ import {
 import { useInfiniteScroll } from 'hooks/useInfiniteScroll'
 
 const HorizonItem = props => {
-  const { title, image, excerpt, date, slug, category2depth } = props.post
+  const {
+    title,
+    image,
+    excerpt,
+    date,
+    slug,
+    category1depth,
+    category2depth,
+    keywords,
+  } = props.post
+
   const { ref, isInViewport } = useInfiniteScroll()
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
@@ -20,7 +30,7 @@ const HorizonItem = props => {
     year: 'numeric',
   })
 
-  const imagePath = `/static/images/${slug}/${image}`
+  const imagePath = `/static/images/${category1depth}/${image}`
   const linkPath = `/posts/${category2depth}/${slug}`
 
   return (
@@ -28,15 +38,18 @@ const HorizonItem = props => {
       <Link href={linkPath}>
         <StyledImageBox height={'220px'}>
           <FlexBox>
-            <Badge
-              borderRadius="2rem"
-              backgroundColor={theme.colors.subPrimary_001}
-              aggressive="body_oneline_006"
-              padding="5px 10px 5px 10px"
-              margin="10px 0 0 10px"
-            >
-              Algorithm
-            </Badge>
+            {keywords.map((keyword: string) => (
+              <Badge
+                borderRadius="2rem"
+                backgroundColor={theme.colors.primary_003}
+                aggressive="body_oneline_006"
+                padding="5px 10px 5px 10px"
+                margin="10px 0 0 10px"
+                key={keyword}
+              >
+                {keyword}
+              </Badge>
+            ))}
           </FlexBox>
           <Image
             src={imagePath}
