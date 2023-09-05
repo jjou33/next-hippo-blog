@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import theme from 'styles/theme'
 
+import * as S from './styles'
+
 import { Typography } from 'components/common'
-import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
+import { FlexBox } from 'components/common/StyledLayout'
 import { Badge } from 'components/common'
+import { IndicatorLottie } from 'components/common/Lottie'
 
 const PostHeader = ({ posts }) => {
   const imagePath = `/static/images/${posts.category1depth}/${posts.image}`
@@ -15,7 +18,7 @@ const PostHeader = ({ posts }) => {
   })
 
   return (
-    <StyledImageBox height={'80vh'}>
+    <S.StyledImageContainer>
       <FlexBox
         flexDirection="column"
         alignContent="center"
@@ -30,7 +33,7 @@ const PostHeader = ({ posts }) => {
           fill
           style={{
             objectFit: 'cover',
-            filter: 'brightness(0.25)',
+            filter: 'brightness(0.3)',
             zIndex: '-1',
           }}
         />
@@ -64,8 +67,13 @@ const PostHeader = ({ posts }) => {
             {formattedDate} BY HIPPO DEV
           </Typography>
         </FlexBox>
+        <FlexBox justifyContent="center" margin="5rem 0 0 0">
+          <S.IndicatorWrapper>
+            <IndicatorLottie />
+          </S.IndicatorWrapper>
+        </FlexBox>
       </FlexBox>
-    </StyledImageBox>
+    </S.StyledImageContainer>
   )
 }
 

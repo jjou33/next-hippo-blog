@@ -1,8 +1,8 @@
+import { MainIconSet } from 'public/static/icon'
 import * as S from './styles'
 
 import ReactMarkdown from 'react-markdown'
 
-import { SubMaxContainer } from 'components/common/StyledLayout'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
@@ -50,13 +50,16 @@ const PostContent = props => {
   }
 
   return (
-    <SubMaxContainer>
-      <S.ContentsContainer>
+    <S.ContentsContainer>
+      <S.WaveAnimationContainer>
+        <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
+      </S.WaveAnimationContainer>
+      <S.ContentsWrapper>
         <ReactMarkdown components={customRenderers}>
           {posts.content}
         </ReactMarkdown>
-      </S.ContentsContainer>
-    </SubMaxContainer>
+      </S.ContentsWrapper>
+    </S.ContentsContainer>
   )
 }
 

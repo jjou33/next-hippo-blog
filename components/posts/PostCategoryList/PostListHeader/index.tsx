@@ -43,7 +43,6 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
               variant="span"
               aggressive="montserratAlternates_Medium_001"
               color={theme.colors.primary_008}
-              // align="center"
             >
               {categoryId ? `${mainCategory} / ${categoryId}` : `All Post 📚`}
             </Typography>
