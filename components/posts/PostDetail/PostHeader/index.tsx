@@ -6,7 +6,7 @@ import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import { Badge } from 'components/common'
 
 const PostHeader = ({ posts }) => {
-  const imagePath = `/static/images/${posts.slug}/${posts.image}`
+  const imagePath = `/static/images/${posts.category1depth}/${posts.image}`
 
   const formattedDate = new Date(posts.date).toLocaleDateString('ko', {
     day: 'numeric',

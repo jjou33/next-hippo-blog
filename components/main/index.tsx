@@ -24,7 +24,6 @@ const MainContents = ({ posts }: { posts: PostData[] }) => {
           <RecommendList />
           <ProjectSection />
           <PostListSection posts={posts} />
-          {/* <PostList posts={posts} /> */}
         </S.SectionContainer>
       </S.MainContainer>
     </FlexBox>

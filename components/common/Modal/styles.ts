@@ -1,8 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const ModalWrapper = styled.div<{ visible: boolean }>`
   box-sizing: border-box;
-  display: ${props => (props.visible ? 'block' : 'none')};
   position: fixed;
   top: 0;
   right: 0;
@@ -15,7 +14,6 @@ export const ModalWrapper = styled.div<{ visible: boolean }>`
 
 export const ModalOverlay = styled.div<{ visible: boolean }>`
   box-sizing: border-box;
-  display: ${props => (props.visible ? 'block' : 'none')};
   position: fixed;
   top: 0;
   left: 0;
@@ -25,10 +23,22 @@ export const ModalOverlay = styled.div<{ visible: boolean }>`
   z-index: 999;
 `
 
-export const ModalInner = styled.div`
+const slideInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
+export const ModalInner = styled.div<{ visible: boolean }>`
   position: relative;
   background: white;
   width: 300px;
+  animation: ${slideInRight} 1s ease-in-out;
 `
 
 export const CloseButton = styled.div`

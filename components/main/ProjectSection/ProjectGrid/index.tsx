@@ -2,13 +2,14 @@ import * as S from './styles'
 
 import ProjectItem from '../ProjectItem'
 
-const ProjectGrid = () => {
-  const imagePath = `/static/images/dfs/dfs.png`
+import type { ProjectInfoProps } from '../index'
 
+const ProjectGrid = ({ projectInfo }: { projectInfo: ProjectInfoProps[] }) => {
   return (
     <S.GridContainer>
-      <ProjectItem imagePath={imagePath} title="title" />
-      <ProjectItem imagePath={imagePath} title="title" />
+      {projectInfo.map((projectItem, index) => (
+        <ProjectItem {...projectItem} key={index} />
+      ))}
     </S.GridContainer>
   )
 }

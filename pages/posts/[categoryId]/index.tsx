@@ -21,6 +21,7 @@ export const getStaticProps = async ({ params }) => {
 
   const postList = getCategoryPosts(categoryId)
   const category = getAllPostsCategory()
+
   return {
     props: {
       posts: postList,

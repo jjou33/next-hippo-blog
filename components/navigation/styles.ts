@@ -1,10 +1,18 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
+const slideIn = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
 export const SideNavContainer = styled.div<{ isModal: boolean }>`
   display: flex;
   flex-direction: column;
   position: relative;
-
+  /* animation: ${slideIn} 0.6s ease-in-out; */
   ${({ isModal }) =>
     isModal
       ? css`

@@ -15,7 +15,7 @@ const Navigation = ({
   return (
     <S.SideNavContainer isModal={isModal}>
       <S.SideNavWrapper>
-        <ProfileSection />
+        <ProfileSection category={category} />
         <NavigationSection category={category} />
       </S.SideNavWrapper>
     </S.SideNavContainer>

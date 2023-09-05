@@ -1,7 +1,7 @@
 ---
 date: "2023-05-08"
 title: "[Algorithm] DFS 알고리즘 정리1"
-image: 'dfs.png'
+image: 'dfs2.png'
 rootCategory: Programming
 category1depth: Algorithm
 category2depth: dfs

@@ -22,4 +22,6 @@ export interface AllPostCategory {
   count: {
     [key: string]: number
   }
+  categoryCount: number
+  allPostCount: number
 }

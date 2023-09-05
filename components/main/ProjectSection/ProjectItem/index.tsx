@@ -5,15 +5,21 @@ import theme from 'styles/theme'
 import Link from 'next/link'
 
 import { Badge, Typography } from 'components/common'
-import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
+import {
+  Divider,
+  FlexBox,
+  StyledImageBox,
+} from 'components/common/StyledLayout'
 
-interface ProjectItemProps {
-  imagePath: string
-  title: string
-}
+import type { ProjectInfoProps } from '../index'
 
-const ProjectItem = ({ imagePath, title }: ProjectItemProps) => {
-  const linkPath = `/`
+const ProjectItem = ({
+  title,
+  content,
+  imagePath,
+  keywords,
+  linkPath,
+}: ProjectInfoProps) => {
   return (
     <S.ProjectItemContainer>
       <Link href={linkPath}>
@@ -39,24 +45,18 @@ const ProjectItem = ({ imagePath, title }: ProjectItemProps) => {
         )`}
           >
             <FlexBox gap="1rem" margin="10px 0 0 10px">
-              <Badge
-                borderRadius="2rem"
-                backgroundColor={theme.colors.subPrimary_001}
-                aggressive="body_oneline_006"
-                padding="5px 10px 5px 10px"
-                color={theme.colors.subPrimary_004}
-              >
-                알고리즘
-              </Badge>
-              <Badge
-                borderRadius="2rem"
-                backgroundColor={theme.colors.subPrimary_001}
-                color={theme.colors.subPrimary_004}
-                aggressive="body_oneline_006"
-                padding="5px 10px 5px 10px"
-              >
-                Badge2
-              </Badge>
+              {keywords.map(keyword => (
+                <Badge
+                  borderRadius="2rem"
+                  backgroundColor={theme.colors.subPrimary_001}
+                  aggressive="body_oneline_006"
+                  padding="5px 10px 5px 10px"
+                  color={theme.colors.subPrimary_004}
+                  key={keyword}
+                >
+                  {keyword}
+                </Badge>
+              ))}
             </FlexBox>
             <FlexBox
               flexDirection="column-reverse"
@@ -66,19 +66,34 @@ const ProjectItem = ({ imagePath, title }: ProjectItemProps) => {
               <Typography
                 variant="p"
                 aggressive="body_oneline_001"
-                color={theme.colors.primary_001}
+                color={theme.colors.gray_002}
+                overFlow="hidden"
+                textOverflow="ellipsis"
+                margin="1rem 0 0 0"
+              >
+                {content}
+              </Typography>
+              <Divider
+                direction="horizontal"
+                width="100%"
+                height="1px"
+                margin="1rem auto 0"
+                color={theme.colors.gray_002}
+              />
+              <Typography
+                variant="p"
+                aggressive="montserratAlternates_Bold_003"
+                color={theme.colors.primary_007}
                 overFlow="hidden"
                 textOverflow="ellipsis"
               >
-                해당 프로젝트는 현재 실무에서 차세대 프로젝트에 참여하여
-                진행중인 프로젝트간 필요한 내용을 포스팅 합니다.
+                {title}
               </Typography>
             </FlexBox>
           </FlexBox>
         </StyledImageBox>
       </Link>
     </S.ProjectItemContainer>
-    // </StyledImageBox>
   )
 }
 

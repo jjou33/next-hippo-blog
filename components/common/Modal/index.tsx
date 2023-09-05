@@ -38,7 +38,9 @@ const Modal = ({ children }: DimmedModalPropsType) => {
     <>
       <S.ModalOverlay visible={state} />
       <S.ModalWrapper onClick={onMaskClick} visible={state}>
-        <S.ModalInner className="modal-inner">{children}</S.ModalInner>
+        <S.ModalInner className="modal-inner" visible={state}>
+          {children}
+        </S.ModalInner>
       </S.ModalWrapper>
     </>
   )

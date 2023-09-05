@@ -6,7 +6,7 @@ import theme from 'styles/theme'
 
 import { Divider } from 'components/common/StyledLayout'
 
-const ProfileSection = () => {
+const ProfileSection = props => {
   const linkInfo = [
     { color1: '#f97253', color2: '#f7cb80', iconName: 'Git', title: 'GITHUB' },
     {
@@ -18,8 +18,8 @@ const ProfileSection = () => {
   ]
 
   const numberInfo = [
-    { number: 33, title: '총 게시글' },
-    { number: 53, title: '총 카테고리' },
+    { number: Number(`${props.category.categoryCount}`), title: '총 카테고리' },
+    { number: Number(`${props.category.allPostCount}`), title: '총 게시글' },
   ]
 
   return (

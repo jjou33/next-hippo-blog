@@ -6,7 +6,8 @@ import {
 } from 'utils/PostUtil'
 
 const PostDetailPage = props => {
-  return <PostDetail posts={props.post} />
+  return <PostDetail posts={props.posts} />
+  // return <></>
 }
 
 export default PostDetailPage
@@ -14,16 +15,16 @@ export default PostDetailPage
 export const getStaticProps = async ({ params: { categoryId, postId } }) => {
   const postData = getPostData(`${categoryId}/${postId}`)
   const category = getAllPostsCategory()
+
   return {
     props: {
-      post: postData,
+      posts: postData,
       category,
     },
-    revalidate: 600,
   }
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
   const slugs = getSlugByParams()
 
   return {

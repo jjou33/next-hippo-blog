@@ -9,7 +9,7 @@ import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 const PostContent = props => {
   const { posts } = props
 
-  const imagePath = `/static/images/${posts.slug}/${posts.image}`
+  const imagePath = `/static/images/${posts.category1depth}/${posts.image}`
 
   const customRenderers = {
     p(paragraph) {

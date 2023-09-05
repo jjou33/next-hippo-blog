@@ -73,7 +73,8 @@ export const getAllPosts = (): PostData[] => {
 export const getAllPostsCategory = (): AllPostCategory => {
   const result = {}
   const count = {}
-
+  let categoryCount = 0
+  let allPostCount = 0
   getAllPosts().forEach(({ rootCategory, category1depth, category2depth }) => {
     if (!result[rootCategory]) {
       result[rootCategory] = {}
@@ -88,13 +89,15 @@ export const getAllPostsCategory = (): AllPostCategory => {
       result[rootCategory][category1depth].push(category2depth)
       // count Object 에 값 추가
       count[category2depth] = 1
+      categoryCount++
     } else {
       // 2depth 배열에 동일 카테고리 존재 할 경우
       count[category2depth]++
     }
+    allPostCount++
   })
 
-  return { result, count }
+  return { result, count, categoryCount, allPostCount }
 }
 
 /**
