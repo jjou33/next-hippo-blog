@@ -10,7 +10,7 @@ export const RecommendItemWrapper = styled.div`
   align-items: center;
   margin: 10px 30px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+  transition: all 1s ease 0s;
   cursor: pointer;
   outline: none;
 
