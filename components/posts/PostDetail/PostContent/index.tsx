@@ -4,7 +4,8 @@ import * as S from './styles'
 import ReactMarkdown from 'react-markdown'
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import PostToc from 'components/common/PostToc'
 
 const PostContent = props => {
   const { posts } = props
@@ -29,7 +30,7 @@ const PostContent = props => {
               alt={alt}
               width={0}
               height={0}
-              sizes="100vw"
+              sizes="100%"
             />
           )
         }
@@ -37,12 +38,13 @@ const PostContent = props => {
 
       return <p>{paragraph.children}</p>
     },
-
     code(code) {
       const { className, children } = code
-      const language = className.split('-')[1]
+      let language = ''
+      language = className.split('-')[1]
+
       return (
-        <SyntaxHighlighter style={atomDark} language={language}>
+        <SyntaxHighlighter style={nightOwl} language={language}>
           {children}
         </SyntaxHighlighter>
       )
@@ -54,7 +56,12 @@ const PostContent = props => {
       <S.WaveAnimationContainer>
         <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
       </S.WaveAnimationContainer>
+
       <S.ContentsWrapper>
+        <PostToc />
+        <S.StyledDivider>
+          <hr />
+        </S.StyledDivider>
         <ReactMarkdown components={customRenderers}>
           {posts.content}
         </ReactMarkdown>

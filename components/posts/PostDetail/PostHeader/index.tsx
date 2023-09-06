@@ -50,7 +50,7 @@ const PostHeader = ({ posts }) => {
             </Badge>
           </FlexBox>
           <Typography
-            variant="h3"
+            variant="h2"
             aggressive="headline_multiline_001"
             color={theme.colors.primary_005}
             align="center"
