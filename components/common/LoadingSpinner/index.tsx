@@ -4,11 +4,13 @@ import { LoadingCircleLottie } from '../Lottie'
 
 const LoadingSpinner = () => {
   return (
-    <S.LoaddingContainer>
-      <S.LoaddingWrapper>
-        <LoadingCircleLottie />
-      </S.LoaddingWrapper>
-    </S.LoaddingContainer>
+    <S.LoadingBox>
+      <S.LoaddingContainer>
+        <S.LoaddingWrapper>
+          <LoadingCircleLottie />
+        </S.LoaddingWrapper>
+      </S.LoaddingContainer>
+    </S.LoadingBox>
   )
 }
 

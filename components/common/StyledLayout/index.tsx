@@ -28,6 +28,7 @@ export const FlexBox = styled.div<CSSProperties>`
   overflow: ${({ overflow }) => overflow};
   place-items: ${({ placeItems }) => placeItems};
   border-radius: ${({ borderRadius }) => borderRadius};
+  vertical-align: ${({ verticalAlign }) => verticalAlign};
 `
 
 export const MaxContainer = styled.div<CSSProperties>`

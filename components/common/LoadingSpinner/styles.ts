@@ -18,6 +18,13 @@ const fadeOut = keyframes`
   }
 `
 
+export const LoadingBox = styled.div<{ isLoading: boolean }>`
+  position: fixed;
+  display: ${({ isLoading }) => !isLoading && 'none'};
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+`
 export const LoaddingContainer = styled.div`
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);

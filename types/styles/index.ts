@@ -1,11 +1,12 @@
 export interface AggressivePropsType {
   aggressive:
-    | 'headline_oneline_001'
-    | 'headline_oneline_002'
-    | 'headline_oneline_003'
-    | 'headline_oneline_004'
-    | 'headline_oneline_005'
-    | 'headline_oneline_006'
+    | 'headline_large_001'
+    | 'headline_large_002'
+    | 'headline_medium_001'
+    | 'headline_medium_002'
+    | 'headline_small_001'
+    | 'headline_small_002'
+    | 'headline_small_003'
     | 'headline_multiline_001'
     | 'headline_multiline_002'
     | 'body_oneline_000'
@@ -39,6 +40,7 @@ export interface AggressivePropsType {
     | 'montserratAlternates_Regular_002'
     | 'montserratAlternates_Regular_003'
     | 'montserratAlternates_light'
+    | 'gmarketSans_bold_001'
 }
 
 export interface VariantPropsType {

@@ -36,7 +36,9 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
         <ChildrenContainer>
           <Header />
           {isLoading ? (
-            <LoadingSpinner />
+            <>
+              <LoadingSpinner isLoading={isLoading} />
+            </>
           ) : (
             <>
               {children}

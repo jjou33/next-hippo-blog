@@ -31,7 +31,7 @@ const PostCategoryList = props => {
             </IconBox>
             <Typography
               variant="h2"
-              aggressive="headline_oneline_002"
+              aggressive="headline_medium_001"
               color={theme.colors.primary_008}
               align="center"
             >

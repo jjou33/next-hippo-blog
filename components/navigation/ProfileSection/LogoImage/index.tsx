@@ -30,7 +30,7 @@ const LogoImage = () => {
         </S.NotificationContainer>
       </S.LogoImageWrapper>
       <FlexBox flexDirection="column" alignItems="center" margin="0 0 1.5rem 0">
-        <Typography variant="h5" aggressive="headline_oneline_006">
+        <Typography variant="h6" aggressive="headline_small_002">
           HIPPO DEV 🧑🏼‍💻
         </Typography>
       </FlexBox>

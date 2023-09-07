@@ -1,26 +1,22 @@
-import * as S from './styles'
-
 import theme from 'styles/theme'
 
 import { Typography } from 'components/common'
 import { useTypingTitle } from 'hooks/useTypingTitle'
+import { FlexBox } from 'components/common/StyledLayout'
 
+const TYPINGLIST = {
+  LIST: ['Typescript', 'Javascript', 'NextJS', 'React', 'HTML'],
+}
 const TypingSection = () => {
-  const currentTitle = useTypingTitle([
-    'Typescript',
-    'Javascript',
-    'NextJS',
-    'React',
-    'HTML',
-  ])
+  const currentTitle = useTypingTitle(TYPINGLIST.LIST)
   return (
-    <S.Container>
-      {/* <MotionShowBox showDirection={'down'}>
-        <S.HeroMoveImageContainer>
-          <LandingLottie />
-        </S.HeroMoveImageContainer>
-      </MotionShowBox> */}
-      <S.HeroWriteContainer>
+    <FlexBox alignItems={'center'} justifyContent={'center'} gap={'2rem'}>
+      <FlexBox
+        flexDirection={'column'}
+        padding={'1rem'}
+        gap={'1rem'}
+        width={'100%'}
+      >
         <Typography
           variant="h2"
           aggressive="montserratAlternates_Medium_002"
@@ -35,8 +31,8 @@ const TypingSection = () => {
         >
           : {currentTitle}
         </Typography>
-      </S.HeroWriteContainer>
-    </S.Container>
+      </FlexBox>
+    </FlexBox>
   )
 }
 

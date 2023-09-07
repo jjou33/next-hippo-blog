@@ -9,22 +9,24 @@ import { useImageIndexSlider } from 'hooks/useIntervalAnimation'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
 
 const HeroSection = () => {
-  const images = [
-    '/static/images/landing.jpg',
-    '/static/images/landing2.jpg',
-    '/static/images/landing3.jpg',
-  ]
+  const IMAGEDATA = {
+    LIST: [
+      '/static/images/landing.jpg',
+      '/static/images/landing2.jpg',
+      '/static/images/landing3.jpg',
+    ],
+  }
 
   const currentPercentage = useChangeOpacityByScroll()
-  const currentImage = useImageIndexSlider(images)
+  const currentImage = useImageIndexSlider(IMAGEDATA.LIST)
 
   return (
     <S.HeroImageContainer>
-      {images.map((image, index) => (
+      {IMAGEDATA.LIST.map((image, index) => (
         <S.StyledImage
           key={index}
           src={image}
-          alt={'alt'}
+          alt={'Hero Image'}
           fill
           selected={index === currentImage}
         />

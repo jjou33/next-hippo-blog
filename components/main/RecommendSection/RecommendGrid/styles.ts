@@ -11,7 +11,7 @@ const scroll = keyframes`
 `
 export const SliderTrack = styled.div`
   display: flex;
-  animation: ${scroll} 40s linear infinite;
+  animation: ${scroll} 20s linear infinite;
 `
 
 export const SliderContainer = styled.div`

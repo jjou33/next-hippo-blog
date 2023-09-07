@@ -15,6 +15,8 @@ interface Props extends PropsWithChildren {
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
+  boxShadow?: string
+  flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse'
 }
 
 const Badge = ({ children, aggressive, ...props }: Props) => {

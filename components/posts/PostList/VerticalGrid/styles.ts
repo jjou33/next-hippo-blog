@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-export const GridContainer = styled.div`
-  /* width: 996px; */
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+export const GridContainer = styled.ul`
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  align-content: center;
 
-  @media screen and (min-width: 768px) {
-    width: 700px;
-    margin: 0 auto;
+  @media screen and (max-width: 300px) {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   }
 `

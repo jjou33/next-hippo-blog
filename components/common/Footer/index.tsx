@@ -20,7 +20,7 @@ const Footer = () => {
         >
           <S.LinkContentsWrapper>
             <Typography
-              variant="h4"
+              variant="span"
               aggressive="body_oneline_003"
               color={theme.colors.gray_004}
             >
@@ -48,7 +48,7 @@ const Footer = () => {
             </S.Anchor>
           </S.LinkContentsWrapper>
           <Typography
-            variant="h4"
+            variant="span"
             aggressive="body_oneline_003"
             color={theme.colors.gray_004}
             margin={'4rem 0 0 0'}

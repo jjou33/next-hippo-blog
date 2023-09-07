@@ -1,38 +1,5 @@
 import Image from 'next/image'
-import styled, { css, keyframes } from 'styled-components'
-
-export const StyledImage = styled(Image)<{ selected: boolean }>`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0;
-  filter: brightness(50%);
-  ${({ selected }) => {
-    if (selected) {
-      return css`
-        opacity: 1;
-      `
-    }
-  }};
-  transition: opacity 3s;
-`
-
-export const IndicatorContainer = styled.div`
-  width: 10rem;
-  height: 10rem;
-  background-color: red;
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-`
-export const HeroWriteContainer = styled.div`
-  flex: 1;
-
-  width: 400px;
-  margin: 0 auto;
-  height: 100%;
-`
+import styled, { keyframes } from 'styled-components'
 
 export const HeroImageContainer = styled.div`
   position: fixed;
@@ -44,30 +11,14 @@ export const HeroImageContainer = styled.div`
   }
 `
 
-const blinkCursorKeyframe = keyframes`
-  50% {
-    opacity: 0;
-  }
-`
-
-export const HeroInfoMoveContainer = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 5rem;
-`
-export const HeroTextContainer = styled.div`
-  font-size: 2rem;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  &::after {
-    content: '';
-    position: absolute;
-    background-color: #e65454;
-    height: 2.5rem;
-    margin-left: 0.5rem;
-    width: 5px;
-    animation: ${blinkCursorKeyframe} 0.5s infinite;
-  }
+export const StyledImage = styled(Image)<{ selected: boolean }>`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%);
+  opacity: ${({ selected }) => (selected ? 1 : 0)};
+  transition: opacity 3s;
 `
 
 export const scroll = keyframes`
@@ -85,7 +36,8 @@ export const scroll = keyframes`
 export const MouseIndicatorWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  margin-top: 5rem;
+  /* padding-top: 5rem; */
   width: 5rem;
   height: 7rem;
 `
@@ -96,7 +48,6 @@ export const MouseIndicator = styled.div`
   border: solid 2px;
   border-radius: 30px;
   border-color: #ada6bb;
-  /* background: #35303d; */
   &::before {
     content: '';
     position: absolute;
@@ -109,31 +60,30 @@ export const MouseIndicator = styled.div`
     animation: ${scroll} 2s infinite;
   }
 `
-export const HeroMoveItemContainer = styled.div``
 
-export const FireCrackerWrapper = styled.div`
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-`
-
-interface HeroInfoProps {
+export const HeroInfoContainer = styled.div<{
   currentPercentage: number
-}
-export const HeroInfoContainer = styled.div.attrs<HeroInfoProps>(props => ({
-  style: {
-    opacity: `${props.currentPercentage}`,
-  },
-}))`
+}>`
   width: 100%;
   height: 100%;
-  /* margin: 15rem; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  opacity: ${({ currentPercentage }) => currentPercentage};
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 55px;
+    }
+
+    h2 {
+      font-size: 45px;
+    }
+
+    h3 {
+      font-size: 40px;
+    }
+  }
 `

@@ -36,10 +36,18 @@ const ProjectSection = () => {
     <S.ProjectWrapper>
       <Typography
         variant="h2"
-        aggressive="headline_oneline_002"
+        aggressive="headline_medium_002"
         color={theme.colors.gray_007}
       >
-        ✨ 사이드 프로젝트
+        프로젝트 이야기 ✨
+      </Typography>
+      <Typography
+        variant="h2"
+        aggressive="body_oneline_003"
+        color={theme.colors.gray_004}
+        margin="1rem 0 0 0"
+      >
+        진행했던 프로젝트들에 대한 기술 포스팅
       </Typography>
       <Divider
         direction="horizontal"

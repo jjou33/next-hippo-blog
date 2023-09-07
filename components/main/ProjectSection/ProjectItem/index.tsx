@@ -39,25 +39,11 @@ const ProjectItem = ({
             height="100%"
             background={`linear-gradient(
           to bottom,
-          rgba(20, 20, 20, 0) 10%,
-          rgba(20, 20, 20, 0.1) 55%,
-          rgba(20, 20, 20, 0.6) 100%
+          rgba(20, 20, 20, 0) 5%,
+          rgba(20, 20, 20, 0.1) 30%,
+          rgba(20, 20, 20, 0.6) 80%
         )`}
           >
-            <FlexBox gap="1rem" margin="10px 0 0 10px">
-              {keywords.map(keyword => (
-                <Badge
-                  borderRadius="2rem"
-                  backgroundColor={theme.colors.subPrimary_001}
-                  aggressive="body_oneline_006"
-                  padding="5px 10px 5px 10px"
-                  color={theme.colors.subPrimary_004}
-                  key={keyword}
-                >
-                  {keyword}
-                </Badge>
-              ))}
-            </FlexBox>
             <FlexBox
               flexDirection="column-reverse"
               height="100%"
@@ -65,8 +51,9 @@ const ProjectItem = ({
             >
               <Typography
                 variant="p"
-                aggressive="body_oneline_001"
+                aggressive="body_oneline_004"
                 color={theme.colors.gray_002}
+                whiteSpace="nowrap"
                 overFlow="hidden"
                 textOverflow="ellipsis"
                 margin="1rem 0 0 0"
@@ -82,13 +69,26 @@ const ProjectItem = ({
               />
               <Typography
                 variant="p"
-                aggressive="montserratAlternates_Bold_003"
-                color={theme.colors.primary_007}
+                aggressive="headline_small_002"
+                color={theme.colors.gray_000}
                 overFlow="hidden"
                 textOverflow="ellipsis"
               >
                 {title}
               </Typography>
+              <FlexBox gap="1rem" margin="10px 0" flexWrap="wrap">
+                {keywords.map(keyword => (
+                  <Badge
+                    borderRadius="2rem"
+                    backgroundColor={theme.colors.subPrimary_002}
+                    aggressive="body_oneline_006"
+                    padding="5px 10px 5px 10px"
+                    key={keyword}
+                  >
+                    {keyword}
+                  </Badge>
+                ))}
+              </FlexBox>
             </FlexBox>
           </FlexBox>
         </StyledImageBox>

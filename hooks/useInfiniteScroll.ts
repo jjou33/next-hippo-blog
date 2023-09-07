@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export const useInfiniteScroll = () => {
+export const useInfiniteScroll = (delay: number = 0) => {
   const [isInViewport, setIsInViewport] = useState(false)
   const ref = useRef<HTMLLIElement | null>(null)
 
@@ -10,7 +10,10 @@ export const useInfiniteScroll = () => {
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setIsInViewport(true)
+          setTimeout(() => {
+            setIsInViewport(true)
+            observer.unobserve(entry.target)
+          }, delay)
         } else {
           setIsInViewport(false)
         }
@@ -24,7 +27,7 @@ export const useInfiniteScroll = () => {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [delay])
 
   return { ref, isInViewport }
 }

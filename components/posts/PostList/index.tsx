@@ -1,15 +1,23 @@
 import * as S from './styles'
 
-import HorizonGrid from './HorizonGrid'
 import VerticalGrid from './VerticalGrid'
+import HorizontalGrid from './HorizontalGrid'
 
-const PostList = props => {
+import type { PostData } from 'types/post'
+
+interface PostListProps {
+  posts: PostData[]
+  isMain?: boolean
+  isVertical?: boolean
+}
+const PostList = ({ posts, isMain, isVertical }: PostListProps) => {
+  const postList = isMain ? posts.slice(0, 6) : posts
   return (
     <S.PostListContainer>
-      {props.isVertical ? (
-        <VerticalGrid posts={props.posts} />
+      {isVertical ? (
+        <VerticalGrid posts={postList} />
       ) : (
-        <HorizonGrid posts={props.posts} />
+        <HorizontalGrid posts={postList} />
       )}
     </S.PostListContainer>
   )

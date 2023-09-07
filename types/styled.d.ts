@@ -33,12 +33,13 @@ declare module 'styled-components' {
       success: '#44927F'
     }
     fonts: {
-      headline_oneline_001: FlattenSimpleInterpolation
-      headline_oneline_002: FlattenSimpleInterpolation
-      headline_oneline_003: FlattenSimpleInterpolation
-      headline_oneline_004: FlattenSimpleInterpolation
-      headline_oneline_005: FlattenSimpleInterpolation
-      headline_oneline_006: FlattenSimpleInterpolation
+      headline_large_001: FlattenSimpleInterpolation
+      headline_large_002: FlattenSimpleInterpolation
+      headline_medium_001: FlattenSimpleInterpolation
+      headline_medium_002: FlattenSimpleInterpolation
+      headline_small_001: FlattenSimpleInterpolation
+      headline_small_002: FlattenSimpleInterpolation
+      headline_small_003: FlattenSimpleInterpolation
       headline_multiline_001: FlattenSimpleInterpolation
       headline_multiline_002: FlattenSimpleInterpolation
       body_oneline_000: FlattenSimpleInterpolation
@@ -72,6 +73,7 @@ declare module 'styled-components' {
       montserratAlternates_Regular_002: FlattenSimpleInterpolation
       montserratAlternates_Regular_003: FlattenSimpleInterpolation
       montserratAlternates_light: FlattenSimpleInterpolation
+      gmarketSans_bold_001: FlattenSimpleInterpolation
     }
   }
   export interface Styles {

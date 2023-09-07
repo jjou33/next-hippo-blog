@@ -1,8 +1,12 @@
 import { css, DefaultTheme } from 'styled-components'
 
-import { montserratAlternates, cafe24OhsquareAir } from 'public/static/fonts'
+import {
+  montserratAlternates,
+  cafe24OhsquareAir,
+  gmarketSans,
+} from 'public/static/fonts'
 interface Font {
-  weight: 300 | 400 | 500 | 600 | 700
+  weight: 300 | 400 | 500 | 600 | 700 | 'bold'
   size: number
   height: number
   spacing: number
@@ -57,45 +61,52 @@ const theme: DefaultTheme = {
   },
 
   fonts: {
-    headline_oneline_001: fontStyleGenerator({
+    headline_large_001: fontStyleGenerator({
       weight: 700,
-      size: 48,
-      height: 52,
+      size: 70,
+      height: 74,
       spacing: -1,
       fontFamily: `${cafe24OhsquareAir.style.fontFamily}`,
     }),
-    headline_oneline_002: fontStyleGenerator({
-      weight: 700,
-      size: 32,
-      height: 35,
+    headline_large_002: fontStyleGenerator({
+      weight: 'bold',
+      size: 60,
+      height: 64,
       spacing: -0.6,
       fontFamily: `${cafe24OhsquareAir.style.fontFamily}`,
     }),
-    headline_oneline_003: fontStyleGenerator({
-      weight: 700,
-      size: 24,
-      height: 28,
+    headline_medium_001: fontStyleGenerator({
+      weight: 500,
+      size: 48,
+      height: 52,
       spacing: -0.4,
       fontFamily: `${cafe24OhsquareAir.style.fontFamily}`,
     }),
-    headline_oneline_004: fontStyleGenerator({
-      weight: 400,
+    headline_medium_002: fontStyleGenerator({
+      weight: 500,
       size: 32,
       height: 34,
       spacing: -0.6,
       fontFamily: `${cafe24OhsquareAir.style.fontFamily}`,
     }),
-    headline_oneline_005: fontStyleGenerator({
+    headline_small_001: fontStyleGenerator({
       weight: 400,
-      size: 24,
-      height: 26,
+      size: 28,
+      height: 32,
       spacing: -0.6,
       fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
     }),
-    headline_oneline_006: fontStyleGenerator({
+    headline_small_002: fontStyleGenerator({
       weight: 500,
-      size: 14,
-      height: 16,
+      size: 22,
+      height: 28,
+      spacing: -0.4,
+      fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
+    }),
+    headline_small_003: fontStyleGenerator({
+      weight: 500,
+      size: 16,
+      height: 20,
       spacing: -0.4,
       fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
     }),
@@ -262,36 +273,36 @@ const theme: DefaultTheme = {
     }),
     montserratAlternates_Bold_001: fontStyleGenerator({
       weight: 700,
-      size: 60,
+      size: 48,
       height: 70,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_Bold_002: fontStyleGenerator({
       weight: 700,
-      size: 48,
+      size: 32,
       height: 52,
       spacing: -0.6,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_Bold_003: fontStyleGenerator({
       weight: 700,
-      size: 32,
-      height: 34,
+      size: 15,
+      height: 20,
       spacing: -0.6,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_Medium_001: fontStyleGenerator({
       weight: 500,
-      size: 60,
-      height: 65,
+      size: 70,
+      height: 74,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_Medium_002: fontStyleGenerator({
       weight: 500,
-      size: 32,
-      height: 36,
+      size: 60,
+      height: 64,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
@@ -329,6 +340,13 @@ const theme: DefaultTheme = {
       height: 13,
       spacing: -1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
+    }),
+    gmarketSans_bold_001: fontStyleGenerator({
+      weight: 700,
+      size: 18,
+      height: 24,
+      spacing: -0.4,
+      fontFamily: ` ${gmarketSans.style.fontFamily}`,
     }),
   },
 } as const

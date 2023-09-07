@@ -25,14 +25,14 @@ const IntroSection = () => {
           <S.IntroTextContainer>
             <Typography
               variant="h2"
-              aggressive="headline_oneline_002"
+              aggressive="headline_medium_002"
               margin="2rem 0"
             >
               <ColorText text="HIPPO DEVLOG" />
             </Typography>
             <Typography
               variant="h2"
-              aggressive="headline_oneline_002"
+              aggressive="headline_small_001"
               margin="1rem 0"
             >
               블로그를 찾아주신 모든분께 감사합니다!
