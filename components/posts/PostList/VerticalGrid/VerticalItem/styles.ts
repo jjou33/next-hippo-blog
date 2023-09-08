@@ -5,31 +5,38 @@ export const GridItemContainer = styled.li<{ inview: boolean }>`
   border: 1px solid ${theme.colors.gray_001};
 
   border-radius: 20px;
-  margin: 0 auto;
-
+  margin: 1rem auto 0;
+  box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.1);
   &:hover {
     transform: scale(1.01);
     transition: transform 0.5s;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    img {
+      transform: scale(1.05);
+      transition: transform 0.5s; /* hover 효과에 사용될 트랜지션 */
+    }
   }
 
   ${({ inview }) =>
     inview
       ? css`
           opacity: 1;
-          transform: translate3d(0, 10%, 0);
-          transition: 1s;
+          transform: translate3d(0, 2%, 0);
+          transition: 0.5s;
         `
       : css`
           opacity: 0;
-          transform: translateZ(30);
-          transition: 1s;
+          transform: translateZ(10);
+          transition: 0.5s;
         `}
 `
 
 export const StyledImage = styled(Image)`
-  width: 100%;
-  overflow: hidden;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.5s;
 `
 export const ImageWrapper = styled.div`
   position: relative;

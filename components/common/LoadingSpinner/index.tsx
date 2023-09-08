@@ -2,9 +2,9 @@ import * as S from './styles'
 
 import { LoadingCircleLottie } from '../Lottie'
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({ isLoading }) => {
   return (
-    <S.LoadingBox>
+    <S.LoadingBox isLoading={isLoading}>
       <S.LoaddingContainer>
         <S.LoaddingWrapper>
           <LoadingCircleLottie />

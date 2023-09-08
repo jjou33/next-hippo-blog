@@ -36,7 +36,8 @@ const HorizontalItem = props => {
           {keywords.map((keyword: string) => (
             <Badge
               borderRadius="2rem"
-              backgroundColor={theme.colors.subPrimary_002}
+              backgroundColor="#fc5460"
+              color="white"
               aggressive="body_oneline_006"
               padding="5px 10px"
               margin="10px 10px 10px 0"
@@ -85,7 +86,7 @@ const HorizontalItem = props => {
       <StyledImageBox
         width="10rem"
         height="10rem"
-        margin="1rem 3rem"
+        margin="1rem 2rem"
         borderRadius="20px"
       >
         <Image src={imagePath} alt="alt" fill style={{ objectFit: 'cover' }} />

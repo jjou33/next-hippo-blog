@@ -1,46 +1,40 @@
-import styled, { keyframes } from 'styled-components'
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-`
+import styled, { css } from 'styled-components'
 
 export const LoadingBox = styled.div<{ isLoading: boolean }>`
   position: fixed;
-  display: ${({ isLoading }) => !isLoading && 'none'};
+  ${({ isLoading }) =>
+    isLoading
+      ? css`
+          transition: 0.1s ease-in;
+          visibility: visible;
+          opacity: 1;
+        `
+      : css`
+          transition: 1s ease-out;
+          visibility: hidden;
+          opacity: 0;
+        `}
+  z-index: 20;
   height: 100vh;
-  width: 100%;
-  z-index: 100;
+  width: calc(100vw - 280px);
+
+  @media screen and (max-width: 1300px) {
+    width: 100%;
+  }
 `
 export const LoaddingContainer = styled.div`
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.5);
+
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
-  /* animation: ${fadeIn} 0.5s ease-in-out; */
-  animation:
-    ${fadeIn} 0.5s ease-in-out,
-    ${fadeOut} 0.5s ease-in-out 1.5s forwards;
 `
 export const LoaddingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 30rem;
-  height: 30rem;
+  width: 10rem;
+  height: 10rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -6,7 +6,7 @@ import LoadingSpinner from 'components/common/LoadingSpinner'
 
 import { Footer, Header } from 'components/common'
 import { FlexBox } from '../StyledLayout'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 
 import { useRecoilValue } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
@@ -21,7 +21,16 @@ interface LayoutPropsType extends PropsWithChildren {
 }
 const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
   const isModal = useRecoilValue(menuOpenState)
+  const [isLoadingAnimation, setIsLoadingAnimation] = useState(true)
   const isLoading = useLoading()
+
+  useEffect(() => {
+    if (!isLoading) {
+      setIsLoadingAnimation(false)
+    } else {
+      setIsLoadingAnimation(true)
+    }
+  }, [isLoading])
   return (
     <FlexBox flexDirection="column" width="100vw">
       <ScrollBar />
@@ -35,16 +44,9 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
         )}
         <ChildrenContainer>
           <Header />
-          {isLoading ? (
-            <>
-              <LoadingSpinner isLoading={isLoading} />
-            </>
-          ) : (
-            <>
-              {children}
-              <Footer />
-            </>
-          )}
+          <LoadingSpinner isLoading={isLoadingAnimation} />
+          {children}
+          <Footer />
         </ChildrenContainer>
       </FlexBox>
     </FlexBox>

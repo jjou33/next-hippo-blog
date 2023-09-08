@@ -9,6 +9,7 @@ export const useLoading = () => {
     }
 
     const end = () => {
+      // setIsLoading(false)
       setTimeout(() => {
         setIsLoading(false)
       }, 1200)

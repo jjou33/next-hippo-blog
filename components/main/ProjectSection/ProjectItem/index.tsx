@@ -24,7 +24,7 @@ const ProjectItem = ({
     <S.ProjectItemContainer>
       <Link href={linkPath}>
         <StyledImageBox height="20rem" borderRadius="20px">
-          <Image
+          <S.StyledImage
             src={imagePath}
             alt={title}
             fill

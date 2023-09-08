@@ -1,6 +1,5 @@
 import * as S from './styles'
 import theme from 'styles/theme'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Badge, Typography } from 'components/common'
@@ -31,15 +30,13 @@ const VerticalItem = props => {
     year: 'numeric',
   })
 
-  console.log('1d : ', category1depth)
-
   const imagePath = `/static/images/${category1depth}/${image}`
   const linkPath = `/posts/${category2depth}/${slug}`
 
   return (
     <S.GridItemContainer ref={ref} inview={isInViewport}>
       <Link href={linkPath}>
-        <StyledImageBox height={'220px'}>
+        <StyledImageBox height={'220px'} borderRadius={'20px 20px 0 0'}>
           <FlexBox>
             {keywords.map((keyword: string) => (
               <Badge
@@ -54,16 +51,7 @@ const VerticalItem = props => {
               </Badge>
             ))}
           </FlexBox>
-          <Image
-            src={imagePath}
-            alt={title}
-            fill
-            style={{
-              objectFit: 'cover',
-              zIndex: -1,
-              borderRadius: '20px 20px 0 0',
-            }}
-          />
+          <S.StyledImage src={imagePath} alt={title} fill />
         </StyledImageBox>
         <S.ContentsWrapper>
           <FlexBox margin={'0 0 1rem 0'} alignItems={'center'} gap={'0.6rem'}>
