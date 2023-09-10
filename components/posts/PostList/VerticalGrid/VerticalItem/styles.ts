@@ -22,12 +22,12 @@ export const GridItemContainer = styled.li<{ inview: boolean }>`
     inview
       ? css`
           opacity: 1;
-          transform: translate3d(0, 2%, 0);
+          transform: translate3d(0, 5%, 0);
           transition: 0.5s;
         `
       : css`
           opacity: 0;
-          transform: translateZ(10);
+          transform: translateZ(20);
           transition: 0.5s;
         `}
 `

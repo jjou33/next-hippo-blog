@@ -4,7 +4,7 @@ import RecommendItem from '../RecommendItem'
 
 const RecommendCategory = () => {
   const imagePath = `/static/images/Algorithm/dfs1.png`
-  const DUMMY_DATA = ['test1', 'test2', 'test3', 'test3']
+  const DUMMY_DATA = ['test1', 'test2', 'test3', 'test4']
   return (
     <S.SliderContainer>
       <S.SliderTrack>
