@@ -15,7 +15,6 @@ const Pagination = ({
     handleClickLeft,
     handleClickRight,
   } = usePagination({ totalPageCount, limitPageCount, currentPage, onChange })
-  // const totalPosts = posts.length
 
   return (
     <S.PageContainer>

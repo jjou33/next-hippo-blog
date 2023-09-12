@@ -30,13 +30,6 @@ export const usePagination = ({
   currentPage,
   onChange,
 }) => {
-  console.log(
-    'pages1 : ',
-    totalPageCount,
-    limitPageCount,
-    currentPage,
-    onChange,
-  )
   const pagesGroupList = useRef<number[][]>(
     createPageGroupList(totalPageCount, limitPageCount),
   )

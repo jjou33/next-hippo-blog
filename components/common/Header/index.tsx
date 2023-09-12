@@ -35,7 +35,7 @@ const Header = () => {
           </S.LogoWrapper>
           <UnorderList gap={'40px'}>
             <S.NavigationItem>
-              <LinkWrapper href={'/posts'}>
+              <LinkWrapper href={'/posts?page=1'}>
                 <Typography
                   variant="span"
                   aggressive="button_001"
