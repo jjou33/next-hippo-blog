@@ -56,6 +56,7 @@ export const LogoWrapper = styled(LinkWrapper)`
 
 export const NavigationContentsWrapper = styled.nav<HeaderProps>`
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -71,12 +72,6 @@ export const NavigationContentsWrapper = styled.nav<HeaderProps>`
         : css`
             padding: 0 2rem;
           `};
-  }
-
-  @media screen and (max-width: 768px) {
-    * {
-      font-size: 15px;
-    }
   }
 `
 export const NavigationItem = styled.li`
@@ -104,20 +99,17 @@ export const HeaderItemTitle = styled.div`
   font-weight: bold;
   padding-left: 50px;
   @media screen and (max-width: 768px) {
-    font-size: 20px;
+    /* font-size: 20px; */
     padding-left: 0px;
   }
 `
 export const NavBarButtonWrapper = styled.div`
-  position: absolute;
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: wheat;
+  width: 40px;
+  height: 40px;
+
   border-radius: 30%;
   padding-top: 2.5px;
-  left: -25px;
-  top: 24px;
+
   cursor: pointer;
 
   @media screen and (min-width: 1300px) {

@@ -11,8 +11,14 @@ import {
 import { useInfiniteScroll } from 'hooks/useInfiniteScroll'
 import { MainIconSet } from 'public/static/icon'
 
-const VerticalItem = props => {
-  const {
+import type { PostData } from 'types/post'
+
+interface VerticalItemProps {
+  posts: PostData
+  index: number
+}
+const VerticalItem = ({
+  posts: {
     title,
     image,
     excerpt,
@@ -21,21 +27,20 @@ const VerticalItem = props => {
     category1depth,
     category2depth,
     keywords,
-  } = props.post
+  },
+  index,
+}: VerticalItemProps) => {
+  const { ref, isInViewport } = useInfiniteScroll(index * 120)
 
-  const { ref, isInViewport } = useInfiniteScroll(props.index * 120)
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   })
 
-  const imagePath = `/static/images/${category1depth}/${image}`
-  const linkPath = `/posts/${category2depth}/${slug}`
-
   return (
     <S.GridItemContainer ref={ref} inview={isInViewport}>
-      <Link href={linkPath}>
+      <Link href={`/posts/${category2depth}/${slug}`}>
         <StyledImageBox height={'220px'} borderRadius={'20px 20px 0 0'}>
           <FlexBox>
             {keywords.map((keyword: string) => (
@@ -51,7 +56,11 @@ const VerticalItem = props => {
               </Badge>
             ))}
           </FlexBox>
-          <S.StyledImage src={imagePath} alt={title} fill />
+          <S.StyledImage
+            src={`/static/images/${category1depth}/${category2depth}/${image}`}
+            alt={title}
+            fill
+          />
         </StyledImageBox>
         <S.ContentsWrapper>
           <FlexBox margin={'0 0 1rem 0'} alignItems={'center'} gap={'0.6rem'}>

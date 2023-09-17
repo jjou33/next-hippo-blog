@@ -12,7 +12,7 @@ export const PageWrapper = styled.div`
 
   /* width: 100%; */
 `
-export const PageBtn = styled.button`
+export const PageBtn = styled.button<{ selected: boolean }>`
   padding: 4px 6px;
   background-color: ${({ selected }) => (selected ? '#000' : 'transparent')};
   color: ${({ selected }) => (selected ? '#fff' : '#000')};

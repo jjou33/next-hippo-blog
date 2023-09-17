@@ -5,8 +5,9 @@ import {
   getSlugByParams,
 } from 'utils/PostUtil'
 
-const PostDetailPage = props => {
-  return <PostDetail posts={props.posts} />
+import type { PostData } from 'types/post'
+const PostDetailPage = ({ postDetailInfo }: { postDetailInfo: PostData }) => {
+  return <PostDetail postDetailInfo={postDetailInfo} />
   // return <></>
 }
 
@@ -18,7 +19,7 @@ export const getStaticProps = async ({ params: { categoryId, postId } }) => {
 
   return {
     props: {
-      posts: postData,
+      postDetailInfo: postData,
       category,
     },
   }

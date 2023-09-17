@@ -66,3 +66,7 @@ export const LottieWrapper = styled.div`
   top: 0;
   transform: translateX(-50%);
 `
+
+export const HeaderTextWrapper = styled.div`
+  text-align: center;
+`

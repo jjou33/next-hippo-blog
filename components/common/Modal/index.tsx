@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
@@ -11,6 +11,7 @@ interface DimmedModalPropsType {
 }
 const Modal = ({ children }: DimmedModalPropsType) => {
   const setMenuState = useSetRecoilState(menuOpenState)
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1300) {
@@ -27,10 +28,13 @@ const Modal = ({ children }: DimmedModalPropsType) => {
 
   const state = useRecoilValue<boolean>(menuOpenState)
   const setState = useSetRecoilState(menuOpenState)
-
+  const [innerState, setInnerState] = useState<boolean>(state)
   const onMaskClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      setState((oldValue: boolean) => !oldValue)
+      setInnerState((oldValue: boolean) => !oldValue)
+      setTimeout(() => {
+        setState((oldValue: boolean) => !oldValue)
+      }, 500)
     }
   }
 
@@ -38,7 +42,7 @@ const Modal = ({ children }: DimmedModalPropsType) => {
     <>
       <S.ModalOverlay visible={state} />
       <S.ModalWrapper onClick={onMaskClick} visible={state}>
-        <S.ModalInner className="modal-inner" visible={state}>
+        <S.ModalInner className="modal-inner" visible={innerState}>
           {children}
         </S.ModalInner>
       </S.ModalWrapper>

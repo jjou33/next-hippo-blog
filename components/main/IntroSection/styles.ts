@@ -9,7 +9,7 @@ export const IntroContainer = styled.div`
   justify-content: center;
   background-color: white;
   border-radius: 10px;
-  padding: 0 1rem;
+  padding: 1rem;
 
   border: 1px solid ${theme.colors.gray_002};
   h2 {

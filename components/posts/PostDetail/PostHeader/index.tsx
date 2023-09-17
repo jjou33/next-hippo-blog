@@ -8,10 +8,14 @@ import { FlexBox } from 'components/common/StyledLayout'
 import { Badge } from 'components/common'
 import { IndicatorLottie } from 'components/common/Lottie'
 
-const PostHeader = ({ posts }) => {
-  const imagePath = `/static/images/${posts.category1depth}/${posts.image}`
+import type { PostData } from 'types/post'
 
-  const formattedDate = new Date(posts.date).toLocaleDateString('ko', {
+const PostHeader = ({
+  postDetailInfo: { category1depth, category2depth, date, image, title },
+}: {
+  postDetailInfo: PostData
+}) => {
+  const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -28,8 +32,8 @@ const PostHeader = ({ posts }) => {
         height="100%"
       >
         <Image
-          src={imagePath}
-          alt={posts.title}
+          src={`/static/images/${category1depth}/${category2depth}/${image}`}
+          alt={title}
           fill
           style={{
             objectFit: 'cover',
@@ -46,7 +50,7 @@ const PostHeader = ({ posts }) => {
               padding="10px"
               margin="15px auto"
             >
-              {posts.title}
+              {title}
             </Badge>
           </FlexBox>
           <Typography
@@ -55,7 +59,7 @@ const PostHeader = ({ posts }) => {
             color={theme.colors.primary_005}
             align="center"
           >
-            {posts.title}
+            {title}
           </Typography>
           <Typography
             variant="span"

@@ -1,4 +1,3 @@
-import { css } from 'styled-components'
 import type { IconPropsType } from 'public/static/icon/index'
 
 export const MainIconSet: IconPropsType = {
@@ -31,9 +30,9 @@ export const MainIconSet: IconPropsType = {
         <path
           d="M4 6H20M4 12H20M4 18H20"
           stroke="#C7C7CC"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ),

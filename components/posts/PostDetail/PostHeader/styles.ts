@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const StyledImageContainer = styled.div`
   position: fixed;
-  /* overflow: hidden; */
   height: 100vh;
   width: 100%;
 

@@ -10,7 +10,7 @@ export const LoadingBox = styled.div<{ isLoading: boolean }>`
           opacity: 1;
         `
       : css`
-          transition: 1s ease-out;
+          transition: 0.3s ease-out;
           visibility: hidden;
           opacity: 0;
         `}
@@ -25,7 +25,7 @@ export const LoadingBox = styled.div<{ isLoading: boolean }>`
 export const LoaddingContainer = styled.div`
   height: 100vh;
 
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.7);
   position: relative;
 `
 export const LoaddingWrapper = styled.div`

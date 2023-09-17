@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import type { PostData, AllPostCategory } from 'types/post'
 const postsDirectory = path.join(process.cwd(), 'posts')
+const imageDirectory = path.join(process.cwd(), 'public/static/images')
 
 const readFilesRecursively = directoryPath => {
   const entries = fs.readdirSync(directoryPath)
@@ -26,6 +27,13 @@ const readFilesRecursively = directoryPath => {
   return paths
 }
 
+/**
+ * @description Image 디렉토리 내 파일을 읽어 온다.
+ */
+
+export const getImageFileNames = () => {
+  return readFilesRecursively(imageDirectory)
+}
 /**
  * @description 현재 디렉토리에 있는 PostFile 을 읽어 온다.
  */
@@ -117,17 +125,16 @@ export const getSlugByParams = (): Array<string>[] => {
  */
 
 export const getCategoryPosts = (category: string): PostData[] => {
-  const allPost = getAllPosts()
+  const categoryPosts = getAllPosts().filter(
+    post => post.category2depth === category,
+  )
 
-  const categoryPosts = allPost.filter(post => post.category2depth === category)
-
+  console.log(getImageFileNames())
   return categoryPosts
 }
 
 export const getFeaturedPosts = () => {
-  const allPosts = getAllPosts()
-
-  const featuredPosts = allPosts.filter(post => post.isFeatured)
+  const featuredPosts = getAllPosts().filter(post => post.isFeatured)
 
   return featuredPosts
 }

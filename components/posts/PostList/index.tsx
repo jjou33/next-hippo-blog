@@ -12,6 +12,7 @@ interface PostListProps {
   posts: PostData[]
   isMain?: boolean
 }
+
 const PostList = ({ posts, isMain }: PostListProps) => {
   const { totalPageCount, currentPage, exposePost, handleChangePage } =
     usePostChangeByPaging(posts)

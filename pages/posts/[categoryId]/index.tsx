@@ -9,7 +9,7 @@ import {
 const PostCategoryListPage = props => {
   return (
     <FlexBox flexDirection="column">
-      <PostCategoryList posts={props.posts} />
+      <PostCategoryList posts={props.posts} categoryId={props.categoryId} />
     </FlexBox>
   )
 }
@@ -26,6 +26,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       posts: postList,
       category,
+      categoryId,
     },
   }
 }

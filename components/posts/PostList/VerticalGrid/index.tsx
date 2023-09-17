@@ -1,13 +1,14 @@
 import * as S from './styles'
+
 import VerticalItem from 'components/posts/PostList/VerticalGrid/VerticalItem'
 
-const VerticalGrid = props => {
-  const { posts } = props
+import type { PostData } from 'types/post'
 
+const VerticalGrid = ({ posts }: { posts: PostData[] }) => {
   return (
     <S.GridContainer>
       {posts.map((post, index) => (
-        <VerticalItem key={post.slug} post={post} index={index} />
+        <VerticalItem key={post.slug} posts={post} index={index} />
       ))}
     </S.GridContainer>
   )

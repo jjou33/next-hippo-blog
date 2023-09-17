@@ -8,13 +8,6 @@ export const HeroImageContainer = styled.div`
   @media screen and (min-width: 1300px) {
     width: calc(100vw - 280px);
   }
-
-  @media screen and (max-width: 768px) {
-    * {
-      font-size: 25px;
-      line-height: 28px;
-    }
-  }
 `
 
 const rotate = keyframes`

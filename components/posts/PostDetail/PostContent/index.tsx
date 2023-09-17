@@ -1,17 +1,19 @@
-import { MainIconSet } from 'public/static/icon'
 import * as S from './styles'
 
 import ReactMarkdown from 'react-markdown'
+import PostToc from 'components/posts/PostToc'
 
+import { MainIconSet } from 'public/static/icon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import PostToc from 'components/common/PostToc'
 
-const PostContent = props => {
-  const { posts } = props
+import type { PostData } from 'types/post'
 
-  const imagePath = `/static/images/${posts.category1depth}/${posts.image}`
-
+const PostContent = ({
+  postDetailInfo: { category1depth, category2depth, content, image },
+}: {
+  postDetailInfo: PostData
+}) => {
   const customRenderers = {
     p(paragraph) {
       const {
@@ -26,7 +28,7 @@ const PostContent = props => {
         if (!src.includes('http')) {
           return (
             <S.StyledImage
-              src={imagePath}
+              src={`/static/images/${category1depth}/${category2depth}/${image}`}
               alt={alt}
               width={0}
               height={0}
@@ -56,15 +58,12 @@ const PostContent = props => {
       <S.WaveAnimationContainer>
         <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
       </S.WaveAnimationContainer>
-
       <S.ContentsWrapper>
         <PostToc />
         <S.StyledDivider>
           <hr />
         </S.StyledDivider>
-        <ReactMarkdown components={customRenderers}>
-          {posts.content}
-        </ReactMarkdown>
+        <ReactMarkdown components={customRenderers}>{content}</ReactMarkdown>
       </S.ContentsWrapper>
     </S.ContentsContainer>
   )

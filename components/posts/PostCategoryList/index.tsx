@@ -1,25 +1,28 @@
 import * as S from './styles'
+
 import PostList from '../PostList'
 import PostListHeader from './PostListHeader'
 import WaveAnimation from 'components/common/WaveAnimation'
 import IconBox from 'components/common/IconBox'
 import theme from 'styles/theme'
+
+import { Fragment } from 'react'
 import { Typography } from 'components/common'
 import { FlexBox } from 'components/common/StyledLayout'
-import { useRouter } from 'next/router'
 import { NavigationIconSet } from 'public/static/icon'
 
-const PostCategoryList = props => {
-  const {
-    query: { categoryId },
-  } = useRouter()
+import type { PostData } from 'types/post'
 
+const PostCategoryList = ({
+  posts,
+  categoryId,
+}: {
+  posts: PostData[]
+  categoryId: string
+}) => {
   return (
-    <>
-      <PostListHeader
-        categoryId={categoryId}
-        mainCategory={props.posts[0].category1depth}
-      />
+    <Fragment>
+      <PostListHeader categoryId={categoryId} postInfo={posts} />
       <S.PostCategoryContainer>
         <WaveAnimation />
         <S.AllPostContainer>
@@ -50,10 +53,10 @@ const PostCategoryList = props => {
               : '최신순으로 모든 포스트가 개재되어 있어요!'}
           </Typography>
           <S.CustomDivider />
-          <PostList posts={props.posts} />
+          <PostList posts={posts} />
         </S.AllPostContainer>
       </S.PostCategoryContainer>
-    </>
+    </Frag>
   )
 }
 

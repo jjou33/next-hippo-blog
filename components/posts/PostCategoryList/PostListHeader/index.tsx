@@ -1,13 +1,22 @@
 import * as S from './styles'
+
 import Image from 'next/image'
 import theme from 'styles/theme'
+import MotionShowBox from 'components/common/Motion/MotionShowBox'
+
 import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
-import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import { IndicatorLottie } from 'components/common/Lottie'
+import { PostData } from 'types/post'
 
-const PostListHeader = ({ categoryId, mainCategory }) => {
-  const imagePath = `/static/images/next1.jpg`
+const PostListHeader = ({
+  categoryId,
+  postInfo,
+}: {
+  categoryId: string | string[]
+  postInfo: PostData[]
+}) => {
+  const { category1depth, category2depth } = postInfo[0]
 
   return (
     <S.HeroImageContainer>
@@ -18,9 +27,10 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
         position="relative"
         width="100%"
         height="100%"
+        padding={'0 2rem'}
       >
         <Image
-          src={imagePath}
+          src={`/static/images/${category1depth}/${category2depth}/headImage.png`}
           alt={'alt'}
           fill
           style={{
@@ -44,7 +54,9 @@ const PostListHeader = ({ categoryId, mainCategory }) => {
               aggressive="montserratAlternates_Medium_001"
               color={theme.colors.primary_008}
             >
-              {categoryId ? `${mainCategory} / ${categoryId}` : `All Post 📚`}
+              {categoryId
+                ? `${category1depth} / ${categoryId} 📚`
+                : `All Post 📮`}
             </Typography>
           </MotionShowBox>
           <Divider

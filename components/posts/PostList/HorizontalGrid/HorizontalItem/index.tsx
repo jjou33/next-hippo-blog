@@ -1,15 +1,22 @@
+import * as S from './styles'
+import Image from 'next/image'
+import theme from 'styles/theme'
+
 import { Badge, Typography } from 'components/common'
 import {
   Divider,
   FlexBox,
   StyledImageBox,
 } from 'components/common/StyledLayout'
-import Image from 'next/image'
 import { MainIconSet } from 'public/static/icon'
-import theme from 'styles/theme'
-import * as S from './styles'
-const HorizontalItem = props => {
-  const {
+
+import type { PostData } from 'types/post'
+interface HorizontalItemProps {
+  posts: PostData
+}
+
+const HorizontalItem = ({
+  posts: {
     title,
     image,
     excerpt,
@@ -18,19 +25,16 @@ const HorizontalItem = props => {
     category1depth,
     category2depth,
     keywords,
-  } = props.post
-
+  },
+}: HorizontalItemProps) => {
   const formattedDate = new Date(date).toLocaleDateString('ko', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   })
 
-  const imagePath = `/static/images/${category1depth}/${image}`
-  const linkPath = `/posts/${category2depth}/${slug}`
-
   return (
-    <S.ItemContainer href={linkPath}>
+    <S.ItemContainer href={`/posts/${category2depth}/${slug}`}>
       <S.ItemContentsWrapper>
         <FlexBox margin={'0 0 0.2rem 0'}>
           {keywords.map((keyword: string) => (
@@ -89,7 +93,12 @@ const HorizontalItem = props => {
         margin="1rem 2rem"
         borderRadius="20px"
       >
-        <Image src={imagePath} alt="alt" fill style={{ objectFit: 'cover' }} />
+        <Image
+          src={`/static/images/${category1depth}/${category2depth}/${image}`}
+          alt="alt"
+          fill
+          style={{ objectFit: 'cover' }}
+        />
       </StyledImageBox>
     </S.ItemContainer>
   )

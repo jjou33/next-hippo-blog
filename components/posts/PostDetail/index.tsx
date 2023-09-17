@@ -3,11 +3,13 @@ import PostHeader from './PostHeader'
 
 import { Fragment } from 'react'
 
-const PostDetail = props => {
+import type { PostData } from 'types/post'
+
+const PostDetail = ({ postDetailInfo }: { postDetailInfo: PostData }) => {
   return (
     <Fragment>
-      <PostHeader posts={props.posts} />
-      <PostContent posts={props.posts} />
+      <PostHeader postDetailInfo={postDetailInfo} />
+      <PostContent postDetailInfo={postDetailInfo} />
     </Fragment>
   )
 }

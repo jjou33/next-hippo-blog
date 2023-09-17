@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const ModalWrapper = styled.div<{ visible: boolean }>`
   box-sizing: border-box;
@@ -10,6 +10,10 @@ export const ModalWrapper = styled.div<{ visible: boolean }>`
   z-index: 1000;
   overflow: auto;
   outline: 0;
+  transition: 1s;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 export const ModalOverlay = styled.div<{ visible: boolean }>`
@@ -34,11 +38,28 @@ const slideInRight = keyframes`
   }
 `
 
+const slideInLeft = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+`
 export const ModalInner = styled.div<{ visible: boolean }>`
   position: relative;
   background: white;
   width: 300px;
-  animation: ${slideInRight} 1s ease-in-out;
+  animation: ${({ visible }) =>
+    visible
+      ? css`
+          ${slideInRight} 0.5s ease-in;
+        `
+      : css`
+          ${slideInLeft} 0.5s ease-out;
+        `};
 `
 
 export const CloseButton = styled.div`

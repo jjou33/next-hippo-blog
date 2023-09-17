@@ -12,7 +12,7 @@ export const useLoading = () => {
       // setIsLoading(false)
       setTimeout(() => {
         setIsLoading(false)
-      }, 1200)
+      }, 500)
     }
 
     Router.events.on('routeChangeStart', start)
