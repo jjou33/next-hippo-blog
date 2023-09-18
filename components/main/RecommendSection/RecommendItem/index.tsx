@@ -13,7 +13,7 @@ const RecommendItem = ({ imagePath, itemName }: RecommendItemProps) => {
   return (
     <S.RecommendItemWrapper key={itemName}>
       <StyledLayout.StyledImageBox borderRadius="2rem" boxShadow="">
-        <Image src={imagePath} alt="alt" width={90} height={90} />
+        <Image src={imagePath} alt="alt" width={110} height={110} />
       </StyledLayout.StyledImageBox>
       <Typography
         variant="p"

@@ -10,6 +10,7 @@ import WaveAnimation from 'components/common/WaveAnimation'
 import { FlexBox } from 'components/common/StyledLayout'
 
 import type { PostData } from 'types/post'
+import SlideSection from './SlideSection'
 
 const MainContents = ({ posts }: { posts: PostData[] }) => {
   return (
@@ -18,6 +19,7 @@ const MainContents = ({ posts }: { posts: PostData[] }) => {
       <S.MainContainer>
         <WaveAnimation />
         <S.SectionContainer>
+          <SlideSection />
           <IntroSection />
           <RecommendList />
           <ProjectSection />

@@ -4,7 +4,7 @@ export const RecommendItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 140px;
-  height: 160px;
+  height: 180px;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
