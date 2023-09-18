@@ -9,6 +9,12 @@ import { ColorBorderBox } from 'components/common/StyledLayout'
 import { FireCrackerStaticLottie } from 'components/common/Lottie/FireCracker'
 
 const IntroSection = () => {
+  const INTRO_INFO = {
+    TITLE: '블로그를 찾아주신 모든분께 감사합니다!',
+    SUBTITLE:
+      ' 즐거운 개발 라이프를 지향하며, 더욱 좋은 개발자가 되기 위해 노력합니다 🧑🏼‍💻',
+  } as const
+
   return (
     <S.IntroBorder>
       <ColorBorderBox
@@ -35,11 +41,10 @@ const IntroSection = () => {
               aggressive="headline_small_001"
               margin="1rem 0"
             >
-              블로그를 찾아주신 모든분께 감사합니다!
+              {INTRO_INFO.TITLE}
             </Typography>
             <Typography variant="h2" aggressive="body_oneline_001">
-              즐거운 개발 라이프를 지향하며, 더욱 좋은 개발자가 되기 위해
-              노력합니다 🧑🏼‍💻
+              {INTRO_INFO.SUBTITLE}
             </Typography>
             <S.IntroFireLottieWrapper>
               <FireCrackerStaticLottie />

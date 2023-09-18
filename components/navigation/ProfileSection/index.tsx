@@ -6,27 +6,36 @@ import theme from 'styles/theme'
 
 import { Divider } from 'components/common/StyledLayout'
 
-const ProfileSection = () => {
-  const linkInfo = [
-    { color1: '#f97253', color2: '#f7cb80', iconName: 'Git', title: 'GITHUB' },
-    {
-      color1: '#8a7240',
-      color2: '#e68e66',
-      iconName: 'Email',
-      title: 'CONTACT',
-    },
-  ]
-
-  const numberInfo = [
-    { number: 33, title: '총 카테고리' },
-    { number: 55, title: '총 게시글' },
-  ]
+const ProfileSection = ({ category: { allPostCount, categoryCount } }) => {
+  const PROFILE_INFO = {
+    LINK: [
+      {
+        color1: '#f97253',
+        color2: '#f7cb80',
+        iconName: 'Git',
+        title: 'GITHUB',
+      },
+      {
+        color1: '#8a7240',
+        color2: '#e68e66',
+        iconName: 'Email',
+        title: 'CONTACT',
+      },
+    ],
+    VISIT_AND_CONTENTS: [
+      { number: Number(`${categoryCount}`), title: '총 카테고리' },
+      { number: Number(`${allPostCount}`), title: '총 게시글' },
+    ],
+  }
 
   return (
     <S.ProfileConotainer>
       <S.ProfileWrapper>
         <LogoImage />
-        <SiteInfo linkItems={linkInfo} numberItems={numberInfo} />
+        <SiteInfo
+          linkItems={PROFILE_INFO.LINK}
+          numberItems={PROFILE_INFO.VISIT_AND_CONTENTS}
+        />
       </S.ProfileWrapper>
       <Divider
         direction="horizontal"

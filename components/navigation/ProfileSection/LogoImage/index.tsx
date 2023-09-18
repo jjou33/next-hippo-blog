@@ -18,12 +18,7 @@ const LogoImage = () => {
           margin="45px auto 0"
           top="50px"
         >
-          <Image
-            src="/static/images/hacker.png"
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
+          <Image src="/static/images/hacker.png" alt="alt" fill />
         </StyledImageBox>
         <S.NotificationContainer>
           <TextNotification />

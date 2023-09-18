@@ -1,10 +1,6 @@
 import * as S from './styles'
 
-import theme from 'styles/theme'
 import ProjectGrid from './ProjectGrid'
-
-import { Typography } from 'components/common'
-import { Divider } from 'components/common/StyledLayout'
 import SectionHeader from '../SectionHeader'
 
 export interface ProjectInfoProps {

@@ -56,7 +56,7 @@ const PostCategoryList = ({
           <PostList posts={posts} />
         </S.AllPostContainer>
       </S.PostCategoryContainer>
-    </Frag>
+    </Fragment>
   )
 }
 
