@@ -19,8 +19,8 @@ const MainContents = ({ posts }: { posts: PostData[] }) => {
       <S.MainContainer>
         <WaveAnimation />
         <S.SectionContainer>
-          <SlideSection />
           <IntroSection />
+          {/* <SlideSection /> */}
           <RecommendList />
           <ProjectSection />
           <PostListSection posts={posts} />

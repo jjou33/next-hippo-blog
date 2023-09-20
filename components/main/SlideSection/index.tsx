@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import * as S from './styles'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const SlideSection = () => {
   const IMAGE_LINK = [
@@ -36,90 +36,12 @@ const SlideSection = () => {
               style={{ objectFit: 'cover' }}
             />
             <S.SlideContents>
-              <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
+              <S.TitleWrapper>{IMAGE_LINK[order].split('/')[3]}</S.TitleWrapper>
               <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
               <S.Button>{`See More`}</S.Button>
             </S.SlideContents>
           </S.SlideItem>
         ))}
-        {/* <S.SlideItem>
-          <Image
-            src={IMAGE_LINK[0]}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem>
-        <S.SlideItem>
-          <Image
-            src={IMAGE_LINK[1]}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem>
-        <S.SlideItem>
-          <Image
-            src={IMAGE_LINK[2]}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem>
-        <S.SlideItem>
-          <Image
-            src={IMAGE_LINK[1]}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem>
-        <S.SlideItem>
-          <Image
-            src={`/static/images/Algorithm/dfs/headImage.png`}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem>
-        <S.SlideItem>
-          <Image
-            src={`/static/images/Algorithm/dfs/headImage.png`}
-            alt="alt"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <S.SlideContents>
-            <S.TitleWrapper>HIPPO DEV</S.TitleWrapper>
-            <S.SubTitleWrapper>Sub HIPPO DEV</S.SubTitleWrapper>
-            <S.Button>{`See More`}</S.Button>
-          </S.SlideContents>
-        </S.SlideItem> */}
       </S.SlideWrapper>
       <S.NavigationContainer>
         <S.NavigationButton onClick={Func}>{`<`}</S.NavigationButton>
