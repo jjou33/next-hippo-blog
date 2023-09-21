@@ -1,7 +1,6 @@
-import { Typography } from 'components/common'
-import Image from 'next/image'
-import theme from 'styles/theme'
 import * as S from './styles'
+import Image from 'next/image'
+import { Typography } from 'components/common'
 
 const SlideSection = () => {
   const IMAGE_LINK = [
@@ -39,7 +38,7 @@ const SlideSection = () => {
               </S.TitleWrapper>
               <S.SubTitleWrapper variant="p" aggressive="body_oneline_003">
                 가나다라마사가나다
-                라마사가나다라마사가나다라마사가나다라마사가나다라마사라마사가나다라마사가나다라마사가나다라마사가나다라마사asdo가니아
+                라마사가나다라마사가나다라마사가나다라마사가나다라마사라마사가나다라마사가나다라마사가나다라마사가나다라마사asdo가니아가니아가니아가니아
               </S.SubTitleWrapper>
               <S.Button>
                 <Typography

@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { Typography } from 'components/common'
+import theme from 'styles/theme'
 const showContent = keyframes`
     from {
         opacity: 0;
@@ -49,10 +50,11 @@ export const Button = styled.button`
   outline: none;
   overflow: hidden;
   position: relative;
-  color: #fff;
+  color: #000;
   font-weight: 700;
   font-size: 12px;
-  background-color: #222;
+  border-radius: 2rem;
+  background-color: wheat;
   padding: 17px 60px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
@@ -93,18 +95,19 @@ export const NavigationButton = styled.button`
   }
 `
 export const TitleWrapper = styled(Typography)`
-  opacity: 0;
+  /* opacity: 0; */
   margin-bottom: 20px;
-  animation: ${showContent} 1s ease-in-out 1s 1 forwards;
+  /* animation: ${showContent} 1s ease-in-out 1s 1 forwards; */
 `
 export const SubTitleWrapper = styled(Typography)`
   margin: 0 0 1rem 0;
-  opacity: 0;
-  white-space: nowrap;
+  /* opacity: 0; */
+  /* white-space: nowrap; */
+
   overflow: hidden;
-  line-clamp: 4;
   text-overflow: ellipsis;
-  animation: ${showContent} 1s ease-in-out 0.3s 1 forwards;
+  display: -webkit-box;
+  /* animation: ${showContent} 1s ease-in-out 0.3s 1 forwards; */
 `
 
 export const LeftDimmedBox = styled.div``
@@ -163,20 +166,30 @@ export const SlideItem = styled.div`
     ${TitleWrapper} {
       font-size: 40px;
 
-      color: ${({ theme }) => theme.colors.primary_004};
+      color: ${({ theme }) => theme.colors.primary_006};
     }
 
     ${SubTitleWrapper} {
       font-size: 20px;
       line-height: 30px;
       width: 250px;
-      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
     }
   }
   &:nth-child(n + 3) {
     ${SlideContents} {
       left: 10px;
       top: 70%;
+    }
+    ${TitleWrapper} {
+      color: ${({ theme }) => theme.colors.primary_003};
+    }
+    ${SubTitleWrapper} {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
   &:nth-child(3) {
@@ -196,14 +209,12 @@ export const SlideItem = styled.div`
   ${Button} {
     padding: 10px 20px;
     border: none;
-    opacity: 0;
-    animation: ${showContent} 1s ease-in-out 0.6s 1 forwards;
   }
 `
 export const NavigationContainer = styled.div`
   position: absolute;
   bottom: 30px;
   z-index: 222222;
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
 `
