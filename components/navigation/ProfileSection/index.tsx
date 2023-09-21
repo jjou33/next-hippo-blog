@@ -6,7 +6,7 @@ import theme from 'styles/theme'
 
 import { Divider } from 'components/common/StyledLayout'
 
-const ProfileSection = ({ category: { allPostCount, categoryCount } }) => {
+const ProfileSection = () => {
   const PROFILE_INFO = {
     LINK: [
       {
@@ -23,8 +23,8 @@ const ProfileSection = ({ category: { allPostCount, categoryCount } }) => {
       },
     ],
     VISIT_AND_CONTENTS: [
-      { number: Number(`${categoryCount}`), title: '총 카테고리' },
-      { number: Number(`${allPostCount}`), title: '총 게시글' },
+      { number: 55, title: '총 카테고리' },
+      { number: 33, title: '총 게시글' },
     ],
   }
 

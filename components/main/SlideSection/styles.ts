@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-
+import { Typography } from 'components/common'
 const showContent = keyframes`
     from {
         opacity: 0;
@@ -15,7 +15,6 @@ const showContent = keyframes`
 export const SlideContainer = styled.div`
   height: 450px;
   position: relative;
-  /* background-color: red; */
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 30px 50px #dbdbdb;
@@ -32,16 +31,55 @@ export const SlideContents = styled.div`
   position: absolute;
   top: 50%;
   left: 100px;
-  width: 300px;
+  width: 150px;
   text-align: left;
   padding: 0;
+  z-index: 3;
   color: #eee;
   transform: translate(0, -50%);
-
-  /* display: none; */
 `
 
-export const Button = styled.button``
+export const Button = styled.button`
+  /* display: none; */
+  border: none;
+  display: none;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  background-color: #222;
+  padding: 17px 60px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  }
+
+  &:hover::after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+`
 
 export const NavigationButton = styled.button`
   width: 50px;
@@ -54,24 +92,28 @@ export const NavigationButton = styled.button`
     background-color: #bac383;
   }
 `
-export const TitleWrapper = styled.div`
-  font-size: 40px;
-  font-weight: bold;
+export const TitleWrapper = styled(Typography)`
   opacity: 0;
+  margin-bottom: 20px;
   animation: ${showContent} 1s ease-in-out 1s 1 forwards;
 `
-export const SubTitleWrapper = styled.div`
-  margin: 20px 0;
+export const SubTitleWrapper = styled(Typography)`
+  margin: 0 0 1rem 0;
   opacity: 0;
-
+  white-space: nowrap;
+  overflow: hidden;
+  line-clamp: 4;
+  text-overflow: ellipsis;
   animation: ${showContent} 1s ease-in-out 0.3s 1 forwards;
 `
-export const SlideItem = styled.div`
-  width: 250px;
-  height: 300px;
-  /* background-position: 50% 1/0%; */
 
-  /* transition: 0.5s; */
+export const LeftDimmedBox = styled.div``
+
+export const SlideItem = styled.div`
+  width: 200px;
+  height: 300px;
+
+  transition: 0.5s;
   position: absolute;
   z-index: 1;
   overflow: hidden;
@@ -79,8 +121,17 @@ export const SlideItem = styled.div`
   transform: translate(0, -50%);
   border-radius: 20px;
   box-shadow: 5px 15px 40px 5px #505050;
-  transition: 0.5s ease-in-out;
-
+  ${LeftDimmedBox} {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0) 5%,
+      rgba(20, 20, 20, 0.1) 20%,
+      rgba(20, 20, 20, 0.6) 70%
+    );
+  }
   &:nth-child(1),
   &:nth-child(2) {
     left: 0;
@@ -89,35 +140,53 @@ export const SlideItem = styled.div`
     border-radius: 0;
     width: 100%;
     height: 100%;
-    box-shadow: none;
+    ${LeftDimmedBox} {
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(
+        to left,
+        rgba(20, 20, 20, 0) 5%,
+        rgba(20, 20, 20, 0.1) 50%,
+        rgba(20, 20, 20, 0.6) 90%
+      );
+    }
 
     ${SlideContents} {
       display: block;
-      z-index: 30;
+      z-index: 3;
+    }
+    ${Button} {
+      display: block;
+    }
+
+    ${TitleWrapper} {
+      font-size: 40px;
+
+      color: ${({ theme }) => theme.colors.primary_004};
+    }
+
+    ${SubTitleWrapper} {
+      font-size: 20px;
+      line-height: 30px;
+      width: 250px;
+      white-space: normal;
+    }
+  }
+  &:nth-child(n + 3) {
+    ${SlideContents} {
+      left: 10px;
+      top: 70%;
     }
   }
   &:nth-child(3) {
-    left: 62%;
-    top: 38%;
-    z-index: 33;
-
-    ${SlideContents} {
-      left: 0;
-      top: 65%;
-      /* text-align: center; */
-
-      /* z-index: 30; */
-    }
+    left: 50%;
   }
   &:nth-child(4) {
-    left: calc(50% + 140px);
-    z-index: 30;
-    top: 43%;
+    left: calc(50% + 220px);
   }
   &:nth-child(5) {
-    left: calc(50% + 160px);
-    z-index: 20;
-    top: 48%;
+    left: calc(50% + 440px);
   }
   &:nth-child(n + 6) {
     left: calc(50% + 660px);
