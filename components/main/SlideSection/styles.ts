@@ -1,18 +1,6 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { Typography } from 'components/common'
-import theme from 'styles/theme'
-const showContent = keyframes`
-    from {
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-        filter: blur(0);
-    }
-`
+
 export const SlideContainer = styled.div`
   height: 450px;
   position: relative;
@@ -55,12 +43,18 @@ export const Button = styled.button`
   font-size: 12px;
   border-radius: 2rem;
   background-color: wheat;
-  padding: 17px 60px;
+  /* padding: 17px 60px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   span {
     position: relative;
     z-index: 1;
+    width: 30px;
+    height: 30px;
+    svg {
+      width: 10px;
+      height: 10px;
+    }
   }
 
   &::after {
@@ -73,41 +67,48 @@ export const Button = styled.button`
     background: #78c7d2;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
-    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    -webkit-transform: translateX(-98%) translateY(-10%) rotate(60deg);
+    transform: translateX(-90%) translateY(-10%) rotate(60deg);
   }
 
   &:hover::after {
-    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    -webkit-transform: translateX(-9%) translateY(-30%) rotate(60deg);
+    transform: translateX(-9%) translateY(-30%) rotate(60deg);
   }
 `
+export const NavigationContainer = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  bottom: 30px;
+  z-index: 222222;
+  width: 100%;
+  left: 40%;
+`
 
-export const NavigationButton = styled.button`
-  width: 50px;
-  height: 50px;
+export const NavigationButton = styled.div<{ direction: string }>`
+  width: 30px;
+  padding: 8px;
+  height: 30px;
   border-radius: 50%;
-  border: 1px solid #555;
+  background: white;
+  ${({ direction }) =>
+    direction === 'right'
+      ? css`
+          transform: rotate(180deg);
+        `
+      : ``};
   transition: 0.5s;
-
-  &:hover {
-    background-color: #bac383;
-  }
+  cursor: pointer;
 `
 export const TitleWrapper = styled(Typography)`
-  /* opacity: 0; */
   margin-bottom: 20px;
-  /* animation: ${showContent} 1s ease-in-out 1s 1 forwards; */
 `
 export const SubTitleWrapper = styled(Typography)`
   margin: 0 0 1rem 0;
-  /* opacity: 0; */
-  /* white-space: nowrap; */
-
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  /* animation: ${showContent} 1s ease-in-out 0.3s 1 forwards; */
 `
 
 export const LeftDimmedBox = styled.div``
@@ -158,6 +159,9 @@ export const SlideItem = styled.div`
     ${SlideContents} {
       display: block;
       z-index: 3;
+      @media screen and (max-width: 768px) {
+        left: 20px;
+      }
     }
     ${Button} {
       display: block;
@@ -165,7 +169,6 @@ export const SlideItem = styled.div`
 
     ${TitleWrapper} {
       font-size: 40px;
-
       color: ${({ theme }) => theme.colors.primary_006};
     }
 
@@ -191,6 +194,10 @@ export const SlideItem = styled.div`
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
     }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &:nth-child(3) {
     left: 50%;
@@ -211,10 +218,108 @@ export const SlideItem = styled.div`
     border: none;
   }
 `
-export const NavigationContainer = styled.div`
-  position: absolute;
-  bottom: 30px;
-  z-index: 222222;
-  /* text-align: center; */
-  width: 100%;
+const baseButtonStyles = css`
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:
+    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+`
+
+// Keyframes for button animation
+const buttonHoverAnimation = keyframes`
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+`
+
+const buttonSpanHoverAnimation = keyframes`
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+`
+
+// Styled component for the button
+export const CustomButton = styled.button`
+  ${baseButtonStyles}
+
+  background: linear-gradient(
+    0deg,
+    rgba(255, 151, 0, 1) 0%,
+    rgba(251, 75, 2, 1) 100%
+  );
+  line-height: 42px;
+  padding: 0;
+  border: none;
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      right: 0;
+      bottom: 0;
+      background: rgba(251, 75, 2, 1);
+      box-shadow:
+        -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
+        -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+        4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    &:before {
+      height: 0;
+      width: 2px;
+    }
+
+    &:after {
+      width: 0;
+      height: 2px;
+    }
+  }
+
+  &:hover {
+    color: rgba(251, 75, 2, 1);
+    background: transparent;
+
+    span:before {
+      animation: ${buttonSpanHoverAnimation} 0.3s ease;
+    }
+
+    span:after {
+      animation: ${buttonSpanHoverAnimation} 0.3s ease;
+    }
+  }
+
+  &:hover:before {
+    animation: ${buttonHoverAnimation} 0.3s ease;
+  }
+
+  &:hover:after {
+    animation: ${buttonHoverAnimation} 0.3s ease;
+  }
 `

@@ -1,6 +1,10 @@
 import * as S from './styles'
+
 import Image from 'next/image'
+import theme from 'styles/theme'
+
 import { Typography } from 'components/common'
+import { MainIconSet } from 'public/static/icon'
 
 const SlideSection = () => {
   const IMAGE_LINK = [
@@ -45,7 +49,7 @@ const SlideSection = () => {
                   variant="span"
                   aggressive="montserratAlternates_Regular_003"
                 >
-                  Go To Category!
+                  GO {MainIconSet['Go'].icon('black')}
                 </Typography>
               </S.Button>
             </S.SlideContents>
@@ -53,8 +57,12 @@ const SlideSection = () => {
         ))}
       </S.SlideWrapper>
       <S.NavigationContainer>
-        <S.NavigationButton onClick={nextItem}>{`<`}</S.NavigationButton>
-        <S.NavigationButton onClick={prevItem}>{`>`}</S.NavigationButton>
+        <S.NavigationButton onClick={nextItem} direction={'left'}>
+          {MainIconSet['Arrow'].icon(theme.colors.gray_006)}
+        </S.NavigationButton>
+        <S.NavigationButton onClick={prevItem} direction={'right'}>
+          {MainIconSet['Arrow'].icon(theme.colors.gray_006)}
+        </S.NavigationButton>
       </S.NavigationContainer>
     </S.SlideContainer>
   )

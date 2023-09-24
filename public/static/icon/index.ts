@@ -3,7 +3,7 @@ export * as IconCollection from 'public/static/icon'
 
 export interface IconPropsType {
   [key: string]: {
-    icon: () => ReactNode
+    icon: (color?: string) => ReactNode
   }
 }
 export * from './NavigationIcon'
