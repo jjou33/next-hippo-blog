@@ -6,8 +6,10 @@ import MotionShowBox from 'components/common/Motion/MotionShowBox'
 
 import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
-import { IndicatorLottie } from 'components/common/Lottie'
+import { GiftBoxLottie, IndicatorLottie } from 'components/common/Lottie'
 import { PostData } from 'types/post'
+import { useTypingTitle } from 'hooks/useIntervalAnimation'
+import { FireCrackerDynamicLottie } from 'components/common/Lottie/FireCracker'
 
 const PostListHeader = ({
   categoryId,
@@ -17,7 +19,10 @@ const PostListHeader = ({
   postInfo: PostData[]
 }) => {
   const { category1depth, category2depth } = postInfo[0]
-
+  const TYPINGLIST = {
+    LIST: ['Closure', 'Javascript', 'ES6'],
+  }
+  const currentTitle = useTypingTitle(TYPINGLIST.LIST)
   return (
     <S.HeroImageContainer>
       <FlexBox
@@ -35,42 +40,48 @@ const PostListHeader = ({
           fill
           style={{
             objectFit: 'cover',
-            filter: 'brightness(0.5)',
+            filter: 'brightness(0.4)',
             zIndex: '-1',
           }}
         />
 
         <FlexBox flexDirection="column" position="absolute" margin="0 auto">
+          <S.LottieContainer>
+            <FireCrackerDynamicLottie />
+          </S.LottieContainer>
           <MotionShowBox showDirection="down">
-            <Typography
-              variant="h3"
-              aggressive="montserratAlternates_Medium_001"
-              color={theme.colors.gray_000}
-            >
-              Look Arround
-            </Typography>
+            <S.TextContainer>
+              <Typography
+                variant="h3"
+                aggressive="montserratAlternates_Medium_001"
+                color={theme.colors.gray_000}
+                align="center"
+              >
+                {`You Can Find Here`}
+              </Typography>
+            </S.TextContainer>
+            <Divider
+              direction="horizontal"
+              width="100%"
+              height="1px"
+              margin="20px 0 0 0"
+              color={theme.colors.gray_002}
+            />
+          </MotionShowBox>
+          <S.DynamicTextBox>
             <Typography
               variant="span"
               aggressive="montserratAlternates_Medium_001"
-              color={theme.colors.primary_008}
+              color={theme.colors.primary_006}
             >
-              {categoryId
-                ? `${category1depth} / ${categoryId} 📚`
-                : `All Post 📮`}
+              {`About ${currentTitle}`}
             </Typography>
-          </MotionShowBox>
-          <Divider
-            direction="horizontal"
-            width="100%"
-            height="1px"
-            margin="20px 0 10px 0"
-            color={theme.colors.gray_002}
-          />
+          </S.DynamicTextBox>
         </FlexBox>
         <FlexBox justifyContent="center" margin="5rem 0 0 0">
-          <S.IndicatorWrapper>
-            <IndicatorLottie />
-          </S.IndicatorWrapper>
+          <S.MouseIndicatorWrapper>
+            <S.MouseIndicator></S.MouseIndicator>
+          </S.MouseIndicatorWrapper>
         </FlexBox>
       </FlexBox>
     </S.HeroImageContainer>

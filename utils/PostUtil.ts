@@ -129,7 +129,6 @@ export const getCategoryPosts = (category: string): PostData[] => {
     post => post.category2depth === category,
   )
 
-  console.log(getImageFileNames())
   return categoryPosts
 }
 

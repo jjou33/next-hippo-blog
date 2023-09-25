@@ -2,7 +2,7 @@ import PostCategoryList from 'components/posts/PostCategoryList'
 import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
-  return <PostCategoryList posts={props.posts} isVertical={true} />
+  return <PostCategoryList posts={props.posts} />
 }
 
 export function getStaticProps() {

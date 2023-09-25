@@ -4,9 +4,13 @@ import SiteInfo from './SiteInfo'
 import LogoImage from './LogoImage'
 import theme from 'styles/theme'
 
+import { useRecoilValue } from 'recoil'
+import { categoryState } from 'states/categoryState'
 import { Divider } from 'components/common/StyledLayout'
 
 const ProfileSection = () => {
+  const categoryInfo = useRecoilValue(categoryState)
+
   const PROFILE_INFO = {
     LINK: [
       {
@@ -23,8 +27,8 @@ const ProfileSection = () => {
       },
     ],
     VISIT_AND_CONTENTS: [
-      { number: 55, title: '총 카테고리' },
-      { number: 33, title: '총 게시글' },
+      { number: Number(`${categoryInfo.categoryCount}`), title: '총 카테고리' },
+      { number: Number(`${categoryInfo.allPostCount}`), title: '총 게시글' },
     ],
   }
 

@@ -9,10 +9,10 @@ import { MainIconSet } from 'public/static/icon'
 const SlideSection = () => {
   const IMAGE_LINK = [
     '/static/images/Algorithm/dfs/headImage.png',
-    '/static/images/Algorithm/bfs/headImage.jpg',
+    '/static/images/Algorithm/bfs/headImage.png',
     '/static/images/HeroImage/landing3.jpg',
     '/static/images/Algorithm/dfs/headImage.png',
-    '/static/images/Algorithm/bfs/headImage.jpg',
+    '/static/images/Algorithm/bfs/headImage.png',
     '/static/images/HeroImage/landing3.jpg',
   ]
 

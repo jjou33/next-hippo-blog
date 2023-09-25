@@ -37,11 +37,11 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
                 {value}
               </Typography>
               <Badge
-                borderRadius="10px"
+                borderRadius="20px"
                 color="red"
-                aggressive="body_oneline_004"
-                padding="0 5px"
-                border="1px solid"
+                aggressive="montserratAlternates_light"
+                padding="0 8px"
+                border="0.1px solid"
               >
                 {count[value]}
               </Badge>

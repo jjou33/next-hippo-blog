@@ -39,7 +39,7 @@ export const ContentsWrapper = styled.article`
 
   p {
     color: hsl(276, 5%, 20%);
-
+    margin: 1rem 0;
     strong {
       color: red;
       font-weight: 400;

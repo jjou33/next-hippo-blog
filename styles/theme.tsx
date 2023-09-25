@@ -331,7 +331,7 @@ const theme: DefaultTheme = {
       weight: 400,
       size: 13,
       height: 13,
-      spacing: -1,
+      spacing: -0.1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_light: fontStyleGenerator({

@@ -18,7 +18,7 @@ const PostCategoryList = ({
   categoryId,
 }: {
   posts: PostData[]
-  categoryId: string
+  categoryId?: string
 }) => {
   return (
     <Fragment>

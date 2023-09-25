@@ -6,9 +6,9 @@ import {
 } from 'utils/PostUtil'
 
 import type { PostData } from 'types/post'
+
 const PostDetailPage = ({ postDetailInfo }: { postDetailInfo: PostData }) => {
   return <PostDetail postDetailInfo={postDetailInfo} />
-  // return <></>
 }
 
 export default PostDetailPage

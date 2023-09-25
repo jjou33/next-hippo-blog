@@ -20,9 +20,9 @@ interface LayoutPropsType extends PropsWithChildren {
   }
 }
 const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
+  const isLoading = useLoading()
   const isModal = useRecoilValue(menuOpenState)
   const [isLoadingAnimation, setIsLoadingAnimation] = useState(true)
-  const isLoading = useLoading()
 
   useEffect(() => {
     if (!isLoading) {
@@ -31,6 +31,7 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
       setIsLoadingAnimation(true)
     }
   }, [isLoading])
+
   return (
     <FlexBox flexDirection="column" width="100vw">
       <ScrollBar />
