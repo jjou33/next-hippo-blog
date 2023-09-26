@@ -1,6 +1,94 @@
 import type { IconPropsType } from 'public/static/icon/index'
 
 export const NavigationIconSet: IconPropsType = {
+  Style: {
+    icon: () => (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#000000"
+        stroke="#000000"
+      >
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+        <g
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        <g id="SVGRepo_iconCarrier">
+          {' '}
+          <path
+            fill="none"
+            stroke="#93a1ae"
+            strokeWidth="2"
+            d="M17,10 L24,10 L17,10 L17,10 Z M1,14 L14,14 L14,2 L1,2 L1,14 Z M6,6 C6,6.5525 5.5525,7 5,7 C4.4475,7 4,6.5525 4,6 C4,5.4475 4.4475,5 5,5 C5.5525,5 6,5.4475 6,6 M17,6 L24,6 L17,6 L17,6 Z M17,2 L24,2 L17,2 L17,2 Z M17,14 L24,14 L17,14 L17,14 Z M0,18 L24,18 L0,18 L0,18 Z M0,22 L24,22 L0,22 L0,22 Z M14,14 L14,13 L10,8 L7,11 L6,10 L2,14 L14,14 Z"
+          />{' '}
+        </g>
+      </svg>
+    ),
+  },
+  Design: {
+    icon: () => (
+      <svg fill="#93a1ae" width="100%" height="100%" viewBox="0 0 512 512">
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+        <g
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        <g id="SVGRepo_iconCarrier">
+          <path d="M441,336.2l-.06-.05c-9.93-9.18-22.78-11.34-32.16-12.92l-.69-.12c-9.05-1.49-10.48-2.5-14.58-6.17-2.44-2.17-5.35-5.65-5.35-9.94s2.91-7.77,5.34-9.94l30.28-26.87c25.92-22.91,40.2-53.66,40.2-86.59S449.73,119.92,423.78,97c-35.89-31.59-85-49-138.37-49C223.72,48,162,71.37,116,112.11c-43.87,38.77-68,90.71-68,146.24s24.16,107.47,68,146.23c21.75,19.24,47.49,34.18,76.52,44.42a266.17,266.17,0,0,0,86.87,15h1.81c61,0,119.09-20.57,159.39-56.4,9.7-8.56,15.15-20.83,15.34-34.56C456.14,358.87,450.56,345.09,441,336.2ZM112,208a32,32,0,1,1,32,32A32,32,0,0,1,112,208Zm40,135a32,32,0,1,1,32-32A32,32,0,0,1,152,343Zm40-199a32,32,0,1,1,32,32A32,32,0,0,1,192,144Zm64,271a48,48,0,1,1,48-48A48,48,0,0,1,256,415Zm72-239a32,32,0,1,1,32-32A32,32,0,0,1,328,176Z" />
+        </g>
+      </svg>
+    ),
+  },
+  Basic: {
+    icon: () => (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#93a1ae"
+      >
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+        <g
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        <g id="SVGRepo_iconCarrier">
+          <title />
+          <g data-name="61-unlock" id="_61-unlock">
+            <rect
+              className="cls-1"
+              height="14"
+              rx="2"
+              ry="2"
+              width="20"
+              x="6"
+              y="17"
+            />{' '}
+            <path
+              className="cls-1"
+              d="M8,17V9a8,8,0,0,1,8-8h0a8,8,0,0,1,8,8H20a4,4,0,0,0-4-4h0a4,4,0,0,0-4,4v8"
+            />{' '}
+            <line className="cls-1" x1="26" x2="30" y1="12" y2="12" />{' '}
+            <line className="cls-1" x1="27" x2="30" y1="9" y2="6" />{' '}
+            <line className="cls-1" x1="27" x2="30" y1="15" y2="18" />{' '}
+          </g>{' '}
+        </g>
+      </svg>
+    ),
+  },
   Javascript: {
     icon: () => (
       <svg
@@ -10,7 +98,7 @@ export const NavigationIconSet: IconPropsType = {
         fill="none"
         stroke="#93a1ae"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
         <g
           id="SVGRepo_tracerCarrier"
@@ -37,7 +125,7 @@ export const NavigationIconSet: IconPropsType = {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
         <g
           id="SVGRepo_tracerCarrier"

@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 export const HeroImageContainer = styled.div`
   position: fixed;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 
   @media screen and (min-width: 1300px) {
@@ -92,9 +92,9 @@ export const LottieContainer = styled.div`
   position: absolute;
   width: 200px;
   height: 200px;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
-  top: 15%;
+  top: 25%;
 `
 
 export const DynamicTextBox = styled.div`

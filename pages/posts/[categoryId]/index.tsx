@@ -9,7 +9,11 @@ import {
 const PostCategoryListPage = props => {
   return (
     <FlexBox flexDirection="column">
-      <PostCategoryList posts={props.posts} categoryId={props.categoryId} />
+      <PostCategoryList
+        posts={props.posts}
+        categoryId={props.categoryId}
+        keywords={props.category.keywordSet[props.categoryId]}
+      />
     </FlexBox>
   )
 }

@@ -74,6 +74,12 @@ export const getAllPosts = (): PostData[] => {
   return sortedPosts
 }
 
+export const makeKeywordSet = (keywordSet, keywords): [] => {
+  const result = keywords.filter(keyword => !keywordSet.includes(keyword))
+
+  // console.log(result)
+  return result
+}
 /**
  * @description Navigation 을 위한 rootCategory, CategoryDepth 에 대한 정보를 통한 객체 생성
  */
@@ -81,31 +87,36 @@ export const getAllPosts = (): PostData[] => {
 export const getAllPostsCategory = (): AllPostCategory => {
   const result = {}
   const count = {}
+  const keywordSet = {}
   let categoryCount = 0
   let allPostCount = 0
-  getAllPosts().forEach(({ rootCategory, category1depth, category2depth }) => {
-    if (!result[rootCategory]) {
-      result[rootCategory] = {}
-    }
+  getAllPosts().forEach(
+    ({ rootCategory, category1depth, category2depth, keywords }) => {
+      result[rootCategory] = result[rootCategory] || {}
+      result[rootCategory][category1depth] =
+        result[rootCategory][category1depth] || []
 
-    if (!result[rootCategory][category1depth]) {
-      result[rootCategory][category1depth] = []
-    }
+      if (!result[rootCategory][category1depth].includes(category2depth)) {
+        result[rootCategory][category1depth].push(category2depth)
+        count[category2depth] = 1
+        categoryCount++
+      } else {
+        count[category2depth]++
+      }
+      allPostCount++
 
-    if (!result[rootCategory][category1depth].includes(category2depth)) {
-      // 2depth 배열에 동일 카테고리 존재 하지 않을 경우
-      result[rootCategory][category1depth].push(category2depth)
-      // count Object 에 값 추가
-      count[category2depth] = 1
-      categoryCount++
-    } else {
-      // 2depth 배열에 동일 카테고리 존재 할 경우
-      count[category2depth]++
-    }
-    allPostCount++
-  })
+      if (!keywordSet[category2depth]) {
+        keywordSet[category2depth] = []
+      }
 
-  return { result, count, categoryCount, allPostCount }
+      keywordSet[category2depth] = [
+        ...keywordSet[category2depth],
+        ...makeKeywordSet(keywordSet[category2depth], keywords),
+      ]
+    },
+  )
+
+  return { result, count, categoryCount, allPostCount, keywordSet }
 }
 
 /**

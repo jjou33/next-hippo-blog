@@ -3,26 +3,25 @@ import * as S from './styles'
 import Image from 'next/image'
 import theme from 'styles/theme'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
+import FlyingAirplaneLottie from 'components/common/Lottie/FlyingAirplane'
 
 import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
-import { GiftBoxLottie, IndicatorLottie } from 'components/common/Lottie'
 import { PostData } from 'types/post'
 import { useTypingTitle } from 'hooks/useIntervalAnimation'
-import { FireCrackerDynamicLottie } from 'components/common/Lottie/FireCracker'
 
 const PostListHeader = ({
   categoryId,
   postInfo,
+  keywords,
 }: {
   categoryId: string | string[]
   postInfo: PostData[]
+  keywords: string[]
 }) => {
   const { category1depth, category2depth } = postInfo[0]
-  const TYPINGLIST = {
-    LIST: ['Closure', 'Javascript', 'ES6'],
-  }
-  const currentTitle = useTypingTitle(TYPINGLIST.LIST)
+
+  const currentTitle = useTypingTitle(keywords)
   return (
     <S.HeroImageContainer>
       <FlexBox
@@ -44,10 +43,9 @@ const PostListHeader = ({
             zIndex: '-1',
           }}
         />
-
         <FlexBox flexDirection="column" position="absolute" margin="0 auto">
           <S.LottieContainer>
-            <FireCrackerDynamicLottie />
+            <FlyingAirplaneLottie />
           </S.LottieContainer>
           <MotionShowBox showDirection="down">
             <S.TextContainer>
@@ -67,16 +65,16 @@ const PostListHeader = ({
               margin="20px 0 0 0"
               color={theme.colors.gray_002}
             />
+            <S.DynamicTextBox>
+              <Typography
+                variant="span"
+                aggressive="montserratAlternates_Medium_002"
+                color={theme.colors.primary_006}
+              >
+                {categoryId ? `${currentTitle}` : 'All Posts'}
+              </Typography>
+            </S.DynamicTextBox>
           </MotionShowBox>
-          <S.DynamicTextBox>
-            <Typography
-              variant="span"
-              aggressive="montserratAlternates_Medium_001"
-              color={theme.colors.primary_006}
-            >
-              {`About ${currentTitle}`}
-            </Typography>
-          </S.DynamicTextBox>
         </FlexBox>
         <FlexBox justifyContent="center" margin="5rem 0 0 0">
           <S.MouseIndicatorWrapper>

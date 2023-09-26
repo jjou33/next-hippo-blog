@@ -1,10 +1,10 @@
 import * as S from './styles'
 
-import PostList from '../PostList'
-import PostListHeader from './PostListHeader'
-import WaveAnimation from 'components/common/WaveAnimation'
-import IconBox from 'components/common/IconBox'
 import theme from 'styles/theme'
+import IconBox from 'components/common/IconBox'
+import PostList from '../PostList'
+import StyledDivider from 'components/common/Divider'
+import PostListHeader from './PostListHeader'
 
 import { Fragment } from 'react'
 import { Typography } from 'components/common'
@@ -16,15 +16,22 @@ import type { PostData } from 'types/post'
 const PostCategoryList = ({
   posts,
   categoryId,
+  keywords,
 }: {
   posts: PostData[]
   categoryId?: string
+  keywords?: string[]
 }) => {
   return (
     <Fragment>
-      <PostListHeader categoryId={categoryId} postInfo={posts} />
+      <PostListHeader
+        categoryId={categoryId}
+        postInfo={posts}
+        keywords={keywords ? keywords : []}
+      />
+
       <S.PostCategoryContainer>
-        <WaveAnimation />
+        <StyledDivider />
         <S.AllPostContainer>
           <FlexBox justifyContent="center" gap="0.5rem" alignItems="center">
             <IconBox width="43px" height="43px">

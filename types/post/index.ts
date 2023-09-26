@@ -33,4 +33,7 @@ export interface AllPostCategory {
   }
   categoryCount: number
   allPostCount: number
+  keywordSet: {
+    [key: string]: string[]
+  }
 }

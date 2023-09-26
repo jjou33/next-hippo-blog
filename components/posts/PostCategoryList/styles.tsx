@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const PostCategoryContainer = styled.div`
-  margin-top: 100vh;
+  margin-top: 90vh;
   background: white;
   z-index: 1;
 `
