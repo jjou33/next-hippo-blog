@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 export const HeroImageContainer = styled.div`
   position: fixed;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
   @media screen and (min-width: 1300px) {

@@ -1,7 +1,7 @@
 ---
 title: "[HTML/CSS] Async / Defer 스크립트"
 date: "2022-03-18"
-image: headImage.png
+image: async.png
 rootCategory: Programming
 category1depth: Web
 category2depth: Style
@@ -30,7 +30,7 @@ isFeatured: true
 
 일반적으로 브라우저는 **HTML**파일을 받아서 상단부터 차례로 한줄씩 해석을 시작한다.
 
-중간에 `<script>` 태그를 읽게되면 이전까지 진행되고 있던 **HTML Parsing**작업을 일시적으로 멈추고 **Javascript** 파일을 **Load** 하는 방식으로 진행된다.
+중간에 **<script>** 태그를 읽게되면 이전까지 진행되고 있던 **HTML Parsing**작업을 일시적으로 멈추고 **Javascript** 파일을 **Load** 하는 방식으로 진행된다.
 
 ![image](https://user-images.githubusercontent.com/56063287/159010116-ee9fa78a-2d80-4cb2-9bf4-0c5f8140663d.png)
 
@@ -142,7 +142,7 @@ _두번쨰_ 브라우저 함수 중 **DOMContentLoaded** 이벤트 콜백으로 
 
 결과적으로 **Async** 스크립트의 경우 아래와 같은 경우에 효과적일 수 있다.
 
-```
+```bash
 Async 스크립트는 DOM에 직접 접근하지 않거나, 다른 스크립트에 의존적이지 않은 스크립트들을 독립적으로 실행해야 할때 효과적이다.
 ```
 
@@ -156,9 +156,9 @@ Async 스크립트는 DOM에 직접 접근하지 않거나, 다른 스크립트�
 
 **Async**와 다른점은 아래와 같다.
 
-_첫번째_, **Script**로드가 완료된 후 **모든 DOM이 로드된 후 실행**된다는 점이다.
+첫번쨰, **Script**로드가 완료된 후 **모든 DOM이 로드된 후 실행**된다는 점이다.
 
-_두번째_, **defer** 스크립트는 **선언 시점의 순서를 보장한다**
+두번째, **defer** 스크립트는 **선언 시점의 순서를 보장한다**
 
 ```html
 <!-- Async1.js 는 로드되는데 5초가 걸립니다 -->
