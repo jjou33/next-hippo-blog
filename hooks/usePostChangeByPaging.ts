@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 export const usePostChangeByPaging = posts => {
   // 한 페이지 최대 노출 포스트 갯수
-  const POST_LENGTH = 4
+  const POST_LENGTH = 6
 
   const router = useRouter()
 

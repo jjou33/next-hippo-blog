@@ -20,6 +20,7 @@ const PostCategoryList = ({
 }: {
   posts: PostData[]
   categoryId?: string
+  isMain?: boolean
   keywords?: string[]
 }) => {
   return (
@@ -60,7 +61,7 @@ const PostCategoryList = ({
               : '최신순으로 모든 포스트가 개재되어 있어요!'}
           </Typography>
           <S.CustomDivider />
-          <PostList posts={posts} />
+          <PostList posts={posts} isAllPost={!categoryId ? true : false} />
         </S.AllPostContainer>
       </S.PostCategoryContainer>
     </Fragment>

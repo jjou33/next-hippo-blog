@@ -11,9 +11,10 @@ import type { PostData } from 'types/post'
 interface PostListProps {
   posts: PostData[]
   isMain?: boolean
+  isAllPost?: boolean
 }
 
-const PostList = ({ posts, isMain }: PostListProps) => {
+const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
   const { totalPageCount, currentPage, exposePost, handleChangePage } =
     usePostChangeByPaging(posts)
 
@@ -23,10 +24,14 @@ const PostList = ({ posts, isMain }: PostListProps) => {
         <VerticalGrid posts={posts.slice(0, 6)} />
       ) : (
         <>
-          <HorizontalGrid posts={exposePost} />
+          {isAllPost ? (
+            <VerticalGrid posts={exposePost} />
+          ) : (
+            <HorizontalGrid posts={exposePost} />
+          )}
           <Pagination
             totalPageCount={totalPageCount}
-            limitPageCount={5}
+            limitPageCount={6}
             currentPage={currentPage}
             onChange={handleChangePage}
           />

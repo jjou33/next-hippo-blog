@@ -76,8 +76,6 @@ export const getAllPosts = (): PostData[] => {
 
 export const makeKeywordSet = (keywordSet, keywords): [] => {
   const result = keywords.filter(keyword => !keywordSet.includes(keyword))
-
-  // console.log(result)
   return result
 }
 /**
@@ -104,6 +102,15 @@ export const getAllPostsCategory = (): AllPostCategory => {
         count[category2depth]++
       }
       allPostCount++
+
+      if (!keywordSet['AllKeywords']) {
+        keywordSet['AllKeywords'] = [...keywords]
+      } else {
+        keywordSet['AllKeywords'] = [
+          ...keywordSet['AllKeywords'],
+          ...makeKeywordSet(keywordSet['AllKeywords'], keywords),
+        ]
+      }
 
       if (!keywordSet[category2depth]) {
         keywordSet[category2depth] = []

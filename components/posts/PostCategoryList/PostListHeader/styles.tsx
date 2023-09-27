@@ -71,6 +71,7 @@ export const IndicatorWrapper = styled.div`
 export const TextContainer = styled.div`
   display: flex;
   gap: 15px;
+  justify-content: center;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     gap: 0;
@@ -94,7 +95,7 @@ export const LottieContainer = styled.div`
   height: 200px;
   left: 70%;
   transform: translateX(-50%);
-  top: 25%;
+  top: 10%;
 `
 
 export const DynamicTextBox = styled.div`

@@ -2,7 +2,12 @@ import PostCategoryList from 'components/posts/PostCategoryList'
 import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
-  return <PostCategoryList posts={props.posts} />
+  return (
+    <PostCategoryList
+      posts={props.posts}
+      keywords={props.category.keywordSet.AllKeywords}
+    />
+  )
 }
 
 export function getStaticProps() {

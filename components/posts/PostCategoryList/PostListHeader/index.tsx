@@ -5,23 +5,25 @@ import theme from 'styles/theme'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import FlyingAirplaneLottie from 'components/common/Lottie/FlyingAirplane'
 
-import { Typography } from 'components/common'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { Badge, Typography } from 'components/common'
+import {
+  Divider,
+  FlexBox,
+  SubMaxContainer,
+} from 'components/common/StyledLayout'
 import { PostData } from 'types/post'
-import { useTypingTitle } from 'hooks/useIntervalAnimation'
 
 const PostListHeader = ({
   categoryId,
   postInfo,
   keywords,
 }: {
-  categoryId: string | string[]
+  categoryId?: string | string[]
   postInfo: PostData[]
   keywords: string[]
 }) => {
   const { category1depth, category2depth } = postInfo[0]
 
-  const currentTitle = useTypingTitle(keywords)
   return (
     <S.HeroImageContainer>
       <FlexBox
@@ -43,29 +45,48 @@ const PostListHeader = ({
             zIndex: '-1',
           }}
         />
-        <FlexBox flexDirection="column" position="absolute" margin="0 auto">
-          <S.LottieContainer>
-            <FlyingAirplaneLottie />
-          </S.LottieContainer>
-          <MotionShowBox showDirection="down">
-            <S.TextContainer>
-              <Typography
-                variant="h3"
-                aggressive="montserratAlternates_Medium_001"
-                color={theme.colors.gray_000}
-                align="center"
+        <FlexBox flexDirection="column" position="absolute">
+          <SubMaxContainer>
+            <S.LottieContainer>
+              <FlyingAirplaneLottie />
+            </S.LottieContainer>
+            <MotionShowBox showDirection="down">
+              <S.TextContainer>
+                <Typography
+                  variant="h3"
+                  aggressive="montserratAlternates_Medium_001"
+                  color={theme.colors.gray_002}
+                  align="center"
+                >
+                  {`${categoryId ? categoryId : 'ALL POST'} Collection`}
+                </Typography>
+              </S.TextContainer>
+              <Divider
+                direction="horizontal"
+                width="100%"
+                height="1px"
+                margin="20px 0 0 0"
+                color={theme.colors.gray_002}
+              />
+              <FlexBox
+                gap={'1rem'}
+                margin={'1rem 0'}
+                flexWrap={'wrap'}
+                justifyContent="center"
               >
-                {`You Can Find Here`}
-              </Typography>
-            </S.TextContainer>
-            <Divider
-              direction="horizontal"
-              width="100%"
-              height="1px"
-              margin="20px 0 0 0"
-              color={theme.colors.gray_002}
-            />
-            <S.DynamicTextBox>
+                {keywords.map(keyword => (
+                  <Badge
+                    borderRadius="2rem"
+                    backgroundColor={theme.colors.primary_004}
+                    aggressive="montserratAlternates_Regular_003"
+                    padding="10px 20px 10px 20px"
+                    key={keyword}
+                  >
+                    {keyword}
+                  </Badge>
+                ))}
+              </FlexBox>
+              {/* <S.DynamicTextBox>
               <Typography
                 variant="span"
                 aggressive="montserratAlternates_Medium_002"
@@ -73,8 +94,9 @@ const PostListHeader = ({
               >
                 {categoryId ? `${currentTitle}` : 'All Posts'}
               </Typography>
-            </S.DynamicTextBox>
-          </MotionShowBox>
+            </S.DynamicTextBox> */}
+            </MotionShowBox>
+          </SubMaxContainer>
         </FlexBox>
         <FlexBox justifyContent="center" margin="5rem 0 0 0">
           <S.MouseIndicatorWrapper>
