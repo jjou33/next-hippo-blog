@@ -8,12 +8,12 @@ import { MainIconSet } from 'public/static/icon'
 
 const SlideSection = () => {
   const IMAGE_LINK = [
-    '/static/images/Algorithm/dfs/headImage.png',
-    '/static/images/Algorithm/bfs/headImage.png',
-    '/static/images/HeroImage/landing3.jpg',
-    '/static/images/Algorithm/dfs/headImage.png',
-    '/static/images/Algorithm/bfs/headImage.png',
-    '/static/images/HeroImage/landing3.jpg',
+    '/static/images/Web/Style/headImage.png',
+    '/static/images/Web/Style/async.png',
+    '/static/images/Web/Vue/headImage.png',
+    '/static/images/Web/Design/headImage.png',
+    '/static/images/Web/Environment/headImage.png',
+    '/static/images/Web/Browser/headImage.png',
   ]
 
   const nextItem = () => {

@@ -85,7 +85,7 @@ export const ContentsWrapper = styled.article`
 
   h3 {
     font-size: 30px;
-    height: 35px;
+    height: 100%;
     letter-spacing: -0.6;
     border-left: 5px solid #539dfd;
     @media screen and (max-width: 768px) {

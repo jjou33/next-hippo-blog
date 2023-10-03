@@ -15,16 +15,16 @@ const ProjectSection = () => {
     {
       title: 'Blog By GatsbyJS',
       keywords: ['Gatsby', 'Pnpm', 'Typescript', 'EmotionJS'],
-      imagePath: '/static/images/Algorithm/dfs/dfs1.png',
-      linkPath: `posts/dfs?page=1`,
+      imagePath: '/static/images/Web/Style/headImage.png',
+      linkPath: `posts/Style?page=1`,
       content:
         '해당 프로젝트는 현재 실무에서 차세대 프로젝트에 참여하여 진행중인 프로젝트간 필요한 내용을 포스팅 합니다.',
     },
     {
       title: 'Blog By NextJS',
       keywords: ['Gatsby', 'Pnpm', 'Typescript', 'EmotionJS'],
-      imagePath: '/static/images/Algorithm/bfs/dfs1.png',
-      linkPath: `posts/css?page=1`,
+      imagePath: '/static/images/Web/Style/headImage.png',
+      linkPath: `posts/Style?page=1`,
       content:
         '해당 프로젝트는 현재 실무에서 차세대 프로젝트에 참여하여 진행중인 프로젝트간 필요한 내용을 포스팅 합니다.',
     },
