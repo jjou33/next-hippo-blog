@@ -13,6 +13,7 @@ interface RootProps {
 }
 
 const RootPage = (props: RootProps) => {
+  console.log('root : ', props.category)
   const setCategoryInfo = useSetRecoilState(categoryState)
 
   useEffect(() => {

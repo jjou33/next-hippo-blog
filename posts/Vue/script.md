@@ -3,7 +3,7 @@ title: "프로젝트 기술구성 (2) : Typescript VS Javascript"
 date: "2023-05-30"
 image: script.webp
 rootCategory: Programming
-category1depth: Web
+category1depth: Framework
 category2depth: Vue
 keywords: ["Project", "Typescript", "Javascript"]
 excerpt: Project 에 관련된 포스팅 공간입니다.

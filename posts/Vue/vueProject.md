@@ -3,7 +3,7 @@ title: "프로젝트 기술구성 (1) : React vs Vue"
 date: "2023-05-26"
 image: reactvue.webp
 rootCategory: Programming
-category1depth: Web
+category1depth: Framework
 category2depth: Vue
 keywords: ["Vue3","Project"]
 excerpt: Vue3 에 관련된 포스팅 공간입니다.

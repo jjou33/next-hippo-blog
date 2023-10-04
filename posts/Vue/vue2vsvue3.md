@@ -3,7 +3,7 @@ date: "2021-09-05"
 title: "[Vue3] Vue2 vs Vue3 개인적인 견해"
 image: vue2vue3.png
 rootCategory: Programming
-category1depth: Web
+category1depth: Framework
 category2depth: Vue
 keywords: ["Vue3", "Vue2"]
 excerpt: Vue 에 관련된 포스팅 공간입니다.

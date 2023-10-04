@@ -2,7 +2,7 @@
 title: "[Algorithm] 앞 수들 보다 큰 수만 구하기"
 date: "2023-09-10"
 image: headImage.png
-rootCategory: Programming
+rootCategory: CS & Algorithm
 category1depth: Algorithm
 category2depth: Basic
 keywords: ['Algorithm', 'Basic']

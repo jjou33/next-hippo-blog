@@ -13,20 +13,20 @@ export interface ProjectInfoProps {
 const ProjectSection = () => {
   const projectInfo: ProjectInfoProps[] = [
     {
-      title: 'Blog By GatsbyJS',
-      keywords: ['Gatsby', 'Pnpm', 'Typescript', 'EmotionJS'],
-      imagePath: '/static/images/Web/Style/headImage.png',
-      linkPath: `posts/Style?page=1`,
+      title: 'Vue3 차세대 프로젝트(실무)',
+      keywords: ['Vue3', '공통 개발'],
+      imagePath: '/static/images/Framework/Vue/headImage.png',
+      linkPath: `posts/Vue?page=1`,
       content:
         '해당 프로젝트는 현재 실무에서 차세대 프로젝트에 참여하여 진행중인 프로젝트간 필요한 내용을 포스팅 합니다.',
     },
     {
       title: 'Blog By NextJS',
-      keywords: ['Gatsby', 'Pnpm', 'Typescript', 'EmotionJS'],
-      imagePath: '/static/images/Web/Style/headImage.png',
-      linkPath: `posts/Style?page=1`,
+      keywords: ['NextJS', 'SSR', 'Blog'],
+      imagePath: '/static/images/Framework/NextJS/headImage.png',
+      linkPath: `posts/NextJS?page=1`,
       content:
-        '해당 프로젝트는 현재 실무에서 차세대 프로젝트에 참여하여 진행중인 프로젝트간 필요한 내용을 포스팅 합니다.',
+        'NextJS 를 활용하여 개인 Blog 를 구축 기술 및 관련 내용을 기록하는 공간입니다.',
     },
   ]
   return (

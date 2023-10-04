@@ -13,6 +13,7 @@ const AllPostPage = props => {
 export function getStaticProps() {
   const allPosts = getAllPosts()
   const category = getAllPostsCategory()
+
   return {
     props: {
       posts: allPosts,

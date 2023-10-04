@@ -3,7 +3,7 @@ date: "2022-09-05"
 title: "Composition API Life Cycle Hooks 정리"
 image: lifecycle.jpg
 rootCategory: Programming
-category1depth: Web
+category1depth: Framework
 category2depth: Vue
 keywords: ["Vue3","Life Cycle"]
 excerpt: Vue3 에 관련된 포스팅 공간입니다.

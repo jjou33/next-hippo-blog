@@ -1,5 +1,5 @@
 ---
-date: "2023-06-07"
+date: "2022-06-07"
 title: "클로저(Closure) (1)"
 image: 'closure.png'
 rootCategory: Programming
