@@ -63,7 +63,9 @@ const PostContent = ({
         <S.StyledDivider>
           <hr />
         </S.StyledDivider>
-        <ReactMarkdown components={customRenderers}>{content}</ReactMarkdown>
+        <S.MarkdownWrapper>
+          <ReactMarkdown components={customRenderers}>{content}</ReactMarkdown>
+        </S.MarkdownWrapper>
       </S.ContentsWrapper>
     </S.ContentsContainer>
   )

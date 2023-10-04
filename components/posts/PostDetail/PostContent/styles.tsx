@@ -17,6 +17,32 @@ export const StyledDivider = styled.div`
     margin-top: 3rem;
   }
 `
+
+export const MarkdownWrapper = styled.div`
+  ul {
+    margin-left: 1rem;
+    padding: 20px 0 20px;
+
+    li {
+      list-style: disc;
+      padding-left: 10px;
+    }
+  }
+
+  ol {
+    margin-left: 1rem;
+    padding: 20px 0 20px;
+    font-style: italic;
+    li {
+      list-style: decimal;
+      padding-left: 10px;
+    }
+  }
+  ol,
+  ul {
+    font-weight: initial;
+  }
+`
 export const ContentsWrapper = styled.article`
   width: 700px;
   margin: 2rem auto;

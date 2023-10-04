@@ -44,7 +44,7 @@ and it solved it for me. I think this ticket can be closed now.
 ```
 다행이 **0.7.6 버전 이후**부터 **RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED** 값을 통해서 문제를 해결할 수 있다.
 
-.env 파일에 `RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false` 라인을 추가하면 문제가 해결된다.
+.env 파일에 **RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED=false** 라인을 추가하면 문제가 해결된다.
 
 ### 참고 사이트
 ---

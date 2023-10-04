@@ -3,9 +3,9 @@ import theme from 'styles/theme'
 
 import * as S from './styles'
 
-import { Typography } from 'components/common'
-import { FlexBox } from 'components/common/StyledLayout'
 import { Badge } from 'components/common'
+import { FlexBox } from 'components/common/StyledLayout'
+import { Typography } from 'components/common'
 import { IndicatorLottie } from 'components/common/Lottie'
 
 import type { PostData } from 'types/post'
@@ -41,7 +41,12 @@ const PostHeader = ({
             zIndex: '-1',
           }}
         />
-        <FlexBox flexDirection="column" position="absolute" margin="0 auto">
+        <FlexBox
+          flexDirection="column"
+          position="absolute"
+          margin="0 auto"
+          padding={'0 5rem'}
+        >
           <FlexBox margin="0 auto" padding="5px">
             <Badge
               borderRadius="10px"
