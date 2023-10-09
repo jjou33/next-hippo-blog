@@ -30,9 +30,10 @@ export const ImageWrapper = styled.div`
   height: 12rem;
   margin: 1rem 2rem;
   border-radius: 20px;
+  overflow: hidden;
   position: relative;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 `

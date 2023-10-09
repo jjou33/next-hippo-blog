@@ -7,8 +7,6 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    overflow-x: hidden;
-    max-width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

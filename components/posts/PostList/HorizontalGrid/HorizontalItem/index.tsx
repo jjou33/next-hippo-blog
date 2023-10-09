@@ -79,7 +79,6 @@ const HorizontalItem = ({
         <Typography
           variant="p"
           aggressive="body_multiline_003"
-          whiteSpace="nowrap"
           overFlow="hidden"
           textOverflow="ellipsis"
         >
@@ -87,19 +86,14 @@ const HorizontalItem = ({
         </Typography>
       </S.ItemContentsWrapper>
 
-      <StyledImageBox
-        width="10rem"
-        height="10rem"
-        margin="1rem 2rem"
-        borderRadius="20px"
-      >
+      <S.ImageWrapper>
         <Image
           src={`/static/images/${category1depth}/${category2depth}/${image}`}
           alt="alt"
           fill
           style={{ objectFit: 'cover' }}
         />
-      </StyledImageBox>
+      </S.ImageWrapper>
     </S.ItemContainer>
   )
 }
