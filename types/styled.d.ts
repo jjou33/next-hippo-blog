@@ -3,6 +3,16 @@ import 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    darkMode: {
+      text_color: 'white'
+      background_color: 'black'
+      error: 'red'
+    }
+    lightMode: {
+      text_color: 'black'
+      background_color: 'white'
+      error: 'green'
+    }
     colors: {
       white: '#ffffff'
       gray_000: '#F9F9FB'

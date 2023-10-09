@@ -68,13 +68,8 @@ const PostListHeader = ({
                 margin="20px 0 0 0"
                 color={theme.colors.gray_002}
               />
-              <FlexBox
-                gap={'1rem'}
-                margin={'1rem 0'}
-                flexWrap={'wrap'}
-                justifyContent="center"
-              >
-                {keywords.map(keyword => (
+              <S.BadgeContainer>
+                {keywords.slice(0, 40).map(keyword => (
                   <Badge
                     borderRadius="2rem"
                     backgroundColor={theme.colors.primary_004}
@@ -85,16 +80,7 @@ const PostListHeader = ({
                     {keyword}
                   </Badge>
                 ))}
-              </FlexBox>
-              {/* <S.DynamicTextBox>
-              <Typography
-                variant="span"
-                aggressive="montserratAlternates_Medium_002"
-                color={theme.colors.primary_006}
-              >
-                {categoryId ? `${currentTitle}` : 'All Posts'}
-              </Typography>
-            </S.DynamicTextBox> */}
+              </S.BadgeContainer>
             </MotionShowBox>
           </SubMaxContainer>
         </FlexBox>

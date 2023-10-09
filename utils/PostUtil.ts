@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import type { PostData, AllPostCategory } from 'types/post'
+
 const postsDirectory = path.join(process.cwd(), 'posts')
 const imageDirectory = path.join(process.cwd(), 'public/static/images')
 
@@ -42,20 +43,25 @@ export const getPostsFiles = () => {
   return readFilesRecursively(postsDirectory)
 }
 
-/**
- * @description 특정 PostDetail 파일 Generation 을 위한 데이터 Fetch 함수
- */
-
-export const getPostData = (postIdentifier: string) => {
+export const getPageData = (postIdentifier: string) => {
   const postSlug = postIdentifier.replace(/\.md$/, '')
   const filePath = path.join(postsDirectory, `${postSlug}.md`)
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
 
-  const postData: PostData = {
+  return { data, content, postSlug }
+}
+/**
+ * @description 특정 PostDetail 파일 Generation 을 위한 데이터 Fetch 함수
+ */
+
+export const getPostData = (postIdentifier: string) => {
+  const { data, content, postSlug } = getPageData(postIdentifier)
+  const pageData = data as PostData
+  const postData = {
     slug: postSlug.split('/')[1],
-    ...data,
-    content,
+    ...pageData,
+    content: content,
   }
   return postData
 }
@@ -64,7 +70,13 @@ export const getAllPosts = (): PostData[] => {
   const postFiles = getPostsFiles()
 
   const allPosts = postFiles.map(postFile => {
-    return getPostData(postFile)
+    const { data, postSlug } = getPageData(postFile)
+    const pageData = data as PostData
+    const postData = {
+      slug: postSlug.split('/')[1],
+      ...pageData,
+    }
+    return postData
   })
 
   const sortedPosts = allPosts.sort((postA, postB) =>

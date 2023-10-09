@@ -17,6 +17,7 @@ export interface ComponentProps {
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
   whiteSpace?: 'normal' | 'nowrap' | 'pre' | 'pre-wrap'
   boxShadow?: string
+  height?: string
 }
 
 export const Component = styled.div<ComponentProps>`
@@ -33,4 +34,5 @@ export const Component = styled.div<ComponentProps>`
   text-align: center;
   border: ${({ border }) => border ?? border};
   box-shadow: ${({ boxShadow }) => boxShadow ?? boxShadow};
+  height: ${({ height }) => height ?? height};
 `

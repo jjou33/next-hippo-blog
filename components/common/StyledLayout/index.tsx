@@ -134,12 +134,4 @@ export const ColorBorderBox = styled.div<ColorBorderBoxProp>`
     background: ${({ background }) => background && background};
     animation: ${rotate} 5s linear infinite;
   }
-
-  /* &::after {
-    content: '';
-    position: absolute;
-    background: #2b2e47;
-    inset: 5px;
-    border-radius: 10px;
-  } */
 `

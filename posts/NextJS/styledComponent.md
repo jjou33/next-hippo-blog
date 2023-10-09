@@ -1,7 +1,7 @@
 ---
 date: "2023-08-24"
 title: "[Next Project] NextJS v13 그리고 Styled Component FOUC 이슈해결"
-image: 'nextjs.png'
+image: 'nextjs.webp'
 rootCategory: Programming
 category1depth: Framework
 category2depth: NextJS

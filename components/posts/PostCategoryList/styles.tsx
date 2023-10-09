@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const PostCategoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: 100vh;
   background: white;
   z-index: 1;

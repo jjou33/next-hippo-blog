@@ -1,6 +1,4 @@
 import * as S from './styles'
-
-import Image from 'next/image'
 import theme from 'styles/theme'
 import Link from 'next/link'
 

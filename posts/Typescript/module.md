@@ -22,7 +22,7 @@ isFeatured: true
 
 **npm** 을 통해서 **axios** 에 대한 **라이브러리** 를 설치 후 **import** 를 통해 사용해 보도록 하자.
 
-```
+```bash
 npm install axios
 ```
 
@@ -39,5 +39,6 @@ npm install axios
 앞으로 **프로젝트** 에서 사용할때 유의해야 할 것이다.
 
 ### 참고 사이트
+---
 
-- https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%EC%A0%84/unit/61104?tab=community
+- [인프런 강의](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%EC%A0%84/unit/61104?tab=community)

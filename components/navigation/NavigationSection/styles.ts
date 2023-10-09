@@ -9,7 +9,7 @@ export const NavigationWrapper = styled.div`
   flex-direction: column;
   padding: 1rem;
 
-  height: 100vh;
+  height: 100%;
   box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
 `

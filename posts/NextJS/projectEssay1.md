@@ -1,7 +1,7 @@
 ---
 date: "2023-06-08"
 title: "[Next Project] 프로젝트 시작"
-image: 'nextjs.png'
+image: 'nextjs.webp'
 rootCategory: Programming
 category1depth: Framework
 category2depth: NextJS

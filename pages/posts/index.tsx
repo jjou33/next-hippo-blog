@@ -10,7 +10,7 @@ const AllPostPage = props => {
   )
 }
 
-export function getStaticProps() {
+export const getStaticProps = async () => {
   const allPosts = getAllPosts()
   const category = getAllPostsCategory()
 

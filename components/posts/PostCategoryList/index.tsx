@@ -3,7 +3,6 @@ import * as S from './styles'
 import theme from 'styles/theme'
 import IconBox from 'components/common/IconBox'
 import PostList from '../PostList'
-import StyledDivider from 'components/common/Divider'
 import PostListHeader from './PostListHeader'
 
 import { Fragment } from 'react'
@@ -12,6 +11,7 @@ import { FlexBox } from 'components/common/StyledLayout'
 import { NavigationIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
+import WaveAnimation from 'components/common/WaveAnimation'
 
 const PostCategoryList = ({
   posts,
@@ -32,7 +32,7 @@ const PostCategoryList = ({
       />
 
       <S.PostCategoryContainer>
-        <StyledDivider />
+        <WaveAnimation />
         <S.AllPostContainer>
           <FlexBox justifyContent="center" gap="0.5rem" alignItems="center">
             <IconBox width="43px" height="43px">

@@ -1,3 +1,4 @@
+import { FlexBox } from 'components/common/StyledLayout'
 import styled, { keyframes } from 'styled-components'
 
 export const HeroImageContainer = styled.div`
@@ -130,5 +131,16 @@ export const MouseIndicator = styled.div`
     left: 50%;
     transform: translateX(-50%);
     animation: ${scroll} 2s infinite;
+  }
+`
+
+export const BadgeContainer = styled(FlexBox)`
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
   }
 `

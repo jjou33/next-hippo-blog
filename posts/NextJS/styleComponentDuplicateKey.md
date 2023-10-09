@@ -1,7 +1,7 @@
 ---
 date: "2023-09-14"
 title: "[Next Project] Recoil Duplicate Key Error 이슈 "
-image: 'nextjs.png'
+image: 'nextjs.webp'
 rootCategory: Programming
 category1depth: Framework
 category2depth: NextJS

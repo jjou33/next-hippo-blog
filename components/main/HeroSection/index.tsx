@@ -44,6 +44,7 @@ const HeroSection = () => {
             text="Have A Good Dev Trip"
             aggressive="montserratAlternates_Medium_001"
           />
+
           <Divider
             direction="horizontal"
             width="100%"

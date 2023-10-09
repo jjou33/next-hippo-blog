@@ -27,11 +27,9 @@ isFeatured: true
 
 현재 가장 많이 사용하고 있는 **preset-env** 에 대해서 알아본다.
 
-```bash
-npm i @babel/preset-env
-```
-설치 후
 
+>npm i @babel/preset-env
+설치 후
 **babel.config.js** 파일에 **preset-env** preset 을 설정해준다.
 
 ```js
@@ -142,7 +140,7 @@ new Promise();
 
 위 방식은 기본을 공부하는 과정이었고 실제로 웹팩과 통합하여 많이 쓴다고 한다.
 
-##### babel-loader
+#### babel-loader
 
 ---
 
@@ -195,9 +193,7 @@ Module not found: Error: Can't resolve 'core-js/modules/es6.promise.js' in '/Use
 ---
 
 1. **npm i babel-loader @babel/core** 설치
-
 - **babel loader** 를 웹팩에서 실행할때 **babel** 을 실행해야 하기 때문에 **babel/core** 를 설치
-
 2. **webpack.config.js** 설정 및 **babel.config.js** 설정
 
 ```js

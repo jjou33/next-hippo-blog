@@ -10,6 +10,7 @@ import WaveAnimation from 'components/common/WaveAnimation'
 import { FlexBox } from 'components/common/StyledLayout'
 
 import type { PostData } from 'types/post'
+import useTheme from 'hooks/useTheme'
 
 const MainContents = ({ posts }: { posts: PostData[] }) => {
   return (

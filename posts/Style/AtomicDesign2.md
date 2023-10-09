@@ -4,7 +4,7 @@ date: "2023-09-11"
 image: atomic.png
 rootCategory: Programming
 category1depth: Web
-category2depth: Design
+category2depth: Style
 keywords: ['AtomicDesign']
 excerpt: 웹 페이지를 구성하는 디자인 아키텍처에 관련한 포스팅 입니다.
 isFeatured: true

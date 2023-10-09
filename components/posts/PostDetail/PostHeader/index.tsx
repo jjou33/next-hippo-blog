@@ -11,7 +11,14 @@ import { IndicatorLottie } from 'components/common/Lottie'
 import type { PostData } from 'types/post'
 
 const PostHeader = ({
-  postDetailInfo: { category1depth, category2depth, date, image, title },
+  postDetailInfo: {
+    category1depth,
+    category2depth,
+    date,
+    image,
+    title,
+    keywords,
+  },
 }: {
   postDetailInfo: PostData
 }) => {
@@ -47,16 +54,21 @@ const PostHeader = ({
           margin="0 auto"
           padding={'0 5rem'}
         >
-          <FlexBox margin="0 auto" padding="5px">
-            <Badge
-              borderRadius="10px"
-              backgroundColor={theme.colors.primary_003}
-              aggressive="body_multiline_003"
-              padding="10px"
-              margin="15px auto"
-            >
-              {title}
-            </Badge>
+          <FlexBox margin="0 auto" padding="5px" gap={'10px'}>
+            {keywords.map(item => {
+              return (
+                <Badge
+                  borderRadius="50px"
+                  backgroundColor={theme.colors.subPrimary_002}
+                  aggressive="body_multiline_005"
+                  padding="8px"
+                  margin="15px auto"
+                  key={item}
+                >
+                  {item}
+                </Badge>
+              )
+            })}
           </FlexBox>
           <Typography
             variant="h2"

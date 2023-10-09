@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import { LinkWrapper } from 'components/common/StyledLayout'
+import { themedPalette } from 'styles/themeVariables'
 
 interface HeaderProps {
   isHeaderSticky: boolean
@@ -24,6 +25,7 @@ export const Container = styled.header<HeaderProps>`
 `
 
 export const HeaderWrapper = styled.div<HeaderProps>`
+  background-color: ${themedPalette.badge_color};
   position: relative;
   width: 100%;
   max-width: 996px;

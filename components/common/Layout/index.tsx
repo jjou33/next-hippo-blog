@@ -13,13 +13,18 @@ import { menuOpenState } from 'states/menuOpenState'
 import { useLoading } from 'hooks/useLoading'
 
 import type { AllPostCategory } from 'types/post'
+import useTheme from 'hooks/useTheme'
 
 interface LayoutPropsType extends PropsWithChildren {
   pageProps: {
     category: AllPostCategory
   }
 }
-const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
+const Layout = ({
+  children,
+  pageProps: { category },
+  toggle,
+}: LayoutPropsType) => {
   const isLoading = useLoading()
   const isModal = useRecoilValue(menuOpenState)
   const [isLoadingAnimation, setIsLoadingAnimation] = useState(true)
@@ -44,7 +49,7 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
           <Navigation category={category} />
         )}
         <ChildrenContainer>
-          <Header />
+          <Header toggle={toggle} />
           <LoadingSpinner isLoading={isLoadingAnimation} />
           {children}
           <Footer />

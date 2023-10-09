@@ -1,7 +1,7 @@
 ---
 date: "2023-08-31"
 title: "[Next Project] Styled Component에 대한 Props valiation 이슈 "
-image: 'nextjs.png'
+image: 'nextjs.webp'
 rootCategory: Programming
 category1depth: Framework
 category2depth: NextJS
@@ -27,12 +27,7 @@ filtering.)
 
 정확히 말하면 Custom Props 를 보내는 모든 Styled 에서 오류가 발생하고 있었다.
 
-위 로그대로 찾으며 분석한 결과 문제는 명확했다.
-
-### 
----
-
-위 로그에서는 StyleSheetManager 을 활용하여 해결하는 방법이 나온다.
+위 로그대로 찾으며 분석한 결과 문제는 명확했다 StyleSheetManager 을 활용하여 해결하는 방법이 나온다.
 
 직접 모듈로 들어갔더니 아래와 같은 코드를 확인할 수 있다.
 

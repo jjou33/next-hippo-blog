@@ -42,7 +42,7 @@ const VerticalItem = ({
     <S.GridItemContainer ref={ref} inview={isInViewport}>
       <Link href={`/posts/${category2depth}/${slug}`}>
         <StyledImageBox height={'220px'} borderRadius={'20px 20px 0 0'}>
-          <FlexBox>
+          <FlexBox flexWrap="wrap">
             {keywords.map((keyword: string) => (
               <Badge
                 borderRadius="2rem"
@@ -50,6 +50,7 @@ const VerticalItem = ({
                 aggressive="body_oneline_006"
                 padding="5px 10px 5px 10px"
                 margin="10px 0 0 10px"
+                height="100%"
                 key={keyword}
               >
                 {keyword}

@@ -9,7 +9,7 @@ import { useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
 import { MainIconSet } from 'public/static/icon'
 
-const Header = () => {
+const Header = props => {
   const isHeaderSticky = useHeaderSticky()
 
   const setMenuState = useSetRecoilState(menuOpenState)
@@ -42,6 +42,9 @@ const Header = () => {
               </LinkWrapper>
             </S.NavigationItem>
             <S.NavBarButtonWrapper onClick={NavigationHandler}>
+              {MainIconSet['Menu'].icon()}
+            </S.NavBarButtonWrapper>
+            <S.NavBarButtonWrapper onClick={props.toggle}>
               {MainIconSet['Menu'].icon()}
             </S.NavBarButtonWrapper>
           </UnorderList>
