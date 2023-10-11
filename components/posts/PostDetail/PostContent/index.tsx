@@ -1,9 +1,9 @@
 import * as S from './styles'
 
 import ReactMarkdown from 'react-markdown'
+import WaveAnimation from 'components/common/WaveAnimation'
 import PostToc from 'components/posts/PostToc'
 
-import { MainIconSet } from 'public/static/icon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
@@ -55,9 +55,8 @@ const PostContent = ({
 
   return (
     <S.ContentsContainer>
-      <S.WaveAnimationContainer>
-        <S.WaveAnimationBox>{MainIconSet['Wave'].icon()}</S.WaveAnimationBox>
-      </S.WaveAnimationContainer>
+      <WaveAnimation />
+
       <S.ContentsWrapper>
         <PostToc />
         <S.StyledDivider>

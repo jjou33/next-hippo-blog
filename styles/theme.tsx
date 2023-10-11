@@ -30,6 +30,7 @@ const fontStyleGenerator = ({
 }
 
 const theme: DefaultTheme = {
+  test: '#f9edeb',
   darkMode: {
     text_color: 'white',
     background_color: 'black',

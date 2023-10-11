@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const PostCategoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
-  background: white;
+  background: ${themedPalette.bg_color};
   z-index: 1;
 `
 
@@ -23,7 +24,7 @@ export const PostListWrapper = styled.div`
 `
 
 export const AllPostContainer = styled.section`
-  margin: 9rem auto 0;
+  /* margin: 9rem auto 0; */
   min-height: calc(100vh - 258px);
   padding: 0 2rem;
   @media screen and (min-width: 1000px) {

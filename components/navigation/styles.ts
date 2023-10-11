@@ -1,16 +1,16 @@
 import styled, { css } from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const SideNavContainer = styled.div<{ isModal: boolean }>`
   display: flex;
   flex-direction: column;
   position: relative;
-
+  background-color: ${themedPalette.bg_color};
   ${({ isModal }) =>
     isModal
       ? css`
           @media screen and (min-width: 1300px) {
             display: none;
-            background-color: white;
           }
         `
       : css`

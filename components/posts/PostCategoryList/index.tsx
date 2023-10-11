@@ -12,6 +12,7 @@ import { NavigationIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
 import WaveAnimation from 'components/common/WaveAnimation'
+import { themedPalette } from 'styles/themeVariables'
 
 const PostCategoryList = ({
   posts,
@@ -52,7 +53,7 @@ const PostCategoryList = ({
           <Typography
             variant="p"
             aggressive="body_oneline_003"
-            color={theme.colors.gray_006}
+            color={themedPalette.sub_text_color2}
             align="center"
             margin="1rem 0 0 1rem"
           >

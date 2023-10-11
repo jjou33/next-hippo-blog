@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const PageContainer = styled.div`
   display: flex;
@@ -14,8 +15,10 @@ export const PageWrapper = styled.div`
 `
 export const PageBtn = styled.button<{ selected: boolean }>`
   padding: 4px 6px;
-  background-color: ${({ selected }) => (selected ? '#000' : 'transparent')};
-  color: ${({ selected }) => (selected ? '#fff' : '#000')};
+  background-color: ${({ selected }) =>
+    selected ? `${themedPalette.badge_color}` : 'transparent'};
+  color: ${({ selected }) =>
+    selected ? `${themedPalette.badge_text}` : `${themedPalette.text_color}`};
   font-size: 20px;
   cursor: pointer;
   & + & {

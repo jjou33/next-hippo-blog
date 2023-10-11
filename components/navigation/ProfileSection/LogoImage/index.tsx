@@ -2,14 +2,11 @@ import { Typography } from 'components/common'
 import TextNotification from 'components/common/Lottie/textNotification'
 import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
 import Image from 'next/image'
+import { themedPalette } from 'styles/themeVariables'
 import * as S from './styles'
 const LogoImage = () => {
   return (
-    <FlexBox
-      background="linear-gradient(45deg, white 40%, #eee)"
-      borderRadius="1rem"
-      flexDirection="column"
-    >
+    <FlexBox flexDirection="column">
       <S.LogoImageWrapper>
         <StyledImageBox
           borderRadius="30%"
@@ -25,7 +22,11 @@ const LogoImage = () => {
         </S.NotificationContainer>
       </S.LogoImageWrapper>
       <FlexBox flexDirection="column" alignItems="center" margin="0 0 1.5rem 0">
-        <Typography variant="h6" aggressive="headline_small_002">
+        <Typography
+          variant="h6"
+          aggressive="headline_small_002"
+          color={themedPalette.text_color}
+        >
           HIPPO DEV 🧑🏼‍💻
         </Typography>
       </FlexBox>

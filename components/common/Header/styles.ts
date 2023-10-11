@@ -24,8 +24,32 @@ export const Container = styled.header<HeaderProps>`
   }
 `
 
+export const DarkModeToggleContainer = styled.div`
+  /* background-color: ${themedPalette.bg_color}; */
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease; /* 트랜지션 추가 */
+  cursor: pointer;
+  position: relative;
+`
+
+export const DarModeItem = styled.div<{ show: boolean }>`
+  position: absolute;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: ${props => (props.show ? 1 : 0)}; /* 아이콘 보이기/숨기기 */
+  transition: opacity 0.8s ease; /* 트랜지션 추가 */
+`
+
+export const TempBtn2 = styled.div`
+  transition: 1s;
+`
 export const HeaderWrapper = styled.div<HeaderProps>`
-  background-color: ${themedPalette.badge_color};
   position: relative;
   width: 100%;
   max-width: 996px;
@@ -56,26 +80,6 @@ export const LogoWrapper = styled(LinkWrapper)`
   align-items: center;
 `
 
-export const NavigationContentsWrapper = styled.nav<HeaderProps>`
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 78px;
-
-  span {
-    ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
-      isHeaderSticky
-        ? css`
-            color: black;
-            padding: 0;
-          `
-        : css`
-            padding: 0 2rem;
-          `};
-  }
-`
 export const NavigationItem = styled.li`
   display: flex;
   align-items: center;
@@ -87,6 +91,54 @@ export const NavigationItem = styled.li`
     opacity: 0.8;
   }
 `
+
+export const NavBarButtonWrapper = styled.div`
+  width: 40px;
+  height: 40px;
+
+  border-radius: 30%;
+  padding-top: 2.5px;
+
+  cursor: pointer;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
+`
+
+export const NavigationContentsWrapper = styled.nav<HeaderProps>`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 78px;
+
+  ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
+    isHeaderSticky
+      ? css`
+          span {
+            color: black;
+            padding: 0;
+          }
+
+          ${NavigationItem} {
+            gap: 2rem;
+          }
+
+          ${NavBarButtonWrapper} {
+            svg > path {
+              stroke: #176b87;
+            }
+          }
+        `
+      : css`
+          span {
+            padding: 0 2rem;
+          }
+        `};
+`
+
 export const HeaderMenuButton = styled.div`
   float: left;
   height: 100%;
@@ -103,18 +155,5 @@ export const HeaderItemTitle = styled.div`
   @media screen and (max-width: 768px) {
     /* font-size: 20px; */
     padding-left: 0px;
-  }
-`
-export const NavBarButtonWrapper = styled.div`
-  width: 40px;
-  height: 40px;
-
-  border-radius: 30%;
-  padding-top: 2.5px;
-
-  cursor: pointer;
-
-  @media screen and (min-width: 1300px) {
-    display: none;
   }
 `

@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const NavigationContainer = styled.nav`
   padding: 0 1rem;
 `
 
 export const NavigationWrapper = styled.div`
+  background-color: ${themedPalette.bg_element_color};
   display: flex;
   flex-direction: column;
   padding: 1rem;

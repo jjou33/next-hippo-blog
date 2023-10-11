@@ -1,11 +1,11 @@
 import * as S from './styles'
 
-import theme from 'styles/theme'
 import IconBox from 'components/common/IconBox'
 
 import { Typography } from 'components/common'
 import { Fragment, PropsWithChildren, useState } from 'react'
 import { NavigationIconSet } from 'public/static/icon'
+import { themedPalette } from 'styles/themeVariables'
 
 interface MainCategoryProps extends PropsWithChildren {
   item: string
@@ -26,19 +26,19 @@ const NavMainCategory = ({ children, item, count }: MainCategoryProps) => {
       >
         <S.NavIconBoxWrapper>
           <IconBox width="25px" height="25px">
-            {NavigationIconSet[item].icon()}
+            {NavigationIconSet[item].icon(themedPalette.navIcon_color)}
           </IconBox>
         </S.NavIconBoxWrapper>
 
         <Typography
           variant="span"
           aggressive="montserratAlternates_Regular_002"
-          color={theme.colors.gray_005}
+          color={themedPalette.text_color}
         >
           {item}
         </Typography>
         <S.NavItemArrowWrapper isOpen={openState}>
-          {NavigationIconSet['Arrow'].icon()}
+          {NavigationIconSet['Arrow'].icon(themedPalette.arrow_color)}
         </S.NavItemArrowWrapper>
       </S.NavMainCategoryItem>
 

@@ -4,6 +4,7 @@ import * as S from './styles'
 
 import { Divider } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
+import { themedPalette } from 'styles/themeVariables'
 
 const REFERENCE_LINK = {
   GITHUB: 'https://github.com/jjou33',
@@ -22,7 +23,7 @@ const Footer = () => {
             <Typography
               variant="span"
               aggressive="body_oneline_003"
-              color={theme.colors.gray_004}
+              color={themedPalette.sub_text_color2}
             >
               zanda33@naver.com
             </Typography>
@@ -41,7 +42,7 @@ const Footer = () => {
               <Typography
                 variant="span"
                 aggressive="body_oneline_003"
-                color={theme.colors.gray_006}
+                color={themedPalette.sub_text_color2}
               >
                 GIT HUB
               </Typography>

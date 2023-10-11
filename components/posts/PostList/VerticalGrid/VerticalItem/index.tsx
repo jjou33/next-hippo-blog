@@ -12,6 +12,7 @@ import { useInfiniteScroll } from 'hooks/useInfiniteScroll'
 import { MainIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
+import { themedPalette } from 'styles/themeVariables'
 
 interface VerticalItemProps {
   posts: PostData
@@ -69,7 +70,7 @@ const VerticalItem = ({
             <Typography
               variant="span"
               aggressive="body_oneline_006"
-              color={theme.colors.gray_004}
+              color={themedPalette.sub_text_color1}
             >
               {formattedDate}
             </Typography>
@@ -78,7 +79,7 @@ const VerticalItem = ({
             <Typography
               variant="h3"
               aggressive="gmarketSans_bold_001"
-              color={theme.colors.gray_006}
+              color={themedPalette.text_color}
             >
               {title}
             </Typography>
@@ -91,7 +92,11 @@ const VerticalItem = ({
             color={theme.colors.gray_002}
           />
 
-          <Typography variant="p" aggressive="body_multiline_005">
+          <Typography
+            variant="p"
+            aggressive="body_multiline_005"
+            color={themedPalette.sub_text_color2}
+          >
             {excerpt}
           </Typography>
         </S.ContentsWrapper>

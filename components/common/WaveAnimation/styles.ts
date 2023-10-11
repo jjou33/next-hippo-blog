@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const WaveKeyframe1 = keyframes`
 0% {
@@ -39,6 +40,9 @@ export const WaveAnimationContainer = styled.div`
   padding: 0;
   svg {
     width: 100%;
+    .parallax4 > .mainWave {
+      fill: ${themedPalette.bg_color};
+    }
   }
 `
 
@@ -56,24 +60,28 @@ export const WaveAnimationBox = styled.div`
 
   .parallax1 > use {
     animation: ${WaveKeyframe1} 10s linear infinite;
+    fill: ${themedPalette.wave_primary3};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax2 > use {
     animation: ${WaveKeyframe2} 8s linear infinite;
+    fill: ${themedPalette.wave_primary2};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax3 > use {
     animation: ${WaveKeyframe3} 6s linear infinite;
+    fill: ${themedPalette.wave_primary1};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax4 > use {
     animation: ${WaveKeyframe4} 4s linear infinite;
+    fill: ${themedPalette.bg_color};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }

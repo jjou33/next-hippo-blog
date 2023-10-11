@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
-import theme from 'styles/theme'
+import { themedPalette } from 'styles/themeVariables'
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {
@@ -47,8 +47,8 @@ export const shaking_in_animation = keyframes`
 
 export const ReadMoreBtn = styled(Link)`
   border-radius: 2rem;
-  background-color: ${theme.colors.primary_003};
-  color: ${theme.colors.gray_005};
+  background-color: ${themedPalette.badge_color};
+  color: ${themedPalette.badge_text};
   padding: 20px 15px;
   margin: 1rem 0 0 0;
   box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.1);

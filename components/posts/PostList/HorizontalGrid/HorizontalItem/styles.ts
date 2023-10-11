@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const ItemContainer = styled(Link)`
   display: flex;
-  /* justify-content: center; */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: ${themedPalette.bg_element_color};
   border-radius: 20px;
+  border: 1px solid ${themedPalette.border_color};
 `
 
 export const ItemContentsWrapper = styled.div`
@@ -15,6 +17,7 @@ export const ItemContentsWrapper = styled.div`
   padding: 0 2rem;
   margin: 0 auto;
   width: 100%;
+
   @media screen and (min-width: 768px) {
     width: 650px;
   }

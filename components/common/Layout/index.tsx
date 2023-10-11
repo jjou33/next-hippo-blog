@@ -20,11 +20,9 @@ interface LayoutPropsType extends PropsWithChildren {
     category: AllPostCategory
   }
 }
-const Layout = ({
-  children,
-  pageProps: { category },
-  toggle,
-}: LayoutPropsType) => {
+const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
+  const { toggleTheme, isDarkMode } = useTheme()
+
   const isLoading = useLoading()
   const isModal = useRecoilValue(menuOpenState)
   const [isLoadingAnimation, setIsLoadingAnimation] = useState(true)
@@ -49,7 +47,7 @@ const Layout = ({
           <Navigation category={category} />
         )}
         <ChildrenContainer>
-          <Header toggle={toggle} />
+          <Header toggle={toggleTheme} isDarkMode={isDarkMode} />
           <LoadingSpinner isLoading={isLoadingAnimation} />
           {children}
           <Footer />

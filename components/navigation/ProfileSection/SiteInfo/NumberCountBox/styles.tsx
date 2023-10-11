@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const CountContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const CountContainer = styled.div`
   height: 60px;
   /* border: 1px solid black; */
   border-radius: 10px;
-  background-color: white;
+  background-color: ${themedPalette.bg_element_color};
   z-index: 3;
   box-shadow: 5px 5px 16px 25px rgba(0, 0, 0, 0.1);
 `

@@ -1,7 +1,9 @@
+import { Typography } from 'components/common'
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const PostTocContainer = styled.nav`
-  font-size: 20px;
+  font-size: 1rem;
 
   @media screen and (max-width: 768px) {
     font-size: 15px;
@@ -27,6 +29,11 @@ export const PostTocWrapper = styled.ol`
   counter-reset: item;
 `
 
+export const ItemText = styled(Typography)`
+  &:hover {
+    color: red;
+  }
+`
 export const PostTocItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -49,14 +56,14 @@ export const PostTocItem = styled.li`
       background-color: rgb(246 86 96 / 3%);
     }
     &:hover {
-      background-color: #fcf8eb;
+      background-color: ${themedPalette.hover_color};
     }
     @media screen and (max-width: 768px) {
       padding-left: 10px;
     }
   }
   &.head4 > a {
-    padding-left: 60px;
+    padding-left: 2.5rem;
     @media screen and (max-width: 768px) {
       padding-left: 25px;
     }

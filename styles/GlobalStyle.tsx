@@ -1,7 +1,7 @@
 // import { Global, css } from '@emotion/react'
 import { createGlobalStyle } from 'styled-components'
 import { reset } from './reset'
-import { themes } from './themeVariables'
+import { themedPalette, themes } from './themeVariables'
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     -ms-user-select: none;
     user-select: none;
     ${themes.light}
+    background-color: ${themedPalette.bg_color};
   }
   body[data-theme='light'] {
     ${themes.light};

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import theme from 'styles/theme'
+import { themedPalette } from 'styles/themeVariables'
 
 export const NavMainCategoryItem = styled.li<{ openState: boolean }>`
   display: flex;
@@ -9,11 +9,12 @@ export const NavMainCategoryItem = styled.li<{ openState: boolean }>`
   cursor: pointer;
   position: relative;
   span {
-    color: ${({ openState }) => (openState ? 'red' : '')};
+    color: ${({ openState }) =>
+      openState ? `${themedPalette.point_color}` : ''};
   }
   &:hover {
     span {
-      color: #f25b5b;
+      color: ${themedPalette.point_color};
     }
   }
 `
@@ -25,7 +26,7 @@ export const NavIconBoxWrapper = styled.div`
   border-radius: 50%;
   width: 27px;
   height: 27px;
-  background-color: ${theme.colors.gray_001};
+  background-color: ${themedPalette.bg_element_color};
 `
 
 export const NavItemArrowWrapper = styled.div<{ isOpen: boolean }>`

@@ -2,10 +2,11 @@ import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 
 import { cafe24OhsquareAir } from 'public/static/fonts'
+import { themedPalette } from 'styles/themeVariables'
 
 export const ContentsContainer = styled.div`
   margin-top: 100vh;
-  background: white;
+  background: ${themedPalette.bg_color};
   z-index: 1;
 `
 
@@ -41,6 +42,7 @@ export const MarkdownWrapper = styled.div`
   ol,
   ul {
     font-weight: initial;
+    color: ${themedPalette.text_color};
   }
 `
 export const ContentsWrapper = styled.article`
@@ -51,7 +53,7 @@ export const ContentsWrapper = styled.article`
   border-radius: 6px;
   padding: 1rem;
   font-family: ${cafe24OhsquareAir.style.fontFamily};
-
+  word-break: break-word;
   blockquote {
     border: 1px solid #99d6f3;
     border-left: 10px solid #5db5db;
@@ -62,12 +64,14 @@ export const ContentsWrapper = styled.article`
       font-weight: 700;
     }
   }
-
+  a {
+    color: ${themedPalette.sub_text_color2};
+  }
   p {
-    color: hsl(276, 5%, 20%);
+    color: ${themedPalette.text_color};
     margin: 1rem 0;
     strong {
-      color: red;
+      color: ${themedPalette.strong_text_color};
       font-weight: 400;
     }
 
@@ -95,23 +99,24 @@ export const ContentsWrapper = styled.article`
     font-weight: 700;
     margin: 2rem 0 0 0;
     padding-left: 1rem;
+    color: ${themedPalette.text_color};
+    height: 100%;
   }
 
   h1 {
     font-size: 40px;
-    height: 45px;
+
     letter-spacing: -1;
   }
 
   h2 {
     font-size: 34px;
-    height: 40px;
+
     letter-spacing: -0.6;
   }
 
   h3 {
     font-size: 30px;
-    height: 100%;
     letter-spacing: -0.6;
     border-left: 5px solid #539dfd;
     @media screen and (max-width: 768px) {
@@ -121,7 +126,6 @@ export const ContentsWrapper = styled.article`
 
   h4 {
     font-size: 25px;
-    height: 30px;
     letter-spacing: -0.6;
     border-left: 5px solid #ffd381;
     @media screen and (max-width: 768px) {

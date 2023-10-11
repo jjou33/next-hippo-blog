@@ -1,11 +1,11 @@
 import * as S from './styles'
 import Link from 'next/link'
-import theme from 'styles/theme'
 import IconBox from 'components/common/IconBox'
 
 import { Badge, Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'
+import { themedPalette } from 'styles/themeVariables'
 
 interface NavSubCategoryProps {
   items: string[]
@@ -22,7 +22,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
             <S.NavSubItemTitle>
               <FlexBox>
                 <IconBox width="20px" height="20px">
-                  {NavigationIconSet['Arrow'].icon()}
+                  {NavigationIconSet['Arrow'].icon(themedPalette.arrow_color)}
                 </IconBox>
                 <IconBox width="23px" height="23px">
                   {NavigationIconSet[value].icon()}
@@ -32,13 +32,13 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
               <Typography
                 variant="span"
                 aggressive="montserratAlternates_Regular_003"
-                color={theme.colors.gray_005}
+                color={themedPalette.sub_text_color1}
               >
                 {value}
               </Typography>
               <Badge
                 borderRadius="20px"
-                color="red"
+                color={themedPalette.badge_color2}
                 aggressive="montserratAlternates_light"
                 padding="0 8px"
                 border="0.1px solid"

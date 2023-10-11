@@ -6,7 +6,6 @@ export const SlideContainer = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 30px 50px #dbdbdb;
   padding: 0 2rem;
 `
 

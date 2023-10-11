@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 export const NavSubItemContainer = styled.ul``
 
@@ -8,12 +9,12 @@ export const NavSubItemWrapper = styled.li`
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background, 0.5s;
   gap: 10px;
   /* margin-left: 20px; */
   &:hover {
-    background: #ebfeff;
+    background: ${themedPalette.point_bg_color};
     color: black;
   }
 `

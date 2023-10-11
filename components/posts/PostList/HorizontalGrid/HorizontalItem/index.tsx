@@ -1,16 +1,12 @@
 import * as S from './styles'
 import Image from 'next/image'
-import theme from 'styles/theme'
 
 import { Badge, Typography } from 'components/common'
-import {
-  Divider,
-  FlexBox,
-  StyledImageBox,
-} from 'components/common/StyledLayout'
+import { Divider, FlexBox } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
+import { themedPalette } from 'styles/themeVariables'
 interface HorizontalItemProps {
   posts: PostData
 }
@@ -54,7 +50,7 @@ const HorizontalItem = ({
         <Typography
           variant="h3"
           aggressive="gmarketSans_bold_001"
-          color={theme.colors.gray_006}
+          color={themedPalette.text_color}
         >
           {title}
         </Typography>
@@ -63,14 +59,14 @@ const HorizontalItem = ({
           width="100%"
           height="1px"
           margin="15px 0 10px 0"
-          color={theme.colors.gray_002}
+          color={themedPalette.sub_text_color1}
         />
         <FlexBox margin={'0.5rem 0'} alignItems={'center'} gap={'0.6rem'}>
           <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
           <Typography
             variant="span"
             aggressive="body_oneline_006"
-            color={theme.colors.gray_004}
+            color={themedPalette.text_color}
           >
             {formattedDate}
           </Typography>
@@ -81,6 +77,7 @@ const HorizontalItem = ({
           aggressive="body_multiline_003"
           overFlow="hidden"
           textOverflow="ellipsis"
+          color={themedPalette.sub_text_color2}
         >
           {`${excerpt}`}
         </Typography>
