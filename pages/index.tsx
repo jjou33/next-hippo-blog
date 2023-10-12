@@ -22,7 +22,7 @@ const RootPage = (props: RootProps) => {
     <>
       <NextSeo
         title="Root"
-        description="Root description"
+        description="Root descriptions"
         canonical="https://hippoDev.com"
         openGraph={{
           url: 'https://hippoDev.com',
