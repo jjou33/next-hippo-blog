@@ -1,4 +1,3 @@
-import * as S from './styles'
 import { getClassName } from 'hooks/useNestedHeadings'
 import { themedPalette } from 'styles/themeVariables'
 import { Typography } from 'components/common'

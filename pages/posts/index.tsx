@@ -3,10 +3,12 @@ import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
   return (
-    <PostCategoryList
-      posts={props.posts}
-      keywords={props.category.keywordSet.AllKeywords}
-    />
+    <>
+      <PostCategoryList
+        posts={props.posts}
+        keywords={props.category.keywordSet.AllKeywords}
+      />
+    </>
   )
 }
 

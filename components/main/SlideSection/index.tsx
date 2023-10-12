@@ -36,7 +36,7 @@ const SlideSection = () => {
       title: 'Javascript',
       expert:
         'Javascript 를 학습하면서 필요한 내용들을 포스트하여 기록해둔 공간입니다.',
-      imageLink: '/static/images/Languages/javascript/headImage.png',
+      imageLink: '/static/images/Languages/Javascript/headImage.png',
     },
   ]
 
