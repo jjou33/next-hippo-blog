@@ -43,7 +43,7 @@ export const DarModeItem = styled.div<{ show: boolean }>`
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: ${props => (props.show ? 1 : 0)}; /* 아이콘 보이기/숨기기 */
-  transition: opacity 0.8s ease; /* 트랜지션 추가 */
+  transition: opacity 0.5s ease; /* 트랜지션 추가 */
 `
 
 export const TempBtn2 = styled.div`

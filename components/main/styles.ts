@@ -8,6 +8,10 @@ export const MainContainer = styled.div`
   gap: 10rem;
   background: ${themedPalette.bg_color};
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 80vh;
+  }
 `
 
 export const WaveKeyframe1 = keyframes`

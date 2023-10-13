@@ -7,6 +7,8 @@ import Pagination from 'components/common/Pagination'
 import { usePostChangeByPaging } from 'hooks/usePostChangeByPaging'
 
 import type { PostData } from 'types/post'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 interface PostListProps {
   posts: PostData[]
@@ -15,9 +17,12 @@ interface PostListProps {
 }
 
 const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
-  const { totalPageCount, currentPage, exposePost, handleChangePage } =
-    usePostChangeByPaging(posts)
-
+  // const { totalPageCount, currentPage, exposePost, handleChangePage } =
+  //   usePostChangeByPaging(posts)
+  const paginationData = usePostChangeByPaging(posts)
+  const router = useRouter()
+  const { categoryId } = router.query
+  // console.log('dd')
   return (
     <S.PostListContainer>
       {isMain ? (
@@ -25,18 +30,18 @@ const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
       ) : (
         <>
           {isAllPost ? (
-            <VerticalGrid posts={exposePost} />
+            <VerticalGrid posts={paginationData.exposePost} />
           ) : (
-            <HorizontalGrid posts={exposePost} />
+            <HorizontalGrid posts={paginationData.exposePost} />
           )}
-          <Pagination
-            totalPageCount={totalPageCount}
-            limitPageCount={6}
-            currentPage={currentPage}
-            onChange={handleChangePage}
-          />
         </>
       )}
+      <Pagination
+        totalPageCount={paginationData.totalPageCount}
+        limitPageCount={6}
+        currentPage={paginationData.currentPage}
+        onChange={paginationData.handleChangePage}
+      />
     </S.PostListContainer>
   )
 }

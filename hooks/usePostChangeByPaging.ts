@@ -8,6 +8,7 @@ export const usePostChangeByPaging = posts => {
   const router = useRouter()
 
   const { page, categoryId } = router.query
+
   const totalPageCount = Math.ceil(posts.length / POST_LENGTH)
 
   const [currentPage, setCurrentPage] = useState(1)

@@ -22,6 +22,8 @@ type ThemeVariables = {
   wave_primary1: string
   wave_primary2: string
   wave_primary3: string
+  logo_shadow: string
+  custom_divider_color: string
 }
 
 type Theme = 'light' | 'dark'
@@ -31,7 +33,7 @@ type ThemedPalette = Record<VariableKey, string>
 const themeVariableSets: Record<Theme, ThemeVariables> = {
   light: {
     bg_color: '#F8F9FA',
-    bg_element_color: '#FFF',
+    bg_element_color: '#f6f5f8',
     text_color: '#212529',
     sub_text_color1: '#495057',
     sub_text_color2: '#868E96',
@@ -53,6 +55,17 @@ const themeVariableSets: Record<Theme, ThemeVariables> = {
     wave_primary1: '#3461c1',
     wave_primary2: '#4579e2',
     wave_primary3: '#f461c1',
+    logo_shadow: `
+    inset 10px 10px 100px rgba(0, 0, 0, 0.05),
+    15px 25px 10px rgba(0, 0, 0, 0.05),
+    15px 20px 20px rgba(0, 0, 0, 0.05),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.9)`,
+    custom_divider_color: `linear-gradient(
+      to right,
+      transparent,
+      rgb(48, 49, 51),
+      transparent
+    )`,
   },
   dark: {
     bg_color: '#2b303a',
@@ -78,6 +91,17 @@ const themeVariableSets: Record<Theme, ThemeVariables> = {
     wave_primary1: '#29586C',
     wave_primary2: '#00848D',
     wave_primary3: '#2EB193',
+    logo_shadow: `
+    inset 10px 10px 100px rgba(0, 0, 0, 0.25),
+    15px 25px 10px rgba(0, 0, 0, 0.05),
+    15px 20px 20px rgba(0, 0, 0, 0.55),
+    inset -10px -10px 15px rgba(0, 0, 0, 0.35)`,
+    custom_divider_color: `linear-gradient(
+      to right,
+      transparent,
+      white,
+      transparent
+    )`,
   },
 }
 

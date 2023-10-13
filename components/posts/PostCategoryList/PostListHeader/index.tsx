@@ -68,7 +68,7 @@ const PostListHeader = ({
                 margin="20px 0 0 0"
                 color={theme.colors.gray_002}
               />
-              <S.BadgeContainer>
+              <S.BadgeContainer isAllPost={categoryId ? false : true}>
                 {keywords.slice(0, 40).map(keyword => (
                   <Badge
                     borderRadius="2rem"

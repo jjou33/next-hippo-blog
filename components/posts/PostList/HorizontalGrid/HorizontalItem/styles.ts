@@ -7,14 +7,25 @@ export const ItemContainer = styled(Link)`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   background-color: ${themedPalette.bg_element_color};
   border-radius: 20px;
-  border: 1px solid ${themedPalette.border_color};
+  /* border: 1px solid ${themedPalette.border_color}; */
+  &:hover {
+    transform: scale(1.01);
+    transition: transform 0.5s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    img {
+      transform: scale(1.05);
+      transition: transform 0.5s; /* hover 효과에 사용될 트랜지션 */
+    }
+  }
+  transition: 0.5s;
 `
 
 export const ItemContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   margin: 0 auto;
   width: 100%;
 

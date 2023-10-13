@@ -13,12 +13,12 @@ const TypingSection = () => {
     <FlexBox alignItems={'center'} justifyContent={'center'} gap={'2rem'}>
       <FlexBox
         flexDirection={'column'}
-        padding={'1rem'}
+        padding={'0 1rem'}
         gap={'1rem'}
         width={'100%'}
       >
         <Typography
-          variant="h2"
+          variant="h3"
           aggressive="montserratAlternates_Medium_002"
           color={theme.colors.gray_001}
         >

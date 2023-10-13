@@ -6,7 +6,7 @@ const TextEffectKeyFrame = keyframes`
   }
 `
 
-export const ColorText = styled.p`
+export const ColorText = styled.div`
   background-image: linear-gradient(
     -225deg,
     #edb575 0%,

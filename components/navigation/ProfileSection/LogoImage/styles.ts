@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themedPalette } from 'styles/themeVariables'
 
 // 물방울 스타일
 export const LogoImageWrapper = styled.div`
@@ -6,11 +7,7 @@ export const LogoImageWrapper = styled.div`
   margin: 2rem auto;
   width: 150px;
   height: 150px;
-  box-shadow:
-    inset 10px 10px 100px rgba(0, 0, 0, 0.05),
-    15px 25px 10px rgba(0, 0, 0, 0.05),
-    15px 20px 20px rgba(0, 0, 0, 0.05),
-    inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+  box-shadow: ${themedPalette.logo_shadow};
   border-radius: 50%;
 
   &::before {

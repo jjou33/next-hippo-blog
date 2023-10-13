@@ -32,7 +32,7 @@ const HorizontalItem = ({
   return (
     <S.ItemContainer href={`/posts/${category2depth}/${slug}`}>
       <S.ItemContentsWrapper>
-        <FlexBox margin={'0 0 0.2rem 0'}>
+        <FlexBox margin={'0 0 0rem 0'} flexWrap={'wrap'}>
           {keywords.map((keyword: string) => (
             <Badge
               borderRadius="2rem"
@@ -40,7 +40,7 @@ const HorizontalItem = ({
               color="white"
               aggressive="body_oneline_006"
               padding="5px 10px"
-              margin="10px 10px 10px 0"
+              margin="0px 10px 10px 0"
               key={keyword}
             >
               {keyword}
@@ -88,7 +88,7 @@ const HorizontalItem = ({
           src={`/static/images/${category1depth}/${category2depth}/${image}`}
           alt="alt"
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', transition: '0.5s' }}
         />
       </S.ImageWrapper>
     </S.ItemContainer>

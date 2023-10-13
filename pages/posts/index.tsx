@@ -1,9 +1,20 @@
 import PostCategoryList from 'components/posts/PostCategoryList'
+
+import { NextSeo } from 'next-seo'
+
 import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
 
 const AllPostPage = props => {
   return (
     <>
+      <NextSeo
+        title="ALLPOST PAGE"
+        description="블로그의 모든 포스트를 확인할 수 있는 공간입니다."
+        canonical={`https://next-hippo-blog.vercel.app/posts?page=1`}
+        openGraph={{
+          url: 'https://next-hippo-blog.vercel.app/posts?page=1',
+        }}
+      />
       <PostCategoryList
         posts={props.posts}
         keywords={props.category.keywordSet.AllKeywords}

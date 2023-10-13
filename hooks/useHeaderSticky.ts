@@ -5,7 +5,7 @@ export const useHeaderSticky = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isSticky = window.scrollY > window.innerHeight
+      const isSticky = window.scrollY > window.innerHeight - 150
 
       setIsHeaderSticky(isSticky)
     }

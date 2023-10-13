@@ -37,7 +37,7 @@ export const WaveKeyframe4 = keyframes`
 export const WaveAnimationContainer = styled.div`
   position: relative;
   width: 100%;
-  padding: 0;
+  padding: 1px;
   svg {
     width: 100%;
     .parallax4 > .mainWave {

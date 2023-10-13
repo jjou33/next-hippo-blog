@@ -7,7 +7,6 @@ import PostListHeader from './PostListHeader'
 
 import { Fragment } from 'react'
 import { Typography } from 'components/common'
-import { FlexBox } from 'components/common/StyledLayout'
 import { NavigationIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
@@ -35,7 +34,11 @@ const PostCategoryList = ({
       <S.PostCategoryContainer>
         <WaveAnimation />
         <S.AllPostContainer>
-          <FlexBox justifyContent="center" gap="0.5rem" alignItems="center">
+          <S.TextBoxContainer
+            justifyContent="center"
+            gap="0.5rem"
+            alignItems="center"
+          >
             <IconBox width="43px" height="43px">
               {NavigationIconSet[
                 `${categoryId ? categoryId : 'PostList'}`
@@ -49,7 +52,7 @@ const PostCategoryList = ({
             >
               {categoryId ? categoryId : '모든 포스트'}
             </Typography>
-          </FlexBox>
+          </S.TextBoxContainer>
           <Typography
             variant="p"
             aggressive="body_oneline_003"

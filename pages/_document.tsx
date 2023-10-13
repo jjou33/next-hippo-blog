@@ -9,7 +9,6 @@ import { ServerStyleSheet } from 'styled-components'
 
 const themeInitializerScript = `
       (function () {
-        console.log('window : ', window.localStorage.getItem('theme'))
         document.body.dataset.theme = window.localStorage.getItem("theme") || (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? "dark" : "light");
       })();
   `

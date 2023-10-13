@@ -1,12 +1,12 @@
 import * as S from './styles'
 
-import theme from 'styles/theme'
 import ColorText from 'components/common/ColorText'
-import TypingSection from './TypingSection'
+import ComputerLottie from 'components/common/Lottie/computer'
+import MotionShowBox from 'components/common/Motion/MotionShowBox'
 
 import { useChangeOpacityByScroll } from 'hooks/useScrollAnimation'
 import { useImageIndexSlider } from 'hooks/useIntervalAnimation'
-import { Divider, FlexBox } from 'components/common/StyledLayout'
+import { FlexBox } from 'components/common/StyledLayout'
 
 const HeroSection = () => {
   const IMAGE_DATA = {
@@ -40,19 +40,20 @@ const HeroSection = () => {
           gap="1rem"
           padding={'0 2rem'}
         >
-          <ColorText
-            text="Have A Good Dev Trip"
-            aggressive="montserratAlternates_Medium_001"
-          />
+          <S.HeroContentsWrapper>
+            <S.HeroTextWrapper>
+              <ColorText
+                text="HIPPO'S DEV DIARY"
+                aggressive="montserratAlternates_Medium_002"
+              />
+            </S.HeroTextWrapper>
+            <S.LottieWrapper>
+              <MotionShowBox showDirection="down">
+                <ComputerLottie />
+              </MotionShowBox>
+            </S.LottieWrapper>
+          </S.HeroContentsWrapper>
 
-          <Divider
-            direction="horizontal"
-            width="100%"
-            height="1px"
-            margin="0px 0 16px 0"
-            color={theme.colors.gray_002}
-          />
-          <TypingSection />
           <S.MouseIndicatorWrapper>
             <S.MouseIndicator></S.MouseIndicator>
           </S.MouseIndicatorWrapper>

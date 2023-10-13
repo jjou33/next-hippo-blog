@@ -6,9 +6,30 @@ import {
 } from 'utils/PostUtil'
 
 import type { PostData } from 'types/post'
+import { NextSeo } from 'next-seo'
 
-const PostDetailPage = ({ postDetailInfo }: { postDetailInfo: PostData }) => {
-  return <PostDetail postDetailInfo={postDetailInfo} />
+const PostDetailPage = ({
+  postDetailInfo,
+  categoryId,
+  postId,
+}: {
+  postDetailInfo: PostData
+  categoryId: string
+  postId: string
+}) => {
+  return (
+    <>
+      <NextSeo
+        title={`${postDetailInfo.title}`}
+        description={`${postDetailInfo.excerpt}`}
+        canonical={`https://next-hippo-blog.vercel.app/${categoryId}/${postId}`}
+        openGraph={{
+          url: `https://next-hippo-blog.vercel.app/${categoryId}/${postId}`,
+        }}
+      />
+      <PostDetail postDetailInfo={postDetailInfo} />
+    </>
+  )
 }
 
 export default PostDetailPage
@@ -21,6 +42,8 @@ export const getStaticProps = async ({ params: { categoryId, postId } }) => {
     props: {
       postDetailInfo: postData,
       category,
+      categoryId,
+      postId,
     },
   }
 }

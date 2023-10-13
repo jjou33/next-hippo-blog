@@ -1,5 +1,5 @@
 import { FlexBox } from 'components/common/StyledLayout'
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const HeroImageContainer = styled.div`
   position: fixed;
@@ -76,6 +76,10 @@ export const TextContainer = styled.div`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     gap: 0;
+    h3 {
+      font-size: 3rem;
+      word-break: break-word;
+    }
   }
 `
 
@@ -134,13 +138,14 @@ export const MouseIndicator = styled.div`
   }
 `
 
-export const BadgeContainer = styled(FlexBox)`
+export const BadgeContainer = styled(FlexBox)<{ isAllPost: boolean }>`
   gap: 1rem;
   margin: 1rem 0;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media screen and (max-width: 1000px) {
-    display: none;
-  }
+  ${({ isAllPost }) =>
+    isAllPost &&
+    css`
+      display: none;
+    `}
 `

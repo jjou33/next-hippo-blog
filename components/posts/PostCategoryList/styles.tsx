@@ -1,3 +1,4 @@
+import { FlexBox } from 'components/common/StyledLayout'
 import styled from 'styled-components'
 import { themedPalette } from 'styles/themeVariables'
 
@@ -9,7 +10,11 @@ export const PostCategoryContainer = styled.div`
   z-index: 1;
 `
 
-export const TextBoxContainer = styled.div``
+export const TextBoxContainer = styled(FlexBox)`
+  h2 {
+    font-size: 2rem;
+  }
+`
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {
@@ -24,7 +29,7 @@ export const PostListWrapper = styled.div`
 `
 
 export const AllPostContainer = styled.section`
-  /* margin: 9rem auto 0; */
+  margin: 5rem auto 0;
   min-height: calc(100vh - 258px);
   padding: 0 2rem;
   @media screen and (min-width: 1000px) {
@@ -47,12 +52,7 @@ export const CustomDivider = styled.div`
     right: 5%;
     width: 90%;
     height: 1px;
-    background-image: linear-gradient(
-      to right,
-      transparent,
-      rgb(48, 49, 51),
-      transparent
-    );
+    background-image: ${themedPalette.custom_divider_color};
   }
 
   &::after {

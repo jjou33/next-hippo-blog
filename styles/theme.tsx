@@ -30,6 +30,7 @@ const fontStyleGenerator = ({
 }
 
 const theme: DefaultTheme = {
+  bg_color: '#fff',
   test: '#f9edeb',
   darkMode: {
     text_color: 'white',
@@ -307,7 +308,7 @@ const theme: DefaultTheme = {
       weight: 500,
       size: 70,
       height: 74,
-      spacing: -1,
+      spacing: 1,
       fontFamily: ` ${montserratAlternates.style.fontFamily}`,
     }),
     montserratAlternates_Medium_002: fontStyleGenerator({
