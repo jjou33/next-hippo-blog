@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 const range = (size: number, start: number) => {
   return Array(size)
@@ -40,7 +40,7 @@ export const usePagination = ({
   const [pages, setPages] = useState<number[]>(
     pagesGroupList.current[currentGroupIndex.current],
   )
-  console.log('pages : ', pages)
+
   const isFirstGroup = currentGroupIndex.current === 0
   const isLastGroup =
     currentGroupIndex.current === pagesGroupList.current.length - 1
