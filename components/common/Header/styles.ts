@@ -16,11 +16,11 @@ export const Container = styled.header<HeaderProps>`
   left: 0;
   z-index: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
     isHeaderSticky ? 2 : 1};
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 
   @media screen and (min-width: 1300px) {
-    width: calc(100vw - 280px);
-    margin: 0 0 0 280px;
+    width: calc(100vw - 260px);
+    margin: 0 0 0 260px;
   }
 `
 

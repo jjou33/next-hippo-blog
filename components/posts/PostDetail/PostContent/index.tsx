@@ -56,7 +56,6 @@ const PostContent = ({
   return (
     <S.ContentsContainer>
       <WaveAnimation />
-
       <S.ContentsWrapper>
         <PostToc />
         <S.StyledDivider>

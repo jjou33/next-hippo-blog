@@ -29,14 +29,14 @@ const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
           ) : (
             <HorizontalGrid posts={exposePost} />
           )}
+          <Pagination
+            totalPageCount={totalPageCount}
+            limitPageCount={6}
+            currentPage={currentPage}
+            onChange={handleChangePage}
+          />
         </>
       )}
-      <Pagination
-        totalPageCount={totalPageCount}
-        limitPageCount={6}
-        currentPage={currentPage}
-        onChange={handleChangePage}
-      />
     </S.PostListContainer>
   )
 }

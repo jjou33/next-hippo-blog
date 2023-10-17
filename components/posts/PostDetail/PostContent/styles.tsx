@@ -8,6 +8,10 @@ export const ContentsContainer = styled.div`
   margin-top: 100vh;
   background: ${themedPalette.bg_color};
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 80vh;
+  }
 `
 
 export const StyledDivider = styled.div`

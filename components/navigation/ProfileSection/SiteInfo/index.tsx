@@ -11,6 +11,7 @@ interface NavItemType {
     color2: string
     iconName: string
     title: string
+    href: string
   }[]
   numberItems: {
     number: number

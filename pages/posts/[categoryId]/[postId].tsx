@@ -7,6 +7,7 @@ import {
 
 import type { PostData } from 'types/post'
 import { NextSeo } from 'next-seo'
+import METADATA from 'constants/METADATA'
 
 const PostDetailPage = ({
   postDetailInfo,
@@ -17,14 +18,21 @@ const PostDetailPage = ({
   categoryId: string
   postId: string
 }) => {
+  const { category1depth, category2depth, image, excerpt } = postDetailInfo
   return (
     <>
       <NextSeo
         title={`${postDetailInfo.title}`}
         description={`${postDetailInfo.excerpt}`}
-        canonical={`https://next-hippo-blog.vercel.app/${categoryId}/${postId}`}
+        canonical={`${METADATA.meta.url}/${categoryId}/${postId}`}
         openGraph={{
-          url: `https://next-hippo-blog.vercel.app/${categoryId}/${postId}`,
+          url: `${METADATA.meta.url}/${categoryId}/${postId}`,
+          images: [
+            {
+              url: `${METADATA.meta.imageUrl}/${category1depth}/${category2depth}/${image}`,
+              alt: `${excerpt}`,
+            },
+          ],
         }}
       />
       <PostDetail postDetailInfo={postDetailInfo} />

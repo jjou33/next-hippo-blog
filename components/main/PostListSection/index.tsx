@@ -17,7 +17,7 @@ const PostListSection = props => {
         </S.HeaderTextWrapper>
         <PostList posts={props.posts} isMain={true} />
         <S.ReadMoreBtnWrapper>
-          <S.ReadMoreBtn href={'/posts?page=1'}>
+          <S.ReadMoreBtn href={'/posts'}>
             <Typography variant="span" aggressive="body_oneline_005">
               {'Read More Contents..'}
             </Typography>

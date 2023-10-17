@@ -41,7 +41,7 @@ const PostListHeader = ({
           fill
           style={{
             objectFit: 'cover',
-            filter: 'brightness(0.4)',
+            filter: 'brightness(0.5)',
             zIndex: '-1',
           }}
         />
@@ -77,7 +77,7 @@ const PostListHeader = ({
                     padding="10px 20px 10px 20px"
                     key={keyword}
                   >
-                    {keyword}
+                    {`# ${keyword}`}
                   </Badge>
                 ))}
               </S.BadgeContainer>

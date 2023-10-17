@@ -15,29 +15,33 @@ export const usePostChangeByPaging = posts => {
   const [exposePost, setExposePost] = useState([])
 
   useEffect(() => {
-    if (!page) return
-    setCurrentPage(Number(page))
-    setExposePost(handleExposePost(Number(page)))
+    if (page) {
+      setCurrentPage(Number(page))
+    } else {
+      setCurrentPage(1)
+    }
+    setExposePost(handleExposePost(page))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts, page])
 
   const handleChangePage = (page: number) => {
     if (categoryId) {
-      router.push(`${categoryId}?page=${page ?? 1}`, undefined, {
+      router.push(`${categoryId}?page=${page ?? ''}`, undefined, {
         shallow: true,
         scroll: true,
       })
     } else {
-      router.push(`?page=${page ?? 1}`, undefined, {
+      router.push(`?page=${page ?? ''}`, undefined, {
         shallow: true,
         scroll: true,
       })
     }
   }
 
-  const handleExposePost = (page: number) => {
-    return posts
+  const handleExposePost = page => {
+    return page
       ? posts.slice((page - 1) * POST_LENGTH, POST_LENGTH * page)
-      : posts
+      : posts.slice(0, POST_LENGTH)
   }
 
   return {

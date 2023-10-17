@@ -10,12 +10,11 @@ const LogoImage = () => {
       <S.LogoImageWrapper>
         <StyledImageBox
           borderRadius="30%"
-          width="5rem"
-          height="5rem"
-          margin="45px auto 0"
-          top="50px"
+          width="6.5rem"
+          height="6.5rem"
+          margin="30px auto 0"
         >
-          <Image src="/static/images/hacker.png" alt="alt" fill />
+          <Image src="/static/images/logo_Image.png" alt="alt" fill />
         </StyledImageBox>
         <S.NotificationContainer>
           <TextNotification />

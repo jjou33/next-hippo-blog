@@ -9,6 +9,7 @@ import { Typography } from 'components/common'
 import { IndicatorLottie } from 'components/common/Lottie'
 
 import type { PostData } from 'types/post'
+import { themedPalette } from 'styles/themeVariables'
 
 const PostHeader = ({
   postDetailInfo: {
@@ -44,40 +45,47 @@ const PostHeader = ({
           fill
           style={{
             objectFit: 'cover',
-            filter: 'brightness(0.3)',
+            filter: 'brightness(0.4)',
             zIndex: '-1',
           }}
         />
-        <FlexBox
-          flexDirection="column"
-          position="absolute"
-          margin="0 auto"
-          padding={'0 5rem'}
-        >
-          <FlexBox margin="0 auto" padding="5px" gap={'10px'}>
+        <FlexBox flexDirection="column" position="absolute" margin="0 auto">
+          <FlexBox
+            margin="1rem auto"
+            padding="5px"
+            flexWrap={'wrap'}
+            justifyContent={'center'}
+          >
             {keywords.map(item => {
               return (
                 <Badge
                   borderRadius="50px"
-                  backgroundColor={theme.colors.subPrimary_002}
+                  backgroundColor={themedPalette.badge_color}
                   aggressive="body_multiline_005"
-                  padding="8px"
-                  margin="15px auto"
+                  padding="0.5rem 1rem"
+                  margin="5px"
                   key={item}
                 >
-                  {item}
+                  <Typography
+                    variant="span"
+                    aggressive="body_oneline_004"
+                    color={themedPalette.badge_text}
+                  >
+                    {`# ${item}`}
+                  </Typography>
                 </Badge>
               )
             })}
           </FlexBox>
-          <Typography
+          <S.HeroTitleWrapper
             variant="h2"
-            aggressive="headline_multiline_001"
-            color={theme.colors.primary_005}
+            aggressive="headline_multiline_002"
+            color={theme.colors.primary_003}
             align="center"
+            padding={'0 2rem'}
           >
             {title}
-          </Typography>
+          </S.HeroTitleWrapper>
           <Typography
             variant="span"
             aggressive="body_multiline_000"

@@ -29,6 +29,7 @@ export const usePagination = ({
   limitPageCount,
   currentPage,
   onChange,
+  setPageList,
 }) => {
   const pagesGroupList = useRef<number[][]>(
     createPageGroupList(totalPageCount, limitPageCount),
@@ -37,9 +38,9 @@ export const usePagination = ({
   const currentGroupIndex = useRef<number>(
     getCurrentGroupIndex(currentPage, limitPageCount),
   )
-  const [pages, setPages] = useState<number[]>(
-    pagesGroupList.current[currentGroupIndex.current],
-  )
+  // const [pages, setPages] = useState<number[]>(
+  //   pagesGroupList.current[currentGroupIndex.current],
+  // )
 
   const isFirstGroup = currentGroupIndex.current === 0
   const isLastGroup =
@@ -54,7 +55,7 @@ export const usePagination = ({
   const handleClickLeft = () => {
     if (isFirstGroup) return
     currentGroupIndex.current -= 1
-    setPages(pagesGroupList.current[currentGroupIndex.current]) // 이전 그룹으로 ui변경
+    setPageList(pagesGroupList.current[currentGroupIndex.current]) // 이전 그룹으로 ui변경
     onChange(
       pagesGroupList.current[currentGroupIndex.current][limitPageCount - 1],
     ) //현재 속한 그룹의 가장 마지막 페이지로 url변경
@@ -63,13 +64,16 @@ export const usePagination = ({
   const handleClickRight = () => {
     if (isLastGroup) return
     currentGroupIndex.current += 1
-    setPages(pagesGroupList.current[currentGroupIndex.current]) // 다음 그룹으로 ui변경
+    setPageList(pagesGroupList.current[currentGroupIndex.current]) // 다음 그룹으로 ui변경
     onChange(pagesGroupList.current[currentGroupIndex.current][0]) //현재 속한 그룹의 가장 첫번째 페이지로 url변경
   }
 
   return {
-    pages,
     isFirstGroup,
+    pagesGroupList,
+    currentGroupIndex,
+    createPageGroupList,
+    getCurrentGroupIndex,
     isLastGroup,
     handleClickPage,
     handleClickLeft,

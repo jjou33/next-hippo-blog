@@ -18,12 +18,14 @@ const ProfileSection = () => {
         color2: '#f7cb80',
         iconName: 'Git',
         title: 'GITHUB',
+        href: 'https://github.com/jjou33',
       },
       {
         color1: '#8a7240',
         color2: '#e68e66',
         iconName: 'Email',
         title: 'CONTACT',
+        href: '/',
       },
     ],
     VISIT_AND_CONTENTS: [

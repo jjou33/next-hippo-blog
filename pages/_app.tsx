@@ -6,7 +6,7 @@ import isPropValid from '@emotion/is-prop-valid'
 import { StyleSheetManager, ThemeProvider } from 'styled-components'
 import { RecoilRoot } from 'recoil'
 import { DefaultSeo } from 'next-seo'
-import SEO from '../seo.config'
+import DEFAULT_SEO from '../next-seo-config'
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }) => {
         <GlobalStyle />
         <RecoilRoot>
           <Layout pageProps={...pageProps}>
-            <DefaultSeo {...SEO} />
+            <DefaultSeo {...DEFAULT_SEO} />
             <Component {...pageProps} />
           </Layout>
         </RecoilRoot>

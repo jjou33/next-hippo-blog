@@ -131,9 +131,9 @@ const theme: DefaultTheme = {
     }),
     headline_multiline_002: fontStyleGenerator({
       weight: 700,
-      size: 32,
-      height: 44,
-      spacing: -0.6,
+      size: 40,
+      height: 46,
+      spacing: 1,
       fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
     }),
     body_oneline_000: fontStyleGenerator({

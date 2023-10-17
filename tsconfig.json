@@ -28,7 +28,8 @@
       "styles/*": ["styles/*"],
       "types/*": ["types/*"],
       "assets/*": ["assets/*"],
-      "states/*": ["states/*"]
+      "states/*": ["states/*"],
+      "constants/*": ["constants/*"]
     },
   },
   "include": [

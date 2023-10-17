@@ -1,5 +1,6 @@
 import * as S from './styles'
 import { usePagination } from 'hooks/usePagination'
+import { useEffect, useState } from 'react'
 
 const Pagination = ({
   totalPageCount,
@@ -7,14 +8,30 @@ const Pagination = ({
   currentPage,
   onChange,
 }) => {
+  const [pageList, setPageList] = useState([])
   const {
-    pages,
     isFirstGroup,
     isLastGroup,
+    createPageGroupList,
+    getCurrentGroupIndex,
     handleClickPage,
     handleClickLeft,
     handleClickRight,
-  } = usePagination({ totalPageCount, limitPageCount, currentPage, onChange })
+  } = usePagination({
+    totalPageCount,
+    limitPageCount,
+    currentPage,
+    onChange,
+    setPageList,
+  })
+
+  useEffect(() => {
+    const groupList = createPageGroupList(totalPageCount, limitPageCount)
+    const currentIndex = getCurrentGroupIndex(currentPage, limitPageCount)
+    const pages = groupList[currentIndex]
+    setPageList(pages)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalPageCount])
 
   return (
     <S.PageContainer>
@@ -22,7 +39,7 @@ const Pagination = ({
         {'<'}
       </button>
       <S.PageWrapper>
-        {pages.map(page => (
+        {pageList.map(page => (
           <S.PageBtn
             key={page}
             selected={page === currentPage}
