@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 const range = (size: number, start: number) => {
   return Array(size)

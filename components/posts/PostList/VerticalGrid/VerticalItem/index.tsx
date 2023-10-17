@@ -50,7 +50,7 @@ const VerticalItem = ({
                 backgroundColor={theme.colors.primary_003}
                 aggressive="body_oneline_006"
                 padding="5px 10px 5px 10px"
-                margin="10px 0 0 10px"
+                margin="15px 0 0 15px"
                 height="100%"
                 key={keyword}
               >

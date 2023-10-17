@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow-x: hidden;
     ${themes.light}
     background-color: ${themedPalette.bg_color};
   }
