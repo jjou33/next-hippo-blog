@@ -22,7 +22,7 @@ export const NavigationGrid = styled.ul`
   padding: 1rem 0;
 `
 
-export const RootItemContainer = styled.div`
+export const RootItemContainer = styled.ul`
   display: flex;
 
   flex-direction: column;

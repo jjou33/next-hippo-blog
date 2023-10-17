@@ -40,8 +40,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head></Head>
+      <Html lang="ko">
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo"
+          />
+        </Head>
         <body>
           <script
             dangerouslySetInnerHTML={{ __html: themeInitializerScript }}

@@ -21,8 +21,8 @@ const LinkedIcon = ({
   href,
 }: LinkStyleBoxProps) => {
   return (
-    <S.LinkItemContainer>
-      <Link href={href} target={'_blank'}>
+    <Link href={href} target={'_blank'}>
+      <S.LinkItemContainer>
         <S.LinkItemWrapper
           background={`linear-gradient(45deg, ${color1}, ${color2})`}
         >
@@ -34,8 +34,8 @@ const LinkedIcon = ({
 
           <S.LinkItemTitle>{title}</S.LinkItemTitle>
         </S.LinkItemWrapper>
-      </Link>
-    </S.LinkItemContainer>
+      </S.LinkItemContainer>
+    </Link>
   )
 }
 
