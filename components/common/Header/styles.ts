@@ -133,8 +133,9 @@ export const NavigationContentsWrapper = styled.nav<HeaderProps>`
           }
         `
       : css`
+          padding: 2rem;
           span {
-            padding: 0 2rem;
+            /* padding: 0 2rem; */
           }
         `};
 `

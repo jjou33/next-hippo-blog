@@ -10,6 +10,6 @@ export const GridContainer = styled.ul`
   align-content: center;
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   }
 `
