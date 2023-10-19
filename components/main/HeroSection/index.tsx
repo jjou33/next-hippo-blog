@@ -38,7 +38,7 @@ const HeroSection = () => {
           justifyItems="center"
           textAlign="center"
           gap="1rem"
-          padding={'0 2rem'}
+          padding="0 2rem"
         >
           <S.HeroContentsWrapper>
             <S.HeroTextWrapper>

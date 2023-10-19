@@ -8,11 +8,11 @@ export const HeroImageContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: 1300px) {
-    width: calc(100vw - 280px);
+    width: calc(100vw - 260px);
   }
 
-  @media screen and (max-width: 800px) {
-    height: 80vh;
+  @media screen and (max-width: 768px) {
+    height: 100vh;
   }
 `
 
@@ -68,7 +68,7 @@ export const LottieWrapper = styled.div`
   width: 40%;
 
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 50%;
   }
 `
 export const ResponsiveContentsWrapper = styled(FlexBox)`
@@ -80,7 +80,7 @@ export const HeroTextWrapper = styled(FlexBox)`
   font-size: 1rem;
   @media screen and (max-width: 768px) {
     span {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
   }
 `

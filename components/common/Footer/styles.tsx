@@ -24,6 +24,7 @@ export const LinkContentsWrapper = styled.div`
   align-items: center;
   height: 100%;
   margin-bottom: 14px;
+  flex-wrap: wrap;
 `
 
 export const Anchor = styled(Link)`

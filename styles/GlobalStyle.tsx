@@ -11,9 +11,13 @@ const GlobalStyle = createGlobalStyle`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow-x: hidden;
+    max-width: 100vw;
     ${themes.light}
     background-color: ${themedPalette.bg_color};
+
+    @media screen and (max-width: 1300px ) {
+      overflow-x: hidden;
+    }
   }
   body[data-theme='light'] {
     ${themes.light};

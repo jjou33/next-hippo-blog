@@ -36,7 +36,7 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
   }, [isLoading])
 
   return (
-    <FlexBox flexDirection="column" width="100vw">
+    <FlexBox flexDirection="column" width="100%">
       <ScrollBar />
       <FlexBox>
         {isModal ? (
