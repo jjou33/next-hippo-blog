@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+import DATA from 'constants/data'
 import PostList from 'components/posts/PostList'
 import SectionHeader from '../SectionHeader'
 
@@ -11,8 +12,8 @@ const PostListSection = props => {
       <S.AllPostContainer>
         <S.HeaderTextWrapper>
           <SectionHeader
-            title={'🧑🏻‍💻 모든 포스트'}
-            subTitle={'최신 순으로 모든 게시물을 만나보세요!'}
+            title={DATA.POST_LIST_INFO.HEADER.TITLE}
+            subTitle={DATA.POST_LIST_INFO.HEADER.SUB_TITLE}
           />
         </S.HeaderTextWrapper>
         <PostList posts={props.posts} isMain={true} />

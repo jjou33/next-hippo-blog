@@ -1,17 +1,16 @@
-import ColorText from 'components/common/ColorText'
-import Link from 'next/link'
 import * as S from './styles'
 
+import DATA from 'constants/data'
+import Link from 'next/link'
+import ColorText from 'components/common/ColorText'
+
 const NavRootTitle = () => {
-  const ROOT_INFO = {
-    TITLE: 'TOTAL CONTENTS',
-  }
   return (
     <S.NavRootContainer>
       <S.NavRootTextWrapper>
         <Link href="/">
           <ColorText
-            text={ROOT_INFO.TITLE}
+            text={DATA.ROOT_INFO.TITLE}
             aggressive="montserratAlternates_Regular_001"
           />
         </Link>

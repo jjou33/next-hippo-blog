@@ -10,7 +10,7 @@ export const Container = styled.header<HeaderProps>`
   position: fixed;
   display: flex;
   background-color: transparent;
-
+  padding: 0.5rem;
   width: 100%;
   top: 0;
   left: 0;

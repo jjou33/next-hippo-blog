@@ -6,6 +6,6 @@ const METADATA = {
     url: 'https://next-hippo-blog.vercel.app',
     imageUrl: 'https://next-hippo-blog.vercel.app/static/images',
   },
-}
+} as const
 
 export default METADATA

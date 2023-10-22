@@ -1,13 +1,12 @@
 import * as S from './styles'
 
+import DATA from 'constants/data'
 import ProjectItem from '../ProjectItem'
 
-import type { ProjectInfoProps } from '../index'
-
-const ProjectGrid = ({ projectInfo }: { projectInfo: ProjectInfoProps[] }) => {
+const ProjectGrid = () => {
   return (
     <S.GridContainer>
-      {projectInfo.map((projectItem, index) => (
+      {DATA.PROJECT_INFO.LIST.map((projectItem, index) => (
         <ProjectItem {...projectItem} key={index} />
       ))}
     </S.GridContainer>

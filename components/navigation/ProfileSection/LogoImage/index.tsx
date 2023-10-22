@@ -1,9 +1,11 @@
-import { Typography } from 'components/common'
-import TextNotification from 'components/common/Lottie/textNotification'
-import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
-import Image from 'next/image'
-import { themedPalette } from 'styles/themeVariables'
 import * as S from './styles'
+import Image from 'next/image'
+import DATA from 'constants/data'
+import TextNotification from 'components/common/Lottie/textNotification'
+
+import { Typography } from 'components/common'
+import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
+import { themedPalette } from 'styles/themeVariables'
 const LogoImage = () => {
   return (
     <FlexBox flexDirection="column">
@@ -14,7 +16,7 @@ const LogoImage = () => {
           height="6.5rem"
           margin="30px auto 0"
         >
-          <Image src="/static/images/logo_Image.png" alt="alt" fill />
+          <Image src={DATA.IMAGES.LOGO_IMAGE} alt="logoImage" fill />
         </StyledImageBox>
         <S.NotificationContainer>
           <TextNotification />

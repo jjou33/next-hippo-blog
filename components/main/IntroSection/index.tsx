@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+import DATA from 'constants/data'
 import IntroLottie from 'components/common/Lottie/Intro'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import ColorText from 'components/common/ColorText'
@@ -10,13 +11,6 @@ import { FireCrackerStaticLottie } from 'components/common/Lottie/FireCracker'
 import { themedPalette } from 'styles/themeVariables'
 
 const IntroSection = () => {
-  const INTRO_INFO = {
-    TITLE: `Don't dream, Be it`,
-    AUTHOR: 'Tim curry',
-    SUBTITLE:
-      ' 즐거운 개발 라이프를 지향하며, 더욱 좋은 개발자가 되기 위해 노력합니다 🧑🏼‍💻',
-  } as const
-
   return (
     <S.IntroBorder>
       <ColorBorderBox
@@ -44,7 +38,7 @@ const IntroSection = () => {
               margin="1rem 0"
               color={themedPalette.text_color}
             >
-              {INTRO_INFO.TITLE}
+              {DATA.INTRO_INFO.TITLE}
             </Typography>
             <Typography
               variant="h2"
@@ -52,14 +46,14 @@ const IntroSection = () => {
               margin="1rem 0"
               color={themedPalette.text_color}
             >
-              {`- ${INTRO_INFO.AUTHOR} -`}
+              {`- ${DATA.INTRO_INFO.AUTHOR} -`}
             </Typography>
             <Typography
               variant="h2"
               aggressive="body_oneline_001"
               color={themedPalette.sub_text_color2}
             >
-              {INTRO_INFO.SUBTITLE}
+              {DATA.INTRO_INFO.SUBTITLE}
             </Typography>
             <S.IntroFireLottieWrapper>
               <FireCrackerStaticLottie />

@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+import DATA from 'constants/data'
 import ColorText from 'components/common/ColorText'
 import ComputerLottie from 'components/common/Lottie/computer'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
@@ -9,20 +10,12 @@ import { useImageIndexSlider } from 'hooks/useIntervalAnimation'
 import { FlexBox } from 'components/common/StyledLayout'
 
 const HeroSection = () => {
-  const IMAGE_DATA = {
-    LIST: [
-      '/static/images/HeroImage/landing.jpg',
-      '/static/images/HeroImage/landing2.jpg',
-      '/static/images/HeroImage/landing3.jpg',
-    ],
-  }
-
   const currentPercentage = useChangeOpacityByScroll()
-  const currentImage = useImageIndexSlider(IMAGE_DATA.LIST)
+  const currentImage = useImageIndexSlider(DATA.IMAGES.HERO_IMAGES)
 
   return (
     <S.HeroImageContainer>
-      {IMAGE_DATA.LIST.map((image, index) => (
+      {DATA.IMAGES.HERO_IMAGES.map((image, index) => (
         <S.StyledImage
           key={index}
           src={image}

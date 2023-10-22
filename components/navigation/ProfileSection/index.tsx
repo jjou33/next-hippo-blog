@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+import DATA from 'constants/data'
 import SiteInfo from './SiteInfo'
 import LogoImage from './LogoImage'
 import theme from 'styles/theme'
@@ -12,25 +13,15 @@ const ProfileSection = () => {
   const categoryInfo = useRecoilValue(categoryState)
 
   const PROFILE_INFO = {
-    LINK: [
-      {
-        color1: '#f97253',
-        color2: '#f7cb80',
-        iconName: 'Git',
-        title: 'GITHUB',
-        href: 'https://github.com/jjou33',
-      },
-      {
-        color1: '#8a7240',
-        color2: '#e68e66',
-        iconName: 'Email',
-        title: 'CONTACT',
-        href: '/',
-      },
-    ],
     VISIT_AND_CONTENTS: [
-      { number: Number(`${categoryInfo.categoryCount}`), title: '총 카테고리' },
-      { number: Number(`${categoryInfo.allPostCount}`), title: '총 게시글' },
+      {
+        number: Number(`${categoryInfo.categoryCount}`),
+        title: `${DATA.PROFILE_INFO.COUNT_TITLE.CATEGORY}`,
+      },
+      {
+        number: Number(`${categoryInfo.allPostCount}`),
+        title: `${DATA.PROFILE_INFO.COUNT_TITLE.POSTS}`,
+      },
     ],
   }
 
@@ -39,7 +30,7 @@ const ProfileSection = () => {
       <S.ProfileWrapper>
         <LogoImage />
         <SiteInfo
-          linkItems={PROFILE_INFO.LINK}
+          linkItems={DATA.PROFILE_INFO.LIST}
           numberItems={PROFILE_INFO.VISIT_AND_CONTENTS}
         />
       </S.ProfileWrapper>
