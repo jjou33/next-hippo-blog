@@ -102,36 +102,34 @@ export const ContentsWrapper = styled.article`
   h5 {
     font-weight: 700;
     margin: 2rem 0 0 0;
-    padding-left: 1rem;
+    padding-left: 0.7rem;
     color: ${themedPalette.text_color};
     height: 100%;
   }
 
   h1 {
     font-size: 40px;
-
     letter-spacing: -1;
   }
 
   h2 {
     font-size: 34px;
-
     letter-spacing: -0.6;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: -0.6;
-    border-left: 5px solid #539dfd;
+    border-left: 3px solid #539dfd;
     @media screen and (max-width: 768px) {
       font-size: 25px;
     }
   }
 
   h4 {
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: -0.6;
-    border-left: 5px solid #ffd381;
+    border-left: 3px solid #ffd381;
     @media screen and (max-width: 768px) {
       font-size: 20px;
     }
@@ -145,7 +143,7 @@ export const ContentsWrapper = styled.article`
     margin: 1rem 0;
   }
   h3 + hr {
-    &::after {
+    /* &::after {
       content: '';
       position: absolute;
       width: 50%;
@@ -164,13 +162,13 @@ export const ContentsWrapper = styled.article`
       display: block;
       clear: both;
       background-color: #e2dfdf;
-    }
+    } */
     /* background: linear-gradient(to left, red, blue); */
     margin: 10px 0;
     border-radius: 10px;
   }
   h4 + hr {
-    &::after {
+    /* &::after {
       content: '';
       position: absolute;
       width: 50%;
@@ -189,7 +187,7 @@ export const ContentsWrapper = styled.article`
       display: block;
       clear: both;
       background-color: #e2dfdf;
-    }
+    } */
     /* background: linear-gradient(to left, red, blue); */
     margin: 10px 0;
     border-radius: 10px;
@@ -273,55 +271,9 @@ export const WaveKeyframe4 = keyframes`
   }
 `
 
-export const WaveAnimationContainer = styled.div`
-  position: relative;
-  width: 100%;
-  padding: 0;
-  svg {
-    width: 500px;
-  }
-`
-
 export const SectionContainer = styled.div`
   padding: 0 2rem 5rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
-`
-export const WaveAnimationBox = styled.div`
-  .editorial {
-    display: block;
-    width: 100%;
-    height: 100px;
-    max-height: 100px;
-    margin: 0;
-    z-index: 5;
-    bottom: 0;
-    position: absolute;
-  }
-
-  .parallax1 > use {
-    animation: ${WaveKeyframe1} 10s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax2 > use {
-    animation: ${WaveKeyframe2} 8s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax3 > use {
-    animation: ${WaveKeyframe3} 6s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax4 > use {
-    animation: ${WaveKeyframe4} 4s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
 `

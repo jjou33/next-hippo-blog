@@ -3,7 +3,13 @@ import { Divider, FlexBox } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
 import { themedPalette } from 'styles/themeVariables'
 
-const SectionHeader = ({ title, subTitle }) => {
+const SectionHeader = ({
+  title,
+  subTitle,
+}: {
+  title: string
+  subTitle: string
+}) => {
   return (
     <FlexBox flexDirection="column">
       <Typography

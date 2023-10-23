@@ -1,7 +1,7 @@
 import * as S from './styles'
 import Link from 'next/link'
-import IconBox from 'components/common/IconBox'
 
+import { IconBox } from 'components/common'
 import { Badge, Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'

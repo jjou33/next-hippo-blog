@@ -1,14 +1,10 @@
+import * as S from './styles'
 import theme from 'styles/theme'
 import Typography from '../Typography'
-import * as S from './styles'
-
+import DATA from 'constants/data'
 import { Divider } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
 import { themedPalette } from 'styles/themeVariables'
-
-const REFERENCE_LINK = {
-  GITHUB: 'https://github.com/jjou33',
-} as const
 
 const Footer = () => {
   return (
@@ -35,7 +31,7 @@ const Footer = () => {
               color="#D9D9D9"
             />
             <S.Anchor
-              href={REFERENCE_LINK.GITHUB}
+              href={DATA.FOOTER_INFO.GITHUB_LINK}
               target="_blank"
               rel="noreferrer"
             >
@@ -58,7 +54,7 @@ const Footer = () => {
           </Typography>
           <S.ChannelWrapper>
             <S.Anchor
-              href={REFERENCE_LINK.GITHUB}
+              href={DATA.FOOTER_INFO.GITHUB_LINK}
               target="_blank"
               rel="noreferrer"
             >

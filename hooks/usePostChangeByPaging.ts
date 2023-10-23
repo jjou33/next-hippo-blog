@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-
-export const usePostChangeByPaging = posts => {
+import DATA from 'constants/data'
+import type { PostData } from 'types/post'
+export const usePostChangeByPaging = (posts: PostData[]) => {
   // 한 페이지 최대 노출 포스트 갯수
-  const POST_LENGTH = 6
 
   const router = useRouter()
 
   const { page, categoryId } = router.query
 
-  const totalPageCount = Math.ceil(posts.length / POST_LENGTH)
+  const totalPageCount = Math.ceil(posts.length / DATA.MAIN_POST_LENGTH)
 
   const [currentPage, setCurrentPage] = useState(1)
   const [exposePost, setExposePost] = useState([])
@@ -20,7 +20,7 @@ export const usePostChangeByPaging = posts => {
     } else {
       setCurrentPage(1)
     }
-    setExposePost(handleExposePost(page))
+    setExposePost(handleExposePost(Number(page)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts, page])
 
@@ -38,10 +38,13 @@ export const usePostChangeByPaging = posts => {
     }
   }
 
-  const handleExposePost = page => {
+  const handleExposePost = (page: number) => {
     return page
-      ? posts.slice((page - 1) * POST_LENGTH, POST_LENGTH * page)
-      : posts.slice(0, POST_LENGTH)
+      ? posts.slice(
+          (page - 1) * DATA.MAIN_POST_LENGTH,
+          DATA.MAIN_POST_LENGTH * page,
+        )
+      : posts.slice(0, DATA.MAIN_POST_LENGTH)
   }
 
   return {

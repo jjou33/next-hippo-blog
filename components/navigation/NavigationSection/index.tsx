@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import IconBox from 'components/common/IconBox'
+import { IconBox } from 'components/common'
 import NavMainCategory from './NavMainCategory'
 import NavSubCategory from './NavSubCategory'
 import NavRootTitle from './NavRootTitle'

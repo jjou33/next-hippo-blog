@@ -1,7 +1,6 @@
 import * as S from './styles'
 
-import IconBox from 'components/common/IconBox'
-
+import { IconBox } from 'components/common'
 import { Typography } from 'components/common'
 import { Fragment, PropsWithChildren, useState } from 'react'
 import { NavigationIconSet } from 'public/static/icon'

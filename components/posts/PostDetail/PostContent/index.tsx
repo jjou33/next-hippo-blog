@@ -1,9 +1,9 @@
 import * as S from './styles'
 
 import ReactMarkdown from 'react-markdown'
-import WaveAnimation from 'components/common/WaveAnimation'
 import PostToc from 'components/posts/PostToc'
 
+import { WaveAnimation } from 'components/common'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 

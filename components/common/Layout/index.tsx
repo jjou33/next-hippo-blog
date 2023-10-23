@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import Navigation from 'components/navigation'
-import ScrollBar from '../ScrollStateBar'
-import Modal from '../Modal'
 import LoadingSpinner from 'components/common/LoadingSpinner'
 
+import { Modal } from 'components/common'
+import { ScrollStateBar } from 'components/common'
 import { Footer, Header } from 'components/common'
 import { FlexBox } from '../StyledLayout'
 import { PropsWithChildren, useEffect, useState } from 'react'
@@ -37,7 +37,7 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
 
   return (
     <FlexBox flexDirection="column" width="100%">
-      <ScrollBar />
+      <ScrollStateBar />
       <FlexBox>
         {isModal ? (
           <Modal>

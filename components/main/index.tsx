@@ -5,7 +5,7 @@ import IntroSection from './IntroSection'
 import ProjectSection from './ProjectSection'
 import RecommendList from './RecommendSection'
 import PostListSection from './PostListSection'
-import WaveAnimation from 'components/common/WaveAnimation'
+import { WaveAnimation } from 'components/common'
 
 import { FlexBox } from 'components/common/StyledLayout'
 

@@ -1,4 +1,8 @@
 const DATA = {
+  MAIN_POST_LENGTH: 6,
+  FOOTER_INFO: {
+    GITHUB_LINK: 'https://github.com/jjou33',
+  },
   IMAGES: {
     LOGO_IMAGE: '/static/images/logo_Image.png',
     HERO_IMAGES: [
@@ -82,6 +86,11 @@ const DATA = {
         expert:
           'NextJS 로 개발하면서 만든 포스트들에 대한 정보를 기록한 공간입니다.',
         imageLink: '/static/images/Framework/NextJS/headImage.png',
+      },
+      {
+        title: 'App',
+        expert: 'APP 과 관련된 기술 내용에 대한 포스트를 기록하는 공간입니다.',
+        imageLink: '/static/images/Web/App/headImage.png',
       },
       {
         title: 'Browser',

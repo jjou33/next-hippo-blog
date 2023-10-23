@@ -43,57 +43,11 @@ export const WaveKeyframe4 = keyframes`
   }
 `
 
-export const WaveAnimationContainer = styled.div`
-  position: relative;
-  width: 100%;
-  padding: 0;
-  svg {
-    width: 500px;
-  }
-`
-
 export const SectionContainer = styled.div`
   padding: 0 2rem 5rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
-`
-export const WaveAnimationBox = styled.div`
-  .editorial {
-    display: block;
-    width: 100%;
-    height: 100px;
-    max-height: 100px;
-    margin: 0;
-    z-index: 5;
-    bottom: 0;
-    position: absolute;
-  }
-
-  .parallax1 > use {
-    animation: ${WaveKeyframe1} 10s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax2 > use {
-    animation: ${WaveKeyframe2} 8s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax3 > use {
-    animation: ${WaveKeyframe3} 6s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
-  .parallax4 > use {
-    animation: ${WaveKeyframe4} 4s linear infinite;
-    &:nth-of-type(1) {
-      animation-delay: -2s;
-    }
-  }
 `
 export const IndicatorContainer = styled.div`
   width: 10rem;

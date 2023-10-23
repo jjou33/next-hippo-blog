@@ -16,6 +16,7 @@ const useTheme = () => {
       (preferDarkMode ? 'dark' : 'light')) as ThemeKey
 
     setTheme(initalTheme)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

@@ -111,7 +111,7 @@ export const useImageIndexSlider = (images: Array<string>): number => {
     }, 6000) // 8초마다 이미지 변경
 
     return () => clearInterval(interval)
-  }, [])
+  }, [images])
 
   return currentImage
 }

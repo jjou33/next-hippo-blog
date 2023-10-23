@@ -1,17 +1,17 @@
 import * as S from './styles'
 
 import theme from 'styles/theme'
-import IconBox from 'components/common/IconBox'
 import PostList from '../PostList'
 import PostListHeader from './PostListHeader'
 
+import { IconBox } from 'components/common'
 import { Fragment } from 'react'
 import { Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
+import { WaveAnimation } from 'components/common'
+import { themedPalette } from 'styles/themeVariables'
 
 import type { PostData } from 'types/post'
-import WaveAnimation from 'components/common/WaveAnimation'
-import { themedPalette } from 'styles/themeVariables'
 
 const PostCategoryList = ({
   posts,
