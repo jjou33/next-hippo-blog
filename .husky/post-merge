@@ -4,7 +4,7 @@
 # 현재 Branch 명
 BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
 
-# 색상 코드 정의
+# 색상 코드
 RED='\033[1;31m'
 GREEN='\033[1;32m'
 BOLD='\033[1m'
