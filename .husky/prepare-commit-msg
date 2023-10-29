@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+COMMIT_EDITMSG=$1
+
+addIssueNumber() {
+  NAME=$(git branch | grep '*' | sed 's/* //' | sed 's/^.*\///') #branch Name 에서 마지막 "/" 이후 문자열 가져오기
+  ISSUE_NUMBER=`echo $NAME | cut -d '-' -f1` #branch Name 에서 Issue Number 가져오기
+  echo "[#$ISSUE_NUMBER] $(cat $COMMIT_EDITMSG)" > $COMMIT_EDITMSG # Commit Message 에 추가
+}
+
+MERGE=$(cat $COMMIT_EDITMSG|grep -i 'merge'|wc -l)
+
+if [ $MERGE -eq 0 ] ; then
+  addIssueNumber
+fi
