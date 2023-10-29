@@ -8,15 +8,13 @@
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "reinstall": "rm -rf ./node_modules && rm -rf pnpm-lock.yaml && pnpm install",
-    "typecheck": "tsc --pretty --noEmit",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --cache --fix",
-      "tsc --noEmit"
+      "eslint --cache --fix"
     ]
   },
   "dependencies": {

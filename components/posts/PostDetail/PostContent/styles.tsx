@@ -59,13 +59,13 @@ export const ContentsWrapper = styled.article`
   font-family: ${cafe24OhsquareAir.style.fontFamily};
   word-break: break-word;
   blockquote {
-    border: 1px solid #99d6f3;
-    border-left: 10px solid #5db5db;
-    margin: 20px;
-    padding: 20px;
+    border: 1px solid ${themedPalette.badge_color};
+    border-left: 10px solid ${themedPalette.badge_color};
+    background-color: ${themedPalette.bg_element_color};
+    padding: 5px 20px;
     p {
       font-style: italic;
-      font-weight: 700;
+      font-weight: bold;
     }
   }
   a {
