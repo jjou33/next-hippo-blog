@@ -8,7 +8,7 @@
 
 아직까지는 전체적으로 더미데이터로 구성되어있으니, 참고 부탁드립니다.
 
-Gatsby 프로젝트 블로그 주소 : [https://hippo-dev.vercel.app/](https://hippo-dev.vercel.app/)
+프로젝트 배포 주소 : [https://next-hippo-blog.vercel.app/](https://next-hippo-blog.vercel.app/)
 
 ## Tech Stack
 
