@@ -6,7 +6,7 @@
 
 기존 Gatsby 를 활용해서 블로그를 최근 관심을 가지게 된 NextJS 로 변경하기 위한 프로젝트 입니다.
 
-아직까지는 전체적으로 더미데이터로 구성되어있으니, 참고 부탁드립니다.
+아직까지는 전체적으로 더미데이터로 구성되어있며 참고 부탁드립니다.
 
 Gatsby 프로젝트 블로그 주소 : [https://hippo-dev.vercel.app/](https://hippo-dev.vercel.app/)
 
