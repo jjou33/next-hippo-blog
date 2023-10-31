@@ -1,6 +1,6 @@
 <h1>Hippo Dev Blog By NextJS</h1>
 
-#### 프로젝트 제작 개요
+#### 프로젝트 개요
 
 ---
 
