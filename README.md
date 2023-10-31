@@ -4,10 +4,6 @@
 
 ---
 
-기존 Gatsby 를 활용해서 블로그를 최근 관심을 가지게 된 NextJS 로 변경하기 위한 프로젝트 입니다.
-
-아직까지는 전체적으로 더미데이터로 구성되어있며 참고 부탁드립니다.
-
 프로젝트 배포 주소 : [https://next-hippo-blog.vercel.app/](https://next-hippo-blog.vercel.app/)
 
 ## Tech Stack
