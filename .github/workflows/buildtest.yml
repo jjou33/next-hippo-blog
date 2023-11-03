@@ -1,0 +1,60 @@
+name: "Build Test Before Merge"
+
+on:
+  pull_request:
+    types:
+      - opened 
+      - synchronize 
+    branches:
+      - main
+
+jobs:
+  Build-Test:
+    name: Build Test 
+    runs-on: ubuntu-latest  # 작업이 실행될 환경 (최신 버전의 Ubuntu)
+
+    strategy:
+      matrix:
+        node-versions: [18.x]  # 다양한 노드 버전을 테스트하기 위한 매트릭스 18.x 버전 사용
+
+    steps:
+      - name: Checkout  # 작업의 이름 (GitHub 리포지토리 체크아웃)
+        uses: actions/checkout@v3  # GitHub 리포지토리를 현재 워크스페이스로 체크아웃
+
+      - name: Use Node.js ${{ matrix.node-version }}  # 작업의 이름 (Node.js 버전 설정)
+        uses: actions/setup-node@v3  # Node.js를 설정
+
+        with:
+          node-version: ${{ matrix.node-version }}  # 설정할 Node.js 버전을 매트릭스에서 가져옴
+
+      - uses: pnpm/action-setup@v2  # pnpm을 설치하기 위한 액션 사용
+        name: Install pnpm  # 작업의 이름
+
+        with:
+          version: 8  # 설치할 pnpm 버전 설정
+          run_install: false  # pnpm 설치를 실행하지 않음
+
+      - name: Get pnpm store directory  # 작업의 이름 (pnpm 저장소 디렉토리 가져오기)
+        # 쉘을 bash로 설정
+        shell: bash  
+        # pnpm 저장소 경로를 환경 변수에 저장
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV  
+
+      - uses: actions/cache@v3  # 캐싱 액션 사용
+        name: Setup pnpm cache  # 작업의 이름
+        with:
+          path: ${{ env.STORE_PATH }}  # 캐시할 디렉토리 경로를 pnpm 저장소 경로로 설정
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}  # 캐시 키 생성
+          # 복원 키 생성
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-  
+
+      - name: Install dependencies  # 작업의 이름 (의존성 설치)
+        run: pnpm install  # pnpm을 사용하여 의존성 설치
+
+      - name: Build Test  # 작업의 이름 (빌드 테스트)
+        # pnpm을 사용하여 빌드 실행
+        run: |
+          pnpm build  
+        if: ${{ always() }}  # 항상 실행 (조건 없음)
