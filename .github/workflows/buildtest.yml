@@ -1,60 +1,80 @@
+# test.yml
+
 name: "Build Test Before Merge"
 
 on:
   pull_request:
     types:
-      - opened 
-      - synchronize 
+      - opened # pull request가 열린 경우에만 실행
+      - synchronize
     branches:
-      - main
-
+      - main  # main 브랜치로의 pull request에서 실행
 jobs:
-  Build-Test:
-    name: Build Test 
-    runs-on: ubuntu-latest  # 작업이 실행될 환경 (최신 버전의 Ubuntu)
-
+  test:
+    name: Build Test
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-versions: [18.x]  # 다양한 노드 버전을 테스트하기 위한 매트릭스 18.x 버전 사용
-
+        node-versions: [18.x]
     steps:
-      - name: Checkout  # 작업의 이름 (GitHub 리포지토리 체크아웃)
-        uses: actions/checkout@v3  # GitHub 리포지토리를 현재 워크스페이스로 체크아웃
-
-      - name: Use Node.js ${{ matrix.node-version }}  # 작업의 이름 (Node.js 버전 설정)
-        uses: actions/setup-node@v3  # Node.js를 설정
-
+      # Action 준비
+      - uses: act10ns/slack@v2
         with:
-          node-version: ${{ matrix.node-version }}  # 설정할 Node.js 버전을 매트릭스에서 가져옴
+          status: starting
+          webhook-url: ${{ secrets.SLACK_INCOMING_URL }}
+          message: "📣 Opened Pull Request & Build Test Start\n<${{ github.event.pull_request.html_url }}|🚀 View Pull Request>"
+        if: always()
 
-      - uses: pnpm/action-setup@v2  # pnpm을 설치하기 위한 액션 사용
-        name: Install pnpm  # 작업의 이름
+      - name: Checkout
+        uses: actions/checkout@v3
 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          version: 8  # 설치할 pnpm 버전 설정
-          run_install: false  # pnpm 설치를 실행하지 않음
+          node-version: ${{ matrix.node-version }}
 
-      - name: Get pnpm store directory  # 작업의 이름 (pnpm 저장소 디렉토리 가져오기)
-        # 쉘을 bash로 설정
-        shell: bash  
-        # pnpm 저장소 경로를 환경 변수에 저장
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV  
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3  # 캐싱 액션 사용
-        name: Setup pnpm cache  # 작업의 이름
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        id: Cache-Work
         with:
-          path: ${{ env.STORE_PATH }}  # 캐시할 디렉토리 경로를 pnpm 저장소 경로로 설정
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}  # 캐시 키 생성
-          # 복원 키 생성
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-  
+            ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies  # 작업의 이름 (의존성 설치)
-        run: pnpm install  # pnpm을 사용하여 의존성 설치
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Build Test  # 작업의 이름 (빌드 테스트)
-        # pnpm을 사용하여 빌드 실행
+      - name: Lint Test
+        id: Lint-Test
+        run: pnpm lint
+      
+      - name: Type Check
+        id: Type-Check
+        run: pnpm typecheck
+        
+      - name: Build Test
+        id: Build-Test
         run: |
-          pnpm build  
-        if: ${{ always() }}  # 항상 실행 (조건 없음)
+          pnpm build
+        if: ${{ always() }}
+
+      - uses: act10ns/slack@v2
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#workflows'
+          webhook-url: ${{ secrets.SLACK_INCOMING_URL }}
+          config: .github/config/slack.yml
+        if: always()
