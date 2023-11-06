@@ -1,6 +1,6 @@
 # test.yml
 
-name: "Build Test Before Merge"
+name: 'Build Test Before Merge'
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
       - opened # pull request가 열린 경우에만 실행
       - synchronize
     branches:
-      - main  # main 브랜치로의 pull request에서 실행
+      - main # main 브랜치로의 pull request에서 실행
 jobs:
   test:
     name: Build Test
@@ -59,11 +59,13 @@ jobs:
       - name: Lint Test
         id: Lint-Test
         run: pnpm lint
-      
+        if: ${{ always() }}
+
       - name: Type Check
         id: Type-Check
         run: pnpm typecheck
-        
+        if: ${{ always() }}
+
       - name: Build Test
         id: Build-Test
         run: |
