@@ -16,7 +16,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --fix",
-      "tsc --noEmit --project tsconfig.json"
+      "bash -c tsc"
     ]
   },
   "dependencies": {
