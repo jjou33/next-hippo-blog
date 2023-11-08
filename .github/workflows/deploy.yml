@@ -50,14 +50,19 @@ jobs:
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
+        id: BuildProject
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Project Artifacts to Vercel
+        id: DeployProject
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        
       - uses: act10ns/slack@v2
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: "#workflows"
           webhook-url: ${{ secrets.SLACK_INCOMING_URL }}
+          config: .github/config/slack.yml
         if: always()

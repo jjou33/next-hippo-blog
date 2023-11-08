@@ -20,13 +20,8 @@ echo "${YELLOW}$BRANCH_NAME"
 if [ "$BRANCH_NAME" = "dev"  ]; then
   echo "${BOLD}Feature branch merged into develop. Running automation...${RESET}"
 
-  # 빌드 스크립트 실행
-  echo "${BOLD}Running build script...${RESET}"
-  pnpm build  # 또는 적절한 빌드 명령어
-
   if [ $? -eq 0 ]; then
-    echo "${BLUE}Build successful. Pushing to develop...${RESET}"
-    # 빌드 성공 시 자동 배포
+    # DEV BRANCH 로 자동 배포
     git push origin dev
 
     if [ $? -eq 0 ]; then
