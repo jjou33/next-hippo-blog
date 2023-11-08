@@ -23,9 +23,9 @@ const RootPage = (props: RootProps) => {
       <NextSeo
         title="Home"
         description="HIPPO 의 DEVLOG"
-        canonical="https://https://next-hippo-blog.vercel.app/"
+        canonical="https://hippodevlog.vercel.app/"
         openGraph={{
-          url: 'https://https://next-hippo-blog.vercel.app/',
+          url: 'https://hippodevlog.vercel.app/',
         }}
       />
       <MainSection posts={props.posts} />
