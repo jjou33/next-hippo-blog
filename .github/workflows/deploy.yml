@@ -1,6 +1,6 @@
 # deploy.yml
 
-name: 'Vercel Production Deployment'
+name: "Vercel Production Deployment"
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -12,18 +12,42 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-versions: [18.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-versions: ${{ secrets.NODE_VERSION }}
-      - name: Setup Pnpm Environment
-        uses: pnpm/action-setup@v2
+          node-version: ${{ matrix.node-version }}
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          version: 6.0.2
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        id: cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: v1-cli-${{ runner.os }}-${{ hashFiles('vercel.json') }}
+          restore-keys: |
+            v1-cli-${{ runner.os }}-
+
       - name: Install Vercel CLI
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm add -g vercel@latest
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
@@ -34,6 +58,6 @@ jobs:
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: '#workflows'
+          channel: "#workflows"
           webhook-url: ${{ secrets.SLACK_INCOMING_URL }}
         if: always()

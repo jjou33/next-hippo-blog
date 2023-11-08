@@ -25,7 +25,7 @@ fields:
   - title: 🔎 Git Ref
     value: "<{{refUrl}}|`{{ref}}`> ({{refType}})"
     short: true
-  - title: 🧑‍💻 Actor
+  - title: 🧑 Actor
     value: "{{actor}}"
     short: true
   - title: ⛅ Job Status
