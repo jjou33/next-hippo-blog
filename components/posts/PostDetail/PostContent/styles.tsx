@@ -69,7 +69,7 @@ export const ContentsWrapper = styled.article`
     }
   }
   a {
-    color: ${themedPalette.sub_text_color2};
+    color: #6199d1;
   }
   p {
     color: ${themedPalette.text_color};
@@ -80,7 +80,7 @@ export const ContentsWrapper = styled.article`
     }
 
     em {
-      color: blue;
+      color: ${themedPalette.em_color};
       font-weight: 400;
     }
   }
