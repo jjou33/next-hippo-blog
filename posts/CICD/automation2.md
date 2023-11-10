@@ -1,11 +1,11 @@
 ---
 date: "2023-11-09"
-title: "[CI/CD] 개인 프로젝트에서 CICD 자동화 구축하기(2)"
-image: automation.png
+title: "[CI/CD] 개인 프로젝트에서 CICD 자동화 구축하기 (2)"
+image: automation2.png
 rootCategory: Programming
 category1depth: Web
 category2depth: CICD
-keywords: ["CI/CD", "GitHub Action", 'Husky']
+keywords: ["CI/CD", "Husky", "Git Hooks"]
 excerpt: CI/CD 에 관련된 포스팅 공간입니다.
 isFeatured: true
 ---
@@ -17,7 +17,7 @@ isFeatured: true
 
 이제 실제로 제가 작성한 프로세스와 디테일한 코드를 기준으로 확인해보겠습니다.
 
-다시한 전체적인 프로세스는 아래와 같습니다.
+전체적인 프로세스는 아래와 같습니다.
 
 ```bash
 1. Github Issue 등록
@@ -61,7 +61,7 @@ isFeatured: true
 
 그럼 이제 새롭게 **feature Branch** 를 생성해봅니다.
 
-![image](https://github.com/hwcho33/nextstudy/assets/134469187/b341c957-d9e6-4eea-b020-de92d78b9b71")
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/18ee8fca-a012-4c85-be08-b223337eb981)
 
 branch 는 *feature/55-XXX* 로 생성한것을 확인하실 수 있습니다.
 
@@ -69,9 +69,7 @@ branch 는 *feature/55-XXX* 로 생성한것을 확인하실 수 있습니다.
 
 그럼 확인을 위해 수정사항에 대한 개발을 완료하고 **Commit & Push** 를 진행해보도록 하겠습니다.
 
-![image](https://github.com/hwcho33/nextstudy/assets/134469187/18ee8fca-a012-4c85-be08-b223337eb981)
-
-Commit 을 완료한 후 Issue Tab 으로 가보면 아래와 같이 아래에 commit 내용이 추가된것을 확인할 수 있습니다.
+**Commit** 을 완료한 후 **Issue Tab** 으로 가보면 아래와 같이 아래에 commit 내용이 추가된것을 확인할 수 있습니다.
 
 ![image](https://github.com/hwcho33/nextstudy/assets/134469187/56a2dca6-c862-4f72-a8ea-a70a58aea9fd)
 
@@ -135,7 +133,7 @@ pnpm lint-staged
     "prepare": "husky install",
     "lint-staged": "lint-staged" // 추가
   },
-  // 추가
+  // Staging 된 파일들 중 ts, tsx 파일에 대하여 eslint, tsc 로 검증
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --fix",
@@ -147,7 +145,7 @@ pnpm lint-staged
 
 ![image](https://github.com/hwcho33/nextstudy/assets/134469187/efb20187-5c7d-4289-9a0d-6943084fc068)
 
-#### Pre-commit Message 적용
+### Pre-commit Message 적용
 
 이제 위에서 봤던 Commit Message 수정에 대한 기능을 적용해보도록 하겠습니다.
 
@@ -163,21 +161,100 @@ npx husky add .husky/prpare-commit-msg
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# 실제 작성한 Commit Message 
 COMMIT_EDITMSG=$1
 
-addIssueNumber() {
-  NAME=$(git branch | grep '*' | sed 's/* //' | sed 's/^.*\///') #branch Name 에서 마지막 "/" 이후 문자열 가져오기
-  ISSUE_NUMBER=`echo $NAME | cut -d '-' -f1` #branch Name 에서 Issue Number 가져오기
-  echo "[#$ISSUE_NUMBER] $(cat $COMMIT_EDITMSG)" > $COMMIT_EDITMSG # Commit Message 에 추가
-}
+# branch Name 에서 마지막 문자열 가져오기
+# feature/11-sample => 11-sample
+NAME=$(git branch | grep '*' | sed 's/* //' | sed 's/^.*\///') "/" 
 
-# 작성한 commit message 와 
-MERGE=$(cat $COMMIT_EDITMSG|grep -i 'merge'|wc -l)
-
-if [ $MERGE -eq 0 ] ; then
-  addIssueNumber
-fi
+# 11-sample 에서 Issue Number 11 을 가져옴
+ISSUE_NUMBER=`echo $NAME | cut -d '-' -f1` 
+# Commit Message 앞에 [#11] 를 추가
+echo "[#$ISSUE_NUMBER] $(cat $COMMIT_EDITMSG)" > $COMMIT_EDITMSG
 ```
+위와 같이 내가 최초 작성한 **Commit Message** 에 Issue Number 를 붙여줄 수 있습니다.
+
+커밋을 진행 후 해당 브렌치에 **push** 를 진행하고 **Issue Tab** 으로 가보면 아래와 같이 이력이 추가된것을 보실 수 있습니다.
+
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/876e3cbd-100d-4856-b008-da8b59f2b9ce)
+
+여기까지 진행이 되었다면 우리는 개발변경 사항을 각자의 **feature branch** 에 push 를 진행한 상태이고, 이제는 dev branch 에서 이 **feature branch** 에 올린 코드를 **dev branch** 에 *merge* 해야할 차례입니다.
+### feature -> dev Merge 
+
+현재는 혼자 프로젝트를 하고 있기 때문에 저는 우선 feature branch 를 dev 로 rebase 해줍니다.
+
+```bash
+# feature/55-branch
+
+git rebase dev
+```
+
+**dev branch** 로 commit 내용을 리베이스하면 현재 브렌치의 커밋들이 **dev branch** 로 옮겨가게 되고, *commit history* 가 깔끔하게 나오기 떄문입니다.
+
+>rebase 를 공용 브렌치에서 하게되면 기존 커밋을 변경하기 떄문에 협업간에 사용할 경우 주의가 필요하다는점은 숙지를 해야합니다.
+
+```bash
+# 변경사항을 리베이스(로컬브렌치로) 적용하지만, 병합 커밋은 리베이스를 하지 않도록 한다.
+git pull --rebase=merges
+
+git merge feature/55-XXX
+```
+위 과정을 통해서 **merge** 를 진행하게 됩니다.
+
+#### post-merge hook
+
+저의 경우에는 dev 에서 feature 브렌치를 merge 할때 완료되면 자동으로 push 를 하도록 설정하였습니다.
+
+이 역시 husky 를 활용해서 자동화할 수 있습니다.
+
+```bash
+npx husky add .husky/post-merge
+```
+
+위 커멘드를 실행하면 post-merge 파일이 생기게 되는데 이 훅은 merge 가 이루어질때 실행되는 hook 입니다.
+
+```yml
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 현재 Branch
+BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
+
+# 색상 코드
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+BOLD='\033[1m'
+RESET='\033[0m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+
+# 개발환경에서 Feature Merge 진행 시 동작
+if [ "$BRANCH_NAME" = "dev"  ]; then
+  echo "${BOLD}Feature branch merged into develop. Running automation...${RESET}"
+    # DEV BRANCH 로 자동 배포
+    git push origin dev
+
+    if [ $? -eq 0 ]; then
+      echo "${GREEN}Merge into main successful. Pushing to main...${RESET}"
+    else
+      echo "${RED}Merge into main failed. Aborting the push to main.${RESET}"
+    fi
+  fi
+fi
+
+```
+
+저는 먼저 현재 Head branch 가 어딘지를 먼저 확인합니다.
+
+확인 후 만약 dev branch 일 경우에는 안내문구가 출력되고 dev branch 에 push 를 진행합니다.
+
+이후 push 작업의 상태를 출력해줍니다.
+
+
+
+
+
 
 
 

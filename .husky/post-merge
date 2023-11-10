@@ -15,7 +15,6 @@ BLUE='\033[1;34m'
 echo "${YELLOW}Current Branch Name"
 echo "${YELLOW}$BRANCH_NAME"
 
-
 # 개발환경에서 Feature Merge 진행 시 동작
 if [ "$BRANCH_NAME" = "dev"  ]; then
   echo "${BOLD}Feature branch merged into develop. Running automation...${RESET}"

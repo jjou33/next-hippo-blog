@@ -1,6 +1,6 @@
 ---
 date: "2023-11-08"
-title: "[CI/CD] 개인 프로젝트에서 CICD 자동화 구축하기"
+title: "[CI/CD] 개인 프로젝트에서 CICD 자동화 구축하기(1)"
 image: automation.png
 rootCategory: Programming
 category1depth: Web
@@ -96,7 +96,7 @@ isFeatured: true
 7. 통과 후 Main 으로 Merge Confirm 및 push
 ```
 
-대략적으로 위와 같은 순으로 진행되며, 이후 추가적으로 **Jest** 혹은 **Playwright** 를 추가하여 테스트도 진행할 예정이고, 자세한 부분은 다음 포스트에서 자세하게 진행하도록 한다.
+대략적으로 위와 같은 순으로 진행되며, 이후 추가적으로 **Jest** 혹은 **Playwright** 를 추가하여 테스트도 진행할 예정이고, 자세한 부분은 [다음 포스트](https://hippodevlog.vercel.app/posts/CICD/automation2)에서 자세하게 진행하도록 하겠습니다!
 
 
 
