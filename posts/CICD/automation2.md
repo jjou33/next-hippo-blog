@@ -245,11 +245,15 @@ fi
 
 ```
 
-저는 먼저 현재 Head branch 가 어딘지를 먼저 확인합니다.
+저는 먼저 현재 **Head branch** 가 어딘지를 먼저 확인합니다.
 
-확인 후 만약 dev branch 일 경우에는 안내문구가 출력되고 dev branch 에 push 를 진행합니다.
+확인 후 만약 **dev branch** 일 경우에는 안내문구가 출력되고 **dev branch 에 push** 를 진행합니다.
 
 이후 push 작업의 상태를 출력해줍니다.
+
+이제 **dev branch** 에 개발건을 올렸다면 이후부터는 Github Action 으로 배포자동화를 진행하도록 합니다.
+
+이는 다음 포스트에서 진행하도록 하겠습니다.
 
 
 
