@@ -88,6 +88,12 @@ const DATA = {
         imageLink: '/static/images/Framework/NextJS/headImage.png',
       },
       {
+        title: 'CICD',
+        expert:
+          '1인 개발과정에서 husky, Github Action 등을 활용한 CI/CD 자동화에 대한 내용을 기록한 공간입니다.',
+        imageLink: '/static/images/Web/CICD/headImage.png',
+      },
+      {
         title: 'App',
         expert: 'APP 과 관련된 기술 내용에 대한 포스트를 기록하는 공간입니다.',
         imageLink: '/static/images/Web/App/headImage.png',
