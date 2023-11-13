@@ -2,20 +2,31 @@
 
 name: 'Build Test Before Merge'
 
+# workflow 를 동작하기 위한 Trigger 내용입니다.
+# main Branch 에 대한 PR 이 Open 혹은 Sync 될때 아래의 Job 이 실행됩니다.
 on:
   pull_request:
     types:
-      - opened # pull request가 열린 경우에만 실행
-      - synchronize
+      - opened 
+      - synchronize 
     branches:
-      - main # main 브랜치로의 pull request에서 실행
+      - main 
+
+# jobs 은 step 으로 구성할 수 있고, 이러한 step 을 병렬로 나누어서 실행도 가능합니다.
+# 여러개의 job 을 설정하여 사용이 가능하며, job 간에 정보교환도 가능합니다.
+
 jobs:
   test:
+    # job 의 이름을 지정합니다.
     name: Build Test
+    # 리눅스 환경에서 사용한다고 명시합니다.
     runs-on: ubuntu-latest
+    # Github Action 의 실행전략을 새웁니다.
+    # Node Version 을 설치할때 18 버전을 사용하도록 합니다.
     strategy:
       matrix:
         node-versions: [18.x]
+    # job 의 step 을 정의합니다.
     steps:
       # Action 준비
       - uses: act10ns/slack@v2
@@ -25,9 +36,11 @@ jobs:
           message: "📣 Opened Pull Request & Build Test Start\n<${{ github.event.pull_request.html_url }}|🚀 View Pull Request>"
         if: always()
 
+      # 이제 시작에 앞서서 Github Actions 에서 우리는 Linux 환경으로 Checkout 하여 실행하게됩니다.
       - name: Checkout
         uses: actions/checkout@v3
 
+      # 위 에서 명시한 node-version 을 활용하여 Node.js 를 설치 후 그 위에서 진행한다고 명시합니다.
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -39,35 +52,44 @@ jobs:
           version: 8
           run_install: false
 
+      
+      # pnpm-store 의 위치를 찾아 $GITHUB_ENV 에 저장합니다.
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+      # pnpm-store 를 캐싱하여 이미 다운로드된 종속성이 로컬에 저장되므로 다시 다운로드 하지 않습니다.
+      # node_module 과 next Cache 를 caching 하여 시간을 단축할 수 있습니다.
       - uses: actions/cache@v3
-        name: Setup pnpm cache
-        id: Cache-Work
+        name: Setup pnpm & next Build cache
+        id: cache
         with:
           path: |
-            ${{ env.STORE_PATH }}
+            node_modules
             ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            cache-
 
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
 
+      # Lint Test 진행 합니다.
+      # if 문에 always() 를 추가하면 이전에 실패한 부분이 생기더라도 무조건 실행하게 됩니다.
       - name: Lint Test
         id: Lint-Test
         run: pnpm lint
         if: ${{ always() }}
 
+      # Type Check Test 진행 합니다.
       - name: Type Check
         id: Type-Check
         run: pnpm typecheck
         if: ${{ always() }}
 
+      # Build Test 진행 합니다.
       - name: Build Test
         id: Build-Test
         run: |

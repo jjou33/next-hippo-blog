@@ -6,7 +6,7 @@ rootCategory: Programming
 category1depth: Web
 category2depth: CICD
 keywords: ["CI/CD", "GitHub Action", 'Husky']
-excerpt: CI/CD 에 관련된 포스팅 공간입니다.
+excerpt: CI/CD 자동화에 대한 기본적인 개념과 앞으로의 포스팅 내용을 간단하게 설명한 포스팅입니다.
 isFeatured: true
 ---
 

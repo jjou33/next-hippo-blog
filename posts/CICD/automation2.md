@@ -6,7 +6,7 @@ rootCategory: Programming
 category1depth: Web
 category2depth: CICD
 keywords: ["CI/CD", "Husky", "Git Hooks"]
-excerpt: CI/CD 에 관련된 포스팅 공간입니다.
+excerpt: Husky 와 Git hook 을 활용해서 로컬상 테스트 자동화에 대한 내용을 기록한 포스팅입니다.
 isFeatured: true
 ---
 
@@ -20,9 +20,9 @@ isFeatured: true
 전체적인 프로세스는 아래와 같습니다.
 
 ```bash
-1. Github Issue 등록
-2. branch 생성(dev->feature/XX)
-3. 개발완료
+1. Github Issue 등록 
+2. branch 생성(dev->feature/XX) 
+3. 개발완료 
 4. commit -> Husky 로 lint-staged 검사 및 Commit-msg 에 Issue Number Setting
 5. feature -> dev Merge 진행
 6. PR 생성(dev -> main) -> Github Action 으로 build Test
@@ -253,7 +253,7 @@ fi
 
 이제 **dev branch** 에 개발건을 올렸다면 이후부터는 Github Action 으로 배포자동화를 진행하도록 합니다.
 
-이는 다음 포스트에서 진행하도록 하겠습니다.
+이는 [다음 포스트](https://hippodevlog.vercel.app/posts/CICD/automation3)에서 진행하도록 하겠습니다.
 
 
 

@@ -50,7 +50,7 @@ export const MarkdownWrapper = styled.div`
   }
 `
 export const ContentsWrapper = styled.article`
-  width: 700px;
+  width: 900px;
   margin: 2rem auto;
   font-size: 1rem;
   line-height: 2rem;
