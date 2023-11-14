@@ -186,7 +186,25 @@ jobs:
 
 일단 저는 [공식문서](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)에 나와있는 내용을 참고해서 진행하였습니다.
 
-위에서 필요로하는 **TOKEN** 혹은 **SLACK_INCOING_URL** 과 같은 정보는 이미 사전에 **GITHUB_SECREAT** 에 저장되어 있기 떄문에 가져와서 적용할 수 있습니다.
+저는 앞선 포스트에서도 말씀드렸지만, 최대한 **Caching** 을 적용할 수 있는 부분들을 찾아서 적용하였습니다.
+
+현재 위 yml 파일에서는 **vercel cli** 와 **vercel build caching** 을 진행하였습니다. 
+
+만약 캐싱을 하지 않게 되면 아래와 같이 총 1분 42초의 배포 시간이 소요되는것을 보실 수 있습니다.
+
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/93a4385f-0c0a-42a3-a5f6-61a36f5bf442)
+
+그럼 만약 캐싱을 진행하게 되면 어떻게될까요?
+
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/387e7c6c-b66b-4739-ac86-2110ef11100c)
+
+총 1분 4초가 걸린것을 보실 수 있습니다.
+
+*1m 42s > 1m 4s*로 총 **40%** 정도 감소한것을 볼 수 있습니다.
+
+이와같이 중복되는 경우 Caching 을 진행해주는것이 좋습니다.
+
+추가로 위에서 필요로하는 **TOKEN** 혹은 **SLACK_INCOING_URL** 과 같은 정보는 이미 사전에 **GITHUB_SECREAT** 에 저장되어 있기 떄문에 가져와서 적용할 수 있습니다.
 
 이렇게 모든 일련의 **CI/CD 과정을 제 개인프로젝트에 적용**해보았습니다.
 

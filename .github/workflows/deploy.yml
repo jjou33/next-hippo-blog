@@ -47,30 +47,42 @@ jobs:
       # pnpm 캐시를 설정하는 여섯 번째 단계입니다. 이전에 저장된 캐시가 있다면 사용합니다.
       - uses: actions/cache@v3
         name: Setup pnpm cache
-        id: cache
+        id: Pnpm-cache
         with:
           path: ${{ env.STORE_PATH }}
-          key: v1-cli-${{ runner.os }}-${{ hashFiles('vercel.json') }}
+          key: v1-cli-pnpm-store-${{ hashFiles('vercel.json') }}
           restore-keys: |
-            v1-cli-${{ runner.os }}-
+            v1-cli-pnpm-store-
 
       # Vercel CLI를 설치하는 일곱 번째 단계입니다. 이전에 캐시된 내용이 없을 때만 설치합니다.
       - name: Install Vercel CLI
-        if: steps.cache.outputs.cache-hit != 'true'
+        id: Install-vercel
+        if: steps.Pnpm-cache.outputs.cache-hit != 'true'
         run: pnpm add -g vercel@latest
 
       # 여덟 번째 단계로, Vercel 환경 정보를 가져오는 명령을 실행합니다.
       - name: Pull Vercel Environment Information
+        id: Get-Vercel-Environment
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      # 프로젝트 아티팩트를 빌드하는 아홉 번째 단계입니다.
+      # 프로젝트 아티팩트를 빌드하는 아홉 번째 단계입니다.1
+      - name: Cache Vercel build
+        uses: actions/cache@v3
+        id: Build-cache
+        with:
+          path: .vercel
+          key: vercel-${{ hashFiles('vercel.json') }}
+          restore-keys: |
+            vercel-
+
       - name: Build Project Artifacts
-        id: BuildProject
+        id: Vercel-Build
+        if: steps.Build-cache.outputs.cache-hit != 'true'
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       # Vercel에 프로젝트 아티팩트를 배포하는 열 번째 단계입니다.
       - name: Deploy Project Artifacts to Vercel
-        id: DeployProject
+        id: Vercel-Deploy
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
         
       # 배포 상태와 관련된 정보를 Slack에 알리는 마지막 단계입니다.
