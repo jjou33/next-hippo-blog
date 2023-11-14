@@ -92,8 +92,7 @@ jobs:
       # Build Test 진행 합니다.
       - name: Build Test
         id: Build-Test
-        run: |
-          pnpm build
+        run: pnpm build
         if: ${{ always() }}
 
       - uses: act10ns/slack@v2

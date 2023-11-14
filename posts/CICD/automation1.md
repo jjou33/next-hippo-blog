@@ -19,7 +19,7 @@ isFeatured: true
 
 그러나, 개인 프로젝트를 하는동안 "혼자하는건데뭐.." 라는 생각으로 이러한 절차는 크게 상관없이 [블로그 프로젝트](https://github.com/jjou33/next-hippo-blog) 를 진행을 하고 있었습니다.
 
-그런데 우연히 클릭한 [기술 블로그](https://myeongjae.kim/)가 너무 마음에 들어서 여러 포스트를 정독하다보니 이러한 생각이 잘못되었음을 인지하였고, 블로그의 **UI 및 기능개선**이 어느정도 완료된 현재 시점에서 앞으로 추가 기능개선 및 개발건은 어느정도 절차를 만들어서 진행할 예정입니다.
+그런데 우연히 클릭한 [기술 블로그](https://myeongjae.kim/blog/2019/02/02/prepare-commit-msg-hook-issue-number)가 너무 마음에 들어서 여러 포스트를 정독하다보니 이러한 생각이 잘못되었음을 인지하였고, 블로그의 **UI 및 기능개선**이 어느정도 완료된 현재 시점에서 앞으로 추가 기능개선 및 개발건은 어느정도 절차를 만들어서 진행할 예정입니다.
 
 1인 프로젝트라 하더라도 **Git** 을 활용한 형상관리의 중요성은 말할 필요가 없을 것이며, 위 블로그의 글쓴이의 철학을 보면서 다시한번 느끼는 바가 많았고 이참에 혼자하는 프로젝트이지만 조금 더 정교한 프로세스 하에서 진행을 하고 싶은 생각이 들었습니다.
 
@@ -98,7 +98,12 @@ isFeatured: true
 
 대략적으로 위와 같은 순으로 진행되며, 이후 추가적으로 **Jest** 혹은 **Playwright** 를 추가하여 테스트도 진행할 예정이고, 자세한 부분은 [다음 포스트](https://hippodevlog.vercel.app/posts/CICD/automation2)에서 자세하게 진행하도록 하겠습니다!
 
+### 참고 사이트
 
+- [Vercel 공식문서](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)
+- [김명재님 블로그](https://myeongjae.kim/blog/2019/02/02/prepare-commit-msg-hook-issue-number)
+- [카카오웹툰 기술 블로그](https://fe-developers.kakaoent.com/2022/220106-github-actions/)
+- [do_dadu.log](https://velog.io/@do_dadu/%EB%82%B4%EA%B0%80-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-GitHub-Actions)
 
 
 

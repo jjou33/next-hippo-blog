@@ -132,7 +132,7 @@ jobs:
 
 위 순서대로 작성 후 **main branch** 에 대한 PR 을 생성하면 **Action** 탭에 아래와 같이 신규 **Action** 이 진행되고 들어가보면 아래와 같이 log 를 확인할 수 있습니다.
 
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/bce2f1b1-9040-43ae-968e-c472802741e8)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/bce2f1b1-9040-43ae-968e-c472802741e8)
 
 총 *38초*의 시간이 경과되었네요
 
@@ -184,14 +184,14 @@ jobs:
 
 만약 캐싱된 데이터가 있다면 아래와 같은 로그가 출력됩니다.
 
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/4534cae8-b26d-4e30-8384-48fa10ac66e5)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/4534cae8-b26d-4e30-8384-48fa10ac66e5)
 
 이후 캐싱된 데이터를 restore 후 아래 작업에서는 아래와 같은 시간단축 효과를 확인하실 수 있습니다.
 
 >Before
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/5ee1b320-4f88-47d8-a288-ad9c3dbf0803)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/5ee1b320-4f88-47d8-a288-ad9c3dbf0803)
 >After
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/620b4ae4-ba6b-4a7a-8a54-c25cf789d80e)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/620b4ae4-ba6b-4a7a-8a54-c25cf789d80e)
 
 *8초 -> 1초* 로 시간이 단축되었습니다.
 
@@ -199,7 +199,7 @@ jobs:
 
 결과는 아래와 같았습니다.
 
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/b1cceb97-c49d-4a97-9f2c-55df09e12309)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/b1cceb97-c49d-4a97-9f2c-55df09e12309)
 
 이유는 **pnpm-store** 내부에는 각각의 중복된 **peer dependencies** 의 **Symbolic link** 가 정의되어 있기때문에 이러한 전체적인 설계서를 바탕으로 **pnpm install** 을 진행했을 시 **node_modules** 를 만들게 되는 것 같습니다.
 
@@ -219,7 +219,7 @@ jobs:
       ${{ runner.os }}-node_modules-
 ```
 
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/f6305d07-4924-409a-9ccb-05096f4cdade)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/f6305d07-4924-409a-9ccb-05096f4cdade)
 
 정상적으로 캐싱이되고 빌드도 되며, 의존성을 변경하였을때 추가적인 **install** 을 진행도 합니다.
 
@@ -231,7 +231,7 @@ jobs:
 
 이유는 Build Log 를 보면 확인할 수 있다.
 
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/39c69777-fde0-4b93-a809-443b4960791d)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/39c69777-fde0-4b93-a809-443b4960791d)
 
 
 ```yml
@@ -255,10 +255,10 @@ jobs:
 그럼 Build cache 를 진행하고 다시한번 돌려보면 아래와 같이 시간이 단축된 결과를 확인할 수 있다.
 
 > Before
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/94160262-67f1-412f-815c-0a9f6626ce2a)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/94160262-67f1-412f-815c-0a9f6626ce2a)
 
 > After
-![images](https://github.com/hwcho33/nextstudy/assets/134469187/dba1a6b7-b502-4657-bae3-c3b4a3f87953)
+![image](https://github.com/hwcho33/nextstudy/assets/134469187/dba1a6b7-b502-4657-bae3-c3b4a3f87953)
 
 총 *23초 -> 14초* 로 **9초**가량 감소한것을 확인할 수 있습니다.
 
@@ -304,7 +304,7 @@ jobs:
 
 >여기서 **secrets.SLACK_INCOMMING_URL** 의 경우 Github -> Repo -> Setting -> 좌측 사이드바 Secrets and variables 하위 Action 에서 secret 을 만들어서 사용하면 됩니다.
 
-![images](https://github.com/jjou33/next-hippo-blog/assets/56063287/bf847780-60a0-45a3-a48b-bdc09432970a)
+![image](https://github.com/jjou33/next-hippo-blog/assets/56063287/bf847780-60a0-45a3-a48b-bdc09432970a)
 
 전체적인 코드는 아래와 같습니다.
 
@@ -429,7 +429,12 @@ jobs:
 
 긴글 읽어주셔서 감사드리며, 다음 포스트는 마지막 **vercel** 로 배포하는 yml 에 대한 포스팅으로 이어가겠습니다!
 
+### 참고 사이트
 
+- [Vercel 공식문서](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)
+- [김명재님 블로그](https://myeongjae.kim/blog/2019/02/02/prepare-commit-msg-hook-issue-number)
+- [카카오웹툰 기술 블로그](https://fe-developers.kakaoent.com/2022/220106-github-actions/)
+- [do_dadu.log](https://velog.io/@do_dadu/%EB%82%B4%EA%B0%80-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-GitHub-Actions)
 
 
 
