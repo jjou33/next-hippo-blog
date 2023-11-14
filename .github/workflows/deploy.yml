@@ -1,40 +1,50 @@
 # deploy.yml
 
 name: "Vercel Production Deployment"
+
+# Vercel 조직 ID와 프로젝트 ID에 대한 환경 변수를 정의합니다.
+# 하위 job 에서 env. 으로 사용할 수 있습니다.
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+# 이 부분은 워크플로가 'main' 브랜치로의 푸시 이벤트에 반응하도록 설정합니다.
 on:
   push:
     branches: [main]
 
 jobs:
+  # "Deploy-Production"이라는 작업을 정의합니다. 이 작업은 최신 버전의 Ubuntu에서 실행되며, Node.js의 버전을 18.x로 설정합니다.
   Deploy-Production:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-versions: [18.x]
     steps:
+      # GitHub 리포지토리를 체크아웃하는 두 번째 단계입니다.
       - name: Checkout
         uses: actions/checkout@v3
-
+      
+      # 원하는 Node.js 버전을 설정합니다.
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
+      
+      # pnpm을 설치합니다. 버전 8을 사용하며, 설치 스크립트를 실행하지 않도록 설정합니다.
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         with:
           version: 8
           run_install: false
 
+      # pnpm 저장소 디렉토리를 가져오는 다섯 번째 단계입니다. 환경 변수에 저장합니다.
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+      # pnpm 캐시를 설정하는 여섯 번째 단계입니다. 이전에 저장된 캐시가 있다면 사용합니다.
       - uses: actions/cache@v3
         name: Setup pnpm cache
         id: cache
@@ -44,21 +54,26 @@ jobs:
           restore-keys: |
             v1-cli-${{ runner.os }}-
 
+      # Vercel CLI를 설치하는 일곱 번째 단계입니다. 이전에 캐시된 내용이 없을 때만 설치합니다.
       - name: Install Vercel CLI
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm add -g vercel@latest
 
+      # 여덟 번째 단계로, Vercel 환경 정보를 가져오는 명령을 실행합니다.
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
+      # 프로젝트 아티팩트를 빌드하는 아홉 번째 단계입니다.
       - name: Build Project Artifacts
         id: BuildProject
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
+      # Vercel에 프로젝트 아티팩트를 배포하는 열 번째 단계입니다.
       - name: Deploy Project Artifacts to Vercel
         id: DeployProject
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
         
+      # 배포 상태와 관련된 정보를 Slack에 알리는 마지막 단계입니다.
       - uses: act10ns/slack@v2
         with:
           status: ${{ job.status }}

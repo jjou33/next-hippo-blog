@@ -255,7 +255,12 @@ fi
 
 이는 [다음 포스트](https://hippodevlog.vercel.app/posts/CICD/automation3)에서 진행하도록 하겠습니다.
 
+### 참고 사이트
 
+- [Vercel 공식문서](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)
+- [김명재님 블로그](https://myeongjae.kim/blog/2019/02/02/prepare-commit-msg-hook-issue-number)
+- [카카오웹툰 기술 블로그](https://fe-developers.kakaoent.com/2022/220106-github-actions/)
+- [do_dadu.log](https://velog.io/@do_dadu/%EB%82%B4%EA%B0%80-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-GitHub-Actions)
 
 
 

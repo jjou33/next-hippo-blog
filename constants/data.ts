@@ -115,12 +115,6 @@ const DATA = {
         expert: 'FrontEnd Style 에 관련된 기록들을 포스트한 카테고리 입니다.',
         imageLink: '/static/images/Web/Style/headImage.png',
       },
-      {
-        title: 'Javascript',
-        expert:
-          'Javascript 를 학습하면서 필요한 내용들을 포스트하여 기록해둔 공간입니다.',
-        imageLink: '/static/images/Languages/Javascript/headImage.png',
-      },
     ],
   },
 }
