@@ -7,10 +7,10 @@ name: 'Build Test Before Merge'
 on:
   pull_request:
     types:
-      - opened 
-      - synchronize 
+      - opened
+      - synchronize
     branches:
-      - main 
+      - main
 
 # jobs 은 step 으로 구성할 수 있고, 이러한 step 을 병렬로 나누어서 실행도 가능합니다.
 # 여러개의 job 을 설정하여 사용이 가능하며, job 간에 정보교환도 가능합니다.
@@ -52,7 +52,6 @@ jobs:
           version: 8
           run_install: false
 
-      
       # pnpm-store 의 위치를 찾아 $GITHUB_ENV 에 저장합니다.
       - name: Get pnpm store directory
         shell: bash
@@ -62,18 +61,19 @@ jobs:
       # pnpm-store 를 캐싱하여 이미 다운로드된 종속성이 로컬에 저장되므로 다시 다운로드 하지 않습니다.
       # node_module 과 next Cache 를 caching 하여 시간을 단축할 수 있습니다.
       - uses: actions/cache@v3
-        name: Setup pnpm & next Build cache
-        id: cache
+        name: Setup pnpm cache
+        id: Pnpm-cache
         with:
           path: |
             node_modules
             ${{ github.workspace }}/.next/cache
-          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            cache-
+            pnpm-store-
 
+      # 캐시한 경우 스킵한다.
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.Pnpm-cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       # Lint Test 진행 합니다.
