@@ -3,17 +3,17 @@ import localFont from 'next/font/local'
 export const gmarketSans = localFont({
   src: [
     {
-      path: './GmarketSansBold.otf',
-      weight: '400',
+      path: './GmarketSansTTFBold.ttf',
+      weight: '700',
       style: 'normal',
     },
     {
-      path: './GmarketSansLight.otf',
+      path: './GmarketSansTTFLight.ttf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: './GmarketSansMedium.otf',
+      path: './GmarketSansTTFMedium.ttf',
       weight: '400',
       style: 'normal',
     },

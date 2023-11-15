@@ -26,6 +26,7 @@ const fontStyleGenerator = ({
     font-size: ${size}px;
     line-height: ${height}px;
     letter-spacing: ${spacing}px;
+    -webkit-font-smoothing: antialiased;
   `
 }
 
