@@ -39,19 +39,19 @@ PR 머지 후 Confirm 이 완료되고 나면 Main branch 에 dev 소스가 **me
 
 #### GITHUB_TOKEN 발급 및 Secrets 등록
 
-Github Token 은 *Github 우측 프로필 > Settings > Developer Settins > Personal access tokens > tokens* 에서 발급이 가능하며, **Generate new token** 선택 후 토큰 발급시 하위 체크박스에 *workflow* 는 체크를 해주고 생성하면 됩니다.
+Github Token 은 *Github 우측 프로필 > Settings > Developer Settins > Personal access tokens > tokens* 에서 발급이 가능하며, **Generate new token** 선택 후 토큰 발급시 하위 체크박스에 **workflow** 는 체크를 해주고 생성하면 됩니다.
 
 ![image](https://github.com/jjou33/next-hippo-blog/assets/56063287/31521e30-96d0-42fc-b988-97c8ab60cfa2)
 
-이전 포스트에서 설명하였지만, 발급받은 TOKEN 은 repo > Settings > Secrets and variables > Actions 로 들어가서 Secrets 에 GITHUB_TOKEN 을 등록해주도록 하겠습니다.
+이전 포스트에서 설명하였지만, 발급받은 **TOKEN** 은 *repo > Settings > Secrets and variables > Actions* 로 들어가서 Secrets 에 GITHUB_TOKEN 을 등록해주도록 하겠습니다.
 
 ![image](https://github.com/jjou33/next-hippo-blog/assets/56063287/6ac0ac24-40cd-45f2-a783-90b24d323fdc)
 
 #### Vercel Token 발급 및 Secrets 등록
 
-이제 Vercel Token 을 발급 받기 위한 작업이 필요합니다.
+이제 **Vercel Token** 을 발급 받기 위한 작업이 필요합니다.
 
-먼저 [Vercel 사이트](https://vercel.com/)로 진입하고 상단 tab 에 **Settings > Tokens** 로 들어가 신규 Token 을 발급받으면 됩니다.
+먼저 [Vercel 사이트](https://vercel.com/)로 진입하고 상단 tab 에 *Settings > Tokens* 로 들어가 신규 Token 을 발급받으면 됩니다.
 
 ![image](https://github.com/jjou33/next-hippo-blog/assets/56063287/46f389a3-1ea9-4ffb-bd9b-e7accf563376)
 
