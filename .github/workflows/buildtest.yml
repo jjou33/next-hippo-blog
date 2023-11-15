@@ -71,6 +71,7 @@ jobs:
           restore-keys: |
             pnpm-store-
 
+      # 캐시한 경우 스킵한다.
       - name: Install dependencies
         if: steps.Pnpm-cache.outputs.cache-hit != 'true'
         run: pnpm install
