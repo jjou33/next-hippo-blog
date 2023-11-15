@@ -24,10 +24,6 @@
 
 <br />
 
-## Browser support
-
-본 프로젝트 개발 브라우저 환경은 `Chrome 80+` 이상 사용을 권장합니다.
-
 ## Node Version
 
 Node Version `18+` 이상 사용을 권장합니다.
