@@ -1,5 +1,6 @@
-import { Typography } from 'components/common'
 import styled from 'styled-components'
+
+import { Typography } from 'components/common'
 import { themedPalette } from 'styles/themeVariables'
 
 export const PostTocContainer = styled.nav`

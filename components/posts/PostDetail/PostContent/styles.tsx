@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
-
-import { cafe24OhsquareAir } from 'public/static/fonts'
+import { gmarketSans } from 'public/static/fonts'
 import { themedPalette } from 'styles/themeVariables'
 
 export const ContentsContainer = styled.div`
@@ -56,7 +55,7 @@ export const ContentsWrapper = styled.article`
   line-height: 2rem;
   border-radius: 6px;
   padding: 1rem;
-  font-family: ${cafe24OhsquareAir.style.fontFamily};
+  font-family: ${gmarketSans.style.fontFamily};
   word-break: break-word;
   blockquote {
     border: 1px solid ${themedPalette.badge_color};

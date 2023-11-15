@@ -1,10 +1,10 @@
-<h1>Hippo Dev Blog By NextJS</h1>
+<h1>Hippo Dev Blog</h1>
 
 #### 프로젝트 개요
 
 ---
 
-프로젝트 배포 주소 : [https://next-hippo-blog.vercel.app/](https://next-hippo-blog.vercel.app/)
+도메인 주소 : [https://hippodevlog.vercel.app/](https://hippodevlog.vercel.app/)
 
 ## Tech Stack
 
@@ -12,16 +12,25 @@
 | ---------------- | ---------------- |
 | React            | Frontend Library |
 | Recoil           | 상태 관리        |
-| Type-script      | 작성 언어        |
+| Type Script      | 작성 언어        |
 | NextJS           | 서버사이드       |
 | PNPM             | Package Manager  |
 | Styled Component | 스타일링         |
+| Github Action, Husky    | CI/CD |
 
 <br />
 
 ---
 
 <br />
+
+## Browser support
+
+본 프로젝트 개발 브라우저 환경은 `Chrome 80+` 이상 사용을 권장합니다.
+
+## Node Version
+
+Node Version `18+` 이상 사용을 권장합니다.
 
 ## Install and use
 
@@ -74,96 +83,4 @@ pnpm typecheck
 <br />
 ---
 
-## Browser support
 
-본 프로젝트 개발 브라우저 환경은 `Chrome 80+` 이상 사용을 권장합니다.
-
-## 프로젝트 구조
-```
-next-hippo-blog
-├─ components
-│  ├─ common // 공용성 컴포넌트
-│  │  ├─ Badge // 뱃지 
-│  │  ├─ Button // 공용성 버튼
-│  │  ├─ ColorText // Color Effect 텍스트 
-│  │  ├─ Footer // 푸터
-│  │  ├─ Header // 헤더
-│  │  ├─ IconBox // IconBox 공통 컴포넌트
-│  │  ├─ Label // 공용성 Label
-│  │  ├─ Layout // 공통 Layout
-│  │  ├─ Lottie // Lottie 애니메이션
-│  │  ├─ Motion // 모션 공통 컴포넌트
-│  │  │  └─ MotionShowBox
-│  │  ├─ ScrollStateBar // 상단 스크롤바
-│  │  ├─ StyledLayout // Flex, Divider.. 공통 스타일
-│  │  ├─ Typography // Typhograpy 공통 컴포넌트
-│  ├─ main
-│  │  ├─ HeroSection // 히어로 렌딩 이미지 섹션
-│  │  │  ├─ TypingSection
-│  │  ├─ ProjectSection // 사이드 프로젝트 섹션
-│  │  │  ├─ ProjectGrid
-│  │  │  ├─ ProjectItem
-│  │  ├─ RecommendSection // 추천 사이트 섹션
-│  │  │  ├─ RecommendGrid
-│  │  │  ├─ RecommendItem
-│  ├─ navigation // 네비게이션
-│  │  ├─ NavigationSection // 사이드 네비게이션 섹션
-│  │  │  ├─ NavMainCategory
-│  │  │  ├─ NavRootTitle
-│  │  │  ├─ NavSubCategory
-│  │  ├─ ProfileSection // 사이드 프로필 섹션
-│  │  │  ├─ LogoImage
-│  │  │  ├─ SiteInfo
-│  │  │  │  ├─ LinkedIcon
-│  │  │  │  ├─ NumberCountBox 
-│  └─ posts
-│     ├─ PostDetail // Post 상세 페이지
-│     └─ PostList // Post 리스트 페이지
-├─ hooks // 커스텀 훅
-│  ├─ useHeaderSticky.ts
-│  ├─ useNumberCount.ts
-│  ├─ useScrollStateBar.ts
-│  └─ useTypingTitle.ts
-├─ lib // 라이브러리
-│  └─ api
-├─ pages // 서버사이드
-│  ├─ _app.tsx
-│  ├─ _document.tsx
-│  ├─ index.tsx
-│  └─ posts
-│     ├─ [categoryId]
-│     │  ├─ [postId].tsx
-│     │  └─ index.tsx
-│     ├─ [postId]
-│     └─ index.tsx
-├─ posts // 포스트 MD 파일
-│  ├─ dfs.md
-│  ├─ dfs1.md
-│  ├─ dfs2.md
-│  └─ next1.md
-├─ public // 정적 리소스
-│  ├─ favicon.ico
-│  └─ static
-│     ├─ fonts // 폰트
-│     ├─ icon // 아이콘
-│     └─ images // 이미지
-├─ styles // 스타일
-├─ tsconfig.json
-├─ .eslintrc.json
-├─ .gitignore
-├─ .prettierignore
-├─ .prettierrc.json
-├─ next.config.js
-├─ package.json
-├─ README.md
-├─ pnpm-lock.yaml
-├─ types // 공용성 타입
-│  ├─ post
-│  │  └─ index.ts
-│  ├─ styled.d.ts
-│  └─ styles
-│     └─ index.ts
-└─ utils
-   └─ PostUtil.ts
-
-```
