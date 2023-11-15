@@ -4,6 +4,8 @@
 
 ---
 
+개인적으로 운영하는 개발 블로그입니다.
+
 도메인 주소 : [https://hippodevlog.vercel.app/](https://hippodevlog.vercel.app/)
 
 ## Tech Stack
