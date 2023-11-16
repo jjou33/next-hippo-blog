@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "lint": "eslint --cache --fix",
+    "lint": "eslint --fix",
     "typecheck": "tsc --noEmit",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "reinstall": "rm -rf ./node_modules && rm -rf pnpm-lock.yaml && pnpm install",
