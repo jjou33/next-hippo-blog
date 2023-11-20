@@ -3,8 +3,8 @@ const METADATA = {
   meta: {
     title: 'HIPPO DEV',
     description: 'HIPPO DEV 의 Dev Diary 에 오신것을 환영합니다 🙋',
-    url: 'https://hippodevlog.vercel.app/',
-    imageUrl: 'https://hippodevlog.vercel.app/static/images',
+    url: 'https://next-hippo-blog.vercel.app/',
+    imageUrl: 'https://next-hippo-blog.vercel.app/static/images',
   },
 } as const
 

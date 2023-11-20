@@ -24,7 +24,7 @@ isFeatured: true
 7. 통과 후 Main 으로 Merge Confirm 및 push
 ```
 
-[이전 포스트](https://hippodevlog.vercel.app/posts/CICD/automation2)에서는 **Issue** 생성부터 **Husky** 를 적용해서 **dev** 로 자동 배포하는 작업까지 진행해보았습니다.
+[이전 포스트](https://next-hippo-blog.vercel.app/posts/CICD/automation2)에서는 **Issue** 생성부터 **Husky** 를 적용해서 **dev** 로 자동 배포하는 작업까지 진행해보았습니다.
 
 그럼 이제 실제로 6번 PR 을 통해서 **build, lint, type** 등 테스트 진행과정과 각 단계별 상태를 자동으로 *Slack* 과 연동하여 **Reporting** 및 **Deploy** 해주는 기능에 대해서 알아보도록 하겠습니다.
 
