@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: 'https://hippodevlog.vercel.app/',
+  siteUrl: 'https://next-hippo-blog.vercel.app/',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'daily',
