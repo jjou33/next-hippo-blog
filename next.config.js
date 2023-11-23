@@ -1,6 +1,12 @@
-/** @type {import('next').NextConfig} */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withBundleAnalyzer = require('@next/bundle-analyzer')
 
-const nextConfig = {
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: process.env.ANALYZE === 'true',
+})
+
+module.exports = bundleAnalyzer({
   reactStrictMode: false,
   swcMinify: true,
   compiler: {
@@ -15,6 +21,4 @@ const nextConfig = {
 
     return config
   },
-}
-
-module.exports = nextConfig
+})
