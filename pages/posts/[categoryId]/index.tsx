@@ -2,11 +2,7 @@ import { FlexBox } from 'components/common/StyledLayout'
 import PostCategoryList from 'components/posts/PostCategoryList'
 import METADATA from 'constants/METADATA'
 import { NextSeo } from 'next-seo'
-import {
-  getAllPostsCategory,
-  getCategoryPosts,
-  getSlugByParams,
-} from 'utils/PostUtil'
+import { getAllPostsCategory, getCategoryPosts } from 'utils/PostUtil'
 
 const PostCategoryListPage = props => {
   return (
@@ -32,7 +28,7 @@ const PostCategoryListPage = props => {
 
 export default PostCategoryListPage
 
-export const getStaticProps = async ({ params }) => {
+export async function getServerSideProps({ params }) {
   const categoryId = params.categoryId
 
   const postList = getCategoryPosts(categoryId)
@@ -44,16 +40,5 @@ export const getStaticProps = async ({ params }) => {
       category,
       categoryId,
     },
-  }
-}
-
-export const getStaticPaths = async () => {
-  const slugs = getSlugByParams()
-
-  return {
-    paths: slugs.map(([categoryId]) => ({
-      params: { categoryId },
-    })),
-    fallback: false,
   }
 }
