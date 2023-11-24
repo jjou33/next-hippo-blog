@@ -50,7 +50,7 @@ const PostCategoryList = ({
               color={theme.colors.primary_008}
               align="center"
             >
-              {categoryId ? categoryId : '모든 포스트'}
+              {categoryId ? categoryId.toUpperCase() : '모든 포스트'}
             </Typography>
           </S.TextBoxContainer>
           <Typography
@@ -61,7 +61,7 @@ const PostCategoryList = ({
             margin="1rem 0 0 1rem"
           >
             {categoryId
-              ? `${categoryId} 에 관련된 포스트를 모아봤어요!`
+              ? `${categoryId.toUpperCase()} 에 관련된 포스트를 모아봤어요!`
               : '최신순으로 모든 포스트가 개재되어 있어요!'}
           </Typography>
           <S.CustomDivider />
