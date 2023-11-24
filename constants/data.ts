@@ -85,35 +85,35 @@ const DATA = {
         title: 'NextJS',
         expert:
           'NextJS 로 개발하면서 만든 포스트들에 대한 정보를 기록한 공간입니다.',
-        imageLink: '/static/images/Framework/NextJS/headImage.png',
+        imageLink: '/static/images/Framework/nextjs/headImage.png',
       },
       {
         title: 'CICD',
         expert:
           '1인 개발과정에서 husky, Github Action 등을 활용한 CI/CD 자동화에 대한 내용을 기록한 공간입니다.',
-        imageLink: '/static/images/Web/CICD/headImage.png',
+        imageLink: '/static/images/Web/cicd/headImage.png',
       },
       {
         title: 'App',
         expert: 'APP 과 관련된 기술 내용에 대한 포스트를 기록하는 공간입니다.',
-        imageLink: '/static/images/Web/App/headImage.png',
+        imageLink: '/static/images/Web/app/headImage.png',
       },
       {
         title: 'Browser',
         expert:
           'Browser 의 동작과정을 학습하면서 학습한 내용을 기록하는 공간입니다.',
-        imageLink: '/static/images/Web/Browser/headImage.png',
+        imageLink: '/static/images/Web/browser/headImage.png',
       },
       {
         title: 'Environment',
         expert:
           'Package Manager, Bundler 등 FrontEnd 개발에 필요한 환경에 대한 정보를 기록한 공간입니다.',
-        imageLink: '/static/images/Web/Environment/headImage.png',
+        imageLink: '/static/images/Web/environment/headImage.png',
       },
       {
         title: 'Style',
         expert: 'FrontEnd Style 에 관련된 기록들을 포스트한 카테고리 입니다.',
-        imageLink: '/static/images/Web/Style/headImage.png',
+        imageLink: '/static/images/Web/style/headImage.png',
       },
     ],
   },
