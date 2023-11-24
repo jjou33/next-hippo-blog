@@ -6,6 +6,7 @@ import MotionShowBox from 'components/common/Motion/MotionShowBox'
 import FlyingAirplaneLottie from 'components/common/Lottie/FlyingAirplane'
 
 import { Badge, Typography } from 'components/common'
+import { convertUpperToPrefix } from 'utils/stringUtils'
 import {
   Divider,
   FlexBox,
@@ -18,7 +19,7 @@ const PostListHeader = ({
   postInfo,
   keywords,
 }: {
-  categoryId?: string | string[]
+  categoryId?: string
   postInfo: PostData[]
   keywords: string[]
 }) => {
@@ -58,7 +59,9 @@ const PostListHeader = ({
                   color={theme.colors.gray_002}
                   align="center"
                 >
-                  {`${categoryId ? categoryId : 'ALL POST'} Collection`}
+                  {`${
+                    categoryId ? convertUpperToPrefix(categoryId) : 'ALL POST'
+                  } Collection`}
                 </Typography>
               </S.TextContainer>
               <Divider

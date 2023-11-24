@@ -5,6 +5,7 @@ import { IconBox } from 'components/common'
 import { Badge, Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'
+import { convertUpperToPrefix } from 'utils/stringUtils'
 import { themedPalette } from 'styles/themeVariables'
 
 interface NavSubCategoryProps {
@@ -34,7 +35,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
                 aggressive="montserratAlternates_Regular_003"
                 color={themedPalette.sub_text_color1}
               >
-                {value}
+                {convertUpperToPrefix(value)}
               </Typography>
               <Badge
                 borderRadius="20px"
