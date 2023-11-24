@@ -41,7 +41,7 @@ const PostCategoryList = ({
           >
             <IconBox width="43px" height="43px">
               {NavigationIconSet[
-                `${categoryId ? categoryId : 'PostList'}`
+                `${categoryId ? categoryId.toLowerCase() : 'PostList'}`
               ].icon()}
             </IconBox>
             <Typography
