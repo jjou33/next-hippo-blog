@@ -1,7 +1,7 @@
 import type { IconPropsType } from 'public/static/icon/index'
 
 export const NavigationIconSet: IconPropsType = {
-  CICD: {
+  cicd: {
     icon: () => (
       <svg
         width="100%"
@@ -50,7 +50,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  App: {
+  app: {
     icon: () => (
       <svg
         fill="#93a1ae"
@@ -74,7 +74,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  NextJS: {
+  nextjs: {
     icon: () => (
       <svg
         width="100%"
@@ -101,7 +101,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Typescript: {
+  typescript: {
     icon: () => (
       <svg
         width="100%"
@@ -128,7 +128,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Jest: {
+  jest: {
     icon: () => (
       <svg
         fill="#93a1ae"
@@ -152,7 +152,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  SonarQube: {
+  sonarQube: {
     icon: () => (
       <svg
         fill="#93a1ae"
@@ -291,7 +291,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  React: {
+  react: {
     icon: () => (
       <svg
         width="100%"
@@ -336,7 +336,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Playwright: {
+  playwright: {
     icon: () => (
       <svg
         height="100%"
@@ -396,7 +396,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Vue: {
+  vue: {
     icon: () => (
       <svg
         width="100%"
@@ -450,7 +450,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Git: {
+  git: {
     icon: () => (
       <svg
         fill="#93a1ae"
@@ -476,7 +476,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Environment: {
+  environment: {
     icon: () => (
       <svg
         width="100%"
@@ -519,7 +519,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Browser: {
+  browser: {
     icon: () => (
       <svg
         height="100%"
@@ -550,7 +550,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Style: {
+  style: {
     icon: () => (
       <svg
         width="100%"
@@ -580,7 +580,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Design: {
+  design: {
     icon: (color: string) => (
       <svg fill={color} width="100%" height="100%" viewBox="0 0 512 512">
         <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -597,7 +597,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Basic: {
+  basic: {
     icon: () => (
       <svg
         width="100%"
@@ -638,7 +638,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Javascript: {
+  javascript: {
     icon: (color: string) => (
       <svg
         width="100%"
@@ -819,7 +819,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  Mac: {
+  mac: {
     icon: () => (
       <svg
         fill="#959697"

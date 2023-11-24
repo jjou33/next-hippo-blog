@@ -3,7 +3,7 @@ import {
   getAllPostsCategory,
   getPostData,
   getSlugByParams,
-} from 'utils/PostUtil'
+} from 'utils/postUtils'
 
 import type { PostData } from 'types/post'
 import { NextSeo } from 'next-seo'

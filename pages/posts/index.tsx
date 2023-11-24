@@ -2,7 +2,7 @@ import PostCategoryList from 'components/posts/PostCategoryList'
 import METADATA from 'constants/METADATA'
 import { NextSeo } from 'next-seo'
 
-import { getAllPostsCategory, getAllPosts } from 'utils/PostUtil'
+import { getAllPostsCategory, getAllPosts } from 'utils/postUtils'
 
 const AllPostPage = props => {
   return (
