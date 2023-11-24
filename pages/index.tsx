@@ -1,7 +1,7 @@
 import MainSection from 'components/main'
 
 import { useEffect } from 'react'
-import { getAllPosts, getAllPostsCategory } from 'utils/PostUtil'
+import { getAllPosts, getAllPostsCategory } from 'utils/postUtils'
 import { useSetRecoilState } from 'recoil'
 import { categoryState } from 'states/categoryState'
 import { NextSeo } from 'next-seo'

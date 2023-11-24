@@ -2,7 +2,7 @@ import { FlexBox } from 'components/common/StyledLayout'
 import PostCategoryList from 'components/posts/PostCategoryList'
 import METADATA from 'constants/METADATA'
 import { NextSeo } from 'next-seo'
-import { getAllPostsCategory, getCategoryPosts } from 'utils/PostUtil'
+import { getAllPostsCategory, getCategoryPosts } from 'utils/postUtils'
 
 const PostCategoryListPage = props => {
   return (
