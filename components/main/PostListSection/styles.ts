@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
 import { themedPalette } from 'styles/themeVariables'
 
@@ -45,7 +44,7 @@ export const shaking_in_animation = keyframes`
  }
  `
 
-export const ReadMoreBtn = styled(Link)`
+export const ReadMoreBtn = styled.div`
   border-radius: 2rem;
   background-color: ${themedPalette.badge_color};
   color: ${themedPalette.badge_text};
@@ -56,6 +55,7 @@ export const ReadMoreBtn = styled(Link)`
   &:hover {
     animation: ${shaking_in_animation} 0.5s ease;
   }
+  cursor: pointer;
 `
 
 export const LottieWrapper = styled.div`

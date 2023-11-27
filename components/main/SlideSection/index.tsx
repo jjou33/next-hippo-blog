@@ -7,7 +7,7 @@ import theme from 'styles/theme'
 
 import { Typography } from 'components/common'
 import { MainIconSet } from 'public/static/icon'
-
+import { convertUpperToPrefix } from 'utils/stringUtils'
 const SlideSection = () => {
   const nextItem = () => {
     const lists = document.querySelectorAll('#slideItem')
@@ -36,12 +36,14 @@ const SlideSection = () => {
                 variant="h3"
                 aggressive="montserratAlternates_Medium_003"
               >
-                {info.title}
+                {convertUpperToPrefix(info.title)}
               </S.TitleWrapper>
               <S.SubTitleWrapper variant="p" aggressive="body_oneline_003">
                 {info.expert}
               </S.SubTitleWrapper>
-              <Link href={`posts/${info.title}`}>
+              <Link
+                href={{ pathname: `posts/${info.title}`, query: { page: 1 } }}
+              >
                 <S.Button>
                   <Typography
                     variant="span"

@@ -38,13 +38,12 @@ export const usePagination = ({
   const currentGroupIndex = useRef<number>(
     getCurrentGroupIndex(currentPage, limitPageCount),
   )
-  // const [pages, setPages] = useState<number[]>(
-  //   pagesGroupList.current[currentGroupIndex.current],
-  // )
 
-  const isFirstGroup = currentGroupIndex.current === 0
+  const isFirstGroup = getCurrentGroupIndex(currentPage, limitPageCount) === 0
+
   const isLastGroup =
-    currentGroupIndex.current === pagesGroupList.current.length - 1
+    getCurrentGroupIndex(currentPage, limitPageCount) ===
+    pagesGroupList.current.length - 1
 
   const handleClickPage = event => {
     const { textContent } = event.target

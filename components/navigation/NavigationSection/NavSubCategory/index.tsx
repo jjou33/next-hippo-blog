@@ -19,7 +19,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
     <S.NavSubItemContainer>
       {items.map(value => (
         <S.NavSubItemWrapper key={value}>
-          <Link href={{ pathname: `/posts/${value}` }}>
+          <Link href={{ pathname: `/posts/${value}`, query: { page: 1 } }}>
             <S.NavSubItemTitle>
               <FlexBox>
                 <IconBox width="20px" height="20px">
