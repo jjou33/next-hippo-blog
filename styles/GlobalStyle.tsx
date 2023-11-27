@@ -2,6 +2,7 @@
 import { createGlobalStyle } from 'styled-components'
 import { reset } from './reset'
 import { themedPalette, themes } from './themeVariables'
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
 

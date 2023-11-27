@@ -9,6 +9,10 @@ const bundleAnalyzer = withBundleAnalyzer({
 module.exports = bundleAnalyzer({
   reactStrictMode: false,
   swcMinify: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    domains: ['github.com'], // 이미지가 호스팅된 도메인 추가
+  },
   compiler: {
     styledComponents: true,
   },
