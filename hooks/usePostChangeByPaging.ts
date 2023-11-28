@@ -1,24 +1,26 @@
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import DATA from 'constants/data'
-import type { PostData } from 'types/post'
-export const usePostChangeByPaging = (posts: PostData[]) => {
-  // 한 페이지 최대 노출 포스트 갯수
 
-  const router = useRouter()
+import { NextRouter, useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+
+import type { PostData } from 'types/post'
+
+export const usePostChangeByPaging = (posts: PostData[]) => {
+  const router: NextRouter = useRouter()
 
   const { page, categoryId } = router.query
 
+  const refreshCurrentPage = router.asPath.split('=')[1]
   const totalPageCount = Math.ceil(posts.length / DATA.MAIN_POST_LENGTH)
 
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(Number(refreshCurrentPage))
   const [exposePost, setExposePost] = useState([])
 
   useEffect(() => {
     if (page) {
       setCurrentPage(Number(page))
     } else {
-      setCurrentPage(1)
+      setCurrentPage(Number(refreshCurrentPage))
     }
     setExposePost(handleExposePost(Number(page)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -26,15 +28,23 @@ export const usePostChangeByPaging = (posts: PostData[]) => {
 
   const handleChangePage = (page: number) => {
     if (categoryId) {
-      router.push(`${categoryId}?page=${page ?? ''}`, undefined, {
-        shallow: true,
-        scroll: true,
-      })
+      router.push(
+        {
+          pathname: categoryId as string,
+          query: { page: page || '' },
+        },
+        undefined,
+        { shallow: true, scroll: true },
+      )
     } else {
-      router.push(`?page=${page ?? ''}`, undefined, {
-        shallow: true,
-        scroll: true,
-      })
+      router.push(
+        {
+          pathname: '',
+          query: { page: page || '' },
+        },
+        undefined,
+        { shallow: true, scroll: true },
+      )
     }
   }
 

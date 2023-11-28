@@ -31,7 +31,7 @@ const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
           )}
           <Pagination
             totalPageCount={totalPageCount}
-            limitPageCount={6}
+            limitPageCount={5}
             currentPage={currentPage}
             onChange={handleChangePage}
           />

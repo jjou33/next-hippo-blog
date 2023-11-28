@@ -48,7 +48,9 @@ const PostHeader = ({
             filter: 'brightness(0.4)',
             zIndex: '-1',
           }}
+          priority
         />
+
         <FlexBox flexDirection="column" position="absolute" margin="0 auto">
           <FlexBox
             margin="1rem auto"

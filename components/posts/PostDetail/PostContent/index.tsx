@@ -10,35 +10,21 @@ import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import type { PostData } from 'types/post'
 
 const PostContent = ({
-  postDetailInfo: { category1depth, category2depth, content, image },
+  postDetailInfo: { content },
 }: {
   postDetailInfo: PostData
 }) => {
   const customRenderers = {
-    p(paragraph) {
-      const {
-        node: { children },
-      } = paragraph
-
-      if (children[0].tagName === 'img') {
-        const {
-          properties: { alt, src },
-        } = children[0]
-
-        if (!src.includes('http')) {
-          return (
-            <S.StyledImage
-              src={`/static/images/${category1depth}/${category2depth}/${image}`}
-              alt={alt}
-              width={0}
-              height={0}
-              sizes="100%"
-            />
-          )
-        }
-      }
-
-      return <p>{paragraph.children}</p>
+    img({ ...props }) {
+      return (
+        <S.StyledImage
+          src={`${props.src}`}
+          alt={props.alt}
+          width={0}
+          height={0}
+          sizes="100%"
+        />
+      )
     },
     code(code) {
       const { className, children } = code

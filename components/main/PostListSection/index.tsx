@@ -5,8 +5,10 @@ import PostList from 'components/posts/PostList'
 import SectionHeader from '../SectionHeader'
 
 import { Typography } from 'components/common'
+import { useRouter } from 'next/router'
 
 const PostListSection = props => {
+  const router = useRouter()
   return (
     <S.PostListContainer>
       <S.AllPostContainer>
@@ -18,7 +20,17 @@ const PostListSection = props => {
         </S.HeaderTextWrapper>
         <PostList posts={props.posts} isMain={true} />
         <S.ReadMoreBtnWrapper>
-          <S.ReadMoreBtn href={'/posts'}>
+          <S.ReadMoreBtn
+            onClick={() => {
+              router.push(
+                {
+                  pathname: '/posts',
+                  query: { page: 1 },
+                },
+                undefined,
+              )
+            }}
+          >
             <Typography variant="span" aggressive="body_oneline_005">
               {'Read More Contents..'}
             </Typography>

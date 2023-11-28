@@ -39,6 +39,7 @@ const PostListHeader = ({
         <Image
           src={`/static/images/${category1depth}/${category2depth}/headImage.png`}
           alt={'alt'}
+          quality={100}
           fill
           style={{
             objectFit: 'cover',

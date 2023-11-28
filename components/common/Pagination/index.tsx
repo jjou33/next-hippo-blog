@@ -9,6 +9,7 @@ const Pagination = ({
   onChange,
 }) => {
   const [pageList, setPageList] = useState([])
+
   const {
     isFirstGroup,
     isLastGroup,
@@ -29,16 +30,19 @@ const Pagination = ({
     const groupList = createPageGroupList(totalPageCount, limitPageCount)
     const currentIndex = getCurrentGroupIndex(currentPage, limitPageCount)
     const pages = groupList[currentIndex]
+
     setPageList(pages)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [totalPageCount])
+  }, [currentPage, totalPageCount])
 
   return (
     <S.PageContainer>
-      <button onClick={handleClickLeft} disabled={isFirstGroup}>
-        {'<'}
-      </button>
       <S.PageWrapper>
+        <S.SideButton
+          side="left"
+          onClick={handleClickLeft}
+          disabled={isFirstGroup}
+        />
         {pageList.map(page => (
           <S.PageBtn
             key={page}
@@ -49,10 +53,12 @@ const Pagination = ({
             {page}
           </S.PageBtn>
         ))}
+        <S.SideButton
+          side="right"
+          onClick={handleClickRight}
+          disabled={isLastGroup}
+        />
       </S.PageWrapper>
-      <button onClick={handleClickRight} disabled={isLastGroup}>
-        {'>'}
-      </button>
     </S.PageContainer>
   )
 }
