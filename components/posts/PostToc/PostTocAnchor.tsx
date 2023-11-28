@@ -22,7 +22,7 @@ const PostTocItems = (headings: NestedHeadingType) => {
     >
       <Typography
         variant="span"
-        aggressive="body_oneline_005"
+        aggressive="body_oneline_002"
         color={themedPalette.text_color}
       >
         {headings.text}

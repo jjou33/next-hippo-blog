@@ -39,13 +39,14 @@ const PostListHeader = ({
         <Image
           src={`/static/images/${category1depth}/${category2depth}/headImage.png`}
           alt={'alt'}
-          quality={100}
           fill
+          sizes="(max-width: 1300px) 100vw, 80vw"
           style={{
             objectFit: 'cover',
             filter: 'brightness(0.5)',
             zIndex: '-1',
           }}
+          priority
         />
         <FlexBox flexDirection="column" position="absolute">
           <SubMaxContainer>
@@ -77,7 +78,7 @@ const PostListHeader = ({
                   <Badge
                     borderRadius="2rem"
                     backgroundColor={theme.colors.primary_004}
-                    aggressive="montserratAlternates_Regular_003"
+                    aggressive="montserratAlternates_Regular_002"
                     padding="10px 20px 10px 20px"
                     key={keyword}
                   >

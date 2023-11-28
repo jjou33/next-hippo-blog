@@ -20,7 +20,6 @@ const HeroSection = () => {
           key={index}
           src={image}
           alt={'Hero Image'}
-          quality={100}
           fill
           sizes="(max-width: 1300px) 100vw, 80vw"
           selected={index === currentImage}

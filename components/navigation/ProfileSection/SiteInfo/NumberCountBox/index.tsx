@@ -17,7 +17,7 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
         <S.CountNameBox>
           <Typography
             variant="span"
-            aggressive="tab_003"
+            aggressive="body_oneline_003"
             color={themedPalette.text_color}
           >
             {title}
@@ -32,7 +32,7 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
         />
         <Typography
           variant="span"
-          aggressive="tab_003"
+          aggressive="body_oneline_003"
           color={themedPalette.text_color}
         >
           {useNumberCount({ number, duration })}

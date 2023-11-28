@@ -21,7 +21,7 @@ const SectionHeader = ({
       </Typography>
       <Typography
         variant="h2"
-        aggressive="body_oneline_003"
+        aggressive="body_oneline_002"
         color={themedPalette.sub_text_color2}
         margin="1rem 0 0 0"
       >

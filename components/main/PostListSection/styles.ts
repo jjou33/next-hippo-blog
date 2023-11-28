@@ -46,7 +46,7 @@ export const shaking_in_animation = keyframes`
 
 export const ReadMoreBtn = styled.div`
   border-radius: 2rem;
-  background-color: ${themedPalette.badge_color};
+  background-color: ${themedPalette.point_color};
   color: ${themedPalette.badge_text};
   padding: 20px 15px;
   margin: 1rem 0 0 0;

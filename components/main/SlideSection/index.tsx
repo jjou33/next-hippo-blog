@@ -28,7 +28,7 @@ const SlideSection = () => {
               src={info.imageLink}
               alt="alt"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 1300px) 100vw, 80vw"
               style={{ objectFit: 'cover' }}
             />
             <S.LeftDimmedBox />
@@ -39,7 +39,7 @@ const SlideSection = () => {
               >
                 {convertUpperToPrefix(info.title)}
               </S.TitleWrapper>
-              <S.SubTitleWrapper variant="p" aggressive="body_oneline_003">
+              <S.SubTitleWrapper variant="p" aggressive="body_oneline_002">
                 {info.expert}
               </S.SubTitleWrapper>
               <Link
@@ -48,7 +48,7 @@ const SlideSection = () => {
                 <S.Button>
                   <Typography
                     variant="span"
-                    aggressive="montserratAlternates_Regular_003"
+                    aggressive="montserratAlternates_Regular_002"
                   >
                     GO {MainIconSet['Go'].icon('black')}
                   </Typography>

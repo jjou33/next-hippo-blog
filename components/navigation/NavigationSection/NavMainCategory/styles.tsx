@@ -52,13 +52,13 @@ export const DropdownWrapper = styled.article<{
   categoryItemCount: number
 }>`
   overflow: hidden;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   height: 0;
   transition: height ease-in-out 0.3s;
   ${props => {
     if (props.isOpen) {
       return css`
-        height: ${(props.categoryItemCount as number) * 35 + 10}px;
+        height: ${(props.categoryItemCount as number) * 35 + 25}px;
       `
     } else {
       return css`

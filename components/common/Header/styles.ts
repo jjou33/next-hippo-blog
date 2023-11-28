@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 import { LinkWrapper } from 'components/common/StyledLayout'
-import { themedPalette } from 'styles/themeVariables'
 
 interface HeaderProps {
   isHeaderSticky: boolean
@@ -16,16 +15,14 @@ export const Container = styled.header<HeaderProps>`
   left: 0;
   z-index: ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
     isHeaderSticky ? 2 : 1};
-  /* padding: 0 1rem; */
 
   @media screen and (min-width: 1300px) {
-    width: calc(100vw - 260px);
+    width: calc(100vw - 275px);
     margin: 0 0 0 260px;
   }
 `
 
 export const DarkModeToggleContainer = styled.div`
-  /* background-color: ${themedPalette.bg_color}; */
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -57,7 +54,7 @@ export const HeaderWrapper = styled.div<HeaderProps>`
     isHeaderSticky
       ? css`
           z-index: 2;
-          margin: 0.5rem auto;
+          margin: 0.2rem auto;
           padding: 0 2rem;
           backdrop-filter: blur(10px);
           background-color: rgba(
@@ -112,7 +109,7 @@ export const NavigationContentsWrapper = styled.nav<HeaderProps>`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 78px;
+  min-height: 60px;
 
   ${({ isHeaderSticky }: { isHeaderSticky: boolean }) =>
     isHeaderSticky
@@ -134,9 +131,6 @@ export const NavigationContentsWrapper = styled.nav<HeaderProps>`
         `
       : css`
           padding: 2rem;
-          span {
-            /* padding: 0 2rem; */
-          }
         `};
 `
 

@@ -31,7 +31,7 @@ const PostListSection = props => {
               )
             }}
           >
-            <Typography variant="span" aggressive="body_oneline_005">
+            <Typography variant="span" aggressive="body_oneline_002">
               {'Read More Contents..'}
             </Typography>
           </S.ReadMoreBtn>

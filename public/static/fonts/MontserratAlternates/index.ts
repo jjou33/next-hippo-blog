@@ -23,4 +23,5 @@ export const montserratAlternates = localFont({
       style: 'normal',
     },
   ],
+  display: 'swap',
 })

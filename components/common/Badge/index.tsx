@@ -5,7 +5,7 @@ import { PropsWithChildren } from 'react'
 import type { AggressivePropsType } from 'types/styles'
 
 interface Props extends PropsWithChildren {
-  aggressive: AggressivePropsType['aggressive']
+  aggressive?: AggressivePropsType['aggressive']
   margin?: string
   padding?: string
   border?: string

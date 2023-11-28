@@ -108,7 +108,7 @@ export const useImageIndexSlider = (images: Array<string>): number => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(prevImage => (prevImage + 1) % images.length)
-    }, 6000) // 8초마다 이미지 변경
+    }, 4000) // 4초마다 이미지 변경
 
     return () => clearInterval(interval)
   }, [images])

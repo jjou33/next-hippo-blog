@@ -17,11 +17,11 @@ const RecommendItem = ({ imagePath, itemName }: RecommendItemProps) => {
       </StyledLayout.StyledImageBox>
       <Typography
         variant="p"
-        aggressive="body_oneline_001"
+        aggressive="headline_medium_002"
         color={theme.colors.gray_005}
         margin="15px 0 10px 0"
       >
-        {itemName}
+        {/* {itemName} */}
       </Typography>
     </S.RecommendItemWrapper>
   )
