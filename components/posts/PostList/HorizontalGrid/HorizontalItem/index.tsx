@@ -38,7 +38,7 @@ const HorizontalItem = ({
               borderRadius="2rem"
               backgroundColor="#fc5460"
               color="white"
-              aggressive="body_oneline_006"
+              aggressive="body_oneline_003"
               padding="5px 10px"
               margin="0px 10px 10px 0"
               key={keyword}
@@ -49,7 +49,7 @@ const HorizontalItem = ({
         </FlexBox>
         <Typography
           variant="h3"
-          aggressive="gmarketSans_bold_001"
+          aggressive="body_oneline_bold_001"
           color={themedPalette.text_color}
         >
           {title}
@@ -65,7 +65,7 @@ const HorizontalItem = ({
           <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
           <Typography
             variant="span"
-            aggressive="body_oneline_006"
+            aggressive="body_oneline_003"
             color={themedPalette.text_color}
           >
             {formattedDate}
@@ -74,7 +74,7 @@ const HorizontalItem = ({
 
         <Typography
           variant="p"
-          aggressive="body_multiline_003"
+          aggressive="body_oneline_002"
           overFlow="hidden"
           textOverflow="ellipsis"
           color={themedPalette.sub_text_color2}

@@ -6,9 +6,10 @@ const DATA = {
   IMAGES: {
     LOGO_IMAGE: '/static/images/logo_Image.png',
     HERO_IMAGES: [
-      '/static/images/HeroImage/landing.jpg',
-      '/static/images/HeroImage/landing2.jpg',
-      '/static/images/HeroImage/landing3.jpg',
+      '/static/images/HeroImage/heroImage1.jpg',
+      '/static/images/HeroImage/heroImage2.jpg',
+      '/static/images/HeroImage/heroImage3.jpg',
+      '/static/images/HeroImage/heroImage4.jpg',
     ],
   },
   ROOT_INFO: {

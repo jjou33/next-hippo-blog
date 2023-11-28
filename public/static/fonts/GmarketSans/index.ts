@@ -18,4 +18,5 @@ export const gmarketSans = localFont({
       style: 'normal',
     },
   ],
+  display: 'swap',
 })

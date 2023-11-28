@@ -32,7 +32,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
 
               <Typography
                 variant="span"
-                aggressive="montserratAlternates_Regular_003"
+                aggressive="montserratAlternates_Regular_002"
                 color={themedPalette.sub_text_color1}
               >
                 {convertUpperToPrefix(value)}
@@ -40,7 +40,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
               <Badge
                 borderRadius="20px"
                 color={themedPalette.badge_color2}
-                aggressive="montserratAlternates_light"
+                aggressive="headline_small_002"
                 padding="0 8px"
                 border="0.1px solid"
               >

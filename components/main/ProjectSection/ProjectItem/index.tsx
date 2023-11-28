@@ -50,7 +50,7 @@ const ProjectItem = ({
             >
               <Typography
                 variant="p"
-                aggressive="body_oneline_004"
+                aggressive="body_oneline_002"
                 color={theme.colors.gray_002}
                 whiteSpace="nowrap"
                 overFlow="hidden"
@@ -68,7 +68,7 @@ const ProjectItem = ({
               />
               <Typography
                 variant="p"
-                aggressive="headline_small_002"
+                aggressive="headline_small_001"
                 color={theme.colors.gray_000}
                 overFlow="hidden"
                 textOverflow="ellipsis"
@@ -80,11 +80,11 @@ const ProjectItem = ({
                   <Badge
                     borderRadius="2rem"
                     backgroundColor={theme.colors.subPrimary_002}
-                    aggressive="body_oneline_006"
+                    aggressive="body_oneline_003"
                     padding="5px 10px 5px 10px"
                     key={keyword}
                   >
-                    {keyword}
+                    {`# ${keyword}`}
                   </Badge>
                 ))}
               </FlexBox>

@@ -3,16 +3,6 @@ import 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    darkMode: {
-      text_color: 'white'
-      background_color: 'black'
-      error: 'red'
-    }
-    lightMode: {
-      text_color: 'black'
-      background_color: 'white'
-      error: 'green'
-    }
     colors: {
       white: '#ffffff'
       gray_000: '#F9F9FB'
@@ -43,47 +33,20 @@ declare module 'styled-components' {
       success: '#44927F'
     }
     fonts: {
-      headline_large_001: FlattenSimpleInterpolation
-      headline_large_002: FlattenSimpleInterpolation
       headline_medium_001: FlattenSimpleInterpolation
       headline_medium_002: FlattenSimpleInterpolation
       headline_small_001: FlattenSimpleInterpolation
       headline_small_002: FlattenSimpleInterpolation
-      headline_small_003: FlattenSimpleInterpolation
       headline_multiline_001: FlattenSimpleInterpolation
-      headline_multiline_002: FlattenSimpleInterpolation
-      body_oneline_000: FlattenSimpleInterpolation
+      body_oneline_bold_001: FlattenSimpleInterpolation
       body_oneline_001: FlattenSimpleInterpolation
       body_oneline_002: FlattenSimpleInterpolation
       body_oneline_003: FlattenSimpleInterpolation
-      body_oneline_004: FlattenSimpleInterpolation
-      body_oneline_005: FlattenSimpleInterpolation
-      body_oneline_006: FlattenSimpleInterpolation
-      body_multiline_000: FlattenSimpleInterpolation
-      body_multiline_001: FlattenSimpleInterpolation
-      body_multiline_002: FlattenSimpleInterpolation
-      body_multiline_003: FlattenSimpleInterpolation
-      body_multiline_004: FlattenSimpleInterpolation
-      body_multiline_005: FlattenSimpleInterpolation
-      button_000: FlattenSimpleInterpolation
-      button_001: FlattenSimpleInterpolation
-      tab_001: FlattenSimpleInterpolation
-      tab_002: FlattenSimpleInterpolation
-      tab_003: FlattenSimpleInterpolation
-      caption_large: FlattenSimpleInterpolation
-      caption_medium: FlattenSimpleInterpolation
-      caption_small: FlattenSimpleInterpolation
-      montserratAlternates_Bold_001: FlattenSimpleInterpolation
-      montserratAlternates_Bold_002: FlattenSimpleInterpolation
-      montserratAlternates_Bold_003: FlattenSimpleInterpolation
       montserratAlternates_Medium_001: FlattenSimpleInterpolation
       montserratAlternates_Medium_002: FlattenSimpleInterpolation
       montserratAlternates_Medium_003: FlattenSimpleInterpolation
       montserratAlternates_Regular_001: FlattenSimpleInterpolation
       montserratAlternates_Regular_002: FlattenSimpleInterpolation
-      montserratAlternates_Regular_003: FlattenSimpleInterpolation
-      montserratAlternates_light: FlattenSimpleInterpolation
-      gmarketSans_bold_001: FlattenSimpleInterpolation
     }
   }
   export interface Styles {

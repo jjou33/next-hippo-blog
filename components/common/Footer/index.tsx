@@ -18,7 +18,7 @@ const Footer = () => {
           <S.LinkContentsWrapper>
             <Typography
               variant="span"
-              aggressive="body_oneline_003"
+              aggressive="body_oneline_002"
               color={themedPalette.sub_text_color2}
             >
               zanda33@naver.com
@@ -37,7 +37,7 @@ const Footer = () => {
             >
               <Typography
                 variant="span"
-                aggressive="body_oneline_003"
+                aggressive="body_oneline_002"
                 color={themedPalette.sub_text_color2}
               >
                 GIT HUB
@@ -46,7 +46,7 @@ const Footer = () => {
           </S.LinkContentsWrapper>
           <Typography
             variant="span"
-            aggressive="body_oneline_003"
+            aggressive="body_oneline_002"
             color={theme.colors.gray_004}
             margin={'4rem 0 0 0'}
           >

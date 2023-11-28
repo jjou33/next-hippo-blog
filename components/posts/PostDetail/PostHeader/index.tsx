@@ -63,14 +63,13 @@ const PostHeader = ({
                 <Badge
                   borderRadius="50px"
                   backgroundColor={themedPalette.badge_color}
-                  aggressive="body_multiline_005"
                   padding="0.5rem 1rem"
                   margin="5px"
                   key={item}
                 >
                   <Typography
                     variant="span"
-                    aggressive="body_oneline_004"
+                    aggressive="body_oneline_002"
                     color={themedPalette.badge_text}
                   >
                     {`# ${item}`}
@@ -81,7 +80,7 @@ const PostHeader = ({
           </FlexBox>
           <S.HeroTitleWrapper
             variant="h2"
-            aggressive="headline_multiline_002"
+            aggressive="headline_multiline_001"
             color={theme.colors.primary_003}
             align="center"
             padding={'0 2rem'}
@@ -90,7 +89,7 @@ const PostHeader = ({
           </S.HeroTitleWrapper>
           <Typography
             variant="span"
-            aggressive="body_multiline_000"
+            aggressive="body_oneline_001"
             color={theme.colors.gray_001}
             align="center"
             padding="20px 0 0 0"

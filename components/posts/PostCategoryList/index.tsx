@@ -55,7 +55,7 @@ const PostCategoryList = ({
           </S.TextBoxContainer>
           <Typography
             variant="p"
-            aggressive="body_oneline_003"
+            aggressive="body_oneline_002"
             color={themedPalette.sub_text_color2}
             align="center"
             margin="1rem 0 0 1rem"

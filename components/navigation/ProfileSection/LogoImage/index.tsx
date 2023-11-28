@@ -25,7 +25,7 @@ const LogoImage = () => {
       <FlexBox flexDirection="column" alignItems="center" margin="0 0 1.5rem 0">
         <Typography
           variant="h6"
-          aggressive="headline_small_002"
+          aggressive="headline_small_001"
           color={themedPalette.text_color}
         >
           HIPPO DEV 🧑🏼‍💻

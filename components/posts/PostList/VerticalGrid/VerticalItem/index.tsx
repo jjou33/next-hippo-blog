@@ -49,7 +49,7 @@ const VerticalItem = ({
               <Badge
                 borderRadius="2rem"
                 backgroundColor={theme.colors.primary_003}
-                aggressive="body_oneline_006"
+                aggressive="body_oneline_003"
                 padding="5px 10px 5px 10px"
                 margin="15px 0 0 15px"
                 height="100%"
@@ -63,6 +63,7 @@ const VerticalItem = ({
             src={`/static/images/${category1depth}/${category2depth}/${image}`}
             alt={title}
             fill
+            sizes="100vw"
           />
         </StyledImageBox>
         <S.ContentsWrapper>
@@ -70,7 +71,7 @@ const VerticalItem = ({
             <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
             <Typography
               variant="span"
-              aggressive="body_oneline_006"
+              aggressive="body_oneline_003"
               color={themedPalette.sub_text_color1}
             >
               {formattedDate}
@@ -79,7 +80,7 @@ const VerticalItem = ({
           <FlexBox margin={'0 0 1rem 0'} alignItems={'center'} gap={'0.6rem'}>
             <Typography
               variant="h3"
-              aggressive="gmarketSans_bold_001"
+              aggressive="body_oneline_bold_001"
               color={themedPalette.text_color}
             >
               {title}
@@ -95,7 +96,7 @@ const VerticalItem = ({
 
           <Typography
             variant="p"
-            aggressive="body_multiline_005"
+            aggressive="body_oneline_002"
             color={themedPalette.sub_text_color2}
           >
             {excerpt}

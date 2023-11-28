@@ -1,7 +1,7 @@
 ---
 title: "프로젝트 기술구성 (1) : React vs Vue"
 date: "2023-05-26"
-image: reactvue.webp
+image: reactVue.webp
 rootCategory: Programming
 category1depth: Framework
 category2depth: vue
