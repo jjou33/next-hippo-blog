@@ -158,9 +158,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-vercel-
 
-      # Build 캐시 정보가 있다면 실행하지 않고, 없다면 Build 를 진행합니다.
       - name: Build Project Artifacts
-        if: steps.Build-cache.outputs.cache-hit != 'true'
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       # 프로젝트 아티팩트를 빌드하는 아홉 번째 단계입니다.
@@ -188,9 +186,7 @@ jobs:
 
 저는 앞선 포스트에서도 말씀드렸지만, 최대한 **Caching** 을 적용할 수 있는 부분들을 찾아서 적용하였습니다.
 
-현재 위 yml 파일에서는 **vercel cli** 와 **vercel build caching** 을 진행하였습니다. 
-
-만약 캐싱을 하지 않게 되면 아래와 같이 총 1분 42초의 배포 시간이 소요되는것을 보실 수 있습니다.
+만약 캐싱을 하지 않게 되면 아래와 같이 총 *1분 42초*의 배포 시간이 소요되는것을 보실 수 있습니다.
 
 ![image](https://github.com/hwcho33/nextstudy/assets/134469187/93a4385f-0c0a-42a3-a5f6-61a36f5bf442)
 
@@ -198,7 +194,7 @@ jobs:
 
 ![image](https://github.com/hwcho33/nextstudy/assets/134469187/387e7c6c-b66b-4739-ac86-2110ef11100c)
 
-총 1분 4초가 걸린것을 보실 수 있습니다.
+총 *1분 4초*가 걸린것을 보실 수 있습니다.
 
 *1m 42s > 1m 4s*로 총 **40%** 정도 감소한것을 볼 수 있습니다.
 

@@ -1,6 +1,41 @@
 import type { IconPropsType } from 'public/static/icon/index'
 
 export const NavigationIconSet: IconPropsType = {
+  optimization: {
+    icon: () => (
+      <svg
+        fill="#93a1ae"
+        height="100%"
+        width="100%"
+        version="1.1"
+        id="XMLID_223_"
+        viewBox="-4.56 -4.56 33.12 33.12"
+        stroke="#93a1ae"
+        strokeWidth="0.00024000000000000003"
+      >
+        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+        <g
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="#CCCCCC"
+          strokeWidth="0.24000000000000005"
+        />
+
+        <g id="SVGRepo_iconCarrier">
+          {' '}
+          <g id="optimization">
+            {' '}
+            <g>
+              {' '}
+              <path d="M17,24V11h6v13H17z M19,13v9h2v-9H19z M15,24H9v-8h6V24z M11,22h2v-4h-2V22z M7,24H1v-6h6V24z M3,22h2v-2H3V22z M1,16v-2 c7.8,0,12.8-3.4,16.1-10.9l-4.3,1.7L12,2.9L19.5,0l3,7.2L20.6,8l-1.7-4.2C15.3,12.1,9.6,16,1,16z" />{' '}
+            </g>{' '}
+          </g>{' '}
+        </g>
+      </svg>
+    ),
+  },
   cicd: {
     icon: () => (
       <svg

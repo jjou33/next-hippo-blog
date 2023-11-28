@@ -26,31 +26,6 @@ const PostContent = ({
         />
       )
     },
-    // p(paragraph) {
-    //   const {
-    //     node: { children },
-    //   } = paragraph
-
-    //   if (children[0].tagName === 'img') {
-    //     const {
-    //       properties: { alt, src },
-    //     } = children[0]
-    //     console.log('2 : ', children, image)
-    //     if (!src.includes('http')) {
-    //       return (
-    //         <S.StyledImage
-    //           src={`/static/images/${category1depth}/${category2depth}/${image}`}
-    //           alt={alt}
-    //           width={0}
-    //           height={0}
-    //           sizes="100%"
-    //         />
-    //       )
-    //     }
-    //   }
-
-    //   return <p>{paragraph.children}</p>
-    // },
     code(code) {
       const { className, children } = code
       let language = ''

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 export const StyledImageContainer = styled.div`
   position: fixed;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 
   @media screen and (min-width: 1300px) {
-    width: calc(100vw - 280px);
+    width: calc(100vw - 260px);
   }
 
   @media screen and (max-width: 768px) {
@@ -29,5 +29,5 @@ export const HeroTitleWrapper = styled(Typography)`
 
 export const StyledImage = styled.div`
   position: relative;
-  height: 100vh;
+  height: 100%;
 `
