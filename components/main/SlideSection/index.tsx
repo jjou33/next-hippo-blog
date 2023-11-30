@@ -28,7 +28,7 @@ const SlideSection = () => {
               src={info.imageLink}
               alt="alt"
               fill
-              sizes="(max-width: 1300px) 100vw, 80vw"
+              sizes="(max-width: 1300px) 80vw,  50vw"
               style={{ objectFit: 'cover' }}
             />
             <S.LeftDimmedBox />

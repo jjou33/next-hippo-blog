@@ -26,7 +26,7 @@ const ProjectItem = ({
             src={imagePath}
             alt={title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 1300px) 50vw, 33vw"
             style={{
               objectFit: 'cover',
               zIndex: '-1',

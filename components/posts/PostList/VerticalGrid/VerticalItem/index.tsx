@@ -64,6 +64,7 @@ const VerticalItem = ({
             alt={title}
             fill
             sizes="100vw"
+            priority
           />
         </StyledImageBox>
         <S.ContentsWrapper>
