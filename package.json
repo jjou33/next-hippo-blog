@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "dev:c": "rm -rf ./.next && next dev",
-    "start": "next start",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "build": "next build",
+    "start": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "reinstall": "rm -rf ./node_modules && rm -rf pnpm-lock.yaml && pnpm install",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
@@ -47,6 +47,7 @@
     "@types/uuid": "^9.0.3",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "compression-webpack-plugin": "^10.0.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "^8.8.0",
@@ -54,6 +55,7 @@
     "framer-motion": "^10.15.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
+    "next-compose-plugins": "^2.2.1",
     "prettier": "^3.0.0",
     "styled-components": "^6.0.7"
   },
