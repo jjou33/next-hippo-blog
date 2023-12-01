@@ -31,7 +31,6 @@ const VerticalItem = ({
   },
   index,
 }: VerticalItemProps) => {
-  console.log('cate : ', category2depth, image)
   const { ref, isInViewport } = useInfiniteScroll(index * 120)
 
   const formattedDate = new Date(date).toLocaleDateString('ko', {
