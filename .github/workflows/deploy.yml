@@ -57,7 +57,6 @@ jobs:
       # Vercel CLI를 설치하는 일곱 번째 단계입니다. 이전에 캐시된 내용이 없을 때만 설치합니다.
       - name: Install Vercel CLI
         id: Install-vercel
-        if: steps.Pnpm-cache.outputs.cache-hit != 'true'
         run: pnpm add -g vercel@latest
 
       # 여덟 번째 단계로, Vercel 환경 정보를 가져오는 명령을 실행합니다.
