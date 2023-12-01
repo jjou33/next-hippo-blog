@@ -1,5 +1,5 @@
 const DATA = {
-  MAIN_POST_LENGTH: 6,
+  MAIN_POST_LENGTH: 9,
   FOOTER_INFO: {
     GITHUB_LINK: 'https://github.com/jjou33',
   },

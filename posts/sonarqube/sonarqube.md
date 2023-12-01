@@ -4,7 +4,7 @@ title: "[SonarQube] 로컬에서 소나큐브 연동하여 코드 Quality 체크
 image: sonarqube.png
 rootCategory: Tools
 category1depth: Quality
-category2depth: sonarQube
+category2depth: sonarqube
 keywords: ["QA Tools","Sonarqube"]
 excerpt: SonarQube 에 관련된 포스팅 공간입니다.
 isFeatured: true
