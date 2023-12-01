@@ -14,7 +14,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['github.com'], // 이미지가 호스팅된 도메인 추가
+    domains: ['github.com', 'user-images.githubusercontent.com'], // 이미지가 호스팅된 도메인 추가
   },
   compiler: {
     styledComponents: true,

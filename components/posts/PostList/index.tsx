@@ -21,7 +21,7 @@ const PostList = ({ posts, isMain, isAllPost }: PostListProps) => {
   return (
     <S.PostListContainer>
       {isMain ? (
-        <VerticalGrid posts={posts.slice(0, 6)} />
+        <VerticalGrid posts={posts.slice(0, 9)} />
       ) : (
         <>
           {isAllPost ? (

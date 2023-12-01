@@ -187,7 +187,7 @@ export const NavigationIconSet: IconPropsType = {
       </svg>
     ),
   },
-  sonarQube: {
+  sonarqube: {
     icon: () => (
       <svg
         fill="#93a1ae"
