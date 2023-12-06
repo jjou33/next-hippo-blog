@@ -50,7 +50,7 @@ const SlideSection = () => {
                     variant="span"
                     aggressive="montserratAlternates_Regular_002"
                   >
-                    GO {MainIconSet['Go'].icon('black')}
+                    🚀 More Posts
                   </Typography>
                 </S.Button>
               </Link>
