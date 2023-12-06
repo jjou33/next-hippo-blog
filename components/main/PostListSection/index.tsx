@@ -18,7 +18,7 @@ const PostListSection = props => {
           />
         </S.HeaderTextWrapper>
         <PostList posts={props.posts} isMain={true} />
-        <Link href={`/posts?page=1`} aria-label={'Go To All Post Page'}>
+        <Link href={`/posts?page=1`} aria-label={'MORE POSTS'}>
           <S.ReadMoreBtnWrapper>
             <S.Button>
               <Typography variant="span" aggressive="body_oneline_001">
