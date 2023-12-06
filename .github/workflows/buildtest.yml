@@ -65,7 +65,7 @@ jobs:
         id: cache
         with:
           path: |
-            node_modules
+            .pnpm-store
             ${{ github.workspace }}/.next/cache
           key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |

@@ -1,5 +1,4 @@
 import * as S from './styles'
-import theme from 'styles/theme'
 import Typography from '../Typography'
 import DATA from 'constants/data'
 import { Divider } from 'components/common/StyledLayout'
@@ -47,7 +46,7 @@ const Footer = () => {
           <Typography
             variant="span"
             aggressive="body_oneline_002"
-            color={theme.colors.gray_004}
+            color={themedPalette.sub_text_color2}
             margin={'4rem 0 0 0'}
           >
             Copyright 2023 BY HIPPO-DEV
@@ -57,6 +56,7 @@ const Footer = () => {
               href={DATA.FOOTER_INFO.GITHUB_LINK}
               target="_blank"
               rel="noreferrer"
+              title="Go to My Github"
             >
               {MainIconSet['Git'].icon()}
             </S.Anchor>

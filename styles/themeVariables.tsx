@@ -9,6 +9,7 @@ type ThemeVariables = {
   border_color: string
   badge_color: string
   badge_color2: string
+  styled_badge_color: string
   badge_text: string
   point_color: string
   em_color: string
@@ -43,6 +44,7 @@ const themeVariableSets: Record<Theme, ThemeVariables> = {
     border_color: '#DEE2E6',
     badge_color: '#FFEBB2',
     badge_color2: '#fc5460',
+    styled_badge_color: '#2d3344',
     point_color: '#f25b5b',
     em_color: '#4477CE',
     point_bg_color: '#fce8e8',
@@ -80,7 +82,8 @@ const themeVariableSets: Record<Theme, ThemeVariables> = {
     border_color: '#4D4D4D',
     badge_color: '#fc5460',
     badge_color2: '#F9F871',
-    point_color: '#00C6BB',
+    styled_badge_color: '#e7e5e5',
+    point_color: '#96F2D7',
     em_color: '#64CCC5',
     point_bg_color: '#00848d',
     badge_text: '#fff',

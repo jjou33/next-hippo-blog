@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { themedPalette } from 'styles/themeVariables'
 
-export const NavMainCategoryItem = styled.li<{ openState: boolean }>`
+export const NavMainCategoryItem = styled.div<{ openState: boolean }>`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -47,7 +47,7 @@ export const NavItemArrowWrapper = styled.div<{ isOpen: boolean }>`
   transition: transform ease-in-out 0.3s;
 `
 
-export const DropdownWrapper = styled.article<{
+export const DropdownWrapper = styled.div<{
   isOpen: boolean
   categoryItemCount: number
 }>`
