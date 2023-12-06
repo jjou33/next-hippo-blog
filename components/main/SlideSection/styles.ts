@@ -101,6 +101,7 @@ export const NavigationButton = styled.div<{ direction: string }>`
   transition: 0.5s;
   cursor: pointer;
 `
+
 export const TitleWrapper = styled(Typography)`
   margin-bottom: 20px;
 `
