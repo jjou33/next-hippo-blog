@@ -96,7 +96,7 @@ isFeatured: true
 7. 통과 후 Main 으로 Merge Confirm 및 push
 ```
 
-대략적으로 위와 같은 순으로 진행되며, 이후 추가적으로 **Jest** 혹은 **Playwright** 를 추가하여 테스트도 진행할 예정이고, 자세한 부분은 [다음 포스트](https://next-hippo-blog.vercel.app/posts/CICD/automation2)에서 자세하게 진행하도록 하겠습니다!
+대략적으로 위와 같은 순으로 진행되며, 이후 추가적으로 **Jest** 혹은 **Playwright** 를 추가하여 테스트도 진행할 예정이고, 자세한 부분은 [다음 포스트](https://hippolog.vercel.app/posts/CICD/automation2)에서 자세하게 진행하도록 하겠습니다!
 
 ### 참고 사이트
 

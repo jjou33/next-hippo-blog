@@ -6,7 +6,7 @@
 
 개인적으로 운영하는 개발 블로그입니다.
 
-도메인 주소 : [https://next-hippo-blog.vercel.app/](https://next-hippo-blog.vercel.app/)
+도메인 주소 : [https://hippolog.vercel.app/](https://hippolog.vercel.app/)
 
 ## Tech Stack
 
