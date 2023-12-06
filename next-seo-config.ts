@@ -3,7 +3,7 @@ import METADATA from 'constants/METADATA'
 import { DefaultSeoProps } from 'next-seo'
 const DEFAULT_SEO: DefaultSeoProps = {
   titleTemplate: `%s | ${METADATA.meta.title}`,
-  defaultTitle: METADATA.meta.title,
+  defaultTitle: `${METADATA.meta.title} - 나만의 개발 기록 일기장`,
   description: METADATA.meta.description,
   canonical: METADATA.meta.url,
   additionalLinkTags: [
@@ -17,6 +17,7 @@ const DEFAULT_SEO: DefaultSeoProps = {
     },
   ],
   openGraph: {
+    description: METADATA.meta.description,
     type: 'website',
     locale: 'ko_KR',
     url: METADATA.meta.url,
