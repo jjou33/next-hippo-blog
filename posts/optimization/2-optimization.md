@@ -12,7 +12,7 @@ isFeatured: true
 
 ### 개요
 
-[이전 포스트](https://next-hippo-blog.vercel.app/posts/optimization/1-optimization)에서 이미지를 최적화 하는 방안에 대한 내용을 학습하였습니다.
+[이전 포스트](https://hippolog.vercel.app/posts/optimization/1-optimization)에서 이미지를 최적화 하는 방안에 대한 내용을 학습하였습니다.
 
 이번엔 Chrome 에서 제공하는 **Lighthouse** 의 분석을 토대로 차근차근 최적화를 진행해보도록 하겠습니다.
 
