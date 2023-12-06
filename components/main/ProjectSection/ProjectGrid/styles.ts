@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const GridContainer = styled.ul`
+export const GridContainer = styled.div`
   display: grid;
   list-style: none;
   margin: 0;
