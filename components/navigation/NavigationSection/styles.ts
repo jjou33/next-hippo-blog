@@ -16,13 +16,13 @@ export const NavigationWrapper = styled.div`
   border-radius: 1rem;
 `
 
-export const NavigationGrid = styled.ul`
+export const NavigationGrid = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
 `
 
-export const RootItemContainer = styled.ul`
+export const RootItemContainer = styled.div`
   display: flex;
 
   flex-direction: column;

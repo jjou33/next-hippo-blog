@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { themedPalette } from 'styles/themeVariables'
 
-export const NavSubItemContainer = styled.ul``
+export const NavSubItemContainer = styled.div``
 
-export const NavSubItemWrapper = styled.li`
+export const NavSubItemWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 5px;

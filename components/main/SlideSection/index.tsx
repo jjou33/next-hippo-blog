@@ -44,6 +44,7 @@ const SlideSection = () => {
               </S.SubTitleWrapper>
               <Link
                 href={{ pathname: `posts/${info.title}`, query: { page: 1 } }}
+                title={`Go To ${info.title} Category`}
               >
                 <S.Button>
                   <Typography
