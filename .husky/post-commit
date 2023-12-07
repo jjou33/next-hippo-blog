@@ -24,10 +24,6 @@ if [[ $current_branch == feature/* ]]; then
     echo "${RED} $current_branch isn't up to date with the upstream"
     echo "${GREEN} It progresses both the upstream and pushes the changes."
     git push --set-upstream origin "$current_branch"
-  else
-    echo "${GREEN} It's already up-to-date with the upstream branch, so it proceeds with the push."
-    git push
-  fi
 
   if [ $? -ne 0 ]; then
     echo "${RED} Push failed! There was an error while pushing the changes."
