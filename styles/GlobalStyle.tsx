@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    font-family: -apple-system, 'IBMPlexSansKR-Light', 'Courier New', monospace;
     user-select: none;
     max-width: 100vw;
     ${themes.light}

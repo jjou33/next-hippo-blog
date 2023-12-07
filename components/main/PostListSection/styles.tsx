@@ -98,7 +98,8 @@ export const Button = styled.button`
   background-color: ${themedPalette.bg_element_color};
   /* padding: 17px 60px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
+  /* isolation: isolate; // safari 호환성 버그 대응 */
+  z-index: 0;
   span {
     position: relative;
     z-index: 1;
@@ -120,6 +121,7 @@ export const Button = styled.button`
     background: ${themedPalette.wave_primary2};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
     -webkit-transform: translateX(-98%) translateY(-10%) rotate(60deg);
     transform: translateX(-90%) translateY(-10%) rotate(60deg);
   }

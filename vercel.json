@@ -1,0 +1,40 @@
+{
+  "headers": [
+    {
+      "source": "/static/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/manifest.json", 
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=0, s-maxage=600"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.ico",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=0, s-maxage=600"
+        }
+      ]
+    },
+    {
+      "source": "/static/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=0, s-maxage=600"
+        }
+      ]
+    }
+  ]
+}
