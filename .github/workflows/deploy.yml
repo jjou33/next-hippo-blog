@@ -38,28 +38,6 @@ jobs:
           version: 8
           run_install: false
 
-      # pnpm 저장소 디렉토리를 가져오는 다섯 번째 단계입니다. 환경 변수에 저장합니다.
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      # pnpm 캐시를 설정하는 여섯 번째 단계입니다. 이전에 저장된 캐시가 있다면 사용합니다.
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        id: Pnpm-cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: v1-cli-pnpm-store-${{ hashFiles('vercel.json') }}
-          restore-keys: |
-            v1-cli-pnpm-store-
-
-      # Vercel CLI를 설치하는 일곱 번째 단계입니다. 이전에 캐시된 내용이 없을 때만 설치합니다.
-      - name: Install Vercel CLI
-        id: Install-vercel
-        if: steps.Pnpm-cache.outputs.cache-hit != 'true'
-        run: pnpm add -g vercel@latest
-
       # 여덟 번째 단계로, Vercel 환경 정보를 가져오는 명령을 실행합니다.
       - name: Pull Vercel Environment Information
         id: Get-Vercel-Environment
