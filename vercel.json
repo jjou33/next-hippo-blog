@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "s-maxage=31536000, immutable"
+          "value": "public,s-maxage=31536000, immutable"
         }
       ]
     },
@@ -14,7 +14,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "max-age=0, s-maxage=600"
+          "value": "public, max-age=0, s-maxage=86400"
         }
       ]
     },
@@ -23,7 +23,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "max-age=0, s-maxage=600"
+          "value": "public, max-age=0, s-maxage=86400"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "max-age=0, s-maxage=600"
+          "value": "public, max-age=0, s-maxage=86400"
         }
       ]
     }
