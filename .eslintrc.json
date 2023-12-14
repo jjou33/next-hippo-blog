@@ -20,6 +20,7 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
+  "ignorePatterns": ["!.storybook"],
   "rules": {
     "react/react-in-jsx-scope": "off", // import React from "react" 안해도 되게 만들어줌.
     "@typescript-eslint/no-unused-vars": "error", // 안 쓰는 변수 그대로 두면 에러 냄.
