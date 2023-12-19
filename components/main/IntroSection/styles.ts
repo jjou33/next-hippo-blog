@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const IntroContainer = styled.div`
   display: flex;
@@ -7,11 +7,10 @@ export const IntroContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: ${themedPalette.bg_element_color};
+  background-color: ${theme.color.bg_element_color};
   border-radius: 10px;
   padding: 1rem;
 
-  /* border: 1px solid ${themedPalette.border_color}; */
   h2 {
     line-height: 2rem;
   }

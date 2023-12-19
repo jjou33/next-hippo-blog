@@ -8,7 +8,7 @@ import ColorText from 'components/common/ColorText'
 import { Typography } from 'components/common'
 import { ColorBorderBox } from 'components/common/StyledLayout'
 import { FireCrackerStaticLottie } from 'components/common/Lottie/FireCracker'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 const IntroSection = () => {
   return (
@@ -36,7 +36,7 @@ const IntroSection = () => {
               variant="h2"
               aggressive="montserratAlternates_Medium_003"
               margin="1rem 0"
-              color={themedPalette.text_color}
+              color={theme.color.text_color}
             >
               {DATA.INTRO_INFO.TITLE}
             </Typography>
@@ -44,14 +44,14 @@ const IntroSection = () => {
               variant="h2"
               aggressive="montserratAlternates_Regular_001"
               margin="1rem 0"
-              color={themedPalette.text_color}
+              color={theme.color.text_color}
             >
               {`- ${DATA.INTRO_INFO.AUTHOR} -`}
             </Typography>
             <Typography
               variant="h2"
               aggressive="body_oneline_001"
-              color={themedPalette.sub_text_color2}
+              color={theme.color.sub_text_color2}
             >
               {DATA.INTRO_INFO.SUBTITLE}
             </Typography>

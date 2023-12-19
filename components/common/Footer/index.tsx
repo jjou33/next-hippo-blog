@@ -3,7 +3,7 @@ import Typography from '../Typography'
 import DATA from 'constants/data'
 import { Divider } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
             <Typography
               variant="span"
               aggressive="body_oneline_002"
-              color={themedPalette.sub_text_color2}
+              color={theme.color.sub_text_color2}
             >
               zanda33@naver.com
             </Typography>
@@ -37,7 +37,7 @@ const Footer = () => {
               <Typography
                 variant="span"
                 aggressive="body_oneline_002"
-                color={themedPalette.sub_text_color2}
+                color={theme.color.sub_text_color2}
               >
                 GIT HUB
               </Typography>
@@ -46,7 +46,7 @@ const Footer = () => {
           <Typography
             variant="span"
             aggressive="body_oneline_002"
-            color={themedPalette.sub_text_color2}
+            color={theme.color.sub_text_color2}
             margin={'4rem 0 0 0'}
           >
             Copyright 2023 BY HIPPO-DEV

@@ -1,5 +1,5 @@
 import * as S from './styles'
-import theme from 'styles/theme'
+
 import Link from 'next/link'
 
 import { Badge, Typography } from 'components/common'
@@ -12,7 +12,7 @@ import { useInfiniteScroll } from 'hooks/useInfiniteScroll'
 import { MainIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 interface VerticalItemProps {
   posts: PostData
@@ -72,7 +72,7 @@ const VerticalItem = ({
             <Typography
               variant="span"
               aggressive="body_oneline_003"
-              color={themedPalette.sub_text_color1}
+              color={theme.color.sub_text_color1}
             >
               {formattedDate}
             </Typography>
@@ -81,7 +81,7 @@ const VerticalItem = ({
             <Typography
               variant="h3"
               aggressive="body_oneline_bold_001"
-              color={themedPalette.text_color}
+              color={theme.color.text_color}
             >
               {title}
             </Typography>
@@ -97,7 +97,7 @@ const VerticalItem = ({
           <Typography
             variant="p"
             aggressive="body_oneline_002"
-            color={themedPalette.sub_text_color2}
+            color={theme.color.sub_text_color2}
           >
             {excerpt}
           </Typography>

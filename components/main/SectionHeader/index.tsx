@@ -1,7 +1,6 @@
 import { Typography } from 'components/common'
 import { Divider, FlexBox } from 'components/common/StyledLayout'
 import theme from 'styles/theme'
-import { themedPalette } from 'styles/themeVariables'
 
 const SectionHeader = ({
   title,
@@ -15,14 +14,14 @@ const SectionHeader = ({
       <Typography
         variant="h2"
         aggressive="headline_medium_002"
-        color={themedPalette.text_color}
+        color={theme.color.text_color}
       >
         {title}
       </Typography>
       <Typography
         variant="h2"
         aggressive="body_oneline_002"
-        color={themedPalette.sub_text_color2}
+        color={theme.color.sub_text_color2}
         margin="1rem 0 0 0"
       >
         {subTitle}

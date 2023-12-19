@@ -1,5 +1,5 @@
 import { styled, css } from 'styled-components'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const PageContainer = styled.div`
   display: flex;
@@ -67,7 +67,7 @@ export const PageBtn = styled.button<{ selected: boolean }>`
   border-radius: 2px;
   background-color: ${({ selected }) => (selected ? `#23adad` : 'transparent')};
   color: ${({ selected }) =>
-    selected ? `${themedPalette.deep_white}` : `${themedPalette.text_color}`};
+    selected ? `${theme.color.deep_white}` : `${theme.color.text_color}`};
   font-size: 15px;
   cursor: pointer;
   & + & {

@@ -4,7 +4,7 @@ import { IconBox } from 'components/common'
 import { Typography } from 'components/common'
 import { Fragment, PropsWithChildren, useState } from 'react'
 import { NavigationIconSet } from 'public/static/icon'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 interface MainCategoryProps extends PropsWithChildren {
   item: string
@@ -25,19 +25,19 @@ const NavMainCategory = ({ children, item, count }: MainCategoryProps) => {
       >
         <S.NavIconBoxWrapper>
           <IconBox width="25px" height="25px">
-            {NavigationIconSet[item].icon(themedPalette.navIcon_color)}
+            {NavigationIconSet[item].icon(theme.color.navIcon_color)}
           </IconBox>
         </S.NavIconBoxWrapper>
 
         <Typography
           variant="span"
           aggressive="montserratAlternates_Regular_001"
-          color={themedPalette.text_color}
+          color={theme.color.text_color}
         >
           {item}
         </Typography>
         <S.NavItemArrowWrapper isOpen={openState}>
-          {NavigationIconSet['Arrow'].icon(themedPalette.arrow_color)}
+          {NavigationIconSet['Arrow'].icon(theme.color.arrow_color)}
         </S.NavItemArrowWrapper>
       </S.NavMainCategoryItem>
 

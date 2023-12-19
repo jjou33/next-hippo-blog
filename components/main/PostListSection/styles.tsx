@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {
@@ -54,8 +54,8 @@ export const ReadMoreBtn = styled.div`
   display: flex;
   gap: 1rem;
   border-radius: 1rem;
-  background-color: ${themedPalette.em_color};
-  color: ${themedPalette.sub_text_color2};
+  background-color: ${theme.color.em_color};
+  color: ${theme.color.sub_text_color2};
   padding: 20px 15px;
   margin: 1rem 0 0 0;
   box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.1);
@@ -91,11 +91,11 @@ export const Button = styled.button`
   outline: none;
   overflow: hidden;
   position: relative;
-  color: ${themedPalette.styled_badge_color};
+  color: ${theme.color.styled_badge_color};
   font-weight: 700;
   font-size: 12px;
   border-radius: 2rem;
-  background-color: ${themedPalette.bg_element_color};
+  background-color: ${theme.color.bg_element_color};
   /* padding: 17px 60px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   /* isolation: isolate; // safari 호환성 버그 대응 */
@@ -118,7 +118,7 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${themedPalette.wave_primary2};
+    background: ${theme.color.wave_primary2};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     border-radius: 2rem;

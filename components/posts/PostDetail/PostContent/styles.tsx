@@ -1,11 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { gmarketSans } from 'public/static/fonts'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const ContentsContainer = styled.div`
   margin-top: 100vh;
-  background: ${themedPalette.bg_color};
+  background: ${theme.color.bg_color};
   z-index: 1;
 
   @media screen and (max-width: 768px) {
@@ -45,7 +45,7 @@ export const MarkdownWrapper = styled.div`
   ol,
   ul {
     font-weight: initial;
-    color: ${themedPalette.text_color};
+    color: ${theme.color.text_color};
   }
 `
 export const ContentsWrapper = styled.article`
@@ -58,9 +58,9 @@ export const ContentsWrapper = styled.article`
   font-family: ${gmarketSans.style.fontFamily};
   word-break: break-word;
   blockquote {
-    border: 1px solid ${themedPalette.badge_color};
-    border-left: 10px solid ${themedPalette.badge_color};
-    background-color: ${themedPalette.bg_element_color};
+    border: 1px solid ${theme.color.badge_color};
+    border-left: 10px solid ${theme.color.badge_color};
+    background-color: ${theme.color.bg_element_color};
     padding: 5px 20px;
     p {
       font-style: italic;
@@ -71,15 +71,15 @@ export const ContentsWrapper = styled.article`
     color: #6199d1;
   }
   p {
-    color: ${themedPalette.text_color};
+    color: ${theme.color.text_color};
     margin: 1rem 0;
     strong {
-      color: ${themedPalette.strong_text_color};
+      color: ${theme.color.strong_text_color};
       font-weight: 400;
     }
 
     em {
-      color: ${themedPalette.em_color};
+      color: ${theme.color.em_color};
       font-weight: 400;
     }
   }
@@ -102,7 +102,7 @@ export const ContentsWrapper = styled.article`
     font-weight: 700;
     margin: 2rem 0 0 0;
     padding-left: 0.7rem;
-    color: ${themedPalette.text_color};
+    color: ${theme.color.text_color};
     height: 100%;
   }
 

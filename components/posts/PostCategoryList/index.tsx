@@ -1,6 +1,5 @@
 import * as S from './styles'
 
-import theme from 'styles/theme'
 import PostList from '../PostList'
 import PostListHeader from './PostListHeader'
 
@@ -9,7 +8,7 @@ import { Fragment } from 'react'
 import { Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 import { WaveAnimation } from 'components/common'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 import type { PostData } from 'types/post'
 
@@ -56,7 +55,7 @@ const PostCategoryList = ({
           <Typography
             variant="p"
             aggressive="body_oneline_002"
-            color={themedPalette.sub_text_color2}
+            color={theme.color.sub_text_color2}
             align="center"
             margin="1rem 0 0 1rem"
           >

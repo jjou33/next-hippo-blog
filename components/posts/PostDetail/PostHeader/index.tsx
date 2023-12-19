@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import theme from 'styles/theme'
 
 import * as S from './styles'
 
@@ -9,7 +8,7 @@ import { Typography } from 'components/common'
 import { IndicatorLottie } from 'components/common/Lottie'
 
 import type { PostData } from 'types/post'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 const PostHeader = ({
   postDetailInfo: {
@@ -62,7 +61,7 @@ const PostHeader = ({
               return (
                 <Badge
                   borderRadius="50px"
-                  backgroundColor={themedPalette.badge_color}
+                  backgroundColor={theme.color.badge_color}
                   padding="0.5rem 1rem"
                   margin="5px"
                   key={item}
@@ -70,7 +69,7 @@ const PostHeader = ({
                   <Typography
                     variant="span"
                     aggressive="body_oneline_002"
-                    color={themedPalette.badge_text}
+                    color={theme.color.badge_text}
                   >
                     {`# ${item}`}
                   </Typography>
