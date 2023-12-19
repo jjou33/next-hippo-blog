@@ -6,7 +6,7 @@ import { Badge, Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 import { FlexBox } from 'components/common/StyledLayout'
 import { convertUpperToPrefix } from 'utils/stringUtils'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 interface NavSubCategoryProps {
   items: string[]
@@ -23,7 +23,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
             <S.NavSubItemTitle>
               <FlexBox>
                 <IconBox width="20px" height="20px">
-                  {NavigationIconSet['Arrow'].icon(themedPalette.arrow_color)}
+                  {NavigationIconSet['Arrow'].icon(theme.color.arrow_color)}
                 </IconBox>
                 <IconBox width="23px" height="23px">
                   {NavigationIconSet[value].icon()}
@@ -33,13 +33,13 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
               <Typography
                 variant="span"
                 aggressive="montserratAlternates_Regular_002"
-                color={themedPalette.sub_text_color1}
+                color={theme.color.sub_text_color1}
               >
                 {convertUpperToPrefix(value)}
               </Typography>
               <Badge
                 borderRadius="20px"
-                color={themedPalette.badge_color2}
+                color={theme.color.badge_color2}
                 aggressive="headline_small_002"
                 padding="0 8px"
                 border="0.1px solid"

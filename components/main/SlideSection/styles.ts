@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components'
 import { Typography } from 'components/common'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const SlideContainer = styled.div`
   height: 450px;
@@ -38,7 +38,7 @@ export const Button = styled.button`
   outline: none;
   overflow: hidden;
   position: relative;
-  color: ${themedPalette.deep_black};
+  color: ${theme.color.deep_black};
   font-weight: 700;
   font-size: 12px;
   border-radius: 2rem;
@@ -64,7 +64,7 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${themedPalette.wave_primary2};
+    background: ${theme.color.wave_primary2};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-10%) rotate(60deg);

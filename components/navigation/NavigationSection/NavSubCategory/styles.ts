@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const NavSubItemContainer = styled.div``
 
@@ -14,7 +14,7 @@ export const NavSubItemWrapper = styled.div`
   gap: 10px;
   margin-right: 10px;
   &:hover {
-    background: ${themedPalette.point_bg_color};
+    background: ${theme.color.point_bg_color};
     color: black;
   }
 `

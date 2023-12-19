@@ -1,5 +1,5 @@
 import { getClassName } from 'hooks/useNestedHeadings'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 import { Typography } from 'components/common'
 
 interface NestedHeadingType {
@@ -23,7 +23,7 @@ const PostTocItems = (headings: NestedHeadingType) => {
       <Typography
         variant="span"
         aggressive="body_oneline_002"
-        color={themedPalette.text_color}
+        color={theme.color.text_color}
       >
         {headings.text}
       </Typography>

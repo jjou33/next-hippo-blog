@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 export const GridItemContainer = styled.li<{ inview: boolean }>`
-  border: 1px solid ${themedPalette.border_color};
+  border: 1px solid ${theme.color.border_color};
   width: 100%;
   border-radius: 20px;
   margin: 1rem auto 0;
   box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.1);
-  background-color: ${themedPalette.bg_element_color};
+  background-color: ${theme.color.bg_element_color};
   &:hover {
     transform: scale(1.01);
     transition: transform 0.5s;

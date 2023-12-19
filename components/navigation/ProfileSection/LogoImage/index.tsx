@@ -5,7 +5,7 @@ import TextNotification from 'components/common/Lottie/textNotification'
 
 import { Typography } from 'components/common'
 import { FlexBox, StyledImageBox } from 'components/common/StyledLayout'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 const LogoImage = () => {
   return (
     <FlexBox flexDirection="column">
@@ -26,7 +26,7 @@ const LogoImage = () => {
         <Typography
           variant="h6"
           aggressive="headline_small_001"
-          color={themedPalette.text_color}
+          color={theme.color.text_color}
         >
           HIPPO DEV 🧑🏼‍💻
         </Typography>

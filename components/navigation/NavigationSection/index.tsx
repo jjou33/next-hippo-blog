@@ -10,7 +10,7 @@ import { Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 
 import type { AllPostCategory } from 'types/post'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 const NavigationSection = ({ category }: { category: AllPostCategory }) => {
   return (
@@ -30,7 +30,7 @@ const NavigationSection = ({ category }: { category: AllPostCategory }) => {
                       <Typography
                         variant="span"
                         aggressive="montserratAlternates_Regular_001"
-                        color={themedPalette.sub_text_color2}
+                        color={theme.color.sub_text_color2}
                       >
                         {rootCategory}
                       </Typography>

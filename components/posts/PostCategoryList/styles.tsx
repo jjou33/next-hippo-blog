@@ -1,12 +1,12 @@
 import { FlexBox } from 'components/common/StyledLayout'
 import styled from 'styled-components'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const PostCategoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
-  background: ${themedPalette.bg_color};
+  background: ${theme.color.bg_color};
   z-index: 1;
 `
 
@@ -52,7 +52,7 @@ export const CustomDivider = styled.div`
     right: 5%;
     width: 90%;
     height: 1px;
-    background-image: ${themedPalette.custom_divider_color};
+    background-image: ${theme.color.custom_divider_color};
   }
 
   &::after {

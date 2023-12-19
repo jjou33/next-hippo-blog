@@ -1,6 +1,7 @@
 import { css, DefaultTheme } from 'styled-components'
 
 import { montserratAlternates, cafe24OhsquareAir } from 'public/static/fonts'
+import { themedPalette } from './themeVariables'
 interface Font {
   weight: 300 | 400 | 500 | 600 | 700 | 'bold'
   size: number
@@ -56,7 +57,7 @@ const theme: DefaultTheme = {
     error: '#F04700',
     success: '#44927F',
   },
-
+  color: themedPalette,
   fonts: {
     headline_medium_001: fontStyleGenerator({
       weight: 500,

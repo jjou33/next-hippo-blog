@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { Typography } from 'components/common'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 export const PostTocContainer = styled.nav`
   font-size: 1rem;
@@ -57,7 +57,7 @@ export const PostTocItem = styled.li`
       background-color: rgb(246 86 96 / 3%);
     }
     &:hover {
-      background-color: ${themedPalette.hover_color};
+      background-color: ${theme.color.hover_color};
     }
     @media screen and (max-width: 768px) {
       padding-left: 10px;

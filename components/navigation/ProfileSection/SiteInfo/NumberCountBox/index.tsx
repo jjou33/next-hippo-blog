@@ -4,7 +4,7 @@ import Typography from 'components/common/Typography'
 
 import { Divider, ColorBorderBox } from 'components/common/StyledLayout'
 import { useNumberCount } from 'hooks/useNumberCount'
-import { themedPalette } from 'styles/themeVariables'
+import theme from 'styles/theme'
 
 const NumberCountBox = ({ number, title, duration = 2000 }) => {
   return (
@@ -18,7 +18,7 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
           <Typography
             variant="span"
             aggressive="body_oneline_003"
-            color={themedPalette.text_color}
+            color={theme.color.text_color}
           >
             {title}
           </Typography>
@@ -28,12 +28,12 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
           width="80%"
           height="1px"
           margin="0 0 0 0"
-          color={themedPalette.border_color}
+          color={theme.color.border_color}
         />
         <Typography
           variant="span"
           aggressive="body_oneline_003"
-          color={themedPalette.text_color}
+          color={theme.color.text_color}
         >
           {useNumberCount({ number, duration })}
         </Typography>
