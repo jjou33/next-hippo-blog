@@ -78,10 +78,8 @@ const ProjectItem = ({
               <FlexBox gap="1rem" margin="10px 0" flexWrap="wrap">
                 {keywords.map(keyword => (
                   <Badge
-                    borderRadius="2rem"
                     backgroundColor={theme.colors.subPrimary_002}
                     aggressive="body_oneline_003"
-                    padding="5px 10px 5px 10px"
                     key={keyword}
                   >
                     {`# ${keyword}`}

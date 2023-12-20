@@ -54,25 +54,19 @@ const PostHeader = ({
           <FlexBox
             margin="1rem auto"
             padding="5px"
+            gap={'0.5rem'}
             flexWrap={'wrap'}
             justifyContent={'center'}
           >
             {keywords.map(item => {
               return (
                 <Badge
-                  borderRadius="50px"
                   backgroundColor={theme.color.badge_color}
-                  padding="0.5rem 1rem"
-                  margin="5px"
+                  aggressive="body_oneline_002"
+                  color={theme.color.badge_text}
                   key={item}
                 >
-                  <Typography
-                    variant="span"
-                    aggressive="body_oneline_002"
-                    color={theme.color.badge_text}
-                  >
-                    {`# ${item}`}
-                  </Typography>
+                  {`# ${item}`}
                 </Badge>
               )
             })}

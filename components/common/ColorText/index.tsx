@@ -2,11 +2,9 @@ import * as S from './styles'
 
 import Typography from '../Typography'
 
-import type { AggressivePropsType } from 'types/styles'
-
 interface ColorTextPropsType {
   text: string
-  aggressive?: AggressivePropsType['aggressive']
+  aggressive?: AggressiveVariant
 }
 
 const ColorText = ({ text, aggressive }: ColorTextPropsType) => {

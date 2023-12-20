@@ -2,7 +2,6 @@ import * as S from './styles'
 
 import theme from 'styles/theme'
 import Typography from '../Typography'
-
 import { useHeaderSticky } from 'hooks/useHeaderSticky'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'

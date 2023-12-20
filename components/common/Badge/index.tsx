@@ -2,15 +2,13 @@ import * as S from './styles'
 
 import { PropsWithChildren } from 'react'
 
-import type { AggressivePropsType } from 'types/styles'
-
 interface Props extends PropsWithChildren {
-  aggressive?: AggressivePropsType['aggressive']
+  aggressive?: AggressiveVariant
   margin?: string
   padding?: string
   border?: string
+  borderRadius?: string
   color?: string
-  borderRadius: string
   backgroundColor?: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'

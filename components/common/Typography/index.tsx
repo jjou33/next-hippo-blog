@@ -2,12 +2,9 @@ import * as S from './styles'
 
 import { PropsWithChildren } from 'react'
 
-import type { AggressivePropsType, VariantPropsType } from 'types/styles'
-
-interface TypographyPropsType
-  extends PropsWithChildren,
-    AggressivePropsType,
-    VariantPropsType {
+interface TypographyPropsType extends PropsWithChildren {
+  aggressive: AggressiveVariant
+  variant: TypographyVariant
   margin?: string
   padding?: string
   color?: string

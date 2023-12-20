@@ -40,6 +40,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
               <Badge
                 borderRadius="20px"
                 color={theme.color.badge_color2}
+                backgroundColor="transparent"
                 aggressive="headline_small_002"
                 padding="0 8px"
                 border="0.1px solid"

@@ -32,15 +32,11 @@ const HorizontalItem = ({
   return (
     <S.ItemContainer href={`/posts/${category2depth}/${slug}`}>
       <S.ItemContentsWrapper>
-        <FlexBox margin={'0 0 0rem 0'} flexWrap={'wrap'}>
+        <FlexBox margin={'0 1rem 1rem 0'} flexWrap={'wrap'} gap={'1rem'}>
           {keywords.map((keyword: string) => (
             <Badge
-              borderRadius="2rem"
-              backgroundColor="#fc5460"
-              color="white"
+              color={theme.color.badge_text}
               aggressive="body_oneline_003"
-              padding="5px 10px"
-              margin="0px 10px 10px 0"
               key={keyword}
             >
               {keyword}
