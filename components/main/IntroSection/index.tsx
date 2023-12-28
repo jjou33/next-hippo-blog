@@ -36,7 +36,7 @@ const IntroSection = () => {
               variant="h2"
               aggressive="montserratAlternates_Medium_003"
               margin="1rem 0"
-              color={theme.color.text_color}
+              color={theme.color.text_001}
             >
               {DATA.INTRO_INFO.TITLE}
             </Typography>
@@ -44,14 +44,14 @@ const IntroSection = () => {
               variant="h2"
               aggressive="montserratAlternates_Regular_001"
               margin="1rem 0"
-              color={theme.color.text_color}
+              color={theme.color.text_001}
             >
               {`- ${DATA.INTRO_INFO.AUTHOR} -`}
             </Typography>
             <Typography
               variant="h2"
-              aggressive="body_oneline_001"
-              color={theme.color.sub_text_color2}
+              aggressive="body_oneline_bold_medium"
+              color={theme.color.primary_005}
             >
               {DATA.INTRO_INFO.SUBTITLE}
             </Typography>

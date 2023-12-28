@@ -35,7 +35,7 @@ const HorizontalItem = ({
         <FlexBox margin={'0 1rem 1rem 0'} flexWrap={'wrap'} gap={'1rem'}>
           {keywords.map((keyword: string) => (
             <Badge
-              color={theme.color.badge_text}
+              color={theme.color.text_001}
               aggressive="body_oneline_003"
               key={keyword}
             >
@@ -46,7 +46,7 @@ const HorizontalItem = ({
         <Typography
           variant="h3"
           aggressive="body_oneline_bold_001"
-          color={theme.color.text_color}
+          color={theme.color.text_001}
         >
           {title}
         </Typography>
@@ -55,14 +55,14 @@ const HorizontalItem = ({
           width="100%"
           height="1px"
           margin="15px 0 10px 0"
-          color={theme.color.sub_text_color1}
+          color={theme.color.divider_002}
         />
         <FlexBox margin={'0.5rem 0'} alignItems={'center'} gap={'0.6rem'}>
           <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
           <Typography
             variant="span"
             aggressive="body_oneline_003"
-            color={theme.color.text_color}
+            color={theme.color.text_001}
           >
             {formattedDate}
           </Typography>
@@ -73,7 +73,7 @@ const HorizontalItem = ({
           aggressive="body_oneline_002"
           overFlow="hidden"
           textOverflow="ellipsis"
-          color={theme.color.sub_text_color2}
+          color={theme.color.text_002}
         >
           {`${excerpt}`}
         </Typography>

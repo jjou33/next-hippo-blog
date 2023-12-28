@@ -4,7 +4,7 @@ export const SideNavContainer = styled.div<{ isModal: boolean }>`
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: ${({ theme }) => theme.color.bg_color};
+  background-color: ${({ theme }) => theme.color.background_001};
   ${({ isModal }) =>
     isModal
       ? css`

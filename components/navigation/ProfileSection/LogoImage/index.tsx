@@ -26,7 +26,7 @@ const LogoImage = () => {
         <Typography
           variant="h6"
           aggressive="headline_small_001"
-          color={theme.color.text_color}
+          color={theme.color.text_001}
         >
           HIPPO DEV 🧑🏼‍💻
         </Typography>

@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 export const NavigationContainer = styled.nav`
   padding: 0 1rem;
 `
 
 export const NavigationWrapper = styled.div`
-  background-color: ${theme.color.bg_element_color};
+  background-color: ${({ theme }) => theme.color.background_002};
   display: flex;
   flex-direction: column;
   padding: 1rem;

@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react'
 import 'styled-components'
+import { ThemeVariables } from 'styles/themeVariables'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -32,6 +33,8 @@ declare module 'styled-components' {
       error: '#F04700'
       success: '#44927F'
     }
+    color: ThemeVariables
+
     fonts: {
       headline_medium_001: FlattenSimpleInterpolation
       headline_medium_002: FlattenSimpleInterpolation
@@ -42,6 +45,8 @@ declare module 'styled-components' {
       body_oneline_001: FlattenSimpleInterpolation
       body_oneline_002: FlattenSimpleInterpolation
       body_oneline_003: FlattenSimpleInterpolation
+      body_oneline_bold_small: FlattenSimpleInterpolation
+      body_oneline_bold_medium: FlattenSimpleInterpolation
       montserratAlternates_Medium_001: FlattenSimpleInterpolation
       montserratAlternates_Medium_002: FlattenSimpleInterpolation
       montserratAlternates_Medium_003: FlattenSimpleInterpolation

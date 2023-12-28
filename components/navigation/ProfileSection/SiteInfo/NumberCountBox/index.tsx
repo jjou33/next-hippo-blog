@@ -18,7 +18,7 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
           <Typography
             variant="span"
             aggressive="body_oneline_003"
-            color={theme.color.text_color}
+            color={theme.color.text_001}
           >
             {title}
           </Typography>
@@ -28,12 +28,12 @@ const NumberCountBox = ({ number, title, duration = 2000 }) => {
           width="80%"
           height="1px"
           margin="0 0 0 0"
-          color={theme.color.border_color}
+          color={theme.color.border_001}
         />
         <Typography
           variant="span"
           aggressive="body_oneline_003"
-          color={theme.color.text_color}
+          color={theme.color.text_001}
         >
           {useNumberCount({ number, duration })}
         </Typography>

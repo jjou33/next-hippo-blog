@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
 import { Typography } from 'components/common'
-import theme from 'styles/theme'
 
 export const SlideContainer = styled.div`
   height: 450px;
@@ -38,12 +37,11 @@ export const Button = styled.button`
   outline: none;
   overflow: hidden;
   position: relative;
-  color: ${theme.color.deep_black};
+  color: ${({ theme }) => theme.color.deep_black};
   font-weight: 700;
   font-size: 12px;
   border-radius: 2rem;
-  background-color: wheat;
-  /* padding: 17px 60px; */
+  background-color: ${({ theme }) => theme.color.primary_003};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   span {
@@ -64,7 +62,7 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${theme.color.wave_primary2};
+    background: ${({ theme }) => theme.color.primary_006};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-10%) rotate(60deg);
@@ -170,7 +168,7 @@ export const SlideItem = styled.div`
 
     ${TitleWrapper} {
       font-size: 40px;
-      color: ${({ theme }) => theme.colors.primary_006};
+      color: ${({ theme }) => theme.color.primary_004};
     }
 
     ${SubTitleWrapper} {
@@ -188,7 +186,7 @@ export const SlideItem = styled.div`
       top: 70%;
     }
     ${TitleWrapper} {
-      color: ${({ theme }) => theme.colors.primary_003};
+      color: ${({ theme }) => theme.color.primary_004};
     }
     ${SubTitleWrapper} {
       display: -webkit-box;

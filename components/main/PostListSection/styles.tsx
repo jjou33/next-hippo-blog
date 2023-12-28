@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-import theme from 'styles/theme'
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {
@@ -49,35 +48,6 @@ export const IconWrapper = styled.div`
   align-items: center;
   font-size: 1.4rem;
 `
-
-export const ReadMoreBtn = styled.div`
-  display: flex;
-  gap: 1rem;
-  border-radius: 1rem;
-  background-color: ${theme.color.em_color};
-  color: ${theme.color.sub_text_color2};
-  padding: 20px 15px;
-  margin: 1rem 0 0 0;
-  box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.1);
-
-  cursor: pointer;
-
-  &:hover {
-    ${IconWrapper} {
-      animation: ${shaking_in_animation} 0.5s ease;
-    }
-  }
-`
-
-export const LottieWrapper = styled.div`
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
-  left: 45%;
-  top: 0;
-  transform: translateX(-50%);
-`
-
 export const HeaderTextWrapper = styled.div`
   text-align: center;
 `
@@ -91,14 +61,14 @@ export const Button = styled.button`
   outline: none;
   overflow: hidden;
   position: relative;
-  color: ${theme.color.styled_badge_color};
+  color: ${({ theme }) => theme.color.text_001};
   font-weight: 700;
   font-size: 12px;
-  border-radius: 2rem;
-  background-color: ${theme.color.bg_element_color};
-  /* padding: 17px 60px; */
+  border-radius: 1rem;
+  background-color: ${({ theme }) => theme.color.background_002};
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  /* isolation: isolate; // safari 호환성 버그 대응 */
+
   z-index: 0;
   span {
     position: relative;
@@ -118,7 +88,7 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${theme.color.wave_primary2};
+    background: ${({ theme }) => theme.color.primary_009};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     border-radius: 2rem;

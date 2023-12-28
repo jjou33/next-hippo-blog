@@ -17,6 +17,8 @@ declare type AggressiveVariant =
   | 'body_oneline_001'
   | 'body_oneline_002'
   | 'body_oneline_003'
+  | 'body_oneline_bold_small'
+  | 'body_oneline_bold_medium'
   | 'montserratAlternates_Medium_001'
   | 'montserratAlternates_Medium_002'
   | 'montserratAlternates_Medium_003'

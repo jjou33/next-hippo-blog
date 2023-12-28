@@ -58,7 +58,7 @@ const PostListHeader = ({
                 <Typography
                   variant="h3"
                   aggressive="montserratAlternates_Medium_001"
-                  color={theme.colors.gray_002}
+                  color={theme.color.text_001}
                   align="center"
                 >
                   {`${
@@ -77,7 +77,7 @@ const PostListHeader = ({
                 {keywords.slice(0, 40).map(keyword => (
                   <Badge
                     borderRadius="2rem"
-                    backgroundColor={theme.colors.primary_004}
+                    backgroundColor={theme.color.badge_003}
                     aggressive="montserratAlternates_Regular_002"
                     padding="10px 20px 10px 20px"
                     key={keyword}

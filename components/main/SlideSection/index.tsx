@@ -61,10 +61,10 @@ const SlideSection = () => {
       </S.SlideWrapper>
       <S.NavigationContainer>
         <S.NavigationButton onClick={nextItem} direction={'left'}>
-          {MainIconSet['Arrow'].icon(theme.colors.gray_006)}
+          {MainIconSet['Arrow'].icon(theme.color.deep_black)}
         </S.NavigationButton>
         <S.NavigationButton onClick={prevItem} direction={'right'}>
-          {MainIconSet['Arrow'].icon(theme.colors.gray_006)}
+          {MainIconSet['Arrow'].icon(theme.color.deep_black)}
         </S.NavigationButton>
       </S.NavigationContainer>
     </S.SlideContainer>

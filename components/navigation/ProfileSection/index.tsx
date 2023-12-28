@@ -39,7 +39,7 @@ const ProfileSection = () => {
         width="100%"
         height="1px"
         margin="2rem 0 0 0"
-        color={theme.colors.gray_002}
+        color={theme.color.divider_002}
       />
     </S.ProfileConotainer>
   )

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { CSSProperties } from 'react'
-import theme from 'styles/theme'
 
 export const LinkItemIcon = styled.span`
   color: #777;
@@ -29,7 +28,7 @@ export const LinkItemWrapper = styled.li<CSSProperties>`
   width: 40px;
   height: 40px;
   margin-bottom: 10px;
-  background: ${theme.color.bg_element_color};
+  background: ${({ theme }) => theme.color.background_002};
   border-radius: 60px;
   cursor: pointer;
   display: flex;

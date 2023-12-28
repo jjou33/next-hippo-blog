@@ -30,7 +30,7 @@ const NavigationSection = ({ category }: { category: AllPostCategory }) => {
                       <Typography
                         variant="span"
                         aggressive="montserratAlternates_Regular_001"
-                        color={theme.color.sub_text_color2}
+                        color={theme.color.text_001}
                       >
                         {rootCategory}
                       </Typography>

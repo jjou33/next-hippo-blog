@@ -51,7 +51,7 @@ const ProjectItem = ({
               <Typography
                 variant="p"
                 aggressive="body_oneline_002"
-                color={theme.colors.gray_002}
+                color={theme.color.text_001}
                 whiteSpace="nowrap"
                 overFlow="hidden"
                 textOverflow="ellipsis"
@@ -64,12 +64,12 @@ const ProjectItem = ({
                 width="100%"
                 height="1px"
                 margin="1rem auto 0"
-                color={theme.colors.gray_002}
+                color={theme.color.divider_002}
               />
               <Typography
                 variant="p"
                 aggressive="headline_small_001"
-                color={theme.colors.gray_000}
+                color={theme.color.text_001}
                 overFlow="hidden"
                 textOverflow="ellipsis"
               >
@@ -78,8 +78,9 @@ const ProjectItem = ({
               <FlexBox gap="1rem" margin="10px 0" flexWrap="wrap">
                 {keywords.map(keyword => (
                   <Badge
-                    backgroundColor={theme.colors.subPrimary_002}
-                    aggressive="body_oneline_003"
+                    backgroundColor={theme.color.badge_001}
+                    color={theme.color.deep_black}
+                    aggressive="body_oneline_bold_small"
                     key={keyword}
                   >
                     {`# ${keyword}`}

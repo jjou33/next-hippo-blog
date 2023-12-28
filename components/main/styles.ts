@@ -1,12 +1,11 @@
 import styled, { keyframes } from 'styled-components'
-import theme from 'styles/theme'
 
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
   gap: 10rem;
-  background: ${theme.color.bg_color};
+  background: ${({ theme }) => theme.color.background_001};
   z-index: 1;
 `
 

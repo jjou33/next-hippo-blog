@@ -46,11 +46,11 @@ const VerticalItem = ({
           <FlexBox flexWrap="wrap" margin={'1rem'} gap={'0.5rem'}>
             {keywords.map((keyword: string) => (
               <Badge
-                backgroundColor={theme.colors.primary_003}
-                aggressive="body_oneline_003"
+                backgroundColor={theme.color.badge_001}
+                aggressive="body_oneline_bold_small"
                 key={keyword}
               >
-                {keyword}
+                {`# ${keyword}`}
               </Badge>
             ))}
           </FlexBox>
@@ -67,8 +67,8 @@ const VerticalItem = ({
             <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
             <Typography
               variant="span"
-              aggressive="body_oneline_003"
-              color={theme.color.sub_text_color1}
+              aggressive="body_oneline_bold_small"
+              color={theme.color.text_001}
             >
               {formattedDate}
             </Typography>
@@ -76,8 +76,8 @@ const VerticalItem = ({
           <FlexBox margin={'0 0 1rem 0'} alignItems={'center'} gap={'0.6rem'}>
             <Typography
               variant="h3"
-              aggressive="body_oneline_bold_001"
-              color={theme.color.text_color}
+              aggressive="body_oneline_bold_medium"
+              color={theme.color.text_001}
             >
               {title}
             </Typography>
@@ -87,13 +87,13 @@ const VerticalItem = ({
             width="100%"
             height="1px"
             margin="1rem auto 0.5rem"
-            color={theme.colors.gray_002}
+            color={theme.color.divider_002}
           />
 
           <Typography
             variant="p"
             aggressive="body_oneline_002"
-            color={theme.color.sub_text_color2}
+            color={theme.color.text_002}
           >
             {excerpt}
           </Typography>

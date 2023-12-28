@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 export const NavSubItemContainer = styled.div``
 
@@ -14,7 +13,7 @@ export const NavSubItemWrapper = styled.div`
   gap: 10px;
   margin-right: 10px;
   &:hover {
-    background: ${theme.color.point_bg_color};
+    background: ${({ theme }) => theme.color.primary_008};
     color: black;
   }
 `
@@ -25,7 +24,6 @@ export const NavSubItemTitle = styled.div`
   margin-right: 20px;
   padding: 5px 0;
   gap: 15px;
-  /* font-size: 20px; */
   cursor: pointer;
 
   &:last-of-type {
