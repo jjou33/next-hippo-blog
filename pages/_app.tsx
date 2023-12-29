@@ -27,7 +27,7 @@ const App = ({ Component, pageProps }) => {
         </Head>
         <GlobalStyle />
         <RecoilRoot>
-          <Layout pageProps={...pageProps}>
+          <Layout pageProps={pageProps}>
             <DefaultSeo {...DEFAULT_SEO} />
             <Component {...pageProps} />
           </Layout>
