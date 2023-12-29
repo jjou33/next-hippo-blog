@@ -26,7 +26,7 @@ export const BadgeContainer = styled.div<ComponentProps>`
   text-align: ${({ align }) => align && align};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor ? backgroundColor : theme.color.badge_color};
+    backgroundColor ? backgroundColor : theme.color.badge_001};
   border: ${({ border }) => border ?? border};
   box-shadow: ${({ boxShadow }) => boxShadow ?? boxShadow};
   height: ${({ height }) => height ?? height};

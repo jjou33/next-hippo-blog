@@ -47,6 +47,7 @@ const VerticalItem = ({
             {keywords.map((keyword: string) => (
               <Badge
                 backgroundColor={theme.color.badge_001}
+                color={theme.color.badge_text_001}
                 aggressive="body_oneline_bold_small"
                 key={keyword}
               >

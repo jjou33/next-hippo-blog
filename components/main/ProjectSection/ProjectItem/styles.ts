@@ -5,10 +5,10 @@ export const ProjectItemContainer = styled.div`
   position: relative;
   border-radius: 20px;
   transition: transform 0.5s;
+  box-shadow: ${({ theme }) => theme.color.shadow_002};
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-
+    box-shadow: ${({ theme }) => theme.color.shadow_003};
     img {
       transform: scale(1.1);
       transition: transform 0.5s;

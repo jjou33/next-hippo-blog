@@ -61,9 +61,9 @@ const PostHeader = ({
             {keywords.map(item => {
               return (
                 <Badge
-                  backgroundColor={theme.color.badge_color}
-                  aggressive="body_oneline_002"
-                  color={theme.color.badge_text}
+                  backgroundColor={theme.color.badge_001}
+                  aggressive="body_oneline_bold_small"
+                  color={theme.color.badge_text_001}
                   key={item}
                 >
                   {`# ${item}`}
@@ -74,7 +74,7 @@ const PostHeader = ({
           <S.HeroTitleWrapper
             variant="h2"
             aggressive="headline_multiline_001"
-            color={theme.colors.primary_003}
+            color={theme.color.primary_003}
             align="center"
             padding={'0 2rem'}
           >
@@ -83,7 +83,7 @@ const PostHeader = ({
           <Typography
             variant="span"
             aggressive="body_oneline_001"
-            color={theme.colors.gray_001}
+            color={theme.color.deep_white}
             align="center"
             padding="20px 0 0 0"
           >

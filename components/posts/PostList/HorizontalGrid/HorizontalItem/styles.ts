@@ -3,15 +3,14 @@ import styled from 'styled-components'
 
 export const ItemContainer = styled(Link)`
   display: flex;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: ${({ theme }) => theme.color.shadow_002};
   background-color: ${({ theme }) => theme.color.background_002};
   border-radius: 20px;
   transition: 0.5s;
   &:hover {
     transform: scale(1.01);
     transition: transform 0.5s;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-
+    box-shadow: ${({ theme }) => theme.color.shadow_003};
     img {
       transform: scale(1.05);
       transition: transform 0.5s; /* hover 효과에 사용될 트랜지션 */

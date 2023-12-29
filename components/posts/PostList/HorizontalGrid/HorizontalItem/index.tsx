@@ -35,11 +35,12 @@ const HorizontalItem = ({
         <FlexBox margin={'0 1rem 1rem 0'} flexWrap={'wrap'} gap={'1rem'}>
           {keywords.map((keyword: string) => (
             <Badge
-              color={theme.color.text_001}
-              aggressive="body_oneline_003"
+              color={theme.color.badge_text_001}
+              backgroundColor={theme.color.badge_001}
+              aggressive="body_oneline_bold_small"
               key={keyword}
             >
-              {keyword}
+              {`# ${keyword}`}
             </Badge>
           ))}
         </FlexBox>

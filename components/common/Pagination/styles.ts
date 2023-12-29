@@ -4,12 +4,10 @@ import theme from 'styles/theme'
 export const PageContainer = styled.div`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   gap: 1rem;
   margin: 8rem auto;
   padding: 1rem 0;
   border-radius: 10px;
-  /* background-color: white; */
 
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -18,7 +16,6 @@ export const PageContainer = styled.div`
 
 export const SideButton = styled.span<{ side: string; disabled: boolean }>`
   position: relative;
-  /* cursor: pointer; */
   ${({ disabled }) =>
     disabled
       ? css`
@@ -54,10 +51,8 @@ export const PageWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  /* width: 100%; */
 `
 export const PageBtn = styled.button<{ selected: boolean }>`
-  /* padding: 4px 6px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +62,7 @@ export const PageBtn = styled.button<{ selected: boolean }>`
   border-radius: 2px;
   background-color: ${({ selected }) => (selected ? `#23adad` : 'transparent')};
   color: ${({ selected }) =>
-    selected ? `${theme.color.deep_white}` : `${theme.color.text_color}`};
+    selected ? `${theme.color.deep_white}` : `${theme.color.text_001}`};
   font-size: 15px;
   cursor: pointer;
   & + & {

@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Typography } from 'components/common'
 
 export const SlideContainer = styled.div`
@@ -7,6 +7,7 @@ export const SlideContainer = styled.div`
   overflow: hidden;
   border-radius: 20px;
   padding: 0 2rem;
+  box-shadow: ${({ theme }) => theme.color.shadow_002};
 `
 
 export const SlideWrapper = styled.div`
@@ -41,7 +42,6 @@ export const Button = styled.button`
   font-weight: 700;
   font-size: 12px;
   border-radius: 2rem;
-  background-color: ${({ theme }) => theme.color.primary_003};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   span {
@@ -62,7 +62,8 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${({ theme }) => theme.color.primary_006};
+    background: ${({ theme }) => theme.color.hover_002};
+
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-10%) rotate(60deg);
@@ -168,7 +169,7 @@ export const SlideItem = styled.div`
 
     ${TitleWrapper} {
       font-size: 40px;
-      color: ${({ theme }) => theme.color.primary_004};
+      color: ${({ theme }) => theme.color.deep_white};
     }
 
     ${SubTitleWrapper} {
@@ -186,7 +187,7 @@ export const SlideItem = styled.div`
       top: 70%;
     }
     ${TitleWrapper} {
-      color: ${({ theme }) => theme.color.primary_004};
+      color: ${({ theme }) => theme.color.deep_white};
     }
     ${SubTitleWrapper} {
       display: -webkit-box;
@@ -215,110 +216,5 @@ export const SlideItem = styled.div`
   ${Button} {
     padding: 10px 20px;
     border: none;
-  }
-`
-const baseButtonStyles = css`
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow:
-    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
-`
-
-// Keyframes for button animation
-const buttonHoverAnimation = keyframes`
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 100%;
-  }
-`
-
-const buttonSpanHoverAnimation = keyframes`
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-`
-
-// Styled component for the button
-export const CustomButton = styled.button`
-  ${baseButtonStyles}
-
-  background: linear-gradient(
-    0deg,
-    rgba(255, 151, 0, 1) 0%,
-    rgba(251, 75, 2, 1) 100%
-  );
-  line-height: 42px;
-  padding: 0;
-  border: none;
-
-  span {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    &:before,
-    &:after {
-      position: absolute;
-      content: '';
-      right: 0;
-      bottom: 0;
-      background: rgba(251, 75, 2, 1);
-      box-shadow:
-        -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-        -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-        7px 7px 20px 0px rgba(0, 0, 0, 0.2),
-        4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    &:before {
-      height: 0;
-      width: 2px;
-    }
-
-    &:after {
-      width: 0;
-      height: 2px;
-    }
-  }
-
-  &:hover {
-    color: rgba(251, 75, 2, 1);
-    background: transparent;
-
-    span:before {
-      animation: ${buttonSpanHoverAnimation} 0.3s ease;
-    }
-
-    span:after {
-      animation: ${buttonSpanHoverAnimation} 0.3s ease;
-    }
-  }
-
-  &:hover:before {
-    animation: ${buttonHoverAnimation} 0.3s ease;
-  }
-
-  &:hover:after {
-    animation: ${buttonHoverAnimation} 0.3s ease;
   }
 `

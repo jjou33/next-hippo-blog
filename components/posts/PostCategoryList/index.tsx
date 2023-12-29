@@ -46,7 +46,7 @@ const PostCategoryList = ({
             <Typography
               variant="h2"
               aggressive="headline_medium_001"
-              color={theme.color.primary_004}
+              color={theme.color.primary_008}
               align="center"
             >
               {categoryId ? categoryId.toUpperCase() : '모든 포스트'}

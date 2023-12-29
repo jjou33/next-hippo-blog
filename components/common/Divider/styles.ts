@@ -31,17 +31,3 @@ export const Wrapper = styled.div`
     width: 100%;
   }
 `
-
-export const Container2 = styled.div`
-  width: 100%;
-  height: 300px;
-  padding: 0;
-  margin: 0;
-  bottom: 19%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  /* background-color: #6c7a89; */
-`
-export const Wrapper2 = styled.div``

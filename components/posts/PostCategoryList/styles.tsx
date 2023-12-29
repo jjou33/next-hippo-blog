@@ -61,7 +61,7 @@ export const CustomDivider = styled.div`
     left: calc(50% - 9px);
     width: 18px;
     height: 18px;
-    background-color: ${({ theme }) => theme.color.primary_006};
+    background-color: ${({ theme }) => theme.color.primary_008};
     border: 1px solid rgb(48, 49, 51);
     border-radius: 50%;
     box-shadow:

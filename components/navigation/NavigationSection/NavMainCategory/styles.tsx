@@ -9,11 +9,11 @@ export const NavMainCategoryItem = styled.div<{ openState: boolean }>`
   position: relative;
   span {
     color: ${({ openState, theme }) =>
-      openState ? theme.color.primary_005 : ''};
+      openState ? theme.color.primary_007 : ''};
   }
   &:hover {
     span {
-      color: ${({ theme }) => theme.color.primary_005};
+      color: ${({ theme }) => theme.color.primary_007};
     }
   }
 `

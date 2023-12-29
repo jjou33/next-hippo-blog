@@ -58,7 +58,7 @@ const PostListHeader = ({
                 <Typography
                   variant="h3"
                   aggressive="montserratAlternates_Medium_001"
-                  color={theme.color.text_001}
+                  color={theme.color.deep_white}
                   align="center"
                 >
                   {`${
@@ -71,13 +71,14 @@ const PostListHeader = ({
                 width="100%"
                 height="1px"
                 margin="20px 0 0 0"
-                color={theme.colors.gray_002}
+                color={theme.color.divider_002}
               />
               <S.BadgeContainer isAllPost={categoryId ? false : true}>
                 {keywords.slice(0, 40).map(keyword => (
                   <Badge
                     borderRadius="2rem"
-                    backgroundColor={theme.color.badge_003}
+                    backgroundColor={theme.color.badge_001}
+                    color={theme.color.badge_text_001}
                     aggressive="montserratAlternates_Regular_002"
                     padding="10px 20px 10px 20px"
                     key={keyword}

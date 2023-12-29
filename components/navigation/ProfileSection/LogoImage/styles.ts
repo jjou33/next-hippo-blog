@@ -6,7 +6,7 @@ export const LogoImageWrapper = styled.div`
   margin: 2rem auto;
   width: 150px;
   height: 150px;
-  box-shadow: ${({ theme }) => theme.color.logo_shadow_001};
+  box-shadow: ${({ theme }) => theme.color.shadow_001};
   border-radius: 50%;
 
   &::before {

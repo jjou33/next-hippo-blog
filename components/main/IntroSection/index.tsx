@@ -51,7 +51,7 @@ const IntroSection = () => {
             <Typography
               variant="h2"
               aggressive="body_oneline_bold_medium"
-              color={theme.color.primary_005}
+              color={theme.color.primary_007}
             >
               {DATA.INTRO_INFO.SUBTITLE}
             </Typography>

@@ -88,7 +88,7 @@ export const Button = styled.button`
     top: 0;
     height: 490%;
     width: 140%;
-    background: ${({ theme }) => theme.color.primary_009};
+    background: ${({ theme }) => theme.color.hover_002};
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     border-radius: 2rem;

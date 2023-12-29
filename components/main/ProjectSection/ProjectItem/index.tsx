@@ -43,15 +43,11 @@ const ProjectItem = ({
           rgba(20, 20, 20, 0.6) 80%
         )`}
           >
-            <FlexBox
-              flexDirection="column-reverse"
-              height="100%"
-              margin="0 0 20px 10px"
-            >
+            <FlexBox flexDirection="column-reverse" height="100%" margin="15px">
               <Typography
                 variant="p"
                 aggressive="body_oneline_002"
-                color={theme.color.text_001}
+                color={theme.color.deep_white}
                 whiteSpace="nowrap"
                 overFlow="hidden"
                 textOverflow="ellipsis"
@@ -69,7 +65,7 @@ const ProjectItem = ({
               <Typography
                 variant="p"
                 aggressive="headline_small_001"
-                color={theme.color.text_001}
+                color={theme.color.deep_white}
                 overFlow="hidden"
                 textOverflow="ellipsis"
               >
@@ -79,7 +75,7 @@ const ProjectItem = ({
                 {keywords.map(keyword => (
                   <Badge
                     backgroundColor={theme.color.badge_001}
-                    color={theme.color.deep_black}
+                    color={theme.color.badge_text_001}
                     aggressive="body_oneline_bold_small"
                     key={keyword}
                   >

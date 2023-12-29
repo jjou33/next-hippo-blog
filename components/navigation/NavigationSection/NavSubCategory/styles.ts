@@ -13,7 +13,7 @@ export const NavSubItemWrapper = styled.div`
   gap: 10px;
   margin-right: 10px;
   &:hover {
-    background: ${({ theme }) => theme.color.primary_008};
+    background: ${({ theme }) => theme.color.hover_001};
     color: black;
   }
 `

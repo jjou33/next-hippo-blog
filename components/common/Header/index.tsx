@@ -29,7 +29,7 @@ const Header = props => {
             <Typography
               variant="span"
               aggressive="body_oneline_001"
-              color={theme.colors.gray_003}
+              color={theme.color.deep_white}
             >
               HIPPO DEV
             </Typography>
