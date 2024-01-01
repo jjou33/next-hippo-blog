@@ -2,15 +2,13 @@ import * as S from './styles'
 
 import { PropsWithChildren } from 'react'
 
-import type { AggressivePropsType } from 'types/styles'
-
-interface Props extends PropsWithChildren {
-  aggressive?: AggressivePropsType['aggressive']
+interface BadgePropsType extends PropsWithChildren {
+  aggressive?: AggressiveVariant
   margin?: string
   padding?: string
   border?: string
+  borderRadius?: string
   color?: string
-  borderRadius: string
   backgroundColor?: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
@@ -20,11 +18,11 @@ interface Props extends PropsWithChildren {
   height?: string
 }
 
-const Badge = ({ children, aggressive, ...props }: Props) => {
+const Badge = ({ children, aggressive, ...props }: BadgePropsType) => {
   return (
-    <S.Component aggressive={aggressive} {...props}>
+    <S.BadgeContainer aggressive={aggressive} {...props}>
       {children}
-    </S.Component>
+    </S.BadgeContainer>
   )
 }
 

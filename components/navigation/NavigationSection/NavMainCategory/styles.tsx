@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import theme from 'styles/theme'
 
 export const NavMainCategoryItem = styled.div<{ openState: boolean }>`
   display: flex;
@@ -9,12 +8,12 @@ export const NavMainCategoryItem = styled.div<{ openState: boolean }>`
   cursor: pointer;
   position: relative;
   span {
-    color: ${({ openState }) =>
-      openState ? `${theme.color.point_color}` : ''};
+    color: ${({ openState, theme }) =>
+      openState ? theme.color.primary_007 : ''};
   }
   &:hover {
     span {
-      color: ${theme.color.point_color};
+      color: ${({ theme }) => theme.color.primary_007};
     }
   }
 `
@@ -26,7 +25,7 @@ export const NavIconBoxWrapper = styled.div`
   border-radius: 50%;
   width: 27px;
   height: 27px;
-  background-color: ${theme.color.bg_element_color};
+  background-color: transparent;
 `
 
 export const NavItemArrowWrapper = styled.div<{ isOpen: boolean }>`

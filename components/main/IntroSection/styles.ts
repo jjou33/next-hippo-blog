@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 export const IntroContainer = styled.div`
   display: flex;
@@ -7,7 +6,7 @@ export const IntroContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: ${theme.color.bg_element_color};
+  background-color: ${({ theme }) => theme.color.background_002};
   border-radius: 10px;
   padding: 1rem;
 

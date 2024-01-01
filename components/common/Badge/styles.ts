@@ -1,17 +1,12 @@
 import styled from 'styled-components'
 
-import { Theme } from '@emotion/react'
-
-import type { AggressivePropsType } from 'types/styles'
-
 export interface ComponentProps {
-  aggressive: AggressivePropsType['aggressive']
-  theme?: Theme
+  aggressive: AggressiveVariant
   margin?: string
   padding?: string
   border?: string
+  borderRadius?: string
   color?: string
-  borderRadius: string
   backgroundColor?: string
   lineHeight?: string
   align?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
@@ -20,18 +15,18 @@ export interface ComponentProps {
   height?: string
 }
 
-export const Component = styled.div<ComponentProps>`
-  margin: ${({ margin }) => margin && margin};
-  padding: ${({ padding }) => padding && padding};
+export const BadgeContainer = styled.div<ComponentProps>`
+  border-radius: ${({ borderRadius }) =>
+    borderRadius ? borderRadius : '1.5rem'};
+  padding: ${({ padding }) => (padding ? padding : '5px 10px')};
   ${({ aggressive, theme }) => theme.fonts[aggressive]};
+  margin: ${({ margin }) => margin && margin};
   color: ${({ color }) => color && color};
   line-height: ${({ lineHeight }) => lineHeight && lineHeight};
   text-align: ${({ align }) => align && align};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
-  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius};
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor ?? backgroundColor};
-  text-align: center;
+  background-color: ${({ backgroundColor, theme }) =>
+    backgroundColor ? backgroundColor : theme.color.badge_001};
   border: ${({ border }) => border ?? border};
   box-shadow: ${({ boxShadow }) => boxShadow ?? boxShadow};
   height: ${({ height }) => height ?? height};

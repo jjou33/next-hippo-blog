@@ -38,8 +38,8 @@ const ProfileSection = () => {
         direction="horizontal"
         width="100%"
         height="1px"
-        margin="2rem 0 0 0"
-        color={theme.colors.gray_002}
+        margin="1rem 0 0 0"
+        color={theme.color.border_001}
       />
     </S.ProfileConotainer>
   )

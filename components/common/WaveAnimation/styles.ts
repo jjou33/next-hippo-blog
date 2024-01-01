@@ -41,7 +41,7 @@ export const WaveAnimationContainer = styled.div`
   svg {
     width: 100%;
     .parallax4 > .mainWave {
-      fill: ${theme.color.bg_color};
+      fill: ${({ theme }) => theme.color.background_001};
     }
   }
 `
@@ -60,28 +60,28 @@ export const WaveAnimationBox = styled.div`
 
   .parallax1 > use {
     animation: ${WaveKeyframe1} 10s linear infinite;
-    fill: ${theme.color.wave_primary3};
+    fill: ${theme.color.wave_003};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax2 > use {
     animation: ${WaveKeyframe2} 8s linear infinite;
-    fill: ${theme.color.wave_primary2};
+    fill: ${theme.color.wave_002};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax3 > use {
     animation: ${WaveKeyframe3} 6s linear infinite;
-    fill: ${theme.color.wave_primary1};
+    fill: ${theme.color.wave_001};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax4 > use {
     animation: ${WaveKeyframe4} 4s linear infinite;
-    fill: ${theme.color.bg_color};
+    fill: ${theme.color.background_001};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }

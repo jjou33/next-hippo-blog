@@ -23,7 +23,7 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
             <S.NavSubItemTitle>
               <FlexBox>
                 <IconBox width="20px" height="20px">
-                  {NavigationIconSet['Arrow'].icon(theme.color.arrow_color)}
+                  {NavigationIconSet['Arrow'].icon(theme.color.nav_icon_001)}
                 </IconBox>
                 <IconBox width="23px" height="23px">
                   {NavigationIconSet[value].icon()}
@@ -33,13 +33,14 @@ const NavSubCategory = ({ items, count }: NavSubCategoryProps) => {
               <Typography
                 variant="span"
                 aggressive="montserratAlternates_Regular_002"
-                color={theme.color.sub_text_color1}
+                color={theme.color.text_001}
               >
                 {convertUpperToPrefix(value)}
               </Typography>
               <Badge
                 borderRadius="20px"
-                color={theme.color.badge_color2}
+                color={theme.color.badge_001}
+                backgroundColor="transparent"
                 aggressive="headline_small_002"
                 padding="0 8px"
                 border="0.1px solid"

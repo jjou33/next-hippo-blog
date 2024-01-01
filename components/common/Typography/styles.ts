@@ -1,8 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components'
-
-import type { AggressivePropsType } from 'types/styles'
-
-export interface ComponentProps extends AggressivePropsType {
+export interface ComponentProps {
+  aggressive: AggressiveVariant
   theme?: DefaultTheme
   margin?: string
   padding?: string

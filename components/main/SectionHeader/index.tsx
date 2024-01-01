@@ -14,14 +14,14 @@ const SectionHeader = ({
       <Typography
         variant="h2"
         aggressive="headline_medium_002"
-        color={theme.color.text_color}
+        color={theme.color.text_001}
       >
         {title}
       </Typography>
       <Typography
         variant="h2"
         aggressive="body_oneline_002"
-        color={theme.color.sub_text_color2}
+        color={theme.color.text_003}
         margin="1rem 0 0 0"
       >
         {subTitle}
@@ -31,7 +31,7 @@ const SectionHeader = ({
         width="100%"
         height="1px"
         margin="20px 0 16px 0"
-        color={theme.colors.gray_002}
+        color={theme.color.border_001}
       />
     </FlexBox>
   )

@@ -1,11 +1,10 @@
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { gmarketSans } from 'public/static/fonts'
-import theme from 'styles/theme'
 
 export const ContentsContainer = styled.div`
   margin-top: 100vh;
-  background: ${theme.color.bg_color};
+  background: ${({ theme }) => theme.color.background_001};
   z-index: 1;
 
   @media screen and (max-width: 768px) {
@@ -45,7 +44,7 @@ export const MarkdownWrapper = styled.div`
   ol,
   ul {
     font-weight: initial;
-    color: ${theme.color.text_color};
+    color: ${({ theme }) => theme.color.text_001};
   }
 `
 export const ContentsWrapper = styled.article`
@@ -58,9 +57,9 @@ export const ContentsWrapper = styled.article`
   font-family: ${gmarketSans.style.fontFamily};
   word-break: break-word;
   blockquote {
-    border: 1px solid ${theme.color.badge_color};
-    border-left: 10px solid ${theme.color.badge_color};
-    background-color: ${theme.color.bg_element_color};
+    border: 1px solid ${({ theme }) => theme.color.primary_003};
+    border-left: 10px solid ${({ theme }) => theme.color.primary_003};
+    background-color: ${({ theme }) => theme.color.background_002};
     padding: 5px 20px;
     p {
       font-style: italic;
@@ -71,15 +70,15 @@ export const ContentsWrapper = styled.article`
     color: #6199d1;
   }
   p {
-    color: ${theme.color.text_color};
+    color: ${({ theme }) => theme.color.text_001};
     margin: 1rem 0;
     strong {
-      color: ${theme.color.strong_text_color};
+      color: ${({ theme }) => theme.color.point_color_003};
       font-weight: 400;
     }
 
     em {
-      color: ${theme.color.em_color};
+      color: ${({ theme }) => theme.color.point_color_001};
       font-weight: 400;
     }
   }
@@ -102,7 +101,7 @@ export const ContentsWrapper = styled.article`
     font-weight: 700;
     margin: 2rem 0 0 0;
     padding-left: 0.7rem;
-    color: ${theme.color.text_color};
+    color: ${({ theme }) => theme.color.text_001};
     height: 100%;
   }
 
@@ -142,52 +141,10 @@ export const ContentsWrapper = styled.article`
     margin: 1rem 0;
   }
   h3 + hr {
-    /* &::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      left: 0;
-      display: block;
-      clear: both;
-      background-color: #539dfd;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      right: 0;
-      display: block;
-      clear: both;
-      background-color: #e2dfdf;
-    } */
-    /* background: linear-gradient(to left, red, blue); */
     margin: 10px 0;
     border-radius: 10px;
   }
   h4 + hr {
-    /* &::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      left: 0;
-      display: block;
-      clear: both;
-      background-color: #ffd381;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      right: 0;
-      display: block;
-      clear: both;
-      background-color: #e2dfdf;
-    } */
-    /* background: linear-gradient(to left, red, blue); */
     margin: 10px 0;
     border-radius: 10px;
   }
@@ -213,7 +170,6 @@ export const ContentsWrapper = styled.article`
       clear: both;
       background-color: #e2dfdf;
     }
-    /* background: linear-gradient(to left, red, blue); */
     margin-bottom: 20px;
     border-radius: 10px;
   }

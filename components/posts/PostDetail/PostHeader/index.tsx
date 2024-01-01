@@ -54,25 +54,19 @@ const PostHeader = ({
           <FlexBox
             margin="1rem auto"
             padding="5px"
+            gap={'0.5rem'}
             flexWrap={'wrap'}
             justifyContent={'center'}
           >
             {keywords.map(item => {
               return (
                 <Badge
-                  borderRadius="50px"
-                  backgroundColor={theme.color.badge_color}
-                  padding="0.5rem 1rem"
-                  margin="5px"
+                  backgroundColor={theme.color.badge_001}
+                  aggressive="body_oneline_bold_small"
+                  color={theme.color.badge_text_001}
                   key={item}
                 >
-                  <Typography
-                    variant="span"
-                    aggressive="body_oneline_002"
-                    color={theme.color.badge_text}
-                  >
-                    {`# ${item}`}
-                  </Typography>
+                  {`# ${item}`}
                 </Badge>
               )
             })}
@@ -80,7 +74,7 @@ const PostHeader = ({
           <S.HeroTitleWrapper
             variant="h2"
             aggressive="headline_multiline_001"
-            color={theme.colors.primary_003}
+            color={theme.color.primary_003}
             align="center"
             padding={'0 2rem'}
           >
@@ -89,7 +83,7 @@ const PostHeader = ({
           <Typography
             variant="span"
             aggressive="body_oneline_001"
-            color={theme.colors.gray_001}
+            color={theme.color.deep_white}
             align="center"
             padding="20px 0 0 0"
           >

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 // 물방울 스타일
 export const LogoImageWrapper = styled.div`
@@ -7,7 +6,7 @@ export const LogoImageWrapper = styled.div`
   margin: 2rem auto;
   width: 150px;
   height: 150px;
-  box-shadow: ${theme.color.logo_shadow};
+  box-shadow: ${({ theme }) => theme.color.shadow_001};
   border-radius: 50%;
 
   &::before {

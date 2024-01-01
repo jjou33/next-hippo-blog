@@ -1,12 +1,11 @@
 import { FlexBox } from 'components/common/StyledLayout'
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 export const PostCategoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100vh;
-  background: ${theme.color.bg_color};
+  background: ${({ theme }) => theme.color.background_001};
   z-index: 1;
 `
 
@@ -40,7 +39,6 @@ export const AllPostContainer = styled.section`
 
 export const CustomDivider = styled.div`
   position: relative;
-  /* margin-top: 90px; */
   margin: 2rem auto 3rem;
   height: 1px;
   width: 80%;
@@ -52,7 +50,7 @@ export const CustomDivider = styled.div`
     right: 5%;
     width: 90%;
     height: 1px;
-    background-image: ${theme.color.custom_divider_color};
+    background-image: ${({ theme }) => theme.color.divider_001};
   }
 
   &::after {
@@ -63,7 +61,7 @@ export const CustomDivider = styled.div`
     left: calc(50% - 9px);
     width: 18px;
     height: 18px;
-    background-color: #71b6ee;
+    background-color: ${({ theme }) => theme.color.primary_008};
     border: 1px solid rgb(48, 49, 51);
     border-radius: 50%;
     box-shadow:

@@ -82,7 +82,7 @@ export const NavigationItem = styled.li`
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: ${({ theme }) => theme.colors.gray_005};
+  color: ${({ theme }) => theme.color.text_002};
 
   &:hover {
     opacity: 0.8;
@@ -148,7 +148,6 @@ export const HeaderItemTitle = styled.div`
   font-weight: bold;
   padding-left: 50px;
   @media screen and (max-width: 768px) {
-    /* font-size: 20px; */
     padding-left: 0px;
   }
 `

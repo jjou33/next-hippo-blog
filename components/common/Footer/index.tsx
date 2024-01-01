@@ -18,7 +18,7 @@ const Footer = () => {
             <Typography
               variant="span"
               aggressive="body_oneline_002"
-              color={theme.color.sub_text_color2}
+              color={theme.color.text_002}
             >
               zanda33@naver.com
             </Typography>
@@ -27,7 +27,7 @@ const Footer = () => {
               width="18px"
               height="1px"
               margin="0 10px 0 10px"
-              color="#D9D9D9"
+              color={theme.color.divider_002}
             />
             <S.Anchor
               href={DATA.FOOTER_INFO.GITHUB_LINK}
@@ -37,7 +37,7 @@ const Footer = () => {
               <Typography
                 variant="span"
                 aggressive="body_oneline_002"
-                color={theme.color.sub_text_color2}
+                color={theme.color.text_002}
               >
                 GIT HUB
               </Typography>
@@ -46,7 +46,7 @@ const Footer = () => {
           <Typography
             variant="span"
             aggressive="body_oneline_002"
-            color={theme.color.sub_text_color2}
+            color={theme.color.text_002}
             margin={'4rem 0 0 0'}
           >
             Copyright 2023 BY HIPPO-DEV

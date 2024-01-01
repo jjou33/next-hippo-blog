@@ -2,7 +2,6 @@ import * as S from './styles'
 
 import theme from 'styles/theme'
 import Typography from '../Typography'
-
 import { useHeaderSticky } from 'hooks/useHeaderSticky'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
@@ -30,7 +29,7 @@ const Header = props => {
             <Typography
               variant="span"
               aggressive="body_oneline_001"
-              color={theme.colors.gray_003}
+              color={theme.color.deep_white}
             >
               HIPPO DEV
             </Typography>

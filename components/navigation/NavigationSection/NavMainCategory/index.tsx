@@ -25,19 +25,19 @@ const NavMainCategory = ({ children, item, count }: MainCategoryProps) => {
       >
         <S.NavIconBoxWrapper>
           <IconBox width="25px" height="25px">
-            {NavigationIconSet[item].icon(theme.color.navIcon_color)}
+            {NavigationIconSet[item].icon(theme.color.nav_icon_001)}
           </IconBox>
         </S.NavIconBoxWrapper>
 
         <Typography
           variant="span"
           aggressive="montserratAlternates_Regular_001"
-          color={theme.color.text_color}
+          color={theme.color.text_001}
         >
           {item}
         </Typography>
         <S.NavItemArrowWrapper isOpen={openState}>
-          {NavigationIconSet['Arrow'].icon(theme.color.arrow_color)}
+          {NavigationIconSet['Arrow'].icon(theme.color.nav_icon_001)}
         </S.NavItemArrowWrapper>
       </S.NavMainCategoryItem>
 

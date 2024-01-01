@@ -2,20 +2,20 @@ import styled, { css } from 'styled-components'
 import Image from 'next/image'
 import theme from 'styles/theme'
 export const GridItemContainer = styled.li<{ inview: boolean }>`
-  border: 1px solid ${theme.color.border_color};
+  border: 1px solid ${theme.color.border_001};
   width: 100%;
   border-radius: 20px;
   margin: 1rem auto 0;
-  box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.1);
-  background-color: ${theme.color.bg_element_color};
+  box-shadow: ${({ theme }) => theme.color.shadow_002};
+  background-color: ${({ theme }) => theme.color.background_002};
+
   &:hover {
     transform: scale(1.01);
     transition: transform 0.5s;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-
+    box-shadow: ${({ theme }) => theme.color.shadow_003};
     img {
       transform: scale(1.05);
-      transition: transform 0.5s; /* hover 효과에 사용될 트랜지션 */
+      transition: transform 0.5s;
     }
   }
 
@@ -49,6 +49,7 @@ export const ImageWrapper = styled.div`
 
 export const ContentsWrapper = styled.div`
   padding: 20px;
+  border-top: 1px solid ${({ theme }) => theme.color.border_001};
 `
 
 export const TimeStampWrapper = styled.div`

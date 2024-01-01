@@ -7,8 +7,7 @@ import theme from 'styles/theme'
 export const Container = styled.footer`
   display: flex;
   min-height: 180px;
-  border-top: 1px solid ${({ theme }) => theme.colors.gray_002};
-  background-color: ${theme.color.bg_color};
+  background-color: ${theme.color.background_002};
   z-index: 1;
 `
 
@@ -31,7 +30,6 @@ export const Anchor = styled(Link)`
   display: flex;
   align-items: center;
   height: inherit;
-  color: ${({ theme }) => theme.colors.primary_010};
 `
 
 export const ChannelWrapper = styled(FlexBox)`

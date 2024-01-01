@@ -1,7 +1,7 @@
 // import { Global, css } from '@emotion/react'
 import { createGlobalStyle } from 'styled-components'
 import { reset } from './reset'
-import { themedPalette, themes } from './themeVariables'
+import { themes } from './themeVariables'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     max-width: 100vw;
     ${themes.light}
-    background-color: ${themedPalette.bg_color};
 
     @media screen and (max-width: 1300px ) {
       overflow-x: hidden;

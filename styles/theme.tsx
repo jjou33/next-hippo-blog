@@ -122,6 +122,20 @@ const theme: DefaultTheme = {
       spacing: 1,
       fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
     }),
+    body_oneline_bold_small: fontStyleGenerator({
+      weight: 700,
+      size: 10,
+      height: 18,
+      spacing: 1,
+      fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
+    }),
+    body_oneline_bold_medium: fontStyleGenerator({
+      weight: 700,
+      size: 18,
+      height: 25,
+      spacing: 1,
+      fontFamily: ` ${cafe24OhsquareAir.style.fontFamily}`,
+    }),
     montserratAlternates_Medium_001: fontStyleGenerator({
       weight: 500,
       size: 70,
