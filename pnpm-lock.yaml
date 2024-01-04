@@ -14,6 +14,9 @@ dependencies:
   '@next/bundle-analyzer':
     specifier: ^14.0.3
     version: 14.0.4
+  '@vercel/speed-insights':
+    specifier: ^1.0.2
+    version: 1.0.2
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
@@ -833,6 +836,11 @@ packages:
       '@typescript-eslint/types': 6.15.0
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@vercel/speed-insights@1.0.2:
+    resolution: {integrity: sha512-y5HWeB6RmlyVYxJAMrjiDEz8qAIy2cit0fhBq+MD78WaUwQvuBnQlX4+5MuwVTWi46bV3klaRMq83u9zUy1KOg==}
+    requiresBuild: true
+    dev: false
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}

@@ -7,7 +7,7 @@ import { StyleSheetManager, ThemeProvider } from 'styled-components'
 import { RecoilRoot } from 'recoil'
 import { DefaultSeo } from 'next-seo'
 import DEFAULT_SEO from '../next-seo-config'
-
+import { SpeedInsights } from '@vercel/speed-insights/next'
 const App = ({ Component, pageProps }) => {
   return (
     <StyleSheetManager
@@ -30,6 +30,7 @@ const App = ({ Component, pageProps }) => {
           <Layout pageProps={pageProps}>
             <DefaultSeo {...DEFAULT_SEO} />
             <Component {...pageProps} />
+            <SpeedInsights />
           </Layout>
         </RecoilRoot>
       </ThemeProvider>
