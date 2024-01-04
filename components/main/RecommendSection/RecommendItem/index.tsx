@@ -18,7 +18,7 @@ const RecommendItem = ({ imagePath, itemName }: RecommendItemProps) => {
       <Typography
         variant="p"
         aggressive="headline_medium_002"
-        color={theme.colors.gray_005}
+        color={theme.color.text_001}
         margin="15px 0 10px 0"
       >
         {/* {itemName} */}

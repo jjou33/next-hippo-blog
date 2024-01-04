@@ -20,14 +20,14 @@ const TypingSection = () => {
         <Typography
           variant="h3"
           aggressive="montserratAlternates_Medium_002"
-          color={theme.colors.gray_001}
+          color={theme.color.text_001}
         >
           Favorite Language
         </Typography>
         <Typography
           variant="h3"
           aggressive="montserratAlternates_Medium_002"
-          color={theme.colors.primary_005}
+          color={theme.color.primary_005}
         >
           : {currentTitle}
         </Typography>
