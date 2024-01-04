@@ -1,9 +1,10 @@
 import * as S from './styles'
 import Typography from '../Typography'
 import DATA from 'constants/data'
+import theme from 'styles/theme'
+
 import { Divider } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
-import theme from 'styles/theme'
 
 const Footer = () => {
   return (

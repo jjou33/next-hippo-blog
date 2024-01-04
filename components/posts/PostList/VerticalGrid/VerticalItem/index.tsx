@@ -59,7 +59,7 @@ const VerticalItem = ({
             src={`/static/images/${category1depth}/${category2depth}/${image}`}
             alt={title}
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
           />
         </StyledImageBox>
