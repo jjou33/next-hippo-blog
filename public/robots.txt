@@ -1,10 +1,6 @@
 # *
 User-agent: *
 Allow: /
-Disallow: 
-
-# Host
-Host: https://hippolog.vercel.app
 
 # Sitemaps
 Sitemap: https://hippolog.vercel.app/sitemap-0.xml
