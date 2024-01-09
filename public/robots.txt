@@ -1,6 +1,10 @@
 # *
 User-agent: *
 Allow: /
+Disallow: 
+
+# Host
+Host: https://next-hippo-blog.vercel.app/
 
 # Sitemaps
-Sitemap: https://hippolog.vercel.app/sitemap-0.xml
+Sitemap: https://next-hippo-blog.vercel.app/sitemap-0.xml

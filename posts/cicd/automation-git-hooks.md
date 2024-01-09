@@ -13,7 +13,7 @@ isFeatured: true
 ### 개요
 ---
 
-[앞선 포스트](https://hippolog.vercel.app/posts/CICD/automation1)에서 구축하려하는 CI/CD 에 대한 개념과 관련된 기술에 대한 이해에 대한 설명을 간략하게 진행하였습니다.
+[앞선 포스트](https://next-hippo-blog.vercel.app/posts/CICD/automation1)에서 구축하려하는 CI/CD 에 대한 개념과 관련된 기술에 대한 이해에 대한 설명을 간략하게 진행하였습니다.
 
 이제 실제로 제가 작성한 프로세스와 디테일한 코드를 기준으로 확인해보겠습니다.
 
@@ -253,7 +253,7 @@ fi
 
 이제 **dev branch** 에 개발건을 올렸다면 이후부터는 Github Action 으로 배포자동화를 진행하도록 합니다.
 
-이는 [다음 포스트](https://hippolog.vercel.app/posts/CICD/automation3)에서 진행하도록 하겠습니다.
+이는 [다음 포스트](https://next-hippo-blog.vercel.app/posts/CICD/automation3)에서 진행하도록 하겠습니다.
 
 ### 참고 사이트
 
