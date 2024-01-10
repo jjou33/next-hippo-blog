@@ -1,6 +1,6 @@
-import * as S from './styles'
 import { usePagination } from 'hooks/usePagination'
 import { useEffect, useState } from 'react'
+import * as S from './styles'
 
 const Pagination = ({
   totalPageCount,
@@ -39,7 +39,7 @@ const Pagination = ({
     <S.PageContainer>
       <S.PageWrapper>
         <S.SideButton
-          side="left"
+          side={'left'}
           onClick={handleClickLeft}
           disabled={isFirstGroup}
         />
@@ -54,7 +54,7 @@ const Pagination = ({
           </S.PageBtn>
         ))}
         <S.SideButton
-          side="right"
+          side={'right'}
           onClick={handleClickRight}
           disabled={isLastGroup}
         />

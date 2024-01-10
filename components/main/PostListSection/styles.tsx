@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 export const PostListContainer = styled.div`
   @media screen and (min-width: 1000px) {
@@ -25,23 +25,6 @@ export const ReadMoreBtnWrapper = styled.div`
   align-items: center;
   margin-top: 5rem;
 `
-
-export const shaking_in_animation = keyframes`
- 0% {
-   transform: rotate(10deg);
- }
- 
- 30% {
-   transform: rotate(-10deg);
- }
- 
- 70% {
-   transform: rotate(10deg);
- }
- 100% {
-   transform: rotate(-10deg);
- }
- `
 
 export const IconWrapper = styled.div`
   display: flex;

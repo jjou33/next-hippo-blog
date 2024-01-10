@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
@@ -13,17 +14,68 @@
     "project": "./tsconfig.json",
     "createDefaultProgram": true
   },
+  "ignorePatterns": ["node_modules/"],
   "extends": [
-    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "next/core-web-vitals",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:@typescript-eslint/recommended",
-    "next",
     "plugin:prettier/recommended",
     "prettier"
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off", // import React from "react" 안해도 되게 만들어줌.
     "@typescript-eslint/no-unused-vars": "error", // 안 쓰는 변수 그대로 두면 에러 냄.
     "@typescript-eslint/no-explicit-any": "error", // any 쓰면 에러 냄.
+    // default Props 기능 끄기
+    "react/require-default-props": 0,
+    // Empty Fragment 허용
+    "react/jsx-no-useless-fragment": 0,
+    // var 금지
+    "no-var": "warn",
+    // 일치 연산자 사용 필수
+    "eqeqeq": "warn",
+    // 컴포넌트의 props 검사 비활성화, propstype 사용하지 않아도 경고 띄우지 않음
+    "react/prop-types": 0,
+    // 불필요한 세미콜론 사용 시 에러 표시
+    "no-extra-semi": "error",
+    // 한 파일 내 export 문이 하나일 경우 default export 사용 권장 경고 비활성화
+    "import/prefer-default-export": 0,
+    // 파일 경로가 틀렸는지 확인하는 옵션 끄기
+    // "import/no-unresolved": ["error", { "caseSensitive": false }],
+    "import/no-unresolved": 0,
+    // jsx 파일 확장자 .jx, jsx, ts, tsx 허용
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    // 함수의 형태 정의 arrow-function , function-declaration 중 
+    "react/function-component-definition": [2, { "namedComponents": ["arrow-function"] }],
+    // JSX 속성이나 자식 요소에서 항상 중괄호를 사용해야 하는지를 검사
+    "react/jsx-curly-brace-presence": ["warn", { "props": "always", "children": "always" }],
+    // props spreading 허용하지 않는 경고 표시 (커스텀 속성의 경우 무시)
+    "react/jsx-props-no-spreading": [1, { "custom": "ignore" }],
+    // 줄바꿈 문자 스타일 검사
+    "linebreak-style": 0,
+    // 확장자에 대한 검사
+    "import/extensions": 0,
+    // import React from "react' 제거
+    "react/react-in-jsx-scope": 0,
+    // 한줄에 하나의 표현식만을 허용하는지를 확인합니다.
+    "react/jsx-one-expression-per-line": 0,
+    // 중첩된 삼항 연산자를 사용제어
+    "no-nested-ternary": 0,
+    // 화살표 함수의 파라미터가 하나일대 괄호 생략 
+    "arrow-parens": ["warn", "as-needed"],
+    // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용 허용
+    "import/no-extraneous-dependencies": 0,
+    // 콘솔 사용 시 발생하는 경고 비활성화
+    "no-console": "off",
+    "react/no-unstable-nested-components": 0,
+    "no-use-before-define": "off",
+    // maxDepth 옵션 설정
+    "import/no-cycle": 0,
+    // 외부 변수 사용 허용
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 0,
     "prettier/prettier": [
       "error",
       {

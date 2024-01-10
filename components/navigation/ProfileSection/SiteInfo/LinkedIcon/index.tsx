@@ -1,9 +1,8 @@
-import * as S from './styles'
-
 import { IconBox } from 'components/common'
 
 import { ProfileIconSet } from 'public/static/icon'
 import Link from 'next/link'
+import * as S from './styles'
 
 interface LinkStyleBoxProps {
   color1: string
@@ -27,7 +26,7 @@ const LinkedIcon = ({
           background={`linear-gradient(45deg, ${color1}, ${color2})`}
         >
           <S.LinkItemIcon>
-            <IconBox width="30px" height="30px">
+            <IconBox width={'30px'} height={'30px'}>
               {ProfileIconSet[iconName].icon()}
             </IconBox>
           </S.LinkItemIcon>

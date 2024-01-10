@@ -5,11 +5,7 @@ import { menuOpenState } from 'states/menuOpenState'
 
 import * as S from './styles'
 
-interface DimmedModalPropsType {
-  maskClosable?: boolean
-  children: React.ReactNode
-}
-const Modal = ({ children }: DimmedModalPropsType) => {
+const Modal = ({ children }: { children: React.ReactNode }) => {
   const setMenuState = useSetRecoilState(menuOpenState)
 
   useEffect(() => {
@@ -42,7 +38,7 @@ const Modal = ({ children }: DimmedModalPropsType) => {
     <>
       <S.ModalOverlay visible={state} />
       <S.ModalWrapper onClick={onMaskClick} visible={state}>
-        <S.ModalInner className="modal-inner" visible={innerState}>
+        <S.ModalInner className={'modal-inner'} visible={innerState}>
           {children}
         </S.ModalInner>
       </S.ModalWrapper>

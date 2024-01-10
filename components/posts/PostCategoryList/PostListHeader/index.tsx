@@ -1,5 +1,3 @@
-import * as S from './styles'
-
 import Image from 'next/image'
 import theme from 'styles/theme'
 import MotionShowBox from 'components/common/Motion/MotionShowBox'
@@ -13,6 +11,7 @@ import {
   SubMaxContainer,
 } from 'components/common/StyledLayout'
 import { PostData } from 'types/post'
+import * as S from './styles'
 
 const PostListHeader = ({
   categoryId,
@@ -28,19 +27,19 @@ const PostListHeader = ({
   return (
     <S.HeroImageContainer>
       <FlexBox
-        flexDirection="column"
-        alignContent="center"
-        justifyContent="center"
-        position="relative"
-        width="100%"
-        height="100%"
+        flexDirection={'column'}
+        alignContent={'center'}
+        justifyContent={'center'}
+        position={'relative'}
+        width={'100%'}
+        height={'100%'}
         padding={'0 2rem'}
       >
         <Image
           src={`/static/images/${category1depth}/${category2depth}/headImage.png`}
           alt={'alt'}
           fill
-          sizes="(max-width: 1300px) 100vw, 80vw"
+          sizes={'(max-width: 1300px) 100vw, 80vw'}
           style={{
             objectFit: 'cover',
             filter: 'brightness(0.5)',
@@ -48,18 +47,18 @@ const PostListHeader = ({
           }}
           priority
         />
-        <FlexBox flexDirection="column" position="absolute">
+        <FlexBox flexDirection={'column'} position={'absolute'}>
           <SubMaxContainer>
             <S.LottieContainer>
               <FlyingAirplaneLottie />
             </S.LottieContainer>
-            <MotionShowBox showDirection="down">
+            <MotionShowBox showDirection={'down'}>
               <S.TextContainer>
                 <Typography
-                  variant="h3"
-                  aggressive="montserratAlternates_Medium_001"
+                  variant={'h3'}
+                  aggressive={'montserratAlternates_Medium_001'}
                   color={theme.color.deep_white}
-                  align="center"
+                  align={'center'}
                 >
                   {`${
                     categoryId ? convertUpperToPrefix(categoryId) : 'ALL POST'
@@ -67,20 +66,20 @@ const PostListHeader = ({
                 </Typography>
               </S.TextContainer>
               <Divider
-                direction="horizontal"
-                width="100%"
-                height="1px"
-                margin="20px 0 0 0"
+                direction={'horizontal'}
+                width={'100%'}
+                height={'1px'}
+                margin={'20px 0 0 0'}
                 color={theme.color.divider_002}
               />
-              <S.BadgeContainer isAllPost={categoryId ? false : true}>
+              <S.BadgeContainer isAllPost={!categoryId}>
                 {keywords.slice(0, 40).map(keyword => (
                   <Badge
-                    borderRadius="2rem"
+                    borderRadius={'2rem'}
                     backgroundColor={theme.color.badge_001}
                     color={theme.color.badge_text_001}
-                    aggressive="montserratAlternates_Regular_002"
-                    padding="10px 20px 10px 20px"
+                    aggressive={'montserratAlternates_Regular_002'}
+                    padding={'10px 20px 10px 20px'}
                     key={keyword}
                   >
                     {`# ${keyword}`}
@@ -90,9 +89,9 @@ const PostListHeader = ({
             </MotionShowBox>
           </SubMaxContainer>
         </FlexBox>
-        <FlexBox justifyContent="center" margin="5rem 0 0 0">
+        <FlexBox justifyContent={'center'} margin={'5rem 0 0 0'}>
           <S.MouseIndicatorWrapper>
-            <S.MouseIndicator></S.MouseIndicator>
+            <S.MouseIndicator />
           </S.MouseIndicatorWrapper>
         </FlexBox>
       </FlexBox>

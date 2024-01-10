@@ -59,10 +59,9 @@ export const DropdownWrapper = styled.div<{
       return css`
         height: ${(props.categoryItemCount as number) * 35 + 25}px;
       `
-    } else {
-      return css`
-        height: 0;
-      `
     }
+    return css`
+      height: 0;
+    `
   }}
 `

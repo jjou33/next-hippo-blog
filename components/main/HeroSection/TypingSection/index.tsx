@@ -18,18 +18,19 @@ const TypingSection = () => {
         width={'100%'}
       >
         <Typography
-          variant="h3"
-          aggressive="montserratAlternates_Medium_002"
+          variant={'h3'}
+          aggressive={'montserratAlternates_Medium_002'}
           color={theme.color.text_001}
         >
-          Favorite Language
+          {'Favorite Language'}
         </Typography>
         <Typography
-          variant="h3"
-          aggressive="montserratAlternates_Medium_002"
+          variant={'h3'}
+          aggressive={'montserratAlternates_Medium_002'}
           color={theme.color.primary_005}
         >
-          : {currentTitle}
+          {': '}
+          {currentTitle}
         </Typography>
       </FlexBox>
     </FlexBox>

@@ -1,11 +1,9 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import styled from 'styled-components'
 import Navigation from 'components/navigation'
 import LoadingSpinner from 'components/common/LoadingSpinner'
 
-import { Modal } from 'components/common'
-import { ScrollStateBar } from 'components/common'
-import { Footer, Header } from 'components/common'
-import { FlexBox } from '../StyledLayout'
+import { Modal, ScrollStateBar, Footer, Header } from 'components/common'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
 import { useRecoilValue } from 'recoil'
@@ -14,6 +12,7 @@ import { useLoading } from 'hooks/useLoading'
 
 import type { AllPostCategory } from 'types/post'
 import useTheme from 'hooks/useTheme'
+import { FlexBox } from '../StyledLayout'
 
 interface LayoutPropsType extends PropsWithChildren {
   pageProps: {
@@ -21,7 +20,7 @@ interface LayoutPropsType extends PropsWithChildren {
   }
 }
 const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
-  const { toggleTheme, isDarkMode } = useTheme()
+  const { toggleTheme } = useTheme()
 
   const isLoading = useLoading()
   const isModal = useRecoilValue(menuOpenState)
@@ -36,18 +35,18 @@ const Layout = ({ children, pageProps: { category } }: LayoutPropsType) => {
   }, [isLoading])
 
   return (
-    <FlexBox flexDirection="column" width="100%">
+    <FlexBox flexDirection={'column'} width={'100%'}>
       <ScrollStateBar />
       <FlexBox>
         {isModal ? (
           <Modal>
-            <Navigation category={category} isModal={true} />
+            <Navigation category={category} isModal />
           </Modal>
         ) : (
           <Navigation category={category} />
         )}
         <ChildrenContainer>
-          <Header toggle={toggleTheme} isDarkMode={isDarkMode} />
+          <Header toggle={toggleTheme} />
           <LoadingSpinner isLoading={isLoadingAnimation} />
           {children}
           <Footer />

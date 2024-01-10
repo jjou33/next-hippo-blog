@@ -1,4 +1,3 @@
-import * as S from './styles'
 import theme from 'styles/theme'
 import Link from 'next/link'
 
@@ -8,6 +7,7 @@ import {
   FlexBox,
   StyledImageBox,
 } from 'components/common/StyledLayout'
+import * as S from './styles'
 
 import type { ProjectInfoProps } from '../index'
 
@@ -21,12 +21,12 @@ const ProjectItem = ({
   return (
     <S.ProjectItemContainer>
       <Link href={linkPath}>
-        <StyledImageBox height="20rem" borderRadius="20px">
+        <StyledImageBox height={'20rem'} borderRadius={'20px'}>
           <S.StyledImage
             src={imagePath}
             alt={title}
             fill
-            sizes="(max-width: 1300px) 50vw, 33vw"
+            sizes={'(max-width: 1300px) 50vw, 33vw'}
             style={{
               objectFit: 'cover',
               zIndex: '-1',
@@ -34,8 +34,8 @@ const ProjectItem = ({
           />
 
           <FlexBox
-            flexDirection="column"
-            height="100%"
+            flexDirection={'column'}
+            height={'100%'}
             background={`linear-gradient(
           to bottom,
           rgba(20, 20, 20, 0) 5%,
@@ -43,40 +43,44 @@ const ProjectItem = ({
           rgba(20, 20, 20, 0.6) 80%
         )`}
           >
-            <FlexBox flexDirection="column-reverse" height="100%" margin="15px">
+            <FlexBox
+              flexDirection={'column-reverse'}
+              height={'100%'}
+              margin={'15px'}
+            >
               <Typography
-                variant="p"
-                aggressive="body_oneline_002"
+                variant={'p'}
+                aggressive={'body_oneline_002'}
                 color={theme.color.deep_white}
-                whiteSpace="nowrap"
-                overFlow="hidden"
-                textOverflow="ellipsis"
-                margin="1rem 0 0 0"
+                whiteSpace={'nowrap'}
+                overFlow={'hidden'}
+                textOverflow={'ellipsis'}
+                margin={'1rem 0 0 0'}
               >
                 {content}
               </Typography>
               <Divider
-                direction="horizontal"
-                width="100%"
-                height="1px"
-                margin="1rem auto 0"
+                direction={'horizontal'}
+                width={'100%'}
+                height={'1px'}
+                margin={'1rem auto 0'}
                 color={theme.color.divider_002}
               />
               <Typography
-                variant="p"
-                aggressive="headline_small_001"
+                variant={'p'}
+                aggressive={'headline_small_001'}
                 color={theme.color.deep_white}
-                overFlow="hidden"
-                textOverflow="ellipsis"
+                overFlow={'hidden'}
+                textOverflow={'ellipsis'}
               >
                 {title}
               </Typography>
-              <FlexBox gap="1rem" margin="10px 0" flexWrap="wrap">
+              <FlexBox gap={'1rem'} margin={'10px 0'} flexWrap={'wrap'}>
                 {keywords.map(keyword => (
                   <Badge
                     backgroundColor={theme.color.badge_001}
                     color={theme.color.badge_text_001}
-                    aggressive="body_oneline_bold_small"
+                    aggressive={'body_oneline_bold_small'}
                     key={keyword}
                   >
                     {`# ${keyword}`}

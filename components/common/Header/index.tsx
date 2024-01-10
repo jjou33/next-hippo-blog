@@ -1,15 +1,14 @@
-import * as S from './styles'
-
 import theme from 'styles/theme'
-import Typography from '../Typography'
 import { useHeaderSticky } from 'hooks/useHeaderSticky'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { menuOpenState } from 'states/menuOpenState'
 import { MainIconSet } from 'public/static/icon'
 import { darkModeState } from 'states/darkModeThemeState'
 import { useEffect, useState } from 'react'
+import Typography from '../Typography'
+import * as S from './styles'
 
-const Header = props => {
+const Header = ({ toggle }) => {
   const currentTheme = useRecoilValue(darkModeState)
   const [isDark, setIsDark] = useState(null)
   const isHeaderSticky = useHeaderSticky()
@@ -27,29 +26,29 @@ const Header = props => {
         <S.NavigationContentsWrapper isHeaderSticky={isHeaderSticky}>
           <S.LogoWrapper href={'/'} hrefLang={'ko'}>
             <Typography
-              variant="span"
-              aggressive="body_oneline_001"
+              variant={'span'}
+              aggressive={'body_oneline_001'}
               color={theme.color.deep_white}
             >
-              HIPPO DEV
+              {'HIPPO DEV'}
             </Typography>
           </S.LogoWrapper>
-          <S.DarkModeToggleContainer onClick={props.toggle}>
+          <S.DarkModeToggleContainer onClick={toggle}>
             {isDark === null ? (
               <></>
             ) : (
               <>
                 <S.DarModeItem show={!isDark}>
-                  {MainIconSet['sun'].icon()}
+                  {MainIconSet.sun.icon()}
                 </S.DarModeItem>
                 <S.DarModeItem show={isDark}>
-                  {MainIconSet['moon'].icon()}
+                  {MainIconSet.moon.icon()}
                 </S.DarModeItem>
               </>
             )}
           </S.DarkModeToggleContainer>
           <S.NavBarButtonWrapper onClick={NavigationHandler}>
-            {MainIconSet['Menu'].icon()}
+            {MainIconSet.Menu.icon()}
           </S.NavBarButtonWrapper>
         </S.NavigationContentsWrapper>
       </S.HeaderWrapper>

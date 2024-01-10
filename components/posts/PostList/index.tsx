@@ -1,12 +1,10 @@
+import Pagination from 'components/common/Pagination'
+import { usePostChangeByPaging } from 'hooks/usePostChangeByPaging'
+import type { PostData } from 'types/post'
 import * as S from './styles'
 
 import VerticalGrid from './VerticalGrid'
 import HorizontalGrid from './HorizontalGrid'
-import Pagination from 'components/common/Pagination'
-
-import { usePostChangeByPaging } from 'hooks/usePostChangeByPaging'
-
-import type { PostData } from 'types/post'
 
 interface PostListProps {
   posts: PostData[]

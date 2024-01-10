@@ -1,9 +1,8 @@
+import type { AllPostCategory } from 'types/post'
 import * as S from './styles'
 
 import NavigationSection from './NavigationSection'
 import ProfileSection from './ProfileSection'
-
-import type { AllPostCategory } from 'types/post'
 
 const Navigation = ({
   category,

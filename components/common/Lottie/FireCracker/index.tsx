@@ -3,9 +3,9 @@ import FireCrackerDynamicMotionJSON from './FireCrackerDynamic.json'
 import FireCrackerStaticJSON from './FireCrackerStatic.json'
 
 export const FireCrackerDynamicLottie = () => {
-  return <Lottie animationData={FireCrackerDynamicMotionJSON} loop={true} />
+  return <Lottie animationData={FireCrackerDynamicMotionJSON} loop />
 }
 
 export const FireCrackerStaticLottie = () => {
-  return <Lottie animationData={FireCrackerStaticJSON} loop={true} />
+  return <Lottie animationData={FireCrackerStaticJSON} loop />
 }

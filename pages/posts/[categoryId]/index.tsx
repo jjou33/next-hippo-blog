@@ -4,22 +4,22 @@ import METADATA from 'constants/METADATA'
 import { NextSeo } from 'next-seo'
 import { getAllPostsCategory, getCategoryPosts } from 'utils/postUtils'
 
-const PostCategoryListPage = props => {
+const PostCategoryListPage = ({ posts, category, categoryId }) => {
   return (
     <>
       <NextSeo
-        title={`About ${props.categoryId}`}
-        description={`${props.categoryId} 와 관련된 포스트를 모아둔 공간입니다.`}
-        canonical={`${METADATA.meta.url}/posts/${props.categoryId}`}
+        title={`About ${categoryId}`}
+        description={`${categoryId} 와 관련된 포스트를 모아둔 공간입니다.`}
+        canonical={`${METADATA.meta.url}/posts/${categoryId}`}
         openGraph={{
-          url: `${METADATA.meta.url}/posts/${props.categoryId}`,
+          url: `${METADATA.meta.url}/posts/${categoryId}`,
         }}
       />
-      <FlexBox flexDirection="column">
+      <FlexBox flexDirection={'column'}>
         <PostCategoryList
-          posts={props.posts}
-          categoryId={props.categoryId}
-          keywords={props.category.keywordSet[props.categoryId]}
+          posts={posts}
+          categoryId={categoryId}
+          keywords={category.keywordSet[categoryId]}
         />
       </FlexBox>
     </>
@@ -29,7 +29,7 @@ const PostCategoryListPage = props => {
 export default PostCategoryListPage
 
 export async function getServerSideProps({ params }) {
-  const categoryId = params.categoryId
+  const { categoryId } = params
 
   const postList = getCategoryPosts(categoryId)
   const category = getAllPostsCategory()

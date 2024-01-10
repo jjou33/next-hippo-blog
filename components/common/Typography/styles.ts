@@ -1,4 +1,5 @@
 import styled, { DefaultTheme } from 'styled-components'
+
 export interface ComponentProps {
   aggressive: AggressiveVariant
   theme?: DefaultTheme

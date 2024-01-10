@@ -16,9 +16,8 @@ export interface ComponentProps {
 }
 
 export const BadgeContainer = styled.div<ComponentProps>`
-  border-radius: ${({ borderRadius }) =>
-    borderRadius ? borderRadius : '1.5rem'};
-  padding: ${({ padding }) => (padding ? padding : '5px 10px')};
+  border-radius: ${({ borderRadius }) => borderRadius || '1.5rem'};
+  padding: ${({ padding }) => padding || '5px 10px'};
   ${({ aggressive, theme }) => theme.fonts[aggressive]};
   margin: ${({ margin }) => margin && margin};
   color: ${({ color }) => color && color};
@@ -26,7 +25,7 @@ export const BadgeContainer = styled.div<ComponentProps>`
   text-align: ${({ align }) => align && align};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor ? backgroundColor : theme.color.badge_001};
+    backgroundColor || theme.color.badge_001};
   border: ${({ border }) => border ?? border};
   box-shadow: ${({ boxShadow }) => boxShadow ?? boxShadow};
   height: ${({ height }) => height ?? height};

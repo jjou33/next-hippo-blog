@@ -1,10 +1,10 @@
-import * as S from './styles'
-import Typography from '../Typography'
 import DATA from 'constants/data'
 import theme from 'styles/theme'
 
 import { Divider } from 'components/common/StyledLayout'
 import { MainIconSet } from 'public/static/icon'
+import Typography from '../Typography'
+import * as S from './styles'
 
 const Footer = () => {
   return (
@@ -17,49 +17,49 @@ const Footer = () => {
         >
           <S.LinkContentsWrapper>
             <Typography
-              variant="span"
-              aggressive="body_oneline_002"
+              variant={'span'}
+              aggressive={'body_oneline_002'}
               color={theme.color.text_002}
             >
-              zanda33@naver.com
+              {'zanda33@naver.com'}
             </Typography>
             <Divider
-              direction="vertical"
-              width="18px"
-              height="1px"
-              margin="0 10px 0 10px"
+              direction={'vertical'}
+              width={'18px'}
+              height={'1px'}
+              margin={'0 10px 0 10px'}
               color={theme.color.divider_002}
             />
             <S.Anchor
               href={DATA.FOOTER_INFO.GITHUB_LINK}
-              target="_blank"
-              rel="noreferrer"
+              target={'_blank'}
+              rel={'noreferrer'}
             >
               <Typography
-                variant="span"
-                aggressive="body_oneline_002"
+                variant={'span'}
+                aggressive={'body_oneline_002'}
                 color={theme.color.text_002}
               >
-                GIT HUB
+                {'GIT HUB'}
               </Typography>
             </S.Anchor>
           </S.LinkContentsWrapper>
           <Typography
-            variant="span"
-            aggressive="body_oneline_002"
+            variant={'span'}
+            aggressive={'body_oneline_002'}
             color={theme.color.text_002}
             margin={'4rem 0 0 0'}
           >
-            Copyright 2023 BY HIPPO-DEV
+            {'Copyright 2023 BY HIPPO-DEV'}
           </Typography>
           <S.ChannelWrapper>
             <S.Anchor
               href={DATA.FOOTER_INFO.GITHUB_LINK}
-              target="_blank"
-              rel="noreferrer"
-              title="Go to My Github"
+              target={'_blank'}
+              rel={'noreferrer'}
+              title={'Go to My Github'}
             >
-              {MainIconSet['Git'].icon()}
+              {MainIconSet.Git.icon()}
             </S.Anchor>
           </S.ChannelWrapper>
         </S.InnerWrapper>

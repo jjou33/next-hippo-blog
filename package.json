@@ -1,18 +1,17 @@
 {
-  "name": "teno",
+  "name": "hippo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "lint": "next lint",
     "dev": "next dev",
-    "dev:c": "rm -rf ./.next && next dev",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "build": "next build",
     "start": "next start",
+    "prepare": "husky install",
     "analyze": "ANALYZE=true next build",
-    "lint": "eslint --fix",
     "typecheck": "tsc --noEmit",
     "reinstall": "rm -rf ./node_modules && rm -rf pnpm-lock.yaml && pnpm install",
-    "prepare": "husky install",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -24,11 +23,9 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/react": "^11.11.1",
-    "@next/bundle-analyzer": "^14.0.3",
     "@vercel/speed-insights": "^1.0.2",
     "gray-matter": "^4.0.3",
     "lottie-react": "^2.4.0",
-    "mongodb": "^5.7.0",
     "next": "^13.2.13",
     "next-seo": "^6.1.0",
     "next-sitemap": "^4.2.3",
@@ -39,9 +36,11 @@
     "recoil": "^0.7.7",
     "recoil-persist": "^5.1.0",
     "sharp": "^0.32.6",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.3",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "^18.2.15",
@@ -51,15 +50,20 @@
     "@typescript-eslint/parser": "^6.0.0",
     "compression-webpack-plugin": "^10.0.0",
     "eslint": "8.44.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^10.15.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
     "next-compose-plugins": "^2.2.1",
-    "prettier": "^3.0.0",
-    "styled-components": "^6.0.7"
+    "prettier": "^3.0.0"
   },
   "sideEffects": false
 }

@@ -1,9 +1,8 @@
 import React from 'react'
+import { useHeadingDataSet, getClassName } from 'hooks/useNestedHeadings'
 import * as S from './styles'
 
 import PostTocAnchor from './PostTocAnchor'
-
-import { useHeadingDataSet, getClassName } from 'hooks/useNestedHeadings'
 
 interface NestedHeadingType {
   id: string
@@ -20,7 +19,7 @@ const PostToc = () => {
 
   return (
     <S.PostTocContainer>
-      <S.PostTocTitle>📚 목차</S.PostTocTitle>
+      <S.PostTocTitle>{'📚 목차'}</S.PostTocTitle>
       <S.PostTocWrapper>
         {nestedHeadingList.map((headings: NestedListType) => (
           <S.PostTocItem key={headings.id}>
