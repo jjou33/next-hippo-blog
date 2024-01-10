@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
-import theme from 'styles/theme'
+
 export const GridItemContainer = styled.li<{ inview: boolean }>`
-  border: 1px solid ${theme.color.border_001};
+  border: 1px solid ${({ theme }) => theme.color.border_001};
   width: 100%;
   border-radius: 20px;
   margin: 1rem auto 0;

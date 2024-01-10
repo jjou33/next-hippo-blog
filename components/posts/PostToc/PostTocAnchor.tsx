@@ -7,25 +7,25 @@ interface NestedHeadingType {
   text: string
   level: number
 }
-const PostTocItems = (headings: NestedHeadingType) => {
+const PostTocItems = ({ id, level, text }: NestedHeadingType) => {
   return (
     <a
-      href={`#${headings.id}`}
-      className={getClassName(headings.level)}
+      href={`#${id}`}
+      className={getClassName(level)}
       onClick={e => {
         e.preventDefault()
-        document.querySelector(`#${headings.id}`)?.scrollIntoView({
+        document.querySelector(`#${id}`)?.scrollIntoView({
           behavior: 'smooth',
           block: 'center',
         })
       }}
     >
       <Typography
-        variant="span"
-        aggressive="body_oneline_002"
+        variant={'span'}
+        aggressive={'body_oneline_002'}
         color={theme.color.text_001}
       >
-        {headings.text}
+        {text}
       </Typography>
     </a>
   )

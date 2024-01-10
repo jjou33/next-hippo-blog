@@ -1,5 +1,3 @@
-import * as S from './styles'
-
 import ReactMarkdown from 'react-markdown'
 import PostToc from 'components/posts/PostToc'
 
@@ -8,6 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import type { PostData } from 'types/post'
+import * as S from './styles'
 
 const PostContent = ({
   postDetailInfo: { content },
@@ -22,15 +21,14 @@ const PostContent = ({
           alt={props.alt}
           width={0}
           height={0}
-          sizes="100%"
+          sizes={'100%'}
           priority
         />
       )
     },
     code(code) {
       const { className, children } = code
-      let language = ''
-      language = className.split('-')[1]
+      const language = className.split('-')[1]
 
       return (
         <SyntaxHighlighter style={nightOwl} language={language}>

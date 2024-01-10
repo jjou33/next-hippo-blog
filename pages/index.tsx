@@ -6,29 +6,30 @@ import { useSetRecoilState } from 'recoil'
 import { categoryState } from 'states/categoryState'
 import { NextSeo } from 'next-seo'
 import type { AllPostCategory, PostData } from 'types/post'
+
 interface RootProps {
   posts: PostData[]
   category: AllPostCategory
 }
 
-const RootPage = (props: RootProps) => {
+const RootPage = ({ posts, category }: RootProps) => {
   const setCategoryInfo = useSetRecoilState(categoryState)
 
   useEffect(() => {
-    setCategoryInfo(props.category)
+    setCategoryInfo(category)
   })
 
   return (
     <>
       <NextSeo
-        title="Home"
-        description="HIPPO 의 DEVLOG"
-        canonical="https://next-hippo-blog.vercel.app/"
+        title={'Home'}
+        description={'HIPPO 의 DEVLOG'}
+        canonical={'https://next-hippo-blog.vercel.app/'}
         openGraph={{
           url: 'https://next-hippo-blog.vercel.app/',
         }}
       />
-      <MainSection posts={props.posts} />
+      <MainSection posts={posts} />
     </>
   )
 }

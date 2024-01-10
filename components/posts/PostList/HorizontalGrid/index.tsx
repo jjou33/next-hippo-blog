@@ -1,8 +1,8 @@
+import type { PostData } from 'types/post'
 import * as S from './styles'
 
 import VerticalItem from './HorizontalItem'
 
-import type { PostData } from 'types/post'
 const HorizontalGrid = ({ posts }: { posts: PostData[] }) => {
   return (
     <S.GridContainer>

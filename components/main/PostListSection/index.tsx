@@ -1,13 +1,12 @@
-import * as S from './styles'
-
 import DATA from 'constants/data'
 import PostList from 'components/posts/PostList'
 import Link from 'next/link'
+import { Typography } from 'components/common'
 import SectionHeader from '../SectionHeader'
 
-import { Typography } from 'components/common'
+import * as S from './styles'
 
-const PostListSection = props => {
+const PostListSection = ({ posts }) => {
   return (
     <S.PostListContainer>
       <S.AllPostContainer>
@@ -17,12 +16,12 @@ const PostListSection = props => {
             subTitle={DATA.POST_LIST_INFO.HEADER.SUB_TITLE}
           />
         </S.HeaderTextWrapper>
-        <PostList posts={props.posts} isMain={true} />
+        <PostList posts={posts} isMain />
         <Link href={`/posts?page=1`} aria-label={'MORE POSTS'}>
           <S.ReadMoreBtnWrapper>
             <S.Button>
-              <Typography variant="span" aggressive="body_oneline_001">
-                🚀 MORE POSTS
+              <Typography variant={'span'} aggressive={'body_oneline_001'}>
+                {'🚀 MORE POSTS'}
               </Typography>
             </S.Button>
           </S.ReadMoreBtnWrapper>

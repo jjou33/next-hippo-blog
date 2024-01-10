@@ -10,7 +10,7 @@ interface ColorTextPropsType {
 const ColorText = ({ text, aggressive }: ColorTextPropsType) => {
   return (
     <S.ColorText>
-      <Typography variant="span" aggressive={aggressive}>
+      <Typography variant={'span'} aggressive={aggressive}>
         {text}
       </Typography>
     </S.ColorText>

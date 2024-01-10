@@ -1,4 +1,3 @@
-import * as S from './styles'
 import Image from 'next/image'
 
 import { Badge, Typography } from 'components/common'
@@ -7,6 +6,8 @@ import { MainIconSet } from 'public/static/icon'
 
 import type { PostData } from 'types/post'
 import theme from 'styles/theme'
+import * as S from './styles'
+
 interface HorizontalItemProps {
   posts: PostData
 }
@@ -37,7 +38,7 @@ const HorizontalItem = ({
             <Badge
               color={theme.color.badge_text_001}
               backgroundColor={theme.color.badge_001}
-              aggressive="body_oneline_bold_small"
+              aggressive={'body_oneline_bold_small'}
               key={keyword}
             >
               {`# ${keyword}`}
@@ -45,24 +46,24 @@ const HorizontalItem = ({
           ))}
         </FlexBox>
         <Typography
-          variant="h3"
-          aggressive="body_oneline_bold_001"
+          variant={'h3'}
+          aggressive={'body_oneline_bold_001'}
           color={theme.color.text_001}
         >
           {title}
         </Typography>
         <Divider
-          direction="horizontal"
-          width="100%"
-          height="1px"
-          margin="15px 0 10px 0"
+          direction={'horizontal'}
+          width={'100%'}
+          height={'1px'}
+          margin={'15px 0 10px 0'}
           color={theme.color.divider_002}
         />
         <FlexBox margin={'0.5rem 0'} alignItems={'center'} gap={'0.6rem'}>
-          <S.IconWrapper>{MainIconSet['Calander'].icon()}</S.IconWrapper>
+          <S.IconWrapper>{MainIconSet.Calander.icon()}</S.IconWrapper>
           <Typography
-            variant="span"
-            aggressive="body_oneline_003"
+            variant={'span'}
+            aggressive={'body_oneline_003'}
             color={theme.color.text_001}
           >
             {formattedDate}
@@ -70,10 +71,10 @@ const HorizontalItem = ({
         </FlexBox>
 
         <Typography
-          variant="p"
-          aggressive="body_oneline_002"
-          overFlow="hidden"
-          textOverflow="ellipsis"
+          variant={'p'}
+          aggressive={'body_oneline_002'}
+          overFlow={'hidden'}
+          textOverflow={'ellipsis'}
           color={theme.color.text_002}
         >
           {`${excerpt}`}
@@ -83,7 +84,7 @@ const HorizontalItem = ({
       <S.ImageWrapper>
         <Image
           src={`/static/images/${category1depth}/${category2depth}/${image}`}
-          alt="alt"
+          alt={'alt'}
           fill
           style={{ objectFit: 'cover', transition: '0.5s' }}
         />

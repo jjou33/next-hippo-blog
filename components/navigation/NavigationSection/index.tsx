@@ -1,16 +1,14 @@
-import * as S from './styles'
-
-import { IconBox } from 'components/common'
-import NavMainCategory from './NavMainCategory'
-import NavSubCategory from './NavSubCategory'
-import NavRootTitle from './NavRootTitle'
+import { IconBox, Typography } from 'components/common'
 
 import { FlexBox } from 'components/common/StyledLayout'
-import { Typography } from 'components/common'
 import { NavigationIconSet } from 'public/static/icon'
 
 import type { AllPostCategory } from 'types/post'
 import theme from 'styles/theme'
+import NavRootTitle from './NavRootTitle'
+import NavSubCategory from './NavSubCategory'
+import NavMainCategory from './NavMainCategory'
+import * as S from './styles'
 
 const NavigationSection = ({ category }: { category: AllPostCategory }) => {
   return (
@@ -23,13 +21,13 @@ const NavigationSection = ({ category }: { category: AllPostCategory }) => {
               ([rootCategory, mainCategory]) => {
                 return (
                   <S.RootItemContainer key={rootCategory}>
-                    <FlexBox alignItems="center">
-                      <IconBox width="32px" height="32px">
-                        {NavigationIconSet['Glass'].icon()}
+                    <FlexBox alignItems={'center'}>
+                      <IconBox width={'32px'} height={'32px'}>
+                        {NavigationIconSet.Glass.icon()}
                       </IconBox>
                       <Typography
-                        variant="span"
-                        aggressive="montserratAlternates_Regular_001"
+                        variant={'span'}
+                        aggressive={'montserratAlternates_Regular_001'}
                         color={theme.color.text_001}
                       >
                         {rootCategory}

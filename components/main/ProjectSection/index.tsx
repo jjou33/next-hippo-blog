@@ -1,6 +1,6 @@
+import DATA from 'constants/data'
 import * as S from './styles'
 
-import DATA from 'constants/data'
 import ProjectGrid from './ProjectGrid'
 import SectionHeader from '../SectionHeader'
 

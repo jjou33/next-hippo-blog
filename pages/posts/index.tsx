@@ -4,20 +4,20 @@ import { NextSeo } from 'next-seo'
 
 import { getAllPostsCategory, getAllPosts } from 'utils/postUtils'
 
-const AllPostPage = props => {
+const AllPostPage = ({ posts, category }) => {
   return (
     <>
       <NextSeo
-        title="ALLPOST PAGE"
-        description="블로그의 모든 포스트를 확인할 수 있는 공간입니다."
+        title={'ALLPOST PAGE'}
+        description={'블로그의 모든 포스트를 확인할 수 있는 공간입니다.'}
         canonical={`${METADATA.meta.url}/posts`}
         openGraph={{
           url: `${METADATA.meta.url}/posts`,
         }}
       />
       <PostCategoryList
-        posts={props.posts}
-        keywords={props.category.keywordSet.AllKeywords}
+        posts={posts}
+        keywords={category.keywordSet.AllKeywords}
       />
     </>
   )

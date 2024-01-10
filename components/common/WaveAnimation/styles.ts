@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-import theme from 'styles/theme'
 
 export const WaveKeyframe1 = keyframes`
 0% {
@@ -60,28 +59,28 @@ export const WaveAnimationBox = styled.div`
 
   .parallax1 > use {
     animation: ${WaveKeyframe1} 10s linear infinite;
-    fill: ${theme.color.wave_003};
+    fill: ${({ theme }) => theme.color.wave_003};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax2 > use {
     animation: ${WaveKeyframe2} 8s linear infinite;
-    fill: ${theme.color.wave_002};
+    fill: ${({ theme }) => theme.color.wave_002};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax3 > use {
     animation: ${WaveKeyframe3} 6s linear infinite;
-    fill: ${theme.color.wave_001};
+    fill: ${({ theme }) => theme.color.wave_001};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }
   }
   .parallax4 > use {
     animation: ${WaveKeyframe4} 4s linear infinite;
-    fill: ${theme.color.background_001};
+    fill: ${({ theme }) => theme.color.background_001};
     &:nth-of-type(1) {
       animation-delay: -2s;
     }

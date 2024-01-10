@@ -40,19 +40,20 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="ko">
+      <Html lang={'ko'}>
         <Head>
           <meta
-            name="google-site-verification"
-            content="qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo"
+            name={'google-site-verification'}
+            content={'qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo'}
           />
           <meta
-            name="naver-site-verification"
-            content="4bf77a2b2d84e0c479db1bc19a21800c189ff273"
+            name={'naver-site-verification'}
+            content={'4bf77a2b2d84e0c479db1bc19a21800c189ff273'}
           />
         </Head>
         <body>
           <script
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: themeInitializerScript }}
           />
           <Main />
