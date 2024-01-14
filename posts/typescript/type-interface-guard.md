@@ -10,8 +10,6 @@ excerpt: Typescript 개발관련 포스팅을 기록하는 공간입니다.
 isFeatured: true
 ---
 
-
-
 ### 1. 개요
 
 ---
@@ -19,6 +17,7 @@ isFeatured: true
 **typescript** 의 추론과 가드를 통한 타이핑을 학습한 내용을 포스팅한다.
 
 ### 2. 타입 추론
+
 ---
 
 ```js
@@ -45,6 +44,7 @@ let detailedItem: DetailedDropdown<number> = {
 위 코드에서 보면 **DetailDropdown** 에서 **Dropdown** 인터페이스를 상속받아 사용하기 때문에 문제없이 추론 및 정의가 가능하다.
 
 ### 3. 타입 가드
+
 ---
 
 **Union** 을 사용해서 타입을 정한다고 생각해보자.
@@ -107,6 +107,7 @@ if (isDeveloper(tony)) {
 위와 같이 **isDeveloper** 함수를 통해 **Developer** 타입 여부를 리턴받는 가드함수를 만들어준다.
 
 이후에 조건을 통해서 분기를 치게되면 훨씬 간단하게 코드가 작성될 수 있다.
+
 ### 참고 사이트
 
 - [강의 사이트](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%EC%A0%84/unit/61104?tab=community)

@@ -21,6 +21,9 @@ export const StyledDivider = styled.div`
   }
 `
 
+export const CodeWrapper = styled.div`
+  border-radius: 20px;
+`
 export const MarkdownWrapper = styled.div`
   ul {
     margin-left: 1rem;
@@ -93,6 +96,9 @@ export const ContentsWrapper = styled.article`
     line-height: 0.5rem;
   }
 
+  pre pre {
+    border-radius: 10px;
+  }
   h1,
   h2,
   h3,
