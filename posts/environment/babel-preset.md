@@ -5,7 +5,7 @@ image: babel.jpeg
 rootCategory: Programming
 category1depth: Web
 category2depth: environment
-keywords: ['Framework', 'Babel', 'Preset']
+keywords: ["Framework", "Babel", "Preset"]
 excerpt: 개발환경에 필요한 도구들과 관련된 포스팅 입니다.
 isFeatured: true
 ---
@@ -15,7 +15,7 @@ isFeatured: true
 
 **_하단 참조 사이트 참고_**
 
-###  실무에서 자주 쓰이는 preset
+### 실무에서 자주 쓰이는 preset
 
 ---
 
@@ -27,10 +27,9 @@ isFeatured: true
 
 현재 가장 많이 사용하고 있는 **preset-env** 에 대해서 알아본다.
 
-
->npm i @babel/preset-env
-설치 후
-**babel.config.js** 파일에 **preset-env** preset 을 설정해준다.
+> npm i @babel/preset-env
+> 설치 후
+> **babel.config.js** 파일에 **preset-env** preset 을 설정해준다.
 
 ```js
 module.exports = {
@@ -40,7 +39,7 @@ module.exports = {
 
 설정까지 완료되면 기존과 같이 **npx babel ./src/app.js** 를 실행하면 **ES5** 로 변환후 노출까지 확인이 된다.
 
-###  Target 브라우저
+### Target 브라우저
 
 ---
 
@@ -85,7 +84,7 @@ var alert = function alert(msg) {
 
 결과는 예상했던데로 나오는것을 볼 수 있다.
 
-###  폴리필
+### 폴리필
 
 ---
 
@@ -136,7 +135,7 @@ new Promise();
 - [useBuiltIns](https://babeljs.io/docs/en/babel-preset-env#usebuiltins)
 - [corejs](https://babeljs.io/docs/en/babel-preset-env#corejs)
 
-###  웹팩으로 통합
+### 웹팩으로 통합
 
 위 방식은 기본을 공부하는 과정이었고 실제로 웹팩과 통합하여 많이 쓴다고 한다.
 
@@ -193,7 +192,9 @@ Module not found: Error: Can't resolve 'core-js/modules/es6.promise.js' in '/Use
 ---
 
 1. **npm i babel-loader @babel/core** 설치
+
 - **babel loader** 를 웹팩에서 실행할때 **babel** 을 실행해야 하기 때문에 **babel/core** 를 설치
+
 2. **webpack.config.js** 설정 및 **babel.config.js** 설정
 
 ```js
@@ -221,7 +222,7 @@ module.exports = {
 **useBuiltIns: "usage"** 설정을 통해 **ES5** 에서 변환하지 못하는 모듈을 **import** 해 온다.
 이때 **import** 된 **라이브러리**를 사용할때 **corejs** 가 사용된다.
 
-###  sass-loader 응용
+### sass-loader 응용
 
 ---
 

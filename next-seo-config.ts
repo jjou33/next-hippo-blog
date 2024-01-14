@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 import METADATA from 'constants/METADATA'
 import { DefaultSeoProps } from 'next-seo'
+
 const DEFAULT_SEO: DefaultSeoProps = {
   titleTemplate: `%s | ${METADATA.meta.title}`,
   defaultTitle: `${METADATA.meta.title} - 나만의 개발 기록 일기장`,
