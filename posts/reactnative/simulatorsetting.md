@@ -1,6 +1,6 @@
 ---
 date: "2024-01-16"
-title: "[React Native] IOS 시뮬레이터 개발 환경 오류"
+title: "[React Native] Android / IOS 시뮬레이터 개발 환경 구축"
 image: devenv.png
 rootCategory: Programming
 category1depth: Framework
