@@ -50,7 +50,7 @@ jobs:
       # Vercel에 프로젝트 아티팩트를 배포하는 열 번째 단계입니다.
       - name: Deploy Project Artifacts to Vercel
         id: Vercel-Deploy
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --force --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       # 배포 상태와 관련된 정보를 Slack에 알리는 마지막 단계입니다.
       - uses: act10ns/slack@v2
