@@ -3,7 +3,7 @@
 module.exports = {
   siteUrl: 'https://next-hippo-blog.vercel.app/',
   generateRobotsTxt: true,
-  sitemapSize: 7000,
+  sitemapSize: 10000,
   changefreq: 'daily',
   priority: 1,
   robotsTxtOptions: {
