@@ -6,6 +6,7 @@ import { useSetRecoilState } from 'recoil'
 import { categoryState } from 'states/categoryState'
 import { NextSeo } from 'next-seo'
 import type { AllPostCategory, PostData } from 'types/post'
+import METADATA from 'constants/METADATA'
 
 interface RootProps {
   posts: PostData[]
@@ -24,9 +25,9 @@ const RootPage = ({ posts, category }: RootProps) => {
       <NextSeo
         title={'Home'}
         description={'HIPPO 의 DEVLOG'}
-        canonical={'https://next-hippo-blog.vercel.app/'}
+        canonical={METADATA.meta.url}
         openGraph={{
-          url: 'https://next-hippo-blog.vercel.app/',
+          url: METADATA.meta.url,
         }}
       />
       <MainSection posts={posts} />
