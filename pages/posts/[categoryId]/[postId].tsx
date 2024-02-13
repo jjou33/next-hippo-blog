@@ -24,9 +24,9 @@ const PostDetailPage = ({
       <NextSeo
         title={`${postDetailInfo.title}`}
         description={`${postDetailInfo.excerpt}`}
-        canonical={`${METADATA.meta.url}/${categoryId}/${postId}`}
+        canonical={`${METADATA.meta.url}/posts/${categoryId}/${postId}`}
         openGraph={{
-          url: `${METADATA.meta.url}/${categoryId}/${postId}`,
+          url: `${METADATA.meta.url}/posts/${categoryId}/${postId}`,
           images: [
             {
               url: `${METADATA.meta.imageUrl}/${category1depth}/${category2depth}/${image}`,
