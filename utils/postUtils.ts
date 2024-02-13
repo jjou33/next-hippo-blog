@@ -61,7 +61,7 @@ export const getPostData = (postIdentifier: string) => {
   const postData = {
     slug: postSlug.split('/')[1],
     ...pageData,
-    content: content,
+    content,
   }
   return postData
 }
@@ -97,7 +97,7 @@ export const makeKeywordSet = (keywordSet, keywords): [] => {
 export const getAllPostsCategory = (): AllPostCategory => {
   const result = {}
   const count = {}
-  const keywordSet = {}
+  const keywordSet: { [key: string]: string[] } = {}
   let categoryCount = 0
   let allPostCount = 0
   getAllPosts().forEach(
@@ -115,12 +115,12 @@ export const getAllPostsCategory = (): AllPostCategory => {
       }
       allPostCount++
 
-      if (!keywordSet['AllKeywords']) {
-        keywordSet['AllKeywords'] = [...keywords]
+      if (!keywordSet.AllKeywords) {
+        keywordSet.AllKeywords = [...keywords]
       } else {
-        keywordSet['AllKeywords'] = [
-          ...keywordSet['AllKeywords'],
-          ...makeKeywordSet(keywordSet['AllKeywords'], keywords),
+        keywordSet.AllKeywords = [
+          ...keywordSet.AllKeywords,
+          ...makeKeywordSet(keywordSet.AllKeywords, keywords),
         ]
       }
 
