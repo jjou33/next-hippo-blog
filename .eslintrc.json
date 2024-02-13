@@ -71,6 +71,8 @@
     "no-console": "off",
     "react/no-unstable-nested-components": 0,
     "no-use-before-define": "off",
+    "no-plusplus": "off",
+    "no-restricted-syntax":"off",
     // maxDepth 옵션 설정
     "import/no-cycle": 0,
     // 외부 변수 사용 허용
