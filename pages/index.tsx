@@ -5,8 +5,8 @@ import { getAllPosts, getAllPostsCategory } from 'utils/postUtils'
 import { useSetRecoilState } from 'recoil'
 import { categoryState } from 'states/categoryState'
 import { NextSeo } from 'next-seo'
-import METADATA from 'constants/METADATA'
 import type { AllPostCategory, PostData } from 'types/post'
+import METADATA from 'constants/METADATA'
 
 interface RootProps {
   posts: PostData[]
