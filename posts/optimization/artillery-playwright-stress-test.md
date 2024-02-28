@@ -1,7 +1,7 @@
 ---
 date: "2024-02-20"
 title: "[Stress Test] Artillery + Playwright 와 함께하는 Stress Test"
-image: 'stress5.png'
+image: 'stress.webp'
 rootCategory: Programming
 category1depth: Web
 category2depth: optimization
