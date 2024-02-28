@@ -4,7 +4,7 @@ Allow: /
 Disallow: 
 
 # Host
-Host: https://hippodevelop.vercel.app/
+Host: https://hippoblog.vercel.app/
 
 # Sitemaps
-Sitemap: https://hippodevelop.vercel.app/sitemap.xml
+Sitemap: https://hippoblog.vercel.app/sitemap.xml
