@@ -42,14 +42,14 @@ class MyDocument extends Document {
     return (
       <Html lang={'ko'}>
         <Head>
-          {/* <meta
-            name={'google-site-verification'}
-            content={'qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo'}
-          /> */}
           <meta
             name={'google-site-verification'}
-            content={'GsFV8Lq-pIaGih_eSOgZkNeV2a0wrX_xyVP3y5njXw4'}
+            content={'qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo'}
           />
+          {/* <meta
+            name={'google-site-verification'}
+            content={'GsFV8Lq-pIaGih_eSOgZkNeV2a0wrX_xyVP3y5njXw4'}
+          /> */}
           <meta
             name={'naver-site-verification'}
             content={'4bf77a2b2d84e0c479db1bc19a21800c189ff273'}
