@@ -5,6 +5,7 @@ import { menuOpenState } from 'states/menuOpenState'
 import { MainIconSet } from 'public/static/icon'
 import { darkModeState } from 'states/darkModeThemeState'
 import { useEffect, useState } from 'react'
+import { Button } from '@hippodev/design-system'
 import Typography from '../Typography'
 import * as S from './styles'
 
@@ -30,7 +31,9 @@ const Header = ({ toggle }) => {
               aggressive={'body_oneline_001'}
               color={theme.color.deep_white}
             >
-              {'HIPPO DEV'}
+              <Button variant={'round'} label={'button'}>
+                {'HIPPO DEV'}
+              </Button>
             </Typography>
           </S.LogoWrapper>
           <S.DarkModeToggleContainer onClick={toggle}>
