@@ -15,7 +15,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/static/fonts/(.*)',
+        source: '/static/media/(.woff2)',
         // 폰트와 관련된 파일의 경우 1년간 Edge 에서 캐싱하며, 조건부 확인 없이 무조건 로컬캐시사용
         // 배포 시 Vercel 에서 자동으로 캐시무효화 및 최신화 진행
         headers: [
@@ -36,6 +36,15 @@ const nextConfig = {
       },
       {
         source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'max-age=0, s-maxage=86400',
+          },
+        ],
+      },
+      {
+        source: '/static/images/(.*)',
         headers: [
           {
             key: 'Cache-Control',
