@@ -12,46 +12,48 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig = {
   reactStrictMode: false,
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/static/fonts/(.*)',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public,s-maxage=31536000, immutable',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       source: '/manifest.json',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=0, s-maxage=86400',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       source: '/favicon.ico',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=0, s-maxage=86400',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       source: '/static/images/(.*)',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=0, s-maxage=86400',
-  //         },
-  //       ],
-  //     },
-  //   ]
-  // },
+  async headers() {
+    return [
+      {
+        source: '/static/fonts/(.*)',
+        // 폰트와 관련된 파일의 경우 1년간 Edge 에서 캐싱하며, 조건부 확인 없이 무조건 로컬캐시사용
+        // 배포 시 Vercel 에서 자동으로 캐시무효화 및 최신화 진행
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 's-maxage=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/manifest.json',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'max-age=0, s-maxage=86400',
+          },
+        ],
+      },
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'max-age=0, s-maxage=86400',
+          },
+        ],
+      },
+      {
+        source: '/static/images/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'max-age=0, s-maxage=86400',
+          },
+        ],
+      },
+    ]
+  },
   swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],
