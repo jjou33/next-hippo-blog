@@ -25,7 +25,7 @@ isFeatured: true
 8. Vercel Deploy Github Action 
 ```
 
-[이전 포스트](https://hippoblog.vercel.app/posts/cicd/automation3)에서는 **PR 생성** 및 **Github Action Trigger** 를 통한 테스트 Action 실행과 Slack 으로 연동해서 최종 **Reporting** 하는 방법까지 알아보았습니다.
+[이전 포스트](https://next-hippo-blog.vercel.app/posts/cicd/automation3)에서는 **PR 생성** 및 **Github Action Trigger** 를 통한 테스트 Action 실행과 Slack 으로 연동해서 최종 **Reporting** 하는 방법까지 알아보았습니다.
 
 이제 마지막 Vercel 로 Deploy 를 진행하는 방법을 포스팅하도록 하겠습니다.
 

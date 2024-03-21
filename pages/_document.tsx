@@ -52,7 +52,7 @@ class MyDocument extends Document {
           /> */}
           <meta
             name={'naver-site-verification'}
-            content={'46efa8daa83786828812b69561c62e6fce8e946f'}
+            content={'4bf77a2b2d84e0c479db1bc19a21800c189ff273'}
           />
         </Head>
         <body>
