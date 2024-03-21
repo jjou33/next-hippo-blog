@@ -52,11 +52,11 @@ const DATA = {
   PROJECT_INFO: {
     HEADER: {
       TITLE: '프로젝트 이야기 ✨',
-      SUB_TITLE: '진행했던 프로젝트들에 대한 기술 포스팅입니다.',
+      SUB_TITLE: '실무에서 진행했던 내용에 대한 포스팅 입니다.',
     },
     LIST: [
       {
-        title: 'Vue3 차세대 프로젝트(실무)',
+        title: 'Vue3 차세대 프로젝트',
         keywords: ['Vue3', '공통 개발'],
         imagePath: '/static/images/Framework/vue/headImage.png',
         linkPath: `posts/vue?page=1`,

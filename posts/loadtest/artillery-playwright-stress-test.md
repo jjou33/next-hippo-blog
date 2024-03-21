@@ -1,10 +1,10 @@
 ---
 date: "2024-02-20"
 title: "[Stress Test] Artillery + Playwright 와 함께하는 Stress Test"
-image: 'stress.webp'
+image: 'loadtest.webp'
 rootCategory: Programming
 category1depth: Web
-category2depth: optimization
+category2depth: loadtest
 keywords: ['Artillery', 'Playwright', 'StressTest']
 excerpt: Artillery 와 Playwright 를 활용하여 부하테스트(Stress Test) 도전기
 isFeatured: true

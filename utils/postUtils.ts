@@ -167,3 +167,11 @@ export const getFeaturedPosts = () => {
 
   return featuredPosts
 }
+
+export const getProjectPost = (): PostData[] => {
+  const projectPosts = getAllPosts().filter(
+    post => post.category1depth === 'Project',
+  )
+
+  return projectPosts
+}
