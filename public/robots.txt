@@ -4,7 +4,7 @@ Allow: /
 Disallow: 
 
 # Host
-Host: https://hippoblog.vercel.app
+Host: https://next-hippo-blog.vercel.app/
 
 # Sitemaps
-Sitemap: https://hippoblog.vercel.app/sitemap.xml
+Sitemap: https://next-hippo-blog.vercel.app/sitemap.xml
