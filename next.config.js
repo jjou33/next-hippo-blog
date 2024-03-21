@@ -52,15 +52,6 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: '/static/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'max-age=0, s-maxage=86400',
-          },
-        ],
-      },
     ]
   },
   swcMinify: true,
