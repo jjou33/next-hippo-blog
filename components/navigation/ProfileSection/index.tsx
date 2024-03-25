@@ -14,11 +14,11 @@ const ProfileSection = () => {
   const PROFILE_INFO = {
     VISIT_AND_CONTENTS: [
       {
-        number: Number(`${categoryInfo.categoryCount}`),
+        number: categoryInfo ? Number(`${categoryInfo.categoryCount}`) : 0,
         title: `${DATA.PROFILE_INFO.COUNT_TITLE.CATEGORY}`,
       },
       {
-        number: Number(`${categoryInfo.allPostCount}`),
+        number: categoryInfo ? Number(`${categoryInfo.allPostCount}`) : 0,
         title: `${DATA.PROFILE_INFO.COUNT_TITLE.POSTS}`,
       },
     ],
