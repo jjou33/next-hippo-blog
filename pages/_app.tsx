@@ -2,6 +2,7 @@ import theme from 'styles/theme'
 import Layout from 'components/common/Layout'
 import isPropValid from '@emotion/is-prop-valid'
 import Head from 'next/head'
+import { categoryState } from 'states/categoryState'
 import { StyleSheetManager, ThemeProvider } from 'styled-components'
 import { RecoilRoot } from 'recoil'
 import { DefaultSeo } from 'next-seo'
@@ -28,7 +29,9 @@ const App = ({ Component, pageProps }) => {
           />
         </Head>
         <GlobalStyle />
-        <RecoilRoot>
+        <RecoilRoot
+          initializeState={({ set }) => set(categoryState, pageProps.category)}
+        >
           <Layout pageProps={pageProps}>
             <DefaultSeo {...DEFAULT_SEO} />
             <Component {...pageProps} />
