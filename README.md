@@ -4,21 +4,21 @@
 
 ---
 
-개인적으로 운영하는 개발 블로그입니다.
+개인적으로 운영하는 저의 개발 블로그입니다.
 
 도메인 주소 : [https://next-hippo-blog.vercel.app/](https://next-hippo-blog.vercel.app/)
 
 ## Tech Stack
 
-| Name             | Description      |
-| ---------------- | ---------------- |
-| React            | Frontend Library |
-| Recoil           | 상태 관리        |
-| Type Script      | 작성 언어        |
-| NextJS           | 서버사이드       |
-| PNPM             | Package Manager  |
-| Styled Component | 스타일링         |
-| Github Action, Husky    | CI/CD |
+| Name                 | Description      |
+| -------------------- | ---------------- |
+| React                | Frontend Library |
+| Recoil               | 상태 관리        |
+| Type Script          | 작성 언어        |
+| NextJS               | 서버사이드       |
+| PNPM                 | Package Manager  |
+| Styled Component     | 스타일링         |
+| Github Action, Husky | CI/CD            |
 
 <br />
 
@@ -37,9 +37,10 @@ Node Version `18+` 이상 사용을 권장합니다.
 ✅ 프로젝트 실행 방법
 
 ---
+
 <br />
 
-✅ PNPM 설치 
+✅ PNPM 설치
 
 ```bash
 npm install -g pnpm
@@ -63,7 +64,6 @@ pnpm dev
 
 ## Coding Convention Check
 
-
 ✅ LINT 검사
 
 ```bash
@@ -78,7 +78,4 @@ pnpm lint
 pnpm typecheck
 ```
 
-<br />
----
-
-
+## <br />
