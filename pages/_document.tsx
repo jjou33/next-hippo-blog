@@ -42,6 +42,10 @@ class MyDocument extends Document {
     return (
       <Html lang={'ko'}>
         <Head>
+          <meta
+            name={'google-site-verification'}
+            content={'qHPW4tQItfmWapVjvbkaO_AMO3PAaSb6JOQxOfGt8fo'}
+          />
           {/* <meta
             name={'google-site-verification'}
             content={'GsFV8Lq-pIaGih_eSOgZkNeV2a0wrX_xyVP3y5njXw4'}
