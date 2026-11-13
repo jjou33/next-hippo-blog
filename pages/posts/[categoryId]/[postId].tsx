@@ -8,6 +8,7 @@ import {
 import type { PostData } from 'types/post'
 import { NextSeo } from 'next-seo'
 import METADATA from 'constants/METADATA'
+import { getNewBlogUrl } from 'constants/NEW_BLOG'
 
 const PostDetailPage = ({
   postDetailInfo,
@@ -19,14 +20,18 @@ const PostDetailPage = ({
   postId: string
 }) => {
   const { category1depth, category2depth, image, excerpt } = postDetailInfo
+  // 새 블로그로 옮긴 글은 대표 주소를 새 블로그로 알린다 (검색엔진의 중복 글 처리)
+  const pageUrl =
+    getNewBlogUrl(categoryId, postId) ??
+    `${METADATA.meta.url}/posts/${categoryId}/${postId}`
   return (
     <>
       <NextSeo
         title={`${postDetailInfo.title}`}
         description={`${postDetailInfo.excerpt}`}
-        canonical={`${METADATA.meta.url}/posts/${categoryId}/${postId}`}
+        canonical={pageUrl}
         openGraph={{
-          url: `${METADATA.meta.url}/posts/${categoryId}/${postId}`,
+          url: pageUrl,
           images: [
             {
               url: `${METADATA.meta.imageUrl}/${category1depth}/${category2depth}/${image}`,
