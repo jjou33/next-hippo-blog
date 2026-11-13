@@ -67,5 +67,10 @@
     "next-sitemap": "^4.2.3",
     "prettier": "^3.0.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "pnpm": {
+    "overrides": {
+      "lottie-web": "5.13.0"
+    }
+  }
 }
